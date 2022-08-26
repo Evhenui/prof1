@@ -1,0 +1,637 @@
+.header {
+    width: 100%;
+    background-color: $color-black;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+    &__wrapper {
+        max-width: $width-page;
+        @extend %centre-marg;
+        width: 100%;
+        height: 100%;
+        padding: 0 48px;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 36px;
+    }
+}
+.header-logo {
+    display: inline-block;
+    padding: 16px 0;
+    max-width: 169px;
+    width: 100%;
+    &__image {
+        max-width: 169px;
+        height: auto;
+    }
+}
+.header-navigation-catalog {
+    position: relative;
+    &__menu {
+        position: absolute;
+        left: -97px;
+    }
+
+    &__menu-list {
+        padding: 4px 0 36px 0;
+        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+        position: relative;
+        background-color: $color-white;
+    }
+
+    &__menu-wrapper {
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        @extend %centre-space-between;
+        padding: 14px 16px;
+        width: 216px;
+        &::before {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-color: $color-red-50;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+        }
+        &.active {
+            background-color: $color-gray-10;
+            &::before {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            background-color: $color-gray-10;
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__item.active &__svg-arrow {
+        stroke: $color-red;
+    }
+
+    &__item:hover &__svg-arrow {
+        stroke: $color-red;
+    }
+
+    &__item.active &__arrow-wrapper::after {
+        opacity: 1;
+        left: 11px;
+    }
+
+    &__item:hover &__arrow-wrapper::after {
+        opacity: 1;
+        left: 11px;
+    }
+    
+    &__arrow-wrapper {
+        font-size: 0;
+        position: relative;
+        &::after {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: $color-red;
+            position: absolute;
+            top: 22px;
+            left: 0px;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    &__link {
+        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight:24px);
+    }
+
+    &__submenu {
+        display: none;
+        padding: 8px 0 8px 20px;
+        background-color: $color-white;
+    }
+
+    &__submenu.bicycles {
+        display: block;
+        flex: 1 0 880px;
+    }
+
+    &__item.active &__submenu.bicycles {
+        display: block;
+    }
+
+    &__submenu-wrapper {
+    }
+
+    &__menus {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__menu-block {
+        white-space: nowrap;
+    }
+
+    &__title {
+        padding: 8px 12px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
+    }
+
+    &__submenu-list {
+    }
+
+    &__submenu-item {
+        padding: 8px 12px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+    }
+
+    &__all-product {
+    }
+
+    &__arrow-right {
+    }
+}
+.btn-red-short {
+}
+.header-button-red {
+    height: 100%;
+    padding: 24px 16.5px;
+
+}
+.header-navigation-menu {
+    display: flex;
+    &__list {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__item {
+        cursor: pointer;
+        @extend %centre-flex;
+        padding: 0 16px;
+        position: relative;
+        white-space: nowrap;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: $color-white;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            opacity: 0;
+            transition: all .1s ease-in-out;
+        }
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+            
+        }
+    }
+
+    &__item:hover &__item-link{
+        color: $color-white;
+    }
+
+    &__item:hover &__item-arrow-svg {
+        stroke: $color-white;
+    }
+
+    &__item.submenu {
+        display: flex;
+        align-items: center;
+        padding: 0 4px 0 16px;
+    }
+
+    &__item-link {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-gray-50, $fontWeight: 400, $lineHeight: 24px);
+        transition: all .1s ease-in-out;
+        position: relative;
+    }
+
+    &__item-arrow {
+        font-size: 0;
+    }
+
+    &__submenu {
+    }
+
+    &__submenu-item {
+        display: none;
+    }
+
+    &__submenu-item-link {
+    }
+
+    &__submenu-call {
+        display: none;
+    }
+
+    &__submenu-call-wrapper {
+    }
+
+    &__submenu-call-title {
+    }
+
+    &__submenu-title {
+    }
+
+    &__submenu-subtitle {
+    }
+
+    &__submenu-button {
+    }
+
+    &__button-title {
+    }
+
+    &__submenu-feedback {
+    }
+
+    &__submenu-feedback-wrapper {
+    }
+
+    &__submenu-form {
+    }
+
+    &__submenu-input-wrapper {
+    }
+
+    &__submenu-button-call {
+    }
+}
+.header-navigation-menu {
+
+    &__wrapper {
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__item-link {
+    }
+
+    &__item-arrow {
+    }
+
+    &__submenu {
+    }
+
+    &__submenu-item {
+    }
+
+    &__submenu-item-link {
+    }
+
+    &__submenu-call {
+    }
+
+    &__submenu-call-wrapper {
+    }
+
+    &__submenu-call-title {
+    }
+
+    &__submenu-title {
+    }
+
+    &__submenu-subtitle {
+    }
+
+    &__submenu-button {
+    }
+
+    &__button-title {
+    }
+
+    &__submenu-feedback {
+    }
+
+    &__submenu-feedback-wrapper {
+    }
+
+    &__submenu-form {
+    }
+
+    &__submenu-input-wrapper {
+    }
+
+    &__submenu-button-call {
+    }
+}
+.header-navigation {
+
+    &__item-link {
+        display: inline-block;
+        font-size: 0;
+    }
+}
+.timetable {
+}
+.subtitle {
+}
+.input-wrapper-black {
+
+    &__input {
+    }
+
+    &__image-error {
+    }
+
+    &__label {
+    }
+
+    &__prompt-wrapper {
+    }
+
+    &__prompt {
+    }
+}
+.btn-red {
+}
+
+.header-navigation {
+
+    &__item-link {
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: stretch;
+        border-right: 1px solid $color-gray-90;
+    }
+
+    &__list-item.mobile {
+        display: none;
+    }
+
+    &__svg {
+        transition: all .1s ease-out;
+    }
+
+    &__list-item:hover &__svg {
+        background-color: #FFFFFF;
+    }
+    
+    &__list-item:hover &__svg-hover {
+        stroke: $color-black;
+    }
+
+    &__submenu-mobile {
+        display: none;
+    }
+
+    &__submenu-mobile-wrapper {
+    }
+
+    &__submenu-mobile-username {
+    }
+
+    &__login-in {
+    }
+
+    &__login-in-wrapper {
+    }
+
+    &__submenu-mobile-icon {
+    }
+
+    &__submenu-title {
+    }
+
+    &__submenu-mobile-arrow {
+    }
+
+    &__login-out {
+    }
+
+    &__login-out-wrapper {
+    }
+
+    &__submenu-items {
+    }
+
+    &__submenu-items-list {
+    }
+
+    &__submenu-items-item {
+    }
+
+    &__submenu-items-link {
+    }
+
+    &__submenu-items-arrow {
+    }
+
+    &__submenu-navigation {
+    }
+
+    &__submenu-navigation-wrapper {
+    }
+
+    &__submenu-navigation-item {
+    }
+
+    &__submenu-navigation-icon {
+    }
+
+    &__submenu-navigation-title {
+    }
+
+    &__submenu-navigation-amount {
+    }
+
+    &__submenu-navigation-amount-title {
+    }
+
+    &__submenu-navigation-select {
+    }
+
+    &__submenu-navigation-select-wrapper {
+    }
+
+    &__selected {
+    }
+
+    &__select-section {
+    }
+
+    &__select-header {
+    }
+
+    &__select-title {
+    }
+
+    &__select-arrow {
+    }
+
+    &__select-body {
+    }
+
+    &__select-list {
+    }
+
+    &__select-item-menu {
+    }
+
+    &__select-item-link {
+    }
+
+    &__submenu-footer {
+    }
+
+    &__submenu-footer-wrapper {
+    }
+
+    &__submenu-footer-call {
+    }
+
+    &__submenu-footer-button {
+    }
+
+    &__submenu-footer-timetable {
+    }
+
+    &__submenu-footer-text-timetable {
+    }
+
+    &__submenu-footer-social-networks {
+    }
+
+    &__social-networks-link {
+    }
+
+    &__submenu-footer-wrapper-active {
+    }
+
+    &__submenu-footer-link-all-button {
+    }
+
+    &__submenu-footer-title {
+    }
+
+    &__submenu-account {
+        display: none;
+    }
+
+    &__account-item {
+    }
+
+    &__account-title {
+    }
+
+    &__account-link {
+    }
+
+    &__account-arrow {
+    }
+
+    &__select-language {
+
+    }
+
+    &__select-language-wrapper {
+        @extend %centre-flex-columb;
+        padding: 0 16px;
+        height: 100%;
+    }
+
+    &__select-item {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-gray-60, $fontWeight: 400, $lineHeight:24px);
+        width: 36px;
+        position: relative;
+        transition: all .1s ease-in-out;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $color-white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .1s ease-in-out;
+        }
+        &.active {
+            color: $color-white;
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__select-item:hover {
+        color: $color-white;
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+.timetable {
+}
+.subtitle {
+}
+.input-wrapper-black {
+
+    &__input {
+    }
+
+    &__image-error {
+    }
+
+    &__label {
+    }
+
+    &__prompt-wrapper {
+    }
+
+    &__prompt {
+    }
+}
+.btn-red {
+}
+.mobile {
+}
+.login-out {
+}
+.enter {
+}
+.register {
+}
+.scooters {
+}
+.kids-scooters {
+}
+.adult-scooters {
+}
+.stunt-scooters {
+}
+.electric-scooters {
+}
+.bicycles {
+}
+.title {
+}
+.header-close {
+    display: none;
+}

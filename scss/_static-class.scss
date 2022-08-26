@@ -110,3 +110,16 @@ html {
     background-color: $color-gray-60;
   }
 }
+
+.btn-red-short {
+  @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight:20px);
+  background-color: $color-red;
+  transition: all .1s ease-in-out;
+  &:hover {
+    background-color: $color-red-70;
+  }
+  &:active {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
