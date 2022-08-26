@@ -1,0 +1,112 @@
+html {
+  // overflow-x: hidden;
+  // margin-right: calc(-1 * (100vw - 100%));
+}
+:root {
+  --width-page: 1440px;
+  --height-monitor: 700px;
+  --height-page: 700px;
+}
+
+.width {
+  width: var(--width-page) px;
+}
+
+#body-cont {
+  background-color: $color-gray-5;
+  overflow-x: hidden;
+  &.active {
+    overflow-y: hidden;
+    padding-right: 17px;
+    @include __860 {
+      padding-right: 0;
+    }
+  }
+}
+
+.input-wrapper-black {
+  position:relative; 
+  margin-bottom: 32px; 
+  &.error &__input {
+    border-color: $color-red-50;
+    color: $color-red-40;
+    margin-bottom: 4px;
+  }
+  &.error &__prompt-wrapper{
+    display: block;
+  }
+  &.error &__image-error {
+    display: block;
+  }
+
+  @include __640 {
+    max-width: 100%;
+  }
+
+  &__input {
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
+    padding: 10px 16px;
+    display:block;
+    border:none;
+    border-bottom:1px solid $color-gray-70;
+    max-width: 240px;
+    width: 100%;
+    &:hover {
+      border-color: $color-white;
+    }
+    &:focus {
+      border-color: $color-gray-30;
+      color: $color-gray-30;
+    }
+  }
+
+  &__image-error {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    display: none;
+  }
+
+  &__prompt-wrapper {
+    display: none;
+    padding-left: 16px;
+  }
+  &__prompt {
+    @include text( $size: 0.75rem, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight:20px);
+  }
+
+
+  &__input:focus{ outline:none; }
+
+  &__label {
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
+    position:absolute;
+    pointer-events:none;
+    left: 16px;
+    top: 10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+
+  &__input:focus ~ &__label, &__input:valid ~ &__label    {
+    top:-20px;
+    font-size: 0.75rem;
+  }
+}
+
+.btn-red {
+  @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight:20px);
+  background-color: $color-black;
+  transition: all .2s ease-in-out;
+  &:hover {
+    background-color: $color-red;
+  }
+  &:active {
+    background-color: $color-red-70;
+  }
+  &:disabled {
+    cursor: auto;
+    background-color: $color-gray-60;
+  }
+}

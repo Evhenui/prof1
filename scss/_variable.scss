@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
+
+$font-main: 'Open Sans', sans-serif;
+
+$width-page: 1440px;
+
+$color-black: #2D2D2D;
+$color-gray-100: #141414;
+$color-gray-90: #474747;
+$color-gray-80: #616161;
+$color-gray-70: #7A7A7A;
+$color-gray-60: #949494;
+$color-gray-50: #ADADAD;
+$color-gray-40: #C7C7C7;
+$color-gray-30: #E0E0E0;
+$color-gray-20: #EDEDED;
+$color-gray-10: #EDEDED;
+$color-gray-5: #FAFAFA;
+$color-white: #FEFEFE;
+$color-background: #1A1919;
+
+$color-red: #E61E37;
+$color-red-100: #250408;
+$color-red-90: #5C0A14;
+$color-red-80: #8A0F1F;
+$color-red-70: #B81429;
+$color-red-60: #991a1d;
+$color-red-50: #F07585;
+$color-red-40: #F5A3AD;
+$color-red-30: #FAD1D6;
+$color-red-20: #FDEDEF;
+$color-red-10: #FEF6F7;
+
+$color-green: #15BC26;
+$color-orange: #FF8C05;
+$color-golden: #ffc107;
+
+
+:root {
+  --my-variable-hiadth: 10px;
+  --row-gap: 16px;
+  --gap: 16px;
+}
+
+$product-gallery-margin: Var(--row-gap, Var(--gap, 1%));
