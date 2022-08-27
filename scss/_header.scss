@@ -215,7 +215,7 @@
             content: "";
             width: 20px;
             height: 1px;
-            background-color: $color-red;
+            background-color: $color-white;
             position: absolute;
             top: 22px;
             left: 0px;
@@ -227,6 +227,7 @@
     &__all-product:hover &__arrow-right::after {
         opacity: 1;
         left: 11px;
+        background-color: $color-red;
     }
 
     &__all-product:hover &__title-footer {
@@ -386,6 +387,15 @@
         position: absolute;
         top: 68px;
         cursor: auto;
+        transition: all .2s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            z-index: 5;  
+        }
     }
 
     &__submenu-call-wrapper {
@@ -566,7 +576,23 @@
         display: flex;
         align-items: stretch;
         border-right: 1px solid $color-gray-90;
+        position: relative;
     }
+
+    .amount-item {
+        position: absolute;
+        right: 9px;
+        top: 6px;
+        background-color: $color-gray-100;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        @extend %centre-flex-columb;
+            &__title {
+                @include text( $size: 0.75rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
+            }
+    }
+
 
     &__list-item.mobile {
         display: none;
@@ -718,10 +744,79 @@
     }
 
     &__submenu-account {
-        display: none;
+        position: absolute;
+        top: 68px;
+        background-color: $color-black;
+        @extend %flex-column;
+        row-gap: 4px;
+        width: 281px;
+        left: -125px;
+        transition: all .2s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+
+    &__account-item.title {
+        @include text( $color: #FFFFFF, $textAlign: left, $fontWeight: 600, $lineHeight: 20px);
+        border-bottom: 1px solid #4E4B4B;
+        padding: 12px;
+    }
+
+    &__account-item.login-out {
+        @include text( $color: $color-white, $textAlign: center );
+        @extend %centre-flex;
+        column-gap: 4px;
+        padding: 4px 0 0 0;
+        border-top: 1px solid #4E4B4B;
+        transition: all .2s ease-in-out;
+        &:hover {
+            color: $color-red;
+        }
+        &:hover .header-navigation__account-arrow-svg-hover {
+            stroke: $color-red;
+        }
+        &:hover .header-navigation__account-arrow::after {
+            opacity: 1;
+            left: 11px;
+            background-color: $color-red;
+        }
+    }
+
+    &__account-arrow-svg-hover {
+        transition: all .2s ease-in-out;
     }
 
     &__account-item {
+        padding: 8px 20px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: #E6E5E5, $fontWeight: 400, $lineHeight: 24px);
+    }
+
+    &__account-item.menu {
+        transition: all .1s ease-in-out;
+        position: relative;
+        &:hover {
+            background-color: $color-gray-100;
+            &::before {
+                opacity: 1;
+            }
+        }
+        &::before {
+            content: "";
+            width: 2px;
+            height: 100%;
+            background-color: $color-red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+        }
     }
 
     &__account-title {
@@ -731,6 +826,24 @@
     }
 
     &__account-arrow {
+        display: inline-block;
+        font-size: 0;
+        position: relative;
+        &::after {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: $color-white;
+            position: absolute;
+            top: 22px;
+            left: 0px;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    &__account-arrow-svg {
+        display: flex
     }
 
     &__select-language {

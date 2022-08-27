@@ -294,6 +294,9 @@
                             </a>
                         </li>
                         <li class="header-navigation__list-item">
+                            <div class="amount-item">
+                                <span class="amount-item__title">2</span>
+                            </div>
                             <a class="header-navigation__item-link" href="#">
                                 <svg class="header-navigation__svg" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path class="header-navigation__svg-hover" d="M34 31V22" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
@@ -372,7 +375,6 @@
                                                 </div> 
                                                 <a class="header-navigation__submenu-title enter" href="">Вход</a>
                                                 <a class="header-navigation__submenu-title register" href="">Регистрация</a>
-                                            
                                             </div>
                                         </section>
                                     </section>
@@ -668,8 +670,8 @@
                                 </div>
                             </section>
                         </li>
-                        <li class="header-navigation__list-item">
-                            <a class="header-navigation__item-link" href="#">
+                        <li data-menu-account class="header-navigation__list-item">
+                            <a data-button-account class="header-navigation__item-link" href="#">
                                 <svg class="header-navigation__svg" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_308_11536)">
                                     <path class="header-navigation__svg-hover" d="M34 46C40.6274 46 46 40.6274 46 34C46 27.3726 40.6274 22 34 22C27.3726 22 22 27.3726 22 34C22 40.6274 27.3726 46 34 46Z" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
@@ -683,27 +685,27 @@
                                     </defs>
                                 </svg>               
                             </a>
-                            <ul class="header-navigation__submenu-account">
+                            <ul data-section-account class="header-navigation__submenu-account">
                                 <li class="header-navigation__account-item title">
                                     <p class="header-navigation__account-title">Здравствуйте, Татьяна</p>
                                 </li>
-                                <li class="header-navigation__account-item">
+                                <li class="header-navigation__account-item menu">
                                     <a class="header-navigation__account-link">Избранное (5)</a>
                                 </li>
-                                <li class="header-navigation__account-item">
+                                <li class="header-navigation__account-item menu">
                                     <a class="header-navigation__account-link">Сравнение (3)</a>
                                 </li>
-                                <li class="header-navigation__account-item">
+                                <li class="header-navigation__account-item menu">
                                     <a class="header-navigation__account-link">Мои заказы</a>
                                 </li>
-                                <li class="header-navigation__account-item">
+                                <li class="header-navigation__account-item menu">
                                     <a class="header-navigation__account-link">Личные данные</a>
                                 </li>
                                 <li class="header-navigation__account-item login-out">
                                     <a class="header-navigation__account-link login-out">Выйти из аккаунта</a>
                                     <div class="header-navigation__account-arrow">
-                                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M26 30L32 22L26 14" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg class="header-navigation__account-arrow-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="header-navigation__account-arrow-svg-hover" d="M26 30L32 22L26 14" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>   
                                     </div>
                                 </li>
@@ -787,6 +789,185 @@
             </div>
         </div>
         <!-- Высплывающее окно для поиска, когда ничинаешь что то вводить -->
+
+        <section data-modal-enter class="main-modal active">
+            <div class="main-modal__mask">
+              <div class="main-modal__wrapper">
+                <div data-popup-modal-container class="main-modal__container">
+                  <header class="main-modal__header">
+                    <div class="main-modal__close-modal">
+                      <button data-close-modal class="main-modal__close-button mobile">
+                        <svg class="main-modal__close-button-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path class="main-modal__close-button-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                          <path class="main-modal__close-button-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                        </svg>  
+                      </button>
+                    </div>
+                    <div class="main-modal__header-wrapper">
+                      <nav class="main-modal__navigation">
+                        <ul class="main-modal__navigation-list">
+                          <li data-modal-tab-item="#modal-enter" class="main-modal__navigation-item enter js-modal-tab-item active">
+                            <a href="#main-modal__enter" class="main-modal__navigation-link link-enter">Вход</a>
+                          </li>
+                          <li data-modal-tab-item="#modal-register" class="main-modal__navigation-item register js-modal-tab-item">
+                            <a href="#main-modal__register" class="main-modal__navigation-link link-register">Регистрация</a>
+                          </li>
+                        </ul>
+                        <button data-close-modal class="main-modal__close-button">
+                          <svg class="main-modal__close-button-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="main-modal__close-button-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                            <path class="main-modal__close-button-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                          </svg>  
+                        </button>
+                      </nav>
+                    </div>
+                  </header>
+                  <main class="main-modal__main">
+                    <div class="main-modal__main-wrapper">
+                      <section class="main-modal__enter js-modal-tab-section active" id="modal-enter">
+    
+                        <form action="" class="main-modal__form-enter" novalidate>
+                            <div class="input-wrapper-white main-modal__input-wrapper email">
+                                <input class="input-wrapper-white__input main-modal__input" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+                            <div class="input-wrapper-white main-modal__input-wrapper password">
+                                <input class="input-wrapper-white__input main-modal__input" type="password" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Пароль</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                                <div data-show-password-personal-area class="main-modal__show-password-button" data-target="#main-modal__old-password" >                              
+                                    <svg class="main-modal__password-calm" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                    </svg> 
+                                    <svg class="main-modal__password-active" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 7.06667C12.0673 7.06667 13.9109 8.20267 14.8109 10C13.9109 11.7973 12.0727 12.9333 10 12.9333C7.92727 12.9333 6.08909 11.7973 5.18909 10C6.08909 8.20267 7.93273 7.06667 10 7.06667ZM7.54545 10C7.54545 8.67733 8.64727 7.6 10 7.6C11.3527 7.6 12.4545 8.67733 12.4545 10C12.4545 11.3227 11.3527 12.4 10 12.4C8.64727 12.4 7.54545 11.3227 7.54545 10Z" fill="#827D7D"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8109 10C13.9109 8.20267 12.0673 7.06667 10 7.06667C7.93273 7.06667 6.08909 8.20267 5.18909 10C6.08909 11.7973 7.92727 12.9333 10 12.9333C12.0727 12.9333 13.9109 11.7973 14.8109 10ZM4 10C4.94364 7.65867 7.27273 6 10 6C12.7273 6 15.0564 7.65867 16 10C15.0564 12.3413 12.7273 14 10 14C7.27273 14 4.94364 12.3413 4 10Z" fill="#827D7D"/>
+                                        <path d="M9.99947 8.66667C10.7522 8.66667 11.3631 9.26401 11.3631 10C11.3631 10.736 10.7522 11.3333 9.99947 11.3333C9.24674 11.3333 8.63583 10.736 8.63583 10C8.63583 9.26401 9.24674 8.66667 9.99947 8.66667Z" fill="#827D7D"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="main-modal__subtitle-wrapper">
+                            <a class="main-modal__subtitle-link" href="#">Забыли пароль? Восстановить</a>
+                            </div>
+                          <button disabled data-modal-button-enter class="main-modal__button btn-red" type="submit">Войти</button>
+                        </form>
+                      </section>
+                      <section class="main-modal__register js-modal-tab-section" id="modal-register">
+                        <form action="" class="main-modal__form-register" novalidate>
+    
+                            <div class="input-wrapper-white main-modal__input-wrapper name-register">
+                                <input class="input-wrapper-white__input main-modal__input" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Введите имя</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+    
+                            <div class="input-wrapper-white main-modal__input-wrapper email-register">
+                                <input class="input-wrapper-white__input main-modal__input" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+    
+                            <div class="input-wrapper-white main-modal__input-wrapper password-register">
+                                <input class="input-wrapper-white__input main-modal__input" type="password" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Пароль</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+    
+                            <div class="input-wrapper-white main-modal__input-wrapper password-re-register">
+                                <input class="input-wrapper-white__input main-modal__input" type="password" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Повторите пароль</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                                <div data-show-password-personal-area class="main-modal__show-password-button" data-target="#main-modal__old-password" >                              
+                                    <svg class="main-modal__password-calm" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                    </svg> 
+                                    <svg class="main-modal__password-active" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 7.06667C12.0673 7.06667 13.9109 8.20267 14.8109 10C13.9109 11.7973 12.0727 12.9333 10 12.9333C7.92727 12.9333 6.08909 11.7973 5.18909 10C6.08909 8.20267 7.93273 7.06667 10 7.06667ZM7.54545 10C7.54545 8.67733 8.64727 7.6 10 7.6C11.3527 7.6 12.4545 8.67733 12.4545 10C12.4545 11.3227 11.3527 12.4 10 12.4C8.64727 12.4 7.54545 11.3227 7.54545 10Z" fill="#827D7D"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8109 10C13.9109 8.20267 12.0673 7.06667 10 7.06667C7.93273 7.06667 6.08909 8.20267 5.18909 10C6.08909 11.7973 7.92727 12.9333 10 12.9333C12.0727 12.9333 13.9109 11.7973 14.8109 10ZM4 10C4.94364 7.65867 7.27273 6 10 6C12.7273 6 15.0564 7.65867 16 10C15.0564 12.3413 12.7273 14 10 14C7.27273 14 4.94364 12.3413 4 10Z" fill="#827D7D"/>
+                                        <path d="M9.99947 8.66667C10.7522 8.66667 11.3631 9.26401 11.3631 10C11.3631 10.736 10.7522 11.3333 9.99947 11.3333C9.24674 11.3333 8.63583 10.736 8.63583 10C8.63583 9.26401 9.24674 8.66667 9.99947 8.66667Z" fill="#827D7D"/>
+                                    </svg>
+                                </div>
+                            </div>
+    
+                            <button disabled data-modal-button-enter class="main-modal__button btn-red" type="submit">Войти</button>
+                        </form>
+                      </section>
+                    </div>
+                  </main>
+                  <footer class="main-modal__footer">
+                    <span class="main-modal__footer-title">Войти через аккаунт:</span>
+                    <div class="main-modal__buttons-wrapper">
+                      <button class="main-modal__button-social-network google">
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_745_18021)">
+                          <path d="M4.88838 8.13711C5.66553 5.78219 7.87859 4.09091 10.4999 4.09091C11.909 4.09091 13.1817 4.59091 14.1817 5.40909L17.0908 2.5C15.3181 0.954545 13.0453 0 10.4999 0C6.55827 0 3.16467 2.24858 1.5332 5.54169L4.88838 8.13711Z" fill="#EA4335"/>
+                          <path d="M13.8673 15.0105C12.9591 15.5969 11.8051 15.9091 10.5 15.9091C7.88877 15.9091 5.68263 14.2307 4.89752 11.8899L1.53125 14.4458C3.16069 17.7447 6.5542 20 10.5 20C12.9441 20 15.2795 19.1312 17.0285 17.4996L13.8673 15.0105Z" fill="#34A853"/>
+                          <path d="M17.0285 17.4997C18.8576 15.7935 20.0455 13.2531 20.0455 10.0001C20.0455 9.40916 19.9545 8.77279 19.8182 8.18188H10.5V12.0455H15.8636C15.599 13.3448 14.8886 14.3511 13.8673 15.0106L17.0285 17.4997Z" fill="#4A90E2"/>
+                          <path d="M4.89748 11.89C4.69861 11.297 4.59091 10.6615 4.59091 10.0001C4.59091 9.34863 4.69536 8.7224 4.8885 8.13717L1.53333 5.54175C0.863823 6.88375 0.5 8.39621 0.5 10.0001C0.5 11.5997 0.870651 13.1085 1.53122 14.4459L4.89748 11.89Z" fill="#FBBC05"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_745_18021">
+                          <rect width="20" height="20" fill="white" transform="translate(0.5)"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                        <span class="main-modal__button-text">Google</span>
+                      </button>
+                      <button class="main-modal__button-social-network facebook">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1669 0H0.83375C0.373125 0 0 0.373125 0 0.833125V19.1669C0 19.6269 0.373125 20 0.83375 20H10.625V12.5H8.125V9.375H10.625V6.875C10.625 4.29187 12.2606 3.02062 14.565 3.02062C15.6687 3.02062 16.6175 3.10313 16.8937 3.13937V5.83937L15.2956 5.84C14.0425 5.84 13.75 6.43562 13.75 7.30937V9.375H16.875L16.25 12.5H13.75L13.8 20H19.1669C19.6269 20 20 19.6269 20 19.1669V0.833125C20 0.373125 19.6269 0 19.1669 0Z" fill="#3B5998"/>
+                        </svg>
+                        <span class="main-modal__button-text">Facebook</span>
+                      </button>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+        </section>
 
         <div class="js-clacc-blur">
         </div>

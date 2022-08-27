@@ -95,6 +95,77 @@ html {
   }
 }
 
+.input-wrapper-white {
+  position:relative; 
+  margin-bottom: 32px; 
+  &.error &__input {
+    border-color: $color-red-50;
+    color: $color-red;
+    margin-bottom: 4px;
+  }
+  &.error &__prompt-wrapper{
+    display: block;
+  }
+  &.error &__image-error {
+    display: block;
+  }
+
+  @include __640 {
+    max-width: 100%;
+  }
+
+  &__input {
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
+    padding: 10px 16px;
+    display:block;
+    border:none;
+    border-bottom:1px solid $color-gray-50;
+    max-width: 240px;
+    width: 100%;
+    &:hover {
+      border-color: $color-red-50;
+    }
+    &:focus {
+      border-color: $color-black;
+      color: $color-gray-100;
+    }
+  }
+
+  &__image-error {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    display: none;
+  }
+
+  &__prompt-wrapper {
+    display: none;
+    padding-left: 16px;
+  }
+  &__prompt {
+    @include text( $size: 0.75rem, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight:20px);
+  }
+
+
+  &__input:focus{ outline:none; }
+
+  &__label {
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight:24px);
+    position:absolute;
+    pointer-events:none;
+    left: 16px;
+    top: 10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+
+  &__input:focus ~ &__label, &__input:valid ~ &__label    {
+    top:-20px;
+    font-size: 0.75rem;
+  }
+}
+
 .btn-red {
   @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight:20px);
   background-color: $color-black;

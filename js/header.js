@@ -23,7 +23,8 @@ export let headerProfi = function() {
         const selectLanguage = header.querySelectorAll('[data-select-language]'),
               catalogMenu = header.querySelector('[data-catalog-menu]'),
               menuServices = header.querySelector('[data-menu-services]'),
-              menuCall = header.querySelector('[data-menu-call]');
+              menuCall = header.querySelector('[data-menu-call]'),
+              menuAccount = header.querySelector('[data-menu-account]')
         //----add/remove class groop------
         addActiveClass(selectLanguage)
         //----catalog---------------------
@@ -88,6 +89,26 @@ export let headerProfi = function() {
             const clickButton = e.composedPath().includes(buttonOpen);
             if(!click && !clickButton) {
               menuCall.classList.remove('active');
+              buttonOpen.classList.remove('active');
+              section.classList.remove('active');
+            }
+          })
+        }
+
+        if(menuAccount !== null) {
+          const buttonOpen = header.querySelector('[data-button-account]'),
+                section = header.querySelector('[data-section-account]');
+          buttonOpen.addEventListener('click', function() {
+            this.classList.toggle('active');
+            menuAccount.classList.toggle('active');
+            section.classList.toggle('active');
+          })
+
+          window.addEventListener('click',(e)=>{
+            const click = e.composedPath().includes(menuAccount);
+            const clickButton = e.composedPath().includes(buttonOpen);
+            if(!click && !clickButton) {
+              menuAccount.classList.remove('active');
               buttonOpen.classList.remove('active');
               section.classList.remove('active');
             }

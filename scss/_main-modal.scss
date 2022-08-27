@@ -1,0 +1,293 @@
+.main-modal {
+    display: none;
+    &.active {
+      display: block;
+    }
+  
+    &__mask {
+      position: fixed;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: table;
+      transition: all 0.3s ease;
+      @media (max-width: 860px) {
+        z-index: 4;
+      }
+    }
+  
+    &__wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+    }
+  
+    &__container {
+      box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      max-width: 460px;
+      width: 100%;
+      background-color: #FFFFFF;
+      @media (max-width: 860px) {
+        max-width: 375px;
+      }
+    }
+  
+    &__header-wrapper {
+      padding: 0 4px 0 60px;
+      background-color: $color-black;
+      @media (max-width: 860px) {
+        background-color: $color-white;
+        padding: 68px 16px 20px 16px;
+      }
+    }
+    &__close-modal {
+      padding: 12px 16px 12px 0px;
+      background-color: $color-gray-10;
+      display: none;
+      justify-content: flex-end;
+      @media (max-width: 860px) {
+        display: flex;
+      }
+    }
+
+    &__close-button-svg-line {
+        transition: all .1s ease-in-out;
+        fill: $color-gray-50;
+    }
+  
+    &__navigation {
+      @extend %centre-space-between;
+    }
+  
+    &__navigation-list{
+      display: flex;
+      column-gap: 12px;
+    }
+  
+    &__navigation-item.enter {
+      @media (max-width: 860px) {
+        width: 163px;
+      }
+    }
+    &__navigation-item.enter.active{
+      &::before {
+        width: 100%;
+      } 
+    }
+
+    &__navigation-item {
+        width: 164px;
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        &::before{
+            content: '';
+            width: 0px;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: $color-white;
+            transition: width .2s;
+          }
+          &:hover {
+            &::before {
+                width: 100%;
+            }
+          }
+    }
+
+
+
+    &__navigation-item.register.active{
+      &::before {
+        width: 100%;
+      } 
+    }
+  
+    &__navigation-item:hover &__navigation-link {
+        color: $color-white;
+    }
+
+    &__navigation-item.active &__navigation-link{
+        color: $color-white;
+    }
+  
+    &__navigation-link {
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all .1s ease-in-out;
+      @include text( $size: 1.25rem, $textAlign: center, $color: $color-gray-50, $fontWeight: 600, $lineHeight: 28px);
+    }
+  
+    &__close-button {
+      font-size: 0;
+      transition: all .1s ease-in-out;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      @media (max-width: 860px) {
+        display: none;
+      }
+
+      &:hover .personal-area-modal__close-button-svg{
+        border-radius: 50%;
+        background-color: $color-gray-20;
+      }
+
+
+      &:active .personal-area-modal__close-button-svg-line {
+        fill:$color-gray-60;
+      }
+    }
+
+    &__close-button:hover &__close-button-svg-line{
+        fill: $color-white;
+      }
+  
+  
+    &__close-button.mobile {
+      font-size: 0;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      @media (max-width: 860px) {
+        display: block;
+      }
+    }
+  
+    &__main-wrapper {
+      padding: 40px 40px 0 40px;
+      @media (max-width: 860px) {
+        padding: 56px 16px 0 16px;
+      }
+    }
+  
+    &__enter {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  
+    &__wrapper-input {
+      margin-bottom: 28px;
+    }
+  
+    &__form-enter {
+    }
+  
+    &__input-wrapper.password {
+        margin-bottom: 4px;
+    }
+  
+    &__subtitle-wrapper {
+      padding-left: 16px;
+      font-size: 0;
+      margin-bottom: 36px;
+    }
+  
+    &__subtitle-link {
+      display: inline-block;
+      @include text( $size: 0.75rem, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight: 20px);
+    }
+  
+    &__button {
+      width: 100%;
+      padding: 16px 0;
+      @media (max-width: 860px) {
+        max-width: 100%;
+      }
+    }
+  
+    &__register {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    &__input {
+        max-width: 100%;
+    }
+
+    &__footer {
+      padding: 20px 40px 40px 40px;
+      @extend %centre-flex-columb;
+      @media (max-width: 860px) {
+        padding: 24px 16px 252px 16px;
+      }
+    }
+
+    &__show-password-button {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        cursor: pointer;
+        font-size: 0;
+    }
+
+    &__show-password-button:hover &__password-calm{
+        background-color: $color-gray-40;
+    }
+
+    &__password-active {
+        display: none;
+    }
+
+    &__password-calm {
+        transition: all 0.2s ease-in-out;
+        border-radius: 50%;
+    }
+  
+    &__footer-title {
+      display: block;
+      margin-bottom: 20px;
+      @include text( $size: 0.875rem, $textAlign: center, $color: #827D7D, $fontWeight: 400, $lineHeight:24px);
+    }
+  
+    &__buttons-wrapper {
+        width: 100%;
+        display: flex;    
+        column-gap: 12px;
+      
+      @media (max-width: 860px) {
+        max-width: 100%;
+      }
+    }
+    
+    &__button-social-network.facebook {
+      @media (max-width: 860px) {
+        display: none;
+      }
+    }
+    &__button-social-network {
+      width: 100%;
+      outline: 1px solid #C12125;
+      border-radius: 1px;
+      @extend %centre-flex;
+      column-gap: 10px;
+      padding: 16px 0;    
+    }
+
+    &__button-text {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 20px);
+    }
+
+    &__form-register {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    &__input-wrapper.name-register, &__input-wrapper.email-register,
+    &__input-wrapper.password-register, &__input-wrapper.password-re-register{
+        margin: 0;
+    }
+
+    &__input-wrapper.password-re-register {
+        margin-bottom: 60px;
+    }
+  }
+  
