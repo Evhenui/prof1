@@ -20,11 +20,11 @@
             
             <nav class="header-navigation-menu">
                 <nav class="header-navigation-catalog">
-                    <button class="btn-red-short header-button-red">Каталог</button>
-                    <section class="header-navigation-catalog__menu">
+                    <button data-button-show-catalog class="btn-red-short header-button-red">Каталог</button>
+                    <section data-catalog-menu class="header-navigation-catalog__menu">
                         <div class="header-navigation-catalog__menu-wrapper">
                             <ul class="header-navigation-catalog__menu-list">
-                                <li class="header-navigation-catalog__item active">
+                                <li data-catalog-menu-item class="header-navigation-catalog__item active">
                                     <a class="header-navigation-catalog__link" href="#">Самокаты</a>
                                     <div class="header-navigation-catalog__arrow-wrapper">
                                         <svg class="header-navigation-catalog__svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,121 +32,41 @@
                                         </svg>
                                     </div>    
                                 </li>
-                                <li class="header-navigation-catalog__item">
+                                <li data-catalog-menu-item class="header-navigation-catalog__item">
                                     <a class="header-navigation-catalog__link" href="#">Скейты</a>
                                     <div class="header-navigation-catalog__arrow-wrapper">
                                         <svg class="header-navigation-catalog__svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path class="header-navigation-catalog__svg-arrow" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </div>
-                                    <section class="header-navigation-catalog__submenu">
-                                        <div class="header-navigation-catalog__submenu-wrapper">
-                                            <section class="header-navigation-catalog__menus">
-                                               <section class="header-navigation-catalog__menu-block">
-                                                <ul class="header-navigation-catalog__submenu-list">
-                                                    <li class="header-navigation-catalog__submenu-item">Скейтборды</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Пенниборды</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Лонгборды</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Скейт Рипстик</li>
-                                                </ul>
-                                               </section> 
-                                            </section>
-                                            <section class="header-navigation-catalog__all-product">
-                                                <a class="header-navigation-catalog__title" href="#">Все товары</a>
-                                                <svg class="header-navigation-catalog__arrow-right" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg> 
-                                            </section>
-                                        </div>
-                                    </section> 
                                 </li>
-                                <li class="header-navigation-catalog__item">
+                                <li data-catalog-menu-item class="header-navigation-catalog__item">
                                     <a class="header-navigation-catalog__link" href="#">Ролики</a>
                                     <div class="header-navigation-catalog__arrow-wrapper">
                                         <svg class="header-navigation-catalog__svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path class="header-navigation-catalog__svg-arrow" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                    </div> 
-                                    <section class="header-navigation-catalog__submenu">
-                                        <div class="header-navigation-catalog__submenu-wrapper">
-                                            <section class="header-navigation-catalog__menus">
-                                               <section class="header-navigation-catalog__menu-block">
-                                                <ul class="header-navigation-catalog__submenu-list">
-                                                    <li class="header-navigation-catalog__submenu-item">Ролики для мальчиков</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Ролики для девочек</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Ролики унисекс</li>
-                                                </ul>
-                                               </section> 
-                                            </section>
-                                            <section class="header-navigation-catalog__all-product">
-                                                <a class="header-navigation-catalog__title" href="#">Все товары</a>
-                                                <svg class="header-navigation-catalog__arrow-right" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg> 
-                                            </section>
-                                        </div>
-                                    </section>   
+                                    </div>  
                                 </li>
-                                <li class="header-navigation-catalog__item">
+                                <li data-catalog-menu-item class="header-navigation-catalog__item">
                                     <a class="header-navigation-catalog__link" href="#">Батуты</a>
                                     <div class="header-navigation-catalog__arrow-wrapper">
                                         <svg class="header-navigation-catalog__svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path class="header-navigation-catalog__svg-arrow" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </div> 
-                                    <section class="header-navigation-catalog__submenu">
-                                        <div class="header-navigation-catalog__submenu-wrapper">
-                                            <section class="header-navigation-catalog__menus">
-                                               <section class="header-navigation-catalog__menu-block">
-                                                <ul class="header-navigation-catalog__submenu-list">
-                                                    <li class="header-navigation-catalog__submenu-item">Батуты с сеткой</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Батуты без сетки</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Батуты для фитнеса</li>
-                                                </ul>
-                                               </section> 
-                                            </section>
-                                            <section class="header-navigation-catalog__all-product">
-                                                <a class="header-navigation-catalog__title" href="#">Все товары</a>
-                                                <svg class="header-navigation-catalog__arrow-right" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg> 
-                                            </section>
-                                        </div>
-                                    </section>   
                                 </li>
-                                <li class="header-navigation-catalog__item">
+                                <li data-catalog-menu-item class="header-navigation-catalog__item">
                                     <a class="header-navigation-catalog__link" href="#">Велоспипеды</a>
                                     <div class="header-navigation-catalog__arrow-wrapper">
                                         <svg class="header-navigation-catalog__svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path class="header-navigation-catalog__svg-arrow" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </div>    
-                                    <section class="header-navigation-catalog__submenu">
-                                        <div class="header-navigation-catalog__submenu-wrapper">
-                                            <section class="header-navigation-catalog__menus">
-                                               <section class="header-navigation-catalog__menu-block">
-                                                <ul class="header-navigation-catalog__submenu-list">
-                                                    <li class="header-navigation-catalog__submenu-item">Горные МТВ</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Двухподвесы</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Подростковые</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Детские 2-х колесные</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Детские 3-х колесные</li>
-                                                    <li class="header-navigation-catalog__submenu-item">Беговелы</li>
-                                                </ul>
-                                               </section> 
-                                            </section>
-                                            <section class="header-navigation-catalog__all-product">
-                                                <a class="header-navigation-catalog__title" href="#">Все товары</a>
-                                                <svg class="header-navigation-catalog__arrow-right" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg> 
-                                            </section>
-                                        </div>
-                                    </section>  
                                 </li>
                             </ul>
-                            <section class="header-navigation-catalog__submenu bicycles">
-                                <div class="header-navigation-catalog__submenu-wrapper">
+                            <section data-submenu-catalog class="header-navigation-catalog__submenu">
+                                <div data-item-submenu class="header-navigation-catalog__submenu-wrapper active">
                                     <section class="header-navigation-catalog__menus">
                                        <section class="header-navigation-catalog__menu-block">
                                         <h3 class="header-navigation-catalog__title">Детские самокаты</h3>
@@ -179,10 +99,92 @@
                                        </section> 
                                     </section>
                                     <section class="header-navigation-catalog__all-product">
-                                        <a class="header-navigation-catalog__title" href="#">Все товары</a>
-                                        <svg class="header-navigation-catalog__arrow-right" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg> 
+                                        <a class="header-navigation-catalog__title-footer" href="#">Все товары</a>
+                                        <div class="header-navigation-catalog__arrow-right">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="header-navigation-catalog__arrow-right-hover" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
+                                    </section>
+                                </div>
+                                <div data-item-submenu class="header-navigation-catalog__submenu-wrapper">
+                                    <section class="header-navigation-catalog__menus">
+                                       <section class="header-navigation-catalog__menu-block">
+                                        <ul class="header-navigation-catalog__submenu-list">
+                                            <li class="header-navigation-catalog__submenu-item">Скейтборды</li>
+                                            <li class="header-navigation-catalog__submenu-item">Пенниборды</li>
+                                            <li class="header-navigation-catalog__submenu-item">Лонгборды</li>
+                                            <li class="header-navigation-catalog__submenu-item">Скейт Рипстик</li>
+                                        </ul>
+                                       </section> 
+                                    </section>
+                                    <section class="header-navigation-catalog__all-product">
+                                        <a class="header-navigation-catalog__title-footer" href="#">Все товары</a>
+                                        <div class="header-navigation-catalog__arrow-right">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="header-navigation-catalog__arrow-right-hover" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
+                                    </section>
+                                </div>
+                                <div data-item-submenu class="header-navigation-catalog__submenu-wrapper">
+                                    <section class="header-navigation-catalog__menus">
+                                       <section class="header-navigation-catalog__menu-block">
+                                        <ul class="header-navigation-catalog__submenu-list">
+                                            <li class="header-navigation-catalog__submenu-item">Ролики для мальчиков</li>
+                                            <li class="header-navigation-catalog__submenu-item">Ролики для девочек</li>
+                                            <li class="header-navigation-catalog__submenu-item">Ролики унисекс</li>
+                                        </ul>
+                                       </section> 
+                                    </section>
+                                    <section class="header-navigation-catalog__all-product">
+                                        <a class="header-navigation-catalog__title-footer" href="#">Все товары</a>
+                                        <div class="header-navigation-catalog__arrow-right">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="header-navigation-catalog__arrow-right-hover" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
+                                    </section>
+                                </div>
+                                <div data-item-submenu class="header-navigation-catalog__submenu-wrapper">
+                                    <section class="header-navigation-catalog__menus">
+                                       <section class="header-navigation-catalog__menu-block">
+                                        <ul class="header-navigation-catalog__submenu-list">
+                                            <li class="header-navigation-catalog__submenu-item">Батуты с сеткой</li>
+                                            <li class="header-navigation-catalog__submenu-item">Батуты без сетки</li>
+                                            <li class="header-navigation-catalog__submenu-item">Батуты для фитнеса</li>
+                                        </ul>
+                                       </section> 
+                                    </section>
+                                    <section class="header-navigation-catalog__all-product">
+                                        <a class="header-navigation-catalog__title-footer" href="#">Все товары</a>
+                                        <div class="header-navigation-catalog__arrow-right">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="header-navigation-catalog__arrow-right-hover" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
+                                    </section>
+                                </div>
+                                <div data-item-submenu class="header-navigation-catalog__submenu-wrapper">
+                                    <section class="header-navigation-catalog__menus">
+                                       <section class="header-navigation-catalog__menu-block">
+                                        <ul class="header-navigation-catalog__submenu-list">
+                                            <li class="header-navigation-catalog__submenu-item">Горные MTB</li>
+                                            <li class="header-navigation-catalog__submenu-item">Двухподвесы</li>
+                                            <li class="header-navigation-catalog__submenu-item">Подростковые</li>
+                                            <li class="header-navigation-catalog__submenu-item">Детские 2-х колесные</li>
+                                            <li class="header-navigation-catalog__submenu-item">Детские 3-х колесные</li>
+                                            <li class="header-navigation-catalog__submenu-item">Беговелы</li>
+                                        </ul>
+                                       </section>                                                               
+                                    </section>
+                                    <section class="header-navigation-catalog__all-product">
+                                        <a class="header-navigation-catalog__title-footer" href="#">Все товары</a>
+                                        <div class="header-navigation-catalog__arrow-right">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="header-navigation-catalog__arrow-right-hover" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
                                     </section>
                                 </div>
                             </section>
@@ -201,22 +203,22 @@
                         <li class="header-navigation-menu__item">
                             <a class="header-navigation-menu__item-link" href="#">Доставка и оплата</a>
                         </li>
-                        <li class="header-navigation-menu__item submenu">
+                        <li data-button-services class="header-navigation-menu__item submenu">
                             <a class="header-navigation-menu__item-link" href="#">Гарантия и сервис</a>
                             <div class="header-navigation-menu__item-arrow">
                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path class="header-navigation-menu__item-arrow-svg" d="M14 19L22 25L30 19" stroke="#ADADAD" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>    
                             </div>
-                            <ul class="header-navigation-menu__submenu">
+                            <ul data-menu-services class="header-navigation-menu__submenu">
                                 <li class="header-navigation-menu__submenu-item">
-                                    <a class="header-navigation-menu__submenu-item-link" href="#">Возврат и обмен</a>
+                                    <a class="header-navigation-menu__submenu-item-link" >Возврат и обмен</a>
                                 </li>
                                 <li class="header-navigation-menu__submenu-item">
-                                    <a class="header-navigation-menu__submenu-item-link" href="#">Инструкции</a>
+                                    <a class="header-navigation-menu__submenu-item-link" >Инструкции</a>
                                 </li>
                                 <li class="header-navigation-menu__submenu-item">
-                                    <a class="header-navigation-menu__submenu-item-link" href="#">FAQ</a>
+                                    <a class="header-navigation-menu__submenu-item-link">FAQ</a>
                                 </li>
                             </ul>
                         </li>
