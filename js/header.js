@@ -22,7 +22,8 @@ export let headerProfi = function() {
     if(header !== null) {
         const selectLanguage = header.querySelectorAll('[data-select-language]'),
               catalogMenu = header.querySelector('[data-catalog-menu]'),
-              menuServices = header.querySelector('[data-menu-services]');
+              menuServices = header.querySelector('[data-menu-services]'),
+              menuCall = header.querySelector('[data-menu-call]');
         //----add/remove class groop------
         addActiveClass(selectLanguage)
         //----catalog---------------------
@@ -54,10 +55,12 @@ export let headerProfi = function() {
         }               
         
         if(menuServices !== null) {
-          const buttonOpen = header.querySelector('[data-button-services]');
+          const buttonOpen = header.querySelector('[data-button-services]'),
+                section = header.querySelector('[data-section-services]');
           buttonOpen.addEventListener('click', function() {
             this.classList.toggle('active');
             menuServices.classList.toggle('active');
+            section.classList.toggle('active');
           })
 
           window.addEventListener('click',(e)=>{
@@ -66,8 +69,29 @@ export let headerProfi = function() {
             if(!click && !clickButton) {
               menuServices.classList.remove('active');
               buttonOpen.classList.remove('active');
+              section.classList.remove('active');
             }
           })
         }  
+
+        if(menuCall !== null) {
+          const buttonOpen = header.querySelector('[data-button-call]'),
+                section = header.querySelector('[data-section-call]');
+          buttonOpen.addEventListener('click', function() {
+            this.classList.toggle('active');
+            menuCall.classList.toggle('active');
+            section.classList.toggle('active');
+          })
+
+          window.addEventListener('click',(e)=>{
+            const click = e.composedPath().includes(menuCall);
+            const clickButton = e.composedPath().includes(buttonOpen);
+            if(!click && !clickButton) {
+              menuCall.classList.remove('active');
+              buttonOpen.classList.remove('active');
+              section.classList.remove('active');
+            }
+          })
+        }
     }
 }

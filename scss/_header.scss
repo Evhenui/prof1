@@ -258,6 +258,19 @@
         height: 100%;
     }
 
+    &__item-wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__item-wrapper.active &__item-link{
+        color: $color-white;
+    }
+    &__item-wrapper.active &__item-arrow-svg{
+        stroke: $color-white;
+    }
+
     &__item {
         cursor: pointer;
         @extend %centre-flex;
@@ -370,25 +383,59 @@
     }
 
     &__submenu-call {
-        display: none;
+        position: absolute;
+        top: 68px;
+        cursor: auto;
     }
 
     &__submenu-call-wrapper {
+        background-color: $color-black;
+        padding: 12px 20px 20px 20px;
     }
 
     &__submenu-call-title {
+        @extend %centre-space-between;
+        margin-bottom: 20px;
     }
 
     &__submenu-title {
+        @include text( $size: 1rem, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 24px);
+    }
+
+    &__submenu-title.text-feedback {
+        width: 240px;
+        white-space: break-spaces;
+        margin-bottom: 22px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 600, $lineHeight: 20px);
     }
 
     &__submenu-subtitle {
+        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-40, $fontWeight: 400, $lineHeight: 20px);
+    }
+
+    &__submenu-subtitle.timetable {
+        max-width: 105px;
+        width: 100%;
+        white-space: break-spaces;
+        color: $color-gray-30;
+    }
+
+    &__submenu-subtitle.subtitle {
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     &__submenu-button {
+        width: 100%;
+        @extend %left-flex;
+        background-color: $color-gray-90;
+        border-radius: 1px;
+        padding-left: 12px;
+        margin-bottom: 20px;
     }
 
     &__button-title {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 400, $lineHeight: 24px);
     }
 
     &__submenu-feedback {
@@ -401,9 +448,12 @@
     }
 
     &__submenu-input-wrapper {
+        margin-bottom: 32px;
     }
 
     &__submenu-button-call {
+        width: 100%;
+        padding: 16px 0;
     }
 }
 .header-navigation-menu {
