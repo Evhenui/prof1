@@ -1,5 +1,6 @@
 export let headerProfi = function() {
-    const header = document.querySelector('[data-header]');
+    const header = document.querySelector('[data-header]'),
+          modalEnter = document.querySelector('[data-modal-enter]');
 
     function addActiveClass(list) {
       list.forEach((item) => {
@@ -115,4 +116,48 @@ export let headerProfi = function() {
           })
         }
     }
+
+    if(modalEnter !== null) {
+      const menuItems = modalEnter.querySelectorAll('[data-header-modal-item]'),
+            tabItems = modalEnter.querySelectorAll('[data-modal-tab-section]'),
+            buttonCloseModal = modalEnter.querySelectorAll('[data-close-modal]'),
+            modalContainer = modalEnter.querySelector('[data-popup-modal-container]'),
+            body = document.querySelector("#body-cont");
+
+            if(modalEnter.classList.contains('active')) {
+              body.style.overflow = 'hidden';
+            }
+
+            menuItems.forEach(function(item) {
+              item.addEventListener("click", function () {
+                const tabId = item.getAttribute("data-modal-tab-item"),
+                      currentTub = modalEnter.querySelector(tabId);
+                if (!item.classList.contains("active")) {
+                  menuItems.forEach(function (item) {
+                    item.classList.remove("active");
+                  });
+                  tabItems.forEach(function (item) {
+                    item.classList.remove("active");
+                  });
+                  item.classList.add("active");
+                  currentTub.classList.add("active");
+                }
+              })
+            })
+
+            buttonCloseModal.forEach((item)=> {
+              item.addEventListener('click', function() {
+                modalEnter.classList.remove('active');
+                body.style.overflow = 'auto';
+              })
+              modalEnter.addEventListener('click',(e)=>{
+                const click = e.composedPath().includes(modalContainer);
+                if(!click) {
+                  modalEnter.classList.remove('active');
+                  body.style.overflow = 'auto';
+                }
+              })
+            })   
+    }
+    
 }

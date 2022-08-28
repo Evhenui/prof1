@@ -1,2 +1,5 @@
 import {headerProfi} from './header.js';
-headerProfi();
+        headerProfi();
+
+import {inputsValidate} from './inputs-validate.js';
+        inputsValidate();

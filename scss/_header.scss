@@ -556,12 +556,15 @@
     &__prompt {
     }
 }
-.btn-red {
-}
 
 .header-navigation {
 
-    &__item-link {
+    &__item-link.active  &__svg-hover{
+        stroke: $color-black;
+    }
+
+    &__item-link.active &__svg {
+        background-color: #FFFFFF;
     }
 
     &__wrapper {

@@ -1,12 +1,16 @@
 .main-modal {
-    display: none;
+    transition: all .3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
     &.active {
-      display: block;
+      visibility: visible;
+      opacity: 1;
+      z-index: 4;
     }
   
     &__mask {
       position: fixed;
-      z-index: 4;
       top: 0;
       left: 0;
       width: 100%;
@@ -93,7 +97,7 @@
             bottom: 0;
             left: 0;
             background: $color-white;
-            transition: width .2s;
+            transition: width .3s ease-in-out;
           }
           &:hover {
             &::before {
@@ -101,8 +105,6 @@
             }
           }
     }
-
-
 
     &__navigation-item.register.active{
       &::before {
@@ -137,7 +139,6 @@
         border-radius: 50%;
         background-color: $color-gray-20;
       }
-
 
       &:active .personal-area-modal__close-button-svg-line {
         fill:$color-gray-60;
@@ -174,10 +175,7 @@
     &__wrapper-input {
       margin-bottom: 28px;
     }
-  
-    &__form-enter {
-    }
-  
+
     &__input-wrapper.password {
         margin-bottom: 4px;
     }

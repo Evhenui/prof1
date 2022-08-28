@@ -730,66 +730,6 @@
     </header>
 
     <main class="js-main">
-        <div class="search-modal">
-            <div class="search-modal__item-wrp">
-                <div class="search-modal__text-wrp">
-                    <img class="search-modal__text-icon" src="icon/search-clock-icon.svg" alt="">
-                    <p class="search-modal__text-name">Джип <span class="search-modal__text-article">M 3579EBLR-3</span>
-                    </p>
-                </div>
-                <span class="red-diamonds"></span>
-            </div>
-            <div class="search-modal__item-wrp">
-                <div class="search-modal__text-wrp">
-                    <img class="search-modal__text-icon" src="icon/search-clock-icon.svg" alt="">
-                    <p class="search-modal__text-name">Джип <span class="search-modal__text-article">M 3579EBLR-3</span>
-                    </p>
-                </div>
-                <span class="red-diamonds"></span>
-            </div>
-            <div class="search-modal__item-wrp">
-                <div class="search-modal__text-wrp">
-                    <!-- <img class="search-modal__text-icon" src="icon/search-clock-icon.svg" alt=""> -->
-                    <p class="search-modal__text-name">Джип <span class="search-modal__text-article">M 3579EBLR-3</span>
-                    </p>
-                </div>
-                <span class="red-diamonds"></span>
-            </div>
-            <div class="search-modal__item-wrp">
-                <div class="search-modal__text-wrp">
-                    <!-- <img class="search-modal__text-icon" src="icon/search-clock-icon.svg" alt=""> -->
-                    <p class="search-modal__text-name">Джип <span class="search-modal__text-article">M 3579EBLR-3</span>
-                    </p>
-                </div>
-                <span class="red-diamonds"></span>
-            </div>
-            <div class="search-modal__item-wrp">
-                <div class="search-modal__text-wrp">
-                    <!-- <img class="search-modal__text-icon" src="icon/search-clock-icon.svg" alt=""> -->
-                    <p class="search-modal__text-name">Джип <span class="search-modal__text-article">M 3579EBLR-3</span>
-                    </p>
-                </div>
-                <span class="red-diamonds"></span>
-            </div>
-            <div class="search-modal__item-wrp">
-                <div class="search-modal__text-wrp">
-                    <!-- <img class="search-modal__text-icon" src="icon/search-clock-icon.svg" alt=""> -->
-                    <p class="search-modal__text-name">Джип <span class="search-modal__text-article">M 3579EBLR-3</span>
-                    </p>
-                </div>
-                <span class="red-diamonds"></span>
-            </div>
-            <div class="search-modal__total-wrp">
-                <a class="search-modal__total-text" href="#">
-                    <p>
-                        Показать все товары
-                    </p>
-                    <img src="icon/arrow-search-icon-modal.svg" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- Высплывающее окно для поиска, когда ничинаешь что то вводить -->
-
         <section data-modal-enter class="main-modal active">
             <div class="main-modal__mask">
               <div class="main-modal__wrapper">
@@ -806,10 +746,10 @@
                     <div class="main-modal__header-wrapper">
                       <nav class="main-modal__navigation">
                         <ul class="main-modal__navigation-list">
-                          <li data-modal-tab-item="#modal-enter" class="main-modal__navigation-item enter js-modal-tab-item active">
+                          <li data-modal-tab-item="#modal-enter" data-header-modal-item class="main-modal__navigation-item enter js-modal-tab-item active">
                             <a href="#main-modal__enter" class="main-modal__navigation-link link-enter">Вход</a>
                           </li>
-                          <li data-modal-tab-item="#modal-register" class="main-modal__navigation-item register js-modal-tab-item">
+                          <li data-modal-tab-item="#modal-register" data-header-modal-item class="main-modal__navigation-item register js-modal-tab-item">
                             <a href="#main-modal__register" class="main-modal__navigation-link link-register">Регистрация</a>
                           </li>
                         </ul>
@@ -824,11 +764,11 @@
                   </header>
                   <main class="main-modal__main">
                     <div class="main-modal__main-wrapper">
-                      <section class="main-modal__enter js-modal-tab-section active" id="modal-enter">
+                      <section data-modal-tab-section class="main-modal__enter js-modal-tab-section active" id="modal-enter">
     
                         <form action="" class="main-modal__form-enter" novalidate>
-                            <div class="input-wrapper-white main-modal__input-wrapper email">
-                                <input class="input-wrapper-white__input main-modal__input" type="text" required>
+                            <div data-input-email-modal-enter-container class="input-wrapper-white main-modal__input-wrapper email">
+                                <input data-input-email-modal-enter data-input-enter class="input-wrapper-white__input main-modal__input" type="text" required>
                                 <div class="input-wrapper-white__image-error">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
@@ -839,8 +779,8 @@
                                     <span class="input-wrapper-white__prompt">Additional description about error</span>
                                 </div>
                             </div>
-                            <div class="input-wrapper-white main-modal__input-wrapper password">
-                                <input class="input-wrapper-white__input main-modal__input" type="password" required>
+                            <div data-input-password-modal-enter-container class="input-wrapper-white main-modal__input-wrapper password">
+                                <input data-input-password-modal-enter data-input-enter class="input-wrapper-white__input main-modal__input" type="password" id="main-modal__password" required>
                                 <div class="input-wrapper-white__image-error">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
@@ -850,7 +790,7 @@
                                 <div class="input-wrapper-white__prompt-wrapper">
                                     <span class="input-wrapper-white__prompt">Additional description about error</span>
                                 </div>
-                                <div data-show-password-personal-area class="main-modal__show-password-button" data-target="#main-modal__old-password" >                              
+                                <div data-show-password class="main-modal__show-password-button" data-target="#main-modal__password" >                              
                                     <svg class="main-modal__password-calm" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
                                     </svg> 
@@ -867,11 +807,11 @@
                           <button disabled data-modal-button-enter class="main-modal__button btn-red" type="submit">Войти</button>
                         </form>
                       </section>
-                      <section class="main-modal__register js-modal-tab-section" id="modal-register">
+                      <section data-modal-tab-section class="main-modal__register js-modal-tab-section" id="modal-register">
                         <form action="" class="main-modal__form-register" novalidate>
     
-                            <div class="input-wrapper-white main-modal__input-wrapper name-register">
-                                <input class="input-wrapper-white__input main-modal__input" type="text" required>
+                            <div data-input-modal-container class="input-wrapper-white main-modal__input-wrapper name-register">
+                                <input data-input-email-modal class="input-wrapper-white__input main-modal__input" type="text" required>
                                 <div class="input-wrapper-white__image-error">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
@@ -910,7 +850,7 @@
                             </div>
     
                             <div class="input-wrapper-white main-modal__input-wrapper password-re-register">
-                                <input class="input-wrapper-white__input main-modal__input" type="password" required>
+                                <input class="input-wrapper-white__input main-modal__input" type="password" id="main-modal__passwords" required>
                                 <div class="input-wrapper-white__image-error">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
@@ -920,7 +860,7 @@
                                 <div class="input-wrapper-white__prompt-wrapper">
                                     <span class="input-wrapper-white__prompt">Additional description about error</span>
                                 </div>
-                                <div data-show-password-personal-area class="main-modal__show-password-button" data-target="#main-modal__old-password" >                              
+                                <div data-show-password class="main-modal__show-password-button" data-target="#main-modal__passwords" >                              
                                     <svg class="main-modal__password-calm" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
                                     </svg> 
@@ -968,7 +908,6 @@
               </div>
             </div>
         </section>
-
         <div class="js-clacc-blur">
         </div>
     </main>
