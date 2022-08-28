@@ -6,7 +6,7 @@
     &.active {
       visibility: visible;
       opacity: 1;
-      z-index: 4;
+      z-index: 5;
     }
   
     &__mask {
@@ -20,7 +20,7 @@
       display: table;
       transition: all 0.3s ease;
       @media (max-width: 860px) {
-        z-index: 4;
+        z-index: 2;
       }
     }
   

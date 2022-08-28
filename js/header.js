@@ -1,6 +1,9 @@
 export let headerProfi = function() {
     const header = document.querySelector('[data-header]'),
-          modalEnter = document.querySelector('[data-modal-enter]');
+          modalEnter = document.querySelector('[data-modal-enter]'),
+          buttonOpenMenuMobile = header.querySelector('[data-open-mobile-menu]'),
+          headerWrapper = header.querySelector('[data-header-wrapper]'),
+          buttonCloseMenuMobile = header.querySelector('[data-close-menu-mobile]');
 
     function addActiveClass(list) {
       list.forEach((item) => {
@@ -160,4 +163,11 @@ export let headerProfi = function() {
             })   
     }
     
+    buttonOpenMenuMobile.addEventListener('click', () => {
+      headerWrapper.classList.add('active')
+    })
+
+    buttonCloseMenuMobile.addEventListener('click', () => {
+      headerWrapper.classList.remove('active')
+    })
 }

@@ -3,8 +3,18 @@
     background-color: $color-black;
     position: fixed;
     top: 0;
-    z-index: 5;
+    z-index: 3;
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color-black;
+        z-index: 3;
+    }
     &__wrapper {
         max-width: $width-page;
         @extend %centre-marg;
@@ -20,9 +30,11 @@
 }
 .header-logo {
     display: flex;
+    align-items: center;
     padding: 16px 0;
     max-width: 169px;
     width: 100%;
+    z-index: 3;
     @include __1175 {
         max-width: 50px;
         margin-right: 10px;
@@ -30,6 +42,7 @@
     @include __960 {
         padding: 16px 0 16px 16px;
         margin-right: 0;
+        max-width: 100%;
     }
     &__image {
         max-width: 169px;
@@ -48,6 +61,9 @@
         @include __1175 {
             display: block;
         }
+    }
+    &__image-mobile-full {
+        display: none;
     }
 }
 .header-navigation-catalog {
@@ -278,6 +294,7 @@
 
 }
 .header-navigation-menu {
+    z-index: 3;
     display: flex;
     @include __960 {
         display: none;
@@ -565,7 +582,6 @@
     }
 }
 .header-navigation {
-
     &__item-link {
         display: inline-block;
         font-size: 0;
@@ -666,7 +682,7 @@
             width: 47px;
         }
         @include __960 {
-            width: 100%;
+            width: auto;
         }
     }
 
@@ -890,24 +906,28 @@
 
 .header-navigation-mobile { 
     display: none;
-    position: absolute;
-    top: 68px;
+    position: fixed;
+    top: -100%;
+    left: 0;
     width: 100%;
     background-color: $color-black;
+    transition: all .3s ease-in-out;
+    max-height: calc(100vh - 68px); 
+    overflow-y: auto;
     @include __960 {
         display: block;
     }
 
     &__wrapper {
-        padding-top: 16px;
     }
 
     &__username {
-       
+        padding: 16px 0;   
     }
 
     &__login-in {
-
+        padding: 0 16px;
+        background-color: #212121;
     }
 
     &__login-in-section {
@@ -916,7 +936,7 @@
     }
 
     &__login-in-wrapper {
-        padding: 4px 16px; 
+        padding: 4px 0; 
         display: flex;
         column-gap: 81px;
     }
@@ -934,50 +954,87 @@
     }
 
     &__login-out {
-
         display: none;
+        padding: 0 16px;
+        background-color: #212121;
+    }
+
+    &__border {
+        display: block;
+        width: 1px;
+        height: 24px;
+        background-color: #B5B0B0;
     }
 
     &__login-out-wrapper {
+        padding: 4px 0; 
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
     }
 
     &__items {
+        padding: 0 16px;
+        margin-bottom: 16px;
     }
 
     &__items-list {
+        border-bottom: 1px solid $color-gray-90;
+        border-top: 1px solid $color-gray-90;
+        padding: 0 16px;
+        @extend %flex-columb;
+        row-gap: 4px
     }
 
     &__item {
+        @extend %left-flex;
+        column-gap: 4px;
+        padding: 4px 0;
     }
 
     &__item-link {
+        max-width: 279px;
+        width: 100%;
+        @include text( $size: 1rem, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 24px);
     }
 
     &__navigation {
     }
 
     &__navigation-wrapper {
+        padding: 0 16px
     }
 
     &__navigation-item {
+        @extend %left-flex;
+        column-gap: 20px;
     }
 
     &__navigation-icon {
+        display: inline-block;
+        font-size: 0;
     }
 
-    &__navigation-title {
+    &__navigation-title.footer-title {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 400, $lineHeight: 24px);
     }
 
     &__navigation-amount {
+        height: 24px;
+        width: 24px;
+        background-color: $color-gray-100;
+        @extend %centre-flex-columb;
     }
 
     &__navigation-amount-title {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
     }
 
     &__amount-title {
     }
 
     &__navigation-select {
+        display: none;
     }
 
     &__navigation-select-wrapper {
@@ -1011,30 +1068,55 @@
     }
 
     &__footer {
+        padding: 14px 16px;
     }
 
     &__footer-wrapper {
+        padding-top: 24px;
+        border-top: 1px solid $color-gray-90;    
     }
 
     &__footer-call {
     }
 
+    &__wraper-footer {
+        @extend %left-flex;
+        column-gap: 19px;
+        margin-bottom: 24px;
+    }
+
     &__footer-button {
+        max-width: 170px;
+        width: 100%;
+        @extend %left-flex;
+        border: 1px solid $color-white;
+    }
+
+    &__navigation-title {
+        @include text( $size: 0.8125rem, $textAlign: left, $color: $color-white, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__footer-timetable {
+        @extend %flex-columb;
+        row-gap: 4px;
     }
 
     &__footer-text-timetable {
+        @include text( $size: 0.75rem, $textAlign: left, $color: #B5B0B0, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__footer-social-networks {
+        display: flex;
+        column-gap: 28px;
     }
 
     &__social-networks-link {
+        font-size: 0;
+        display: inline-block;
     }
 
     &__submenu-footer-wrapper-active {
+        display: none;
     }
 
     &__submenu-footer-link-all-button {
@@ -1043,26 +1125,49 @@
     &__submenu-footer-title {
     }
 }
-.login-out {
-}
-.enter {
-}
-.register {
-}
-.scooters {
-}
-.kids-scooters {
-}
-.adult-scooters {
-}
-.stunt-scooters {
-}
-.electric-scooters {
-}
-.bicycles {
-}
 .header-navigation {
+    z-index: 3;
 
     &__submenu-navigation-title {
     }
 }
+
+.header__wrapper.active {
+    column-gap: 12px;
+    & .header-logo__image-mobile {
+        display: none;
+    }
+    
+    & .header-logo__image-mobile-full {
+        display: flex;
+        align-items: center;
+    }
+
+    & .header-navigation__list {
+        display: none;
+    }
+
+    & .header-navigation-mobile {
+            top: 68px;
+    }
+
+    & .header-navigation__wrapper {
+        height: 100%;
+    }
+
+    & .header-navigation__select-language {
+        display: block;
+    }
+
+    & .header-navigation__select-language-wrapper {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    & .header-close {
+        z-index: 3;
+        display: block;
+        font-size: 0;
+    }
+}
+

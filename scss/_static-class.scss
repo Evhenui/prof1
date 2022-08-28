@@ -72,14 +72,14 @@ html {
     padding-left: 16px;
   }
   &__prompt {
-    @include text( $size: 0.75rem, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight:20px);
+    @include text( $size: 0.75rem, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight: 20px);
   }
 
 
   &__input:focus{ outline:none; }
 
   &__label {
-    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 24px);
     position:absolute;
     pointer-events:none;
     left: 16px;
