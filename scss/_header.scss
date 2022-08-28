@@ -13,17 +13,41 @@
         padding: 0 48px;
         display: flex;
         justify-content: space-between;
-        column-gap: 36px;
+        @include __960 {
+            padding: 0;
+        }
     }
 }
 .header-logo {
-    display: inline-block;
+    display: flex;
     padding: 16px 0;
     max-width: 169px;
     width: 100%;
+    @include __1175 {
+        max-width: 50px;
+        margin-right: 10px;
+    }
+    @include __960 {
+        padding: 16px 0 16px 16px;
+        margin-right: 0;
+    }
     &__image {
         max-width: 169px;
         height: auto;
+        @include __1250 {
+            max-width: 130px;
+        }
+        @include __1175 {
+            display: none;
+        }
+    }
+    &__image-mobile {
+        display: none;
+        max-width: 50px;
+        height: auto;
+        @include __1175 {
+            display: block;
+        }
     }
 }
 .header-navigation-catalog {
@@ -248,10 +272,16 @@
 .header-button-red {
     height: 100%;
     padding: 24px 16.5px;
+    @include __1356 {
+        padding: 24px 5px;
+    }
 
 }
 .header-navigation-menu {
     display: flex;
+    @include __960 {
+        display: none;
+    }
     &__list {
         display: flex;
         align-items: stretch;
@@ -278,6 +308,9 @@
         padding: 0 16px;
         position: relative;
         white-space: nowrap;
+        @include __1340 {
+            padding: 0 5px;
+        }
         &::after {
             content: '';
             width: 100%;
@@ -328,6 +361,9 @@
 
     &__item-arrow {
         font-size: 0;
+        @include __1340 {
+            display: none;
+        }
     }
 
     &__submenu {
@@ -580,6 +616,19 @@
         align-items: stretch;
         border-right: 1px solid $color-gray-90;
         position: relative;
+        @include __960 {
+            border: none;
+        }
+        &.basket {
+            @include __960 {
+                display: none;
+            }
+        }
+        &.account {
+            @include __960 {
+                display: none;
+            }
+        }
     }
 
     .amount-item {
@@ -594,157 +643,54 @@
             &__title {
                 @include text( $size: 0.75rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
             }
+        @include __1050 {
+            width: 15px;
+            height: 15px;
+            right: 6px;
+            top: 10px;
+        }
     }
 
 
     &__list-item.mobile {
         display: none;
+        @include __960 {
+            display: flex;
+            position: relative;
+        }      
     }
 
     &__svg {
         transition: all .1s ease-out;
+        @include __1050 {
+            width: 47px;
+        }
+        @include __960 {
+            width: 100%;
+        }
     }
 
     &__list-item:hover &__svg {
         background-color: #FFFFFF;
+        @include __960 {
+            background-color: $color-black;
+        }
     }
     
     &__list-item:hover &__svg-hover {
         stroke: $color-black;
+        @include __960 {
+            stroke: $color-white;
+        }
     }
 
-    &__submenu-mobile {
-        display: none;
-    }
+    //-------------------nav mobile--------------------
 
-    &__submenu-mobile-wrapper {
-    }
+   
 
-    &__submenu-mobile-username {
-    }
 
-    &__login-in {
-    }
+    //-------------------------------------------------
 
-    &__login-in-wrapper {
-    }
-
-    &__submenu-mobile-icon {
-    }
-
-    &__submenu-title {
-    }
-
-    &__submenu-mobile-arrow {
-    }
-
-    &__login-out {
-    }
-
-    &__login-out-wrapper {
-    }
-
-    &__submenu-items {
-    }
-
-    &__submenu-items-list {
-    }
-
-    &__submenu-items-item {
-    }
-
-    &__submenu-items-link {
-    }
-
-    &__submenu-items-arrow {
-    }
-
-    &__submenu-navigation {
-    }
-
-    &__submenu-navigation-wrapper {
-    }
-
-    &__submenu-navigation-item {
-    }
-
-    &__submenu-navigation-icon {
-    }
-
-    &__submenu-navigation-title {
-    }
-
-    &__submenu-navigation-amount {
-    }
-
-    &__submenu-navigation-amount-title {
-    }
-
-    &__submenu-navigation-select {
-    }
-
-    &__submenu-navigation-select-wrapper {
-    }
-
-    &__selected {
-    }
-
-    &__select-section {
-    }
-
-    &__select-header {
-    }
-
-    &__select-title {
-    }
-
-    &__select-arrow {
-    }
-
-    &__select-body {
-    }
-
-    &__select-list {
-    }
-
-    &__select-item-menu {
-    }
-
-    &__select-item-link {
-    }
-
-    &__submenu-footer {
-    }
-
-    &__submenu-footer-wrapper {
-    }
-
-    &__submenu-footer-call {
-    }
-
-    &__submenu-footer-button {
-    }
-
-    &__submenu-footer-timetable {
-    }
-
-    &__submenu-footer-text-timetable {
-    }
-
-    &__submenu-footer-social-networks {
-    }
-
-    &__social-networks-link {
-    }
-
-    &__submenu-footer-wrapper-active {
-    }
-
-    &__submenu-footer-link-all-button {
-    }
-
-    &__submenu-footer-title {
-    }
 
     &__submenu-account {
         position: absolute;
@@ -850,7 +796,9 @@
     }
 
     &__select-language {
-
+        @include __960 {
+            display: none
+        }
     }
 
     &__select-language-wrapper {
@@ -937,4 +885,184 @@
 }
 .header-close {
     display: none;
+}
+
+
+.header-navigation-mobile { 
+    display: none;
+    position: absolute;
+    top: 68px;
+    width: 100%;
+    background-color: $color-black;
+    @include __960 {
+        display: block;
+    }
+
+    &__wrapper {
+        padding-top: 16px;
+    }
+
+    &__username {
+       
+    }
+
+    &__login-in {
+
+    }
+
+    &__login-in-section {
+        @extend %left-flex;
+        column-gap: 20px;
+    }
+
+    &__login-in-wrapper {
+        padding: 4px 16px; 
+        display: flex;
+        column-gap: 81px;
+    }
+
+    &__icon {
+        font-size: 0;
+    }
+
+    &__title {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 400, $lineHeight: 24px);
+    }
+
+    &__arrow {
+        font-size: 0;
+    }
+
+    &__login-out {
+
+        display: none;
+    }
+
+    &__login-out-wrapper {
+    }
+
+    &__items {
+    }
+
+    &__items-list {
+    }
+
+    &__item {
+    }
+
+    &__item-link {
+    }
+
+    &__navigation {
+    }
+
+    &__navigation-wrapper {
+    }
+
+    &__navigation-item {
+    }
+
+    &__navigation-icon {
+    }
+
+    &__navigation-title {
+    }
+
+    &__navigation-amount {
+    }
+
+    &__navigation-amount-title {
+    }
+
+    &__amount-title {
+    }
+
+    &__navigation-select {
+    }
+
+    &__navigation-select-wrapper {
+    }
+
+    &__selected {
+    }
+
+    &__select-section {
+    }
+
+    &__select-header {
+    }
+
+    &__select-title {
+    }
+
+    &__select-arrow {
+    }
+
+    &__select-body {
+    }
+
+    &__select-list {
+    }
+
+    &__select-item-menu {
+    }
+
+    &__select-item-link {
+    }
+
+    &__footer {
+    }
+
+    &__footer-wrapper {
+    }
+
+    &__footer-call {
+    }
+
+    &__footer-button {
+    }
+
+    &__footer-timetable {
+    }
+
+    &__footer-text-timetable {
+    }
+
+    &__footer-social-networks {
+    }
+
+    &__social-networks-link {
+    }
+
+    &__submenu-footer-wrapper-active {
+    }
+
+    &__submenu-footer-link-all-button {
+    }
+
+    &__submenu-footer-title {
+    }
+}
+.login-out {
+}
+.enter {
+}
+.register {
+}
+.scooters {
+}
+.kids-scooters {
+}
+.adult-scooters {
+}
+.stunt-scooters {
+}
+.electric-scooters {
+}
+.bicycles {
+}
+.header-navigation {
+
+    &__submenu-navigation-title {
+    }
 }
