@@ -6,6 +6,9 @@
     &__wrapper {
         @extend %size-page;
         padding: 16px 48px 20px 48px;
+        @include __960 {
+            @include padding-mob;
+        }
     }
 
     &__title-link {

@@ -1,8 +1,10 @@
 .catalog {
-
     &__wrapper {
         padding: 124px 48px 120px 48px;
         @extend %size-page;
+        @include __960 {
+            @include padding-mob;
+        }
     }
 
     &__name-page {
@@ -19,6 +21,15 @@
 
     &__items-wrapper {
         @extend %centre-space-between;
+        gap: 5px;
+        flex-wrap: wrap;
+        @include __1315 {
+            justify-content: flex-start;
+            gap: 36px 16px;
+        }
+        @include __960 {
+            justify-content: center;
+        }
     }
 
     &__item {
@@ -27,6 +38,10 @@
            box-shadow: none;
            outline: 1px solid $color-red-30;
         }
+        @include __960 {
+            max-width: 343px;
+            width: 100%;
+         }
     }
 
     &__item-wrapper {
@@ -51,6 +66,10 @@
     }
 
     &__description-section {
+        display: none;
+        &.active {
+            display: block;
+        }
     }
 
     &__description-title {

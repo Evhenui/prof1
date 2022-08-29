@@ -3,3 +3,6 @@ import {headerProfi} from './header.js';
 
 import {inputsValidate} from './inputs-validate.js';
         inputsValidate();
+
+import {catalog} from './catalog.js';
+        catalog();
