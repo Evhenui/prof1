@@ -824,6 +824,7 @@
     }
 
     &__select-item {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
         @include text( $size: 0.875rem, $textAlign: center, $color: $color-gray-60, $fontWeight: 400, $lineHeight:24px);
         width: 36px;
         position: relative;
@@ -916,6 +917,13 @@
     overflow-y: auto;
     @include __960 {
         display: block;
+    }
+
+    &__wrapper {
+        padding-bottom: 52px;
+        &.active {
+            padding-bottom: 84px;
+        }
     }
 
     &__wrapper.active  &__items-list {
@@ -1086,16 +1094,10 @@
     }
 
     &__select-section {
+        min-height: 52px;
         outline: 1px solid $color-gray-90;
         padding: 4px 16px;
         transition: all .3s ease-in-out;
-        &.active {
-            padding: 4px 16px 14px 16px;
-        }
-    }
-
-    &__select-section.active &__select-header {
-        padding-bottom: 4px;
     }
 
     &__select-section.active &__select-arrow {
@@ -1114,12 +1116,19 @@
     &__select-arrow {
         transition: all .3s ease-in-out;
         font-size: 0;
+        &.enable {
+            visibility: hidden;
+        }
     }
 
-    &__select-body {
+    &__select-body {   
         height: 0;
         overflow: hidden;
         transition: all 0.3s;
+    }
+
+    &__select-body-wrapper {
+        padding-top: 4px;
     }
 
     &__select-list {
@@ -1191,6 +1200,7 @@
         display: flex;
         align-items: center;
         padding-left: 12px;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     }
 
     &__submenu-footer-title {
@@ -1220,7 +1230,7 @@
     }
 
     & .header-navigation-mobile {
-            top: 68px;
+        top: 68px;
     }
 
     & .header-navigation__wrapper {
