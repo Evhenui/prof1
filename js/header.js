@@ -1,9 +1,6 @@
 export let headerProfi = function() {
     const header = document.querySelector('[data-header]'),
-          modalEnter = document.querySelector('[data-modal-enter]'),
-          buttonOpenMenuMobile = header.querySelector('[data-open-mobile-menu]'),
-          headerWrapper = header.querySelector('[data-header-wrapper]'),
-          buttonCloseMenuMobile = header.querySelector('[data-close-menu-mobile]');
+          modalEnter = document.querySelector('[data-modal-enter]');
 
     function addActiveClass(list) {
       list.forEach((item) => {
@@ -28,7 +25,16 @@ export let headerProfi = function() {
               catalogMenu = header.querySelector('[data-catalog-menu]'),
               menuServices = header.querySelector('[data-menu-services]'),
               menuCall = header.querySelector('[data-menu-call]'),
-              menuAccount = header.querySelector('[data-menu-account]')
+              menuAccount = header.querySelector('[data-menu-account]'),
+              buttonOpenMenuMobile = header.querySelector('[data-open-mobile-menu]'),
+              headerWrapper = header.querySelector('[data-header-wrapper]'),
+              buttonCloseMenuMobile = header.querySelector('[data-close-menu-mobile]'),
+              menuMobileItem = header.querySelectorAll('[data-menu-mobile-item]'),
+              menuMobileList = header.querySelector('[data-menu-mobile-list]'),
+              menuMobileWrapper = header.querySelector('[data-mobile-menu-wrapper]'),
+              accordionItems = header.querySelectorAll('[data-accordion-mobile]'),
+              submenuMobileItems = header.querySelectorAll('[data-select-submenu-mobile]');
+
         //----add/remove class groop------
         addActiveClass(selectLanguage)
         //----catalog---------------------
@@ -118,6 +124,45 @@ export let headerProfi = function() {
             }
           })
         }
+
+        //----mobile-menu--------------
+
+        buttonOpenMenuMobile.addEventListener('click', () => {
+          headerWrapper.classList.add('active')
+        })
+    
+        buttonCloseMenuMobile.addEventListener('click', () => {
+          headerWrapper.classList.remove('active')
+        })
+    
+        menuMobileItem.forEach((item)=> {
+          item.addEventListener('click', function() {
+            this.classList.toggle('active');
+            menuMobileWrapper.classList.toggle('active');
+          })
+        })
+
+        //------accordion-------------
+        accordionItems.forEach((item) => {
+          item.addEventListener('click', function(event) {
+           const self = event.currentTarget;
+           const accordionContent = self.querySelector('[data-accordion-mobile-content]');
+           this.classList.toggle('active');
+           if(this.classList.contains('active')){
+            accordionContent.style.height = accordionContent.scrollHeight + 'px';
+           } else {
+            accordionContent.style.height = 0 + 'px';
+           }
+        })})
+
+        menuMobileItem.forEach((item, index) => {
+          item.addEventListener("click", function () {
+            delActiv(menuMobileItem);
+            delActiv(submenuMobileItems);
+            item.classList.add('active');
+            submenuMobileItems[index].classList.add('active');
+          });
+        });
     }
 
     if(modalEnter !== null) {
@@ -162,12 +207,5 @@ export let headerProfi = function() {
               })
             })   
     }
-    
-    buttonOpenMenuMobile.addEventListener('click', () => {
-      headerWrapper.classList.add('active')
-    })
-
-    buttonCloseMenuMobile.addEventListener('click', () => {
-      headerWrapper.classList.remove('active')
-    })
+  
 }

@@ -139,7 +139,7 @@ label {
   flex-direction: column;
 }
 
-.header-navigation-mobile__footer-timetable, .header-navigation-mobile__items-list {
+.header-navigation-mobile__footer-timetable, .header-navigation-mobile__select-list, .header-navigation-mobile__items-list {
   display: flex;
   flex-direction: column;
 }
@@ -149,7 +149,7 @@ label {
   margin-right: auto;
 }
 
-.main-modal__navigation, .footer-special-documents__wrp, .footer-content__social-wrp, .footer-content, .header-navigation-menu__submenu-call-title, .header-navigation-catalog__item {
+.main-modal__navigation, .footer-special-documents__wrp, .footer-content__social-wrp, .footer-content, .header-navigation-mobile__select-header, .header-navigation-menu__submenu-call-title, .header-navigation-catalog__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1189,6 +1189,35 @@ label {
     display: block;
   }
 }
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__items-list {
+  padding: 0;
+  border-top: 0;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__item {
+  display: none;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__item.active {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__item.active .header-navigation-mobile__arrow {
+  transform: rotateZ(180deg);
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__navigation-select {
+  display: block;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__footer-wrapper {
+  display: none;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__navigation-wrapper {
+  display: none;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__submenu-footer-wrapper-active {
+  display: flex;
+}
+.header-navigation-mobile__wrapper.active .header-navigation-mobile__items {
+  margin: 0;
+}
 .header-navigation-mobile__username {
   padding: 16px 0;
 }
@@ -1245,10 +1274,11 @@ label {
 .header-navigation-mobile__items-list {
   border-bottom: 1px solid #474747;
   border-top: 1px solid #474747;
-  padding: 0 16px;
+  padding-left: 16px;
   row-gap: 4px;
 }
 .header-navigation-mobile__item {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -moz-column-gap: 4px;
        column-gap: 4px;
   padding: 4px 0;
@@ -1298,6 +1328,62 @@ label {
 .header-navigation-mobile__navigation-select {
   display: none;
 }
+.header-navigation-mobile__navigation-select-wrapper {
+  padding: 16px;
+}
+.header-navigation-mobile__selected {
+  flex-direction: column;
+  row-gap: 16px;
+  display: none;
+}
+.header-navigation-mobile__selected.active {
+  display: flex;
+}
+.header-navigation-mobile__select-section {
+  outline: 1px solid #474747;
+  padding: 4px 16px;
+  transition: all 0.3s ease-in-out;
+}
+.header-navigation-mobile__select-section.active {
+  padding: 4px 16px 14px 16px;
+}
+.header-navigation-mobile__select-section.active .header-navigation-mobile__select-header {
+  padding-bottom: 4px;
+}
+.header-navigation-mobile__select-section.active .header-navigation-mobile__select-arrow {
+  transform: rotateZ(180deg);
+}
+.header-navigation-mobile__select-header {
+  transition: all 0.3s ease-in-out;
+}
+.header-navigation-mobile__select-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #FEFEFE;
+}
+.header-navigation-mobile__select-arrow {
+  transition: all 0.3s ease-in-out;
+  font-size: 0;
+}
+.header-navigation-mobile__select-body {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.header-navigation-mobile__select-item-menu {
+  padding: 16px 8px;
+}
+.header-navigation-mobile__select-item-link {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #FEFEFE;
+}
 .header-navigation-mobile__footer {
   padding: 14px 16px;
 }
@@ -1345,7 +1431,22 @@ label {
 }
 .header-navigation-mobile__submenu-footer-wrapper-active {
   display: none;
+  align-items: center;
 }
+.header-navigation-mobile__submenu-footer-link-all-button {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+.header-navigation-mobile__submenu-footer-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  color: #F07585;
+}
+
 .header-navigation {
   z-index: 3;
 }
