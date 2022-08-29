@@ -6,3 +6,6 @@ import {inputsValidate} from './inputs-validate.js';
 
 import {catalog} from './catalog.js';
         catalog();
+
+import {cardProduct} from './card-product.js';
+        cardProduct();
