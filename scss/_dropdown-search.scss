@@ -1,7 +1,6 @@
 .dropdown-search {
     position: fixed;
     top: 100px;///example
-    left: 100px;///example
     display: none;
     box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
     background-color: $color-white;
@@ -145,6 +144,12 @@
             opacity: 0;
             transition: all 0.3s ease-in-out;
         }
+    }
+
+    &__item-text {
+       text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     &__empty {
