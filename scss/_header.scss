@@ -14,7 +14,38 @@
         left: 0;
         background: $color-black;
         z-index: 3;
+        transition: all .3s ease-in-out;
     }
+
+    &.active-search &__wrapper{
+        justify-content: center;
+            @include __650 {
+                width: 100%;
+                justify-content: left;
+            }
+    }
+
+    &.active-search::before {
+        background: $color-white;
+    }
+
+    &.active-search .header-logo {
+        display: none;
+    }
+
+    &.active-search .header-navigation-menu {
+        display: none;
+    }
+
+    &.active-search .header-navigation {
+        display: none;
+    }
+
+    &.active-search .header-search {
+        display: block;
+    }
+
+
     &__wrapper {
         max-width: $width-page;
         @extend %centre-marg;
@@ -587,10 +618,7 @@
         font-size: 0;
     }
 }
-.timetable {
-}
-.subtitle {
-}
+
 .input-wrapper-black {
 
     &__input {
@@ -784,12 +812,6 @@
         }
     }
 
-    &__account-title {
-    }
-
-    &__account-link {
-    }
-
     &__account-arrow {
         display: inline-block;
         font-size: 0;
@@ -855,55 +877,10 @@
         }
     }
 }
-.timetable {
-}
-.subtitle {
-}
-.input-wrapper-black {
 
-    &__input {
-    }
-
-    &__image-error {
-    }
-
-    &__label {
-    }
-
-    &__prompt-wrapper {
-    }
-
-    &__prompt {
-    }
-}
-.btn-red {
-}
-.mobile {
-}
-.login-out {
-}
-.enter {
-}
-.register {
-}
-.scooters {
-}
-.kids-scooters {
-}
-.adult-scooters {
-}
-.stunt-scooters {
-}
-.electric-scooters {
-}
-.bicycles {
-}
-.title {
-}
 .header-close {
     display: none;
 }
-
 
 .header-navigation-mobile { 
     display: none;
@@ -1041,9 +1018,6 @@
         @include text( $size: 1rem, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 24px);
     }
 
-    &__navigation {
-    }
-
     &__navigation-wrapper {
         padding: 0 16px
     }
@@ -1071,9 +1045,6 @@
 
     &__navigation-amount-title {
         @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
-    }
-
-    &__amount-title {
     }
 
     &__navigation-select {
@@ -1152,9 +1123,6 @@
         border-top: 1px solid $color-gray-90;    
     }
 
-    &__footer-call {
-    }
-
     &__wraper-footer {
         @extend %left-flex;
         column-gap: 19px;
@@ -1209,9 +1177,6 @@
 }
 .header-navigation {
     z-index: 3;
-
-    &__submenu-navigation-title {
-    }
 }
 
 .header__wrapper.active {
@@ -1253,3 +1218,49 @@
     }
 }
 
+.header-search {
+    z-index: 3;
+    display: none;
+    @include __650 {
+        width: 100%;
+    }
+    &__wrapper {
+        @include __650 {
+           padding: 12px 16px 12px 0; 
+        }
+    }
+
+    &__form {
+       @extend %left-flex;
+       column-gap: 28px;
+    }
+
+    &__button-search {
+        font-size: 0;
+        @include __650 {
+           display: none;
+        }
+    }
+
+    &__input {
+        width: 768px;
+        padding: 10px 16px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight:24px);
+        &:focus {
+            color: $color-gray-100;
+        }
+        @include __1050 {
+            width: 600px;
+        }
+        @include __860 {
+            width: 400px;
+        }
+        @include __650 {
+            width: 100%;
+        }
+    }
+
+    &__button-close {
+        font-size: 0;
+    }
+}

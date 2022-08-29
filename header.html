@@ -279,7 +279,7 @@
             <nav class="header-navigation">
                 <div class="header-navigation__wrapper">
                     <ul class="header-navigation__list">
-                        <li class="header-navigation__list-item">
+                        <li data-button-search class="header-navigation__list-item">
                             <a class="header-navigation__item-link" href="#">
                                 <svg class="header-navigation__svg" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_308_11511)">
@@ -904,6 +904,33 @@
                     </section>
                 </div>
             </nav>
+            <section class="header-search">
+                <div class="header-search__wrapper">
+                    <form class="header-search__form" action="action_page.php">
+                        <button class="header-search__button-search" type="submit">
+                            <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_222_10467)">
+                                <rect width="68" height="68" fill="white"/>
+                                <path d="M31.3333 40.6667C36.488 40.6667 40.6667 36.488 40.6667 31.3333C40.6667 26.1787 36.488 22 31.3333 22C26.1787 22 22 26.1787 22 31.3333C22 36.488 26.1787 40.6667 31.3333 40.6667Z" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M46 46L38 38" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_222_10467">
+                                <rect width="68" height="68" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>  
+                        </button>
+                        <input class="header-search__input" type="text" placeholder="Поиск товаров" name="search">
+                        <button data-button-close-search class="header-search__button-close">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                                <path d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                            </svg>
+                        </button>
+                      </form>
+                </div>              
+            </section>
             <div data-close-menu-mobile class="header-close">
                 <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M26 27.4545L27.4545 26L42 40.5454L40.5454 42L26 27.4545Z" fill="#FEFEFE"/>
@@ -914,7 +941,8 @@
     </header>
 
     <main class="js-main">
-        <section data-modal-enter class="main-modal active">
+        <!--main-modal 'active'-->
+        <section data-modal-enter class="main-modal">
             <div class="main-modal__mask">
               <div class="main-modal__wrapper">
                 <div data-popup-modal-container class="main-modal__container">
@@ -1092,8 +1120,81 @@
               </div>
             </div>
         </section>
-        <div class="js-clacc-blur">
-        </div>
+        <!--dropdown-search 'active'-->
+        <section class="dropdown-search active">
+            <!--dropdown-search__wrapper has class 'result', 'empty'-->
+            <div class="dropdown-search__wrapper result">
+                <div class="dropdown-search__quad">
+                    <svg width="16" height="6" viewBox="0 0 16 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 0L16 6L0 6L8 0Z" fill="#FEFEFE"/>
+                    </svg>   
+                </div>
+                <section class="dropdown-search__result">
+                    <ul class="dropdown-search__list">
+                        <li class="dropdown-search__item">
+                            <div class="dropdown-search__item-text">
+                                <a class="dropdown-search__item-link dedicated" href="#">Вело</a>
+                                <a class="dropdown-search__item-link" href="#">сипед  26 д. EB26POWER 1.0 S26.4</a>
+                            </div>
+                            <div class="dropdown-search__item-image">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 6C8.6875 6 6 8.6875 6 12C6 15.3125 8.6875 18 12 18C15.3125 18 18 15.3125 18 12C18 8.6875 15.3125 6 12 6Z" stroke="#949494" stroke-miterlimit="10"/>
+                                    <path d="M12 8V12.5H15" stroke="#949494" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  
+                            </div>
+                        </li>
+                        <li class="dropdown-search__item">
+                            <div class="dropdown-search__item-text">
+                                <a class="dropdown-search__item-link dedicated" href="#">Вело</a>
+                                <a class="dropdown-search__item-link" href="#">сипед  22 д. EB22 </a>
+                            </div>
+                            <div class="dropdown-search__item-image">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 6C8.6875 6 6 8.6875 6 12C6 15.3125 8.6875 18 12 18C15.3125 18 18 15.3125 18 12C18 8.6875 15.3125 6 12 6Z" stroke="#949494" stroke-miterlimit="10"/>
+                                    <path d="M12 8V12.5H15" stroke="#949494" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  
+                            </div>
+                        </li>
+                        <li class="dropdown-search__item">
+                            <div class="dropdown-search__item-text">
+                                <a class="dropdown-search__item-link dedicated" href="#">Вело</a>
+                                <a class="dropdown-search__item-link" href="#">сипед  24 д. B22POWER 123456</a>
+                            </div>
+                        </li>
+                        <li class="dropdown-search__item">
+                            <div class="dropdown-search__item-text">
+                                <a class="dropdown-search__item-link" href="#">Спортивный </a><a class="dropdown-search__item-link dedicated" href="#">вело</a><a class="dropdown-search__item-link" href="#">сипед  24 д. B22POWER 123456</a>
+                            </div>
+                        </li>
+                        <li class="dropdown-search__item">
+                            <div class="dropdown-search__item-text">
+                                <a class="dropdown-search__item-link" href="#">Спортивный </a><a class="dropdown-search__item-link dedicated" href="#">вело</a><a class="dropdown-search__item-link" href="#">сипед  24 д. B22POWER 123456</a>
+                            </div>
+                        </li>
+                        <li class="dropdown-search__item">
+                            <div class="dropdown-search__item-text">
+                                <a class="dropdown-search__item-link" href="#">Спортивный </a><a class="dropdown-search__item-link dedicated" href="#">вело</a><a class="dropdown-search__item-link" href="#">сипед  24 д. B22POWER 123456</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <section class="dropdown-search__all-result">
+                        <div class="dropdown-search__all-result-wrapper">
+                            <a class="dropdown-search__title" href="#">Все результаты поиска</a>
+                            <div class="dropdown-search__arrow">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="dropdown-search__svg-arrow" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </div> 
+                        </div>                     
+                    </section>
+                </section>                                
+                <section class="dropdown-search__empty">
+                    <span class="dropdown-search__item-link">По вашему запросу ничего не найдено. Уточните свой запрос</span>
+                </section>
+            </div>
+        </section>
+
+        <div class="js-clacc-blur"></div>
     </main>
 
 </body>

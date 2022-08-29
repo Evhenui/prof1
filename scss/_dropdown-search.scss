@@ -1,0 +1,154 @@
+.dropdown-search {
+    position: fixed;
+    top: 100px;///example
+    left: 100px;///example
+    display: none;
+    box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+    background-color: $color-white;
+    max-width: 800px;
+    width: 100%;
+    &.active {
+        display: block;
+    }
+
+    &__wrapper {
+        position: relative;
+        &.result {
+            padding: 20px 0 12px 0;
+        }
+        &.empty {
+            padding: 20px 0;
+        }
+    }
+
+    &__wrapper.result &__empty {
+        display: none;
+    }
+
+    &__wrapper.empty &__result {
+        display: none;
+    }
+
+    &__quad {
+        position: absolute;
+        top: -6px;
+        left: 16px;
+        font-size: 0;
+    }
+
+    &__list {
+        @extend %flex-columb;
+        row-gap: 4px;
+        margin-bottom: 4px;
+    }
+
+    &__item {
+        @extend %left-flex;
+        justify-content: space-between;
+        padding: 8px 16px;
+        transition: all .1s ease-in-out;
+        position: relative;
+        &::before {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-color: $color-red-50;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: all .1s ease-in-out;
+        }
+
+        &:hover {
+            background-color: #F7F7F7;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__all-result {
+        @extend %centre-flex;
+    }
+
+    &__all-result-wrapper {
+        cursor: pointer;
+        @extend %centre-flex;
+    }
+
+    &__all-result-wrapper:hover &__arrow{
+        &:after {
+            opacity: 1;
+            background-color: #E61E37;
+            left: 11px;
+        }  
+    }
+
+    &__svg-arrow {
+        transition: all .2s ease-in-out;
+    }
+
+    &__all-result-wrapper:hover &__title{
+        color: $color-red;
+    }
+
+    &__all-result-wrapper:hover &__svg-arrow{
+        stroke: $color-red;
+    }
+
+    &__all-result-wrapper:active &__svg-arrow{
+        stroke: $color-red-70;
+    }
+
+    &__all-result-wrapper:hover &__arrow::after{
+        background-color: $color-red;
+    }
+
+    &__all-result-wrapper:active &__title{
+        color: $color-red-70;
+    }
+
+    &__all-result-wrapper:active &__arrow::after{
+        background-color: $color-red-70;
+    }
+
+    &__title {
+        transition: all .2s ease-in-out;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 20px);
+    }
+
+    &__item-link {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+        &.dedicated {
+            @include text($size: 1rem, $fontWeight: 700); 
+        }
+    }
+
+    &__item-image {
+        font-size: 0;
+    }
+
+    &__arrow {
+        font-size: 0;
+        position: relative;
+        &::after {
+            content: "";
+            width: 20px;
+            height: 1px;
+            background-color: $color-black;
+            position: absolute;
+            top: 21.5px;
+            left: 0px;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &__empty {
+        padding-left: 44px;
+    }
+}
+

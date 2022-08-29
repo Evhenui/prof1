@@ -33,7 +33,9 @@ export let headerProfi = function() {
               menuMobileList = header.querySelector('[data-menu-mobile-list]'),
               menuMobileWrapper = header.querySelector('[data-mobile-menu-wrapper]'),
               accordionItems = header.querySelectorAll('[data-accordion-mobile]'),
-              submenuMobileItems = header.querySelectorAll('[data-select-submenu-mobile]');
+              submenuMobileItems = header.querySelectorAll('[data-select-submenu-mobile]'),
+              buttonSearch = header.querySelector('[data-button-search]'),
+              buttonCloseSearch = header.querySelector('[data-button-close-search]');
 
         //----add/remove class groop------
         addActiveClass(selectLanguage)
@@ -163,6 +165,16 @@ export let headerProfi = function() {
             submenuMobileItems[index].classList.add('active');
           });
         });
+
+        //-----------search-----------
+        buttonSearch.addEventListener('click', function() {
+          header.classList.add('active-search');
+        })
+
+        buttonCloseSearch.addEventListener('click', function(event) {
+          event.preventDefault()
+          header.classList.remove('active-search');
+        })
     }
 
     if(modalEnter !== null) {
