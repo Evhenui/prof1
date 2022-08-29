@@ -45,7 +45,6 @@
         display: block;
     }
 
-
     &__wrapper {
         max-width: $width-page;
         @extend %centre-marg;
@@ -222,10 +221,6 @@
         margin-bottom: 16px;
     }
 
-    &__menu-block {
-        
-    }
-
     &__title {
         cursor: pointer;
         width: 200px;
@@ -235,9 +230,6 @@
         &:hover {
             color: $color-red;
         }
-    }
-
-    &__submenu-list {
     }
 
     &__submenu-item {
@@ -314,8 +306,7 @@
     }
 
 }
-.btn-red-short {
-}
+
 .header-button-red {
     height: 100%;
     padding: 24px 16.5px;
@@ -532,15 +523,6 @@
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 400, $lineHeight: 24px);
     }
 
-    &__submenu-feedback {
-    }
-
-    &__submenu-feedback-wrapper {
-    }
-
-    &__submenu-form {
-    }
-
     &__submenu-input-wrapper {
         margin-bottom: 32px;
     }
@@ -550,90 +532,11 @@
         padding: 16px 0;
     }
 }
-.header-navigation-menu {
 
-    &__wrapper {
-    }
-
-    &__list {
-    }
-
-    &__item {
-    }
-
-    &__item-link {
-    }
-
-    &__item-arrow {
-    }
-
-    &__submenu {
-    }
-
-    &__submenu-item {
-    }
-
-    &__submenu-item-link {
-    }
-
-    &__submenu-call {
-    }
-
-    &__submenu-call-wrapper {
-    }
-
-    &__submenu-call-title {
-    }
-
-    &__submenu-title {
-    }
-
-    &__submenu-subtitle {
-    }
-
-    &__submenu-button {
-    }
-
-    &__button-title {
-    }
-
-    &__submenu-feedback {
-    }
-
-    &__submenu-feedback-wrapper {
-    }
-
-    &__submenu-form {
-    }
-
-    &__submenu-input-wrapper {
-    }
-
-    &__submenu-button-call {
-    }
-}
 .header-navigation {
     &__item-link {
         display: inline-block;
         font-size: 0;
-    }
-}
-
-.input-wrapper-black {
-
-    &__input {
-    }
-
-    &__image-error {
-    }
-
-    &__label {
-    }
-
-    &__prompt-wrapper {
-    }
-
-    &__prompt {
     }
 }
 

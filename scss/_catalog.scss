@@ -1,0 +1,69 @@
+.catalog {
+
+    &__wrapper {
+        padding: 124px 48px 120px 48px;
+        @extend %size-page;
+    }
+
+    &__name-page {
+        margin-bottom: 40px;
+    }
+
+    &__page-title {
+        @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);
+    }
+
+    &__items {
+    margin-bottom: 140px;
+    }
+
+    &__items-wrapper {
+        @extend %centre-space-between;
+    }
+
+    &__item {
+        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+        &:hover {
+           box-shadow: none;
+           outline: 1px solid $color-red-30;
+        }
+    }
+
+    &__item-wrapper {
+        padding: 20px 12px 10px 12px;
+        @extend %flex-columb;
+        align-items: center;
+        row-gap: 32px;
+    }
+
+    &__image-wrapper {
+    }
+
+    &__item-name {
+        text-transform: uppercase;
+        @include text( $size: 1.25rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+    }
+
+    &__description {
+    }
+
+    &__description-wrapper {
+    }
+
+    &__description-section {
+    }
+
+    &__description-title {
+        margin-bottom: 12px;
+        @include text( $size: 1rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 700, $lineHeight: 24px);
+    }
+
+    &__description-text {
+        @extend %flex-columb;
+        row-gap: 8px;
+    }
+
+    &__description-subtitle {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 24px);
+    }
+}
