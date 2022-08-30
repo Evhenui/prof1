@@ -161,7 +161,7 @@ label {
   justify-content: left;
 }
 
-.page__wrapper, .catalog__wrapper, .footer-special-documents__wrp, .footer__wrp {
+.card-product__wrapper, .page__wrapper, .catalog__wrapper, .footer-special-documents__wrp, .footer__wrp {
   max-width: 1440px;
   width: 100%;
   margin-left: auto;
@@ -173,7 +173,7 @@ label {
   flex-direction: column;
 }
 
-.footer-special-documents__wrp {
+.card-product__wrapper, .footer-special-documents__wrp {
   padding-left: 48px;
   padding-right: 48px;
 }
@@ -2014,13 +2014,33 @@ label {
 }
 .main-modal__button-social-network {
   width: 100%;
-  outline: 1px solid #C12125;
+  outline: 1px solid #2D2D2D;
   border-radius: 1px;
   -moz-column-gap: 10px;
        column-gap: 10px;
   padding: 16px 0;
+  transition: all 0.1s ease-in-out;
+}
+.main-modal__button-social-network:hover {
+  outline-color: #E61E37;
+}
+.main-modal__button-social-network:active {
+  outline-color: #B81429;
+}
+.main-modal__button-social-network:disabled {
+  outline-color: #949494;
+}
+.main-modal__button-social-network:hover .main-modal__button-text {
+  color: #E61E37;
+}
+.main-modal__button-social-network:active .main-modal__button-text {
+  color: #B81429;
+}
+.main-modal__button-social-network:disabled .main-modal__button-text {
+  color: #949494;
 }
 .main-modal__button-text {
+  transition: all 0.1s ease-in-out;
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
