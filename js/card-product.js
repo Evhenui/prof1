@@ -10,7 +10,11 @@ export let cardProduct = function() {
     if(cardProduct !== null) {
         const navigationPageItems = cardProduct.querySelectorAll('[data-navigation-item]'),
               colorItems = cardProduct.querySelectorAll('[data-color-item]'),
-              sizeItems = cardProduct.querySelectorAll('[data-size-item]');
+              sizeItems = cardProduct.querySelectorAll('[data-size-item]'),
+              buttonLike = cardProduct.querySelectorAll('[data-button-like]'),
+              buttonCompare = cardProduct.querySelectorAll('[data-button-compare]'),
+              accordionItems = cardProduct.querySelectorAll('[data-accordion-all-info]'),
+              characteristicsSection = cardProduct.querySelector('[data-characteristics-section]');
         //----------------navigation page----------------------------
         navigationPageItems.forEach((item) => {
             item.addEventListener("click", function () {
@@ -32,5 +36,39 @@ export let cardProduct = function() {
             item.classList.add('active');
           });
         });
+        //----------------button effect-------------------------------
+        buttonLike.forEach((item)=> {
+          item.addEventListener('click', (event)=> {
+            event.preventDefault();
+            item.classList.toggle('active');
+          })
+        })
+        
+        buttonCompare.forEach((item)=> {
+          item.addEventListener('click', (event)=> {
+            event.preventDefault();
+            item.classList.toggle('active');
+          })
+        })
+        //---------------accordion------------------------------------
+        accordionItems.forEach((item) => {
+          item.addEventListener('click', function(event) {
+           const self = event.currentTarget;
+           const accordionContent = self.querySelector('[data-accordion-all-info-content]');
+           this.classList.toggle('active');
+           if(this.classList.contains('active')){
+            accordionContent.style.height = accordionContent.scrollHeight + 'px';
+           } else {
+            accordionContent.style.height = 0 + 'px';
+           }
+        })
+        })
+
+        if(characteristicsSection !== null) {
+          const button = document.querySelector('[data-button-show-characteristics]');
+          button.addEventListener('click', function() {
+            characteristicsSection.classList.toggle('active');
+          })
+        }
     }
 }
