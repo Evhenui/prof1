@@ -51,18 +51,9 @@
         row-gap: 32px;
     }
 
-    &__image-wrapper {
-    }
-
     &__item-name {
         text-transform: uppercase;
         @include text( $size: 1.25rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
-    }
-
-    &__description {
-    }
-
-    &__description-wrapper {
     }
 
     &__description-section {

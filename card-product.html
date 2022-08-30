@@ -952,24 +952,26 @@
             </div>
         </section>
 
-        <section class="card-product">
+        <section data-card-product class="card-product">
             <div class="card-product__wrapper">
-                <section class="header-navigation">
-                    <div class="header-navigation__wrapper">
-                        <ul class="header-navigation__list">
-                            <li class="header-navigation__item">
-                                <a class="header-navigation__item-link" href="#">Всё о товаре</a>
-                            </li>
-                            <li class="header-navigation__item">
-                                <a class="header-navigation__item-link" href="#">Характеристики</a>
-                            </li>
-                            <li class="header-navigation__item">
-                                <a class="header-navigation__item-link" href="#">Отзывы (4)</a>
-                            </li>
-                            <li class="header-navigation__item">
-                                <a class="header-navigation__item-link" href="#">Запчасти и Комплектующие</a>
-                            </li>
-                        </ul>
+                <section class="header-page-navigation">
+                    <div class="header-page-navigation__wrapper">
+                        <nav>
+                            <ul class="header-page-navigation__list">
+                                <li data-navigation-item class="header-page-navigation__item active">
+                                    <a class="header-page-navigation__item-link" href="#">Всё о товаре</a>
+                                </li>
+                                <li data-navigation-item class="header-page-navigation__item">
+                                    <a class="header-page-navigation__item-link" href="#">Характеристики</a>
+                                </li>
+                                <li data-navigation-item class="header-page-navigation__item">
+                                    <a class="header-page-navigation__item-link" href="#">Отзывы (4)</a>
+                                </li>
+                                <li data-navigation-item class="header-page-navigation__item">
+                                    <a class="header-page-navigation__item-link" href="#">Запчасти и Комплектующие</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </section>
                 <section class="all-about">
@@ -979,7 +981,7 @@
                             <div class="main-information__wrapper">
                                 <section class="main-information__title-wrapper">
                                     <div class="main-information__title-image-wrapper">
-                                        <img class="main-information__title-image" src="" alt="name product">
+                                        <img class="main-information__title-image" src="img/card-product-item-mobile.png" alt="name product" width="80" height="80">
                                     </div>
                                     <h1 class="main-information__title">Велосипед 26 д. с очень длинным названием EB26POWER 1.0 S26.4</h1>
                                 </section>
@@ -1022,58 +1024,58 @@
                                 </section>
                                 <section class="main-information__select">
                                     <div class="main-information__select-wrapper">
-                                        <section class="main-information__select-color">
+                                        <section class="main-information__select-color-section">
                                             <div class="main-information__selected-text">
                                                 <span class="main-information__text">Цвет:</span>
-                                                <span class="main-information__selected-text color">Черный</span>
+                                                <span class="main-information__text color">Черный</span>
                                             </div>
                                             <section class="main-information__select-color">
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item red"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select active">
+                                                    <span class="main-information__color-item black"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item white"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item blue"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item green"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item pink"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item yellow"></span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item"></span>
+                                                <div data-color-item class="main-information__item-select">
+                                                    <span class="main-information__color-item grey"></span>
                                                 </div>
                                             </section>
                                         </section>
-                                        <section class="main-information__select-size">
+                                        <section class="main-information__select-size-section">
                                             <div class="main-information__selected-text">
-                                                <span class="main-information__text">Цвет:</span>
-                                                <span class="main-information__selected-text size">26”</span>
+                                                <span class="main-information__text">Размер:</span>
+                                                <span class="main-information__text size">26”</span>
                                             </div>
                                             <section class="main-information__select-size">
-                                                <div class="main-information__size">
-                                                    <span class="main-information__color-item">16”</span>
+                                                <div data-size-item class="main-information__item-select size">
+                                                    <span class="main-information__size-item">16”</span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item">18”</span>
+                                                <div data-size-item class="main-information__item-select size">
+                                                    <span class="main-information__size-item">18”</span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item">20”</span>
+                                                <div data-size-item class="main-information__item-select size">
+                                                    <span class="main-information__size-item">20”</span>
                                                 </div>
-                                                <div class="main-information__color">
-                                                    <span class="main-information__color-item">24”</span>
+                                                <div data-size-item class="main-information__item-select size">
+                                                    <span class="main-information__size-item">24”</span>
                                                 </div>
-                                                <div class="main-information__color active">
-                                                    <span class="main-information__color-item">26”</span>
+                                                <div data-size-item class="main-information__item-select size active">
+                                                    <span class="main-information__size-item">26”</span>
                                                 </div>
                                             </section>
                                         </section>

@@ -1,30 +1,72 @@
 .card-product {
-
+    padding-top: 124px;
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
     }
 }
-.header-navigation {
+.header-page-navigation {
+    margin-bottom: 28px;
 
     &__wrapper {
     }
 
     &__list {
+        display: flex;
+        column-gap: 16px;
     }
 
     &__item {
+        padding: 12px 16px;
+        position: relative;
+        cursor: pointer;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $color-red;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .2s ease-in-out;
+        }
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &.active {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__item:hover &__item-link{
+        color: $color-red;
+    }
+
+    &__item.active &__item-link{
+        color: $color-red;
     }
 
     &__item-link {
+        transition: all .1s ease-in-out;
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);
     }
 }
 .all-about {
 
     &__wrapper {
+       display: flex;
+       column-gap: 32px;
     }
 }
 .main-slider {
+    flex: 0 0 648px;
+    height: 600px;
+    background-color: $color-gray-40;
 }
 .main-information {
 
@@ -32,69 +74,180 @@
     }
 
     &__title-wrapper {
+        margin-bottom: 4px;
     }
 
     &__title-image-wrapper {
+        display: none;
     }
 
     &__title-image {
     }
 
     &__title {
+        @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
     }
 
     &__subtitles {
+        margin-bottom: 20px;
     }
 
     &__subtitles-wrapper {
+        @extend %centre-space-between;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $color-gray-30;
     }
 
     &__reviews {
+        @extend %centre-space-between;
+        column-gap: 4px
     }
 
     &__stars {
     }
 
     &__reviews-info {
+        cursor: pointer;
+        @extend %centre-space-between;
+        column-gap: 4px
     }
 
     &__reviews-image-wrapper {
+        font-size: 0;
     }
 
     &__reviews-text {
+        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__product-code {
+        @extend %centre-space-between;
+        column-gap: 8px;
     }
 
     &__code-title {
+        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__select {
     }
 
     &__select-wrapper {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $color-gray-30;
+        margin-bottom: 24px;
+    }
+
+    &__select-color-section {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        margin-bottom: 16px;
     }
 
     &__select-color {
+        display: flex;
+        align-items: center;
     }
 
     &__selected-text {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;        
     }
 
     &__text {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
+            &.color, &.size {
+                @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
+            }
     }
 
-    &__color {
+    &__item-select {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border: 0px solid $color-black;
+        border-radius: 4px;
+        transition: all .2s ease-in-out;
+        @extend %centre-flex-columb;
+        &:hover {
+            border-width: 1px;
+        }
+        &.size {
+            background-color: #F7F7F7;
+        }
+        &.size:hover {
+            background-color: $color-white;
+        }
+    }
+
+    &__item-select.active {
+        border-width: 1px;
+    }
+
+    .size.active {
+        background-color: $color-white;
+    }
+
+
+    &__item-select.active &__color-item{
+        width: 20px;
+        height: 20px;
+    }
+
+    &__item-select:hover &__color-item{
+        width: 20px;
+        height: 20px;
     }
 
     &__color-item {
+        display: block;
+        width: 12px;
+        height: 12px;
+        transition: all .2s ease-in-out;
+        outline: 1px solid rgba(177, 177, 177, 0.5);
+
+        &.red {
+            background-color: $color-red;
+        }
+        &.black {
+            background-color: $color-black;
+        }
+        &.white {
+            background-color: $color-white;
+        }
+        &.blue {
+            background-color: #70CBFE;
+        }
+        &.green {
+            background-color: #70FE8F;
+        }
+        &.pink {
+            background-color: #F270FE;
+        }
+        &.yellow {
+            background-color: #FEF070;
+        }
+        &.grey {
+            background-color: #DFDFDF;
+        } 
+    }
+
+    &__select-size-section {
+        display: flex;
+        column-gap: 16px;
+        align-items: center;
     }
 
     &__select-size {
+        display: flex;
+        column-gap: 8px;
+        align-items: center;
     }
 
-    &__size {
+    &__size-item {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
     }
 
     &__buy {
@@ -104,21 +257,35 @@
     }
 
     &__prices {
+        display: flex;
+        align-items: end;
+        margin-bottom: 20px;
     }
 
     &__prices-wrapper {
+
     }
 
     &__prices-discount {
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
     }
 
     &__price {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 20px);
+        &.discount {
+            @include text( $size: 0.875rem, $textAlign: left, $color: $color-red, $fontWeight: 600, $lineHeight: 20px);
+            text-decoration-line: line-through;
+        }
     }
 
     &__full-price {
+        @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);
     }
 
     &__prices-buttons {
+        display: none;
     }
 
     &__button-like {
