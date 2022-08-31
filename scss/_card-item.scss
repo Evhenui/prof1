@@ -99,10 +99,26 @@
     }
 
     &__button-like:hover &__like-svg{
-        
+        fill: $color-black;
+        stroke: $color-black;
+    }
+    &__button-like.active &__like-svg { 
+        fill: $color-black;
+        stroke: $color-black;
+    }
+
+    &__button-compare:hover &__compare-svg {
+        fill: $color-black;
+        stroke: $color-black;
+    }
+
+    &__button-compare.active &__compare-svg { 
+        fill: $color-black;
+        stroke: $color-black;
     }
 
     &__like-svg {
+        transition: all .1s ease-in-out;
     }
 
     &__button-compare {

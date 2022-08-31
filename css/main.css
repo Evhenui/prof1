@@ -725,15 +725,15 @@ label {
   font-size: 0;
   position: relative;
 }
-.header-navigation-catalog__arrow-wrapper::after {
-  content: "";
+.header-navigation-catalog__line-active {
   width: 20px;
   height: 1px;
+  display: flex;
   background-color: #E61E37;
   position: absolute;
   top: 22px;
   left: 0px;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 .header-navigation-catalog__link {
@@ -1657,6 +1657,7 @@ label {
 }
 
 .header-search {
+  position: relative;
   z-index: 3;
   display: none;
 }
@@ -2171,8 +2172,10 @@ label {
 }
 
 .dropdown-search {
-  position: fixed;
-  top: 100px;
+  position: absolute;
+  top: 57px;
+  left: 95px;
+  z-index: 4;
   display: none;
   box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
   background-color: #FEFEFE;
@@ -3269,4 +3272,23 @@ label {
 .card-item__button-like, .card-item__button-compare {
   font-size: 0;
   display: inline-block;
+}
+.card-item__button-like:hover .card-item__like-svg {
+  fill: #2D2D2D;
+  stroke: #2D2D2D;
+}
+.card-item__button-like.active .card-item__like-svg {
+  fill: #2D2D2D;
+  stroke: #2D2D2D;
+}
+.card-item__button-compare:hover .card-item__compare-svg {
+  fill: #2D2D2D;
+  stroke: #2D2D2D;
+}
+.card-item__button-compare.active .card-item__compare-svg {
+  fill: #2D2D2D;
+  stroke: #2D2D2D;
+}
+.card-item__like-svg {
+  transition: all 0.1s ease-in-out;
 }/*# sourceMappingURL=main.css.map */

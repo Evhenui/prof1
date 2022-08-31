@@ -180,17 +180,29 @@
     &__arrow-wrapper {
         font-size: 0;
         position: relative;
-        &::after {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background-color: $color-red;
-            position: absolute;
-            top: 22px;
-            left: 0px;
-            opacity: 0;
-            transition: all .3s ease-in-out;
-        }
+        // &::after {
+        //     content: '';
+        //     width: 20px;
+        //     height: 1px;
+        //     background-color: $color-red;
+        //     position: absolute;
+        //     top: 22px;
+        //     left: 0px;
+        //     opacity: 0;
+        //     transition: all .3s ease-in-out;
+        // }
+    }
+
+    &__line-active {
+        width: 20px;
+        height: 1px;
+        display: flex;
+        background-color: $color-red;
+        position: absolute;
+        top: 22px;
+        left: 0px;
+        opacity: 1;
+        transition: all .3s ease-in-out;
     }
 
     &__link {
@@ -1122,6 +1134,7 @@
 }
 
 .header-search {
+    position: relative;
     z-index: 3;
     display: none;
     @include __650 {
