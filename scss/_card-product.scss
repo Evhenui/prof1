@@ -1,8 +1,12 @@
 .card-product {
     padding-top: 124px;
-    &__wrapper {
-   
+    &__page {
+        @extend %size-page;
+        padding: 16px 48px 20px 48px;
     }
+}
+.card-product-catalog {
+
 }
 .header-page-navigation {
     margin-bottom: 28px;
@@ -77,10 +81,6 @@
     &::-webkit-scrollbar { width: 0; }
 
     &__wrapper {
-    }
-
-    &__title-wrapper {
-        margin-bottom: 4px;
     }
 
     &__title-image-wrapper {
@@ -543,8 +543,25 @@
         margin: 0 auto;
     }
 
+    &__open-all-line, &__open-all-line-hidden {
+        width: 20px;
+        height: 1px;
+        display: flex;
+        background-color: $color-black;
+        position: absolute;
+        top: 22px;
+        left: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__open-all-line-hidden {left: 25px;}
+
     &.active &__open-all-title {
         display: none;
+    }
+    &.active &__open-all-line-hidden{
+        display: block;
     }
     &.active &__open-all-information {
         max-width: 113px;
@@ -586,13 +603,13 @@
     &__open-all-information:hover &__open-all-arrow-svg-hidden {
         transform: rotateZ(90deg);
     }
-    &__open-all-information:hover &__open-all-arrow:after {
+    &__open-all-information:hover &__open-all-line {
         left: 5px;
         opacity: 1;
         background-color: $color-red;
     }
-    &__open-all-information:hover &__open-all-arrow-hidden:after {
-        left: 21px;
+    &__open-all-information:hover &__open-all-line-hidden {
+        left: 20px;
         opacity: 1;
         background-color: $color-red;
     }
@@ -618,17 +635,6 @@
         transition: all .2s ease-in-out;
         font-size: 0;
         position: relative;
-        &::after {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background-color: $color-gray-100;
-            position: absolute;
-            top: 21.5px;
-            left: 0px;
-            opacity: 0;
-            transition: all .2s ease-in-out;
-        }
     }
 
     &__open-all-arrow-hidden {
@@ -636,17 +642,6 @@
         font-size: 0;
         position: relative;
         display: none;
-        &::after {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background-color: $color-gray-100;
-            position: absolute;
-            top: 21.5px;
-            left: 26px;
-            opacity: 0;
-            transition: all .2s ease-in-out;
-        }
     }
 
     &__open-all-arrow-svg {
@@ -665,7 +660,7 @@
     @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);
 }
 .reviews {
-    margin-bottom: 27px;
+    margin-bottom: 160px;
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
@@ -677,21 +672,25 @@
     }
 
     &__title {
-        text-transform: none;
-        margin-bottom: 23px;
+        margin-bottom: 48px;
     }
 
     &__user-rating {
-        @extend %centre-space-between;
-
+        @extend %centre-space-end;
+        margin-bottom: 44px;
     }
 
     &__rating-info {
     }
 
     &__subtitle {
-        padding-left: 6px;
-        @include text( $size: 1rem, $textAlign: left, $color: #000000, $fontWeight: 700, $lineHeight: 24px);
+        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        &.user {
+            text-transform: none;
+        }
+        &.admin {
+            text-transform: none;
+        }
     }
 
     &__button-send-rewiew {
@@ -708,7 +707,7 @@
 
     &__balls {
         text-transform: uppercase;
-        @include text( $size: 3.75rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 900, $lineHeight: 80px);
+        @include text( $size: 2rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 700, $lineHeight: 44px);
     }
 
     &__reviews-balls {
@@ -719,7 +718,7 @@
 
     &__description {
         padding-left: 8px;
-        @include text( $size: 0.875rem, $textAlign: left, $color: #686464, $fontWeight: 400, $lineHeight: 24px);
+        @include text( $size: 0.75rem, $textAlign: left, $color: #949494, $fontWeight: 400, $lineHeight: 24px);
     }
 
     &__title-wrapper {
@@ -729,27 +728,33 @@
     }
 
     &__subtitle.user, &__subtitle.admin {
-        padding: 0;
-        line-height: 24px;
+        margin-bottom: 16px;
+    }
+
+    &__subtitle.ball {
         margin-bottom: 12px;
     }
 
     &__review {
-        margin-bottom: 27px;
+        margin-bottom: 160px;
     }
 
     &__review-wrapper {
         display: flex;
         flex-direction: column;
-        row-gap: 24px;
+        row-gap: 16px;
     }
 
     &__section-review {
+        border: 1px solid #DF9793;
+        padding: 16px;
+        border-radius: 8px;
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
         row-gap: 24px;
         display: none;
-        &:nth-child(1) {
+        &:nth-child(1), &:nth-child(2) {
             display: flex;
         }
     }
@@ -759,37 +764,71 @@
 
     &__section-review-wrapper {
         display: flex;
-        justify-content: space-between;
-        padding: 12px;
-        border: 1px solid #DF9793;
-        border-radius: 8px;
+        flex-direction: column;
         background: #FFFFFF;
         &.admin {
-            background-color: $color-gray-30;
+            background-color: #F7F7F7;
+            border-radius: 8px;
+            padding: 8px 24px;
         }
     }
 
+    &__review {
+        margin-bottom: 48px;
+    }
+
     &__review-grade {
+    }
+
+    &__review-header {
+        @extend %centre-space-between;
     }
 
     &__review-stars {
         font-size: 0;
     }
 
-    &__review-comments {
-        max-width: 604px;
-        width: 100%;
+    &__review-comments.admin {
+       
     }
 
     &__section-review-answer-wrapper {
-        display: flex;
-        justify-content: right;
+        max-width: 720px;
+        width: 100%;
     }
 
     &__section-arrow {
     }
 
     &__arrow {
+    }
+
+    &__button-show-all:hover &__arrow-line {
+        left: 5px;
+        opacity: 1;
+        background-color: $color-red;
+    }
+
+    &__button-show-all:hover &__arrow-line-hidden {
+        left: 21px;
+        opacity: 1;
+        background-color: $color-red;
+    }
+
+    &__arrow-line, &__arrow-line-hidden {
+        width: 20px;
+        height: 1px;
+        display: flex;
+        background-color: $color-black;
+        position: absolute;
+        top: 21px;
+        left: 0px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__arrow-line-hidden {
+        left: 25px;
     }
 
     &__arrow-mobile {
@@ -802,15 +841,26 @@
     &__review-title {
     }
 
+
     &__review-data {
-        margin-bottom: 8px;
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+        margin-bottom: 4px;
+        @include text( $size: 0.75rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+        &.user, &.admin {
+            margin: 0;
+            font-size: 0.875rem;
+            padding-left: 24px;
+        }
+        &.admin {
+            padding: 0;
+        }
+
     }
 
     &__button-show-all {
         max-width: 176px;
         width: 100%;
         margin: 0 auto;
+        justify-content: space-between;
         &.active {
             max-width: 113px;
         }

@@ -1,6 +1,6 @@
 .catalog {
     &__wrapper {
-        padding: 124px 48px 120px 48px;
+        padding: 68px 48px 120px 48px;
         @extend %size-page;
         @include __960 {
             @include padding-mob;

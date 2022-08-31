@@ -1,14 +1,8 @@
 .page {
-    position: fixed;
-    top: 68px;
     width: 100%;
     background-color: $color-white;
     &__wrapper {
-        @extend %size-page;
-        padding: 16px 48px 20px 48px;
-        @include __960 {
-            @include padding-mob;
-        }
+        padding: 16px 0 20px 0;
     }
 
     &__title-link {
