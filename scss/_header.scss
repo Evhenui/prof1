@@ -65,9 +65,11 @@
     max-width: 169px;
     width: 100%;
     z-index: 3;
+    @include __1390 {
+        margin-right: 10px;
+    }
     @include __1175 {
         max-width: 50px;
-        margin-right: 10px;
     }
     @include __960 {
         padding: 16px 0 16px 16px;
@@ -131,6 +133,7 @@
         @extend %centre-space-between;
         padding: 4px 4px 4px 16px;
         width: 216px;
+        cursor: pointer;
         &::before {
             content: '';
             width: 2px;
@@ -155,10 +158,6 @@
         }
     }
 
-    &__item.active .header-navigation-catalog__menus{
-        background-color: aquamarine;
-    }
-
     &__item.active &__svg-arrow {
         stroke: $color-red;
     }
@@ -180,28 +179,30 @@
     &__arrow-wrapper {
         font-size: 0;
         position: relative;
-        // &::after {
-        //     content: '';
-        //     width: 20px;
-        //     height: 1px;
-        //     background-color: $color-red;
-        //     position: absolute;
-        //     top: 22px;
-        //     left: 0px;
-        //     opacity: 0;
-        //     transition: all .3s ease-in-out;
-        // }
     }
+
+    &__item:hover &__line-active {
+        background-color: $color-red;
+        left: 12px;
+        opacity: 1;
+    }
+
+    &__item.active &__line-active {
+        background-color: $color-red;
+        left: 12px;
+        opacity: 1;
+    }
+
 
     &__line-active {
         width: 20px;
         height: 1px;
         display: flex;
-        background-color: $color-red;
+        background-color: $color-black;
         position: absolute;
         top: 22px;
         left: 0px;
-        opacity: 1;
+        opacity: 0;
         transition: all .3s ease-in-out;
     }
 
@@ -278,45 +279,23 @@
         padding-left: 12px;
     }
 
+    &__all-product:hover &__line-active {
+        opacity: 1;
+        left: 11px;
+        background-color: $color-red;
+    }
+    &__all-product:hover &__svg-arrow {
+        stroke: $color-red;
+    }
+
     &__title-footer {
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 20px);
         transition: all .2s ease-in-out;
     }
 
-    &__arrow-right {
-        font-size: 0;
-        position: relative;
-        &::after {
-            content: "";
-            width: 20px;
-            height: 1px;
-            background-color: $color-white;
-            position: absolute;
-            top: 22px;
-            left: 0px;
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-        }
-    }
-
-    &__all-product:hover &__arrow-right::after {
-        opacity: 1;
-        left: 11px;
-        background-color: $color-red;
-    }
-
     &__all-product:hover &__title-footer {
         color: $color-red;
     }
-
-    &__arrow-right-hover {
-        transition: all .2s ease-in-out;
-    }
-
-    &__all-product:hover &__arrow-right-hover {
-        stroke: $color-red;
-    }
-
 }
 
 .header-button-red {
@@ -689,7 +668,7 @@
         &:hover .header-navigation__account-arrow-svg-hover {
             stroke: $color-red;
         }
-        &:hover .header-navigation__account-arrow::after {
+        &:hover .header-navigation__line-active {
             opacity: 1;
             left: 11px;
             background-color: $color-red;
@@ -698,6 +677,18 @@
 
     &__account-arrow-svg-hover {
         transition: all .2s ease-in-out;
+    }
+
+    &__line-active {
+        width: 20px;
+        height: 1px;
+        display: flex;
+        background-color: $color-black;
+        position: absolute;
+        top: 22px;
+        left: 0px;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
     }
 
     &__account-item {
@@ -731,17 +722,6 @@
         display: inline-block;
         font-size: 0;
         position: relative;
-        &::after {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background-color: $color-white;
-            position: absolute;
-            top: 22px;
-            left: 0px;
-            opacity: 0;
-            transition: all .3s ease-in-out;
-        }
     }
 
     &__account-arrow-svg {

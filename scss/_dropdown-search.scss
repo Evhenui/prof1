@@ -8,6 +8,16 @@
     background-color: $color-white;
     max-width: 800px;
     width: 100%;
+    @include __1050 {
+        max-width: 620px;
+    }
+    @include __860 {
+        max-width: 420px;
+    }
+    @include __650 {
+        max-width: 100%;
+        left: 0;
+    }
     &.active {
         display: block;
     }

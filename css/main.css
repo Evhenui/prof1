@@ -608,10 +608,14 @@ label {
   width: 100%;
   z-index: 3;
 }
+@media (max-width: 1390px) {
+  .header-logo {
+    margin-right: 10px;
+  }
+}
 @media (max-width: 1175px) {
   .header-logo {
     max-width: 50px;
-    margin-right: 10px;
   }
 }
 @media (max-width: 960px) {
@@ -681,6 +685,7 @@ label {
   position: relative;
   padding: 4px 4px 4px 16px;
   width: 216px;
+  cursor: pointer;
 }
 .header-navigation-catalog__item::before {
   content: "";
@@ -704,9 +709,6 @@ label {
 .header-navigation-catalog__item:hover::before {
   opacity: 1;
 }
-.header-navigation-catalog__item.active .header-navigation-catalog__menus {
-  background-color: aquamarine;
-}
 .header-navigation-catalog__item.active .header-navigation-catalog__svg-arrow {
   stroke: #E61E37;
 }
@@ -725,15 +727,25 @@ label {
   font-size: 0;
   position: relative;
 }
+.header-navigation-catalog__item:hover .header-navigation-catalog__line-active {
+  background-color: #E61E37;
+  left: 12px;
+  opacity: 1;
+}
+.header-navigation-catalog__item.active .header-navigation-catalog__line-active {
+  background-color: #E61E37;
+  left: 12px;
+  opacity: 1;
+}
 .header-navigation-catalog__line-active {
   width: 20px;
   height: 1px;
   display: flex;
-  background-color: #E61E37;
+  background-color: #2D2D2D;
   position: absolute;
   top: 22px;
   left: 0px;
-  opacity: 1;
+  opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 .header-navigation-catalog__link {
@@ -814,6 +826,14 @@ label {
        column-gap: 4px;
   padding-left: 12px;
 }
+.header-navigation-catalog__all-product:hover .header-navigation-catalog__line-active {
+  opacity: 1;
+  left: 11px;
+  background-color: #E61E37;
+}
+.header-navigation-catalog__all-product:hover .header-navigation-catalog__svg-arrow {
+  stroke: #E61E37;
+}
 .header-navigation-catalog__title-footer {
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem;
@@ -823,34 +843,8 @@ label {
   color: #141414;
   transition: all 0.2s ease-in-out;
 }
-.header-navigation-catalog__arrow-right {
-  font-size: 0;
-  position: relative;
-}
-.header-navigation-catalog__arrow-right::after {
-  content: "";
-  width: 20px;
-  height: 1px;
-  background-color: #FEFEFE;
-  position: absolute;
-  top: 22px;
-  left: 0px;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-.header-navigation-catalog__all-product:hover .header-navigation-catalog__arrow-right::after {
-  opacity: 1;
-  left: 11px;
-  background-color: #E61E37;
-}
 .header-navigation-catalog__all-product:hover .header-navigation-catalog__title-footer {
   color: #E61E37;
-}
-.header-navigation-catalog__arrow-right-hover {
-  transition: all 0.2s ease-in-out;
-}
-.header-navigation-catalog__all-product:hover .header-navigation-catalog__arrow-right-hover {
-  stroke: #E61E37;
 }
 
 .header-button-red {
@@ -1231,13 +1225,24 @@ label {
 .header-navigation__account-item.login-out:hover .header-navigation__account-arrow-svg-hover {
   stroke: #E61E37;
 }
-.header-navigation__account-item.login-out:hover .header-navigation__account-arrow::after {
+.header-navigation__account-item.login-out:hover .header-navigation__line-active {
   opacity: 1;
   left: 11px;
   background-color: #E61E37;
 }
 .header-navigation__account-arrow-svg-hover {
   transition: all 0.2s ease-in-out;
+}
+.header-navigation__line-active {
+  width: 20px;
+  height: 1px;
+  display: flex;
+  background-color: #2D2D2D;
+  position: absolute;
+  top: 22px;
+  left: 0px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 .header-navigation__account-item {
   padding: 8px 20px;
@@ -1273,17 +1278,6 @@ label {
   display: inline-block;
   font-size: 0;
   position: relative;
-}
-.header-navigation__account-arrow::after {
-  content: "";
-  width: 20px;
-  height: 1px;
-  background-color: #FEFEFE;
-  position: absolute;
-  top: 22px;
-  left: 0px;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
 }
 .header-navigation__account-arrow-svg {
   display: flex;
@@ -2181,6 +2175,22 @@ label {
   background-color: #FEFEFE;
   max-width: 800px;
   width: 100%;
+}
+@media (max-width: 1050px) {
+  .dropdown-search {
+    max-width: 620px;
+  }
+}
+@media (max-width: 860px) {
+  .dropdown-search {
+    max-width: 420px;
+  }
+}
+@media (max-width: 650px) {
+  .dropdown-search {
+    max-width: 100%;
+    left: 0;
+  }
 }
 .dropdown-search.active {
   display: block;
