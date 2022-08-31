@@ -3184,4 +3184,89 @@ label {
 
 .wrp {
   height: 1000px;
+  padding-top: 200px;
+  padding-left: 200px;
+}
+
+.card-item {
+  position: relative;
+  box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+  max-width: 312px;
+  width: 100%;
+}
+.card-item__wrapper {
+  padding-bottom: 12px;
+}
+.card-item__offers {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-item__offers.stocks {
+  max-width: 66px;
+  width: 100%;
+}
+.card-item__offers.bestseller {
+  max-width: 101px;
+  width: 100%;
+}
+.card-item__offers.novelty {
+  max-width: 83px;
+  width: 100%;
+}
+.card-item__offers.stocks .card-item__offer.stocks {
+  display: flex;
+}
+.card-item__offers.bestseller .card-item__offer.bestseller {
+  display: flex;
+}
+.card-item__offers.novelty .card-item__offer.novelty {
+  display: flex;
+}
+.card-item__offer {
+  padding-left: 8px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+.card-item__offer.stocks {
+  background-image: url("/icon/stocks.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+}
+.card-item__offer.bestseller {
+  background-image: url("/icon/bestseller.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+}
+.card-item__offer.novelty {
+  background-image: url("/icon/novelty.png");
+  background-repeat: no-repeat;
+}
+.card-item__offers-title {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  color: #FEFEFE;
+}
+.card-item__main {
+  display: flex;
+  justify-content: space-between;
+}
+.card-item__image {
+  padding-top: 24px;
+}
+.card-item__navigation-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+.card-item__button-like, .card-item__button-compare {
+  font-size: 0;
+  display: inline-block;
 }/*# sourceMappingURL=main.css.map */
