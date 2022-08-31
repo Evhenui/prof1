@@ -9,3 +9,6 @@ import {catalog} from './catalog.js';
 
 import {cardProduct} from './card-product.js';
         cardProduct();
+
+import {cardItem} from './card-item.js';
+        cardItem();

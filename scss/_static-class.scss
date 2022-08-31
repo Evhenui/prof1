@@ -224,11 +224,12 @@ html {
   &.active {
       max-width: 113px;
   }
-  &.active &__open-all-title.hidden {
+  &.active &__title {
+    display: none;
+}
+  &.active &__title.hidden {
       display: block;
   }
-
-
   &.active &__arrow {
       display: none;
   }
@@ -236,7 +237,6 @@ html {
       display: block;
       transform: rotateZ(180deg);
   }
-
   &.active &__arrow-svg-hidden {
       display: block;
   }
@@ -270,7 +270,7 @@ html {
       opacity: 1;
       background-color: $color-red;
   }
-  &:hover &__arrow-svg {
+  &:hover &__arrow-svg-state {
       stroke: $color-red;
   }
   &:active &__arrow-svg {
@@ -288,7 +288,7 @@ html {
     }
   }
 
-  &__arrorw {
+  &__arrow {
     transition: all .2s ease-in-out;
         font-size: 0;
         position: relative;
@@ -311,9 +311,6 @@ html {
     position: relative;
   }
 
-  &__arrow-svg-state {
-  }
-
   &__arrow-hidden {
     transition: all .2s ease-in-out;
     font-size: 0;
@@ -331,5 +328,4 @@ html {
         transition: all .2s ease-in-out;
     }
   }
-
 }

@@ -439,7 +439,10 @@ label {
 .btn-arrow-down.active {
   max-width: 113px;
 }
-.btn-arrow-down.active .btn-arrow-down__open-all-title.hidden {
+.btn-arrow-down.active .btn-arrow-down__title {
+  display: none;
+}
+.btn-arrow-down.active .btn-arrow-down__title.hidden {
   display: block;
 }
 .btn-arrow-down.active .btn-arrow-down__arrow {
@@ -480,7 +483,7 @@ label {
   opacity: 1;
   background-color: #E61E37;
 }
-.btn-arrow-down:hover .btn-arrow-down__arrow-svg {
+.btn-arrow-down:hover .btn-arrow-down__arrow-svg-state {
   stroke: #E61E37;
 }
 .btn-arrow-down:active .btn-arrow-down__arrow-svg {
@@ -501,12 +504,12 @@ label {
 .btn-arrow-down__title.hidden {
   display: none;
 }
-.btn-arrow-down__arrorw {
+.btn-arrow-down__arrow {
   transition: all 0.2s ease-in-out;
   font-size: 0;
   position: relative;
 }
-.btn-arrow-down__arrorw::after {
+.btn-arrow-down__arrow::after {
   content: "";
   width: 20px;
   height: 1px;
@@ -3057,6 +3060,9 @@ label {
   color: #2D2D2D;
 }
 
+.reviews {
+  margin-bottom: 27px;
+}
 .reviews__main {
   max-width: 832px;
   width: 100%;
@@ -3113,6 +3119,9 @@ label {
   line-height: 24px;
   margin-bottom: 12px;
 }
+.reviews__review {
+  margin-bottom: 27px;
+}
 .reviews__review-wrapper {
   display: flex;
   flex-direction: column;
@@ -3122,6 +3131,13 @@ label {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+  display: none;
+}
+.reviews__section-review:nth-child(1) {
+  display: flex;
+}
+.reviews.active .reviews__section-review {
+  display: flex;
 }
 .reviews__section-review-wrapper {
   display: flex;
@@ -3156,4 +3172,16 @@ label {
   line-height: 24px;
   text-align: left;
   color: #2D2D2D;
+}
+.reviews__button-show-all {
+  max-width: 176px;
+  width: 100%;
+  margin: 0 auto;
+}
+.reviews__button-show-all.active {
+  max-width: 113px;
+}
+
+.wrp {
+  height: 1000px;
 }/*# sourceMappingURL=main.css.map */

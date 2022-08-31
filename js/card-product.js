@@ -14,7 +14,8 @@ export let cardProduct = function() {
               buttonLike = cardProduct.querySelectorAll('[data-button-like]'),
               buttonCompare = cardProduct.querySelectorAll('[data-button-compare]'),
               accordionItems = cardProduct.querySelectorAll('[data-accordion-all-info]'),
-              characteristicsSection = cardProduct.querySelector('[data-characteristics-section]');
+              characteristicsSection = cardProduct.querySelector('[data-characteristics-section]'),
+              reviwsSection = cardProduct.querySelector('[data-reviews-section]');
         //----------------navigation page----------------------------
         navigationPageItems.forEach((item) => {
             item.addEventListener("click", function () {
@@ -65,9 +66,17 @@ export let cardProduct = function() {
         })
 
         if(characteristicsSection !== null) {
-          const button = document.querySelector('[data-button-show-characteristics]');
+          const button = characteristicsSection.querySelector('[data-button-show-characteristics]');
           button.addEventListener('click', function() {
             characteristicsSection.classList.toggle('active');
+          })
+        }
+
+        if(reviwsSection !== null) {
+          const button = reviwsSection.querySelector('[data-button-show-reviews]');
+          button.addEventListener('click', function() {
+            button.classList.toggle('active');
+            reviwsSection.classList.toggle('active');
           })
         }
     }
