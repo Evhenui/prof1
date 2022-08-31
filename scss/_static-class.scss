@@ -212,3 +212,124 @@ html {
     border-color: $color-gray-60;
   }
 }
+
+.btn-arrow-down {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  &.active &__open-all-title {
+    display: none;
+  }
+  &.active {
+      max-width: 113px;
+  }
+  &.active &__open-all-title.hidden {
+      display: block;
+  }
+
+
+  &.active &__arrow {
+      display: none;
+  }
+  &.active &__arrow-hidden {
+      display: block;
+      transform: rotateZ(180deg);
+  }
+
+  &.active &__arrow-svg-hidden {
+      display: block;
+  }
+  &.active &__arrow:after {
+      display: none;
+  }
+
+  &:hover &__title {
+    color: $color-red;
+  }
+  &:active &__title {
+      color: $color-red-70;
+  }
+  &:disabled &__title {
+      color: $color-gray-60;
+  }
+
+  &:hover &__arrow-svg {
+      transform: rotateZ(-90deg);
+  }
+  &:hover &__arrow-svg-hidden {
+      transform: rotateZ(90deg);
+  }
+  &:hover &__arrow:after {
+      left: 5px;
+      opacity: 1;
+      background-color: $color-red;
+  }
+  &:hover &__arrow-hidden:after {
+      left: 21px;
+      opacity: 1;
+      background-color: $color-red;
+  }
+  &:hover &__arrow-svg {
+      stroke: $color-red;
+  }
+  &:active &__arrow-svg {
+      stroke: $color-red-70;
+  }
+  &:disabled &__arrow-svg {
+      stroke: $color-gray-60;
+  }
+
+  &__title {
+    transition: all .1s ease-in-out;
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 20px);
+    &.hidden {
+        display: none;
+    }
+  }
+
+  &__arrorw {
+    transition: all .2s ease-in-out;
+        font-size: 0;
+        position: relative;
+        &::after {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: $color-gray-100;
+            position: absolute;
+            top: 21.5px;
+            left: 0px;
+            opacity: 0;
+            transition: all .2s ease-in-out;
+        }
+  }
+
+  &__arrow-svg, &__arrow-svg-hidden {
+    transition: all .2s ease-in-out;
+    font-size: 0;
+    position: relative;
+  }
+
+  &__arrow-svg-state {
+  }
+
+  &__arrow-hidden {
+    transition: all .2s ease-in-out;
+    font-size: 0;
+    position: relative;
+    display: none;
+    &::after {
+        content: '';
+        width: 20px;
+        height: 1px;
+        background-color: $color-gray-100;
+        position: absolute;
+        top: 21.5px;
+        left: 26px;
+        opacity: 0;
+        transition: all .2s ease-in-out;
+    }
+  }
+
+}
