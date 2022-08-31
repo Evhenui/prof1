@@ -1,6 +1,7 @@
 export let headerProfi = function() {
     const header = document.querySelector('[data-header]'),
-          modalEnter = document.querySelector('[data-modal-enter]');
+          modalEnter = document.querySelector('[data-modal-enter]'),
+          blur = document.querySelector('[data-blur]')
 
     function addActiveClass(list) {
       list.forEach((item) => {
@@ -36,7 +37,6 @@ export let headerProfi = function() {
               submenuMobileItems = header.querySelectorAll('[data-select-submenu-mobile]'),
               buttonSearch = header.querySelector('[data-button-search]'),
               buttonCloseSearch = header.querySelector('[data-button-close-search]');
-
         //----add/remove class groop------
         addActiveClass(selectLanguage)
         //----catalog---------------------
@@ -47,6 +47,7 @@ export let headerProfi = function() {
 
           buttonCatalog.addEventListener('click', function() {
             catalogMenu.classList.toggle('active');
+            blur.classList.toggle('active');
           })
 
           window.addEventListener('click',(e)=>{
