@@ -4,9 +4,8 @@ export let slidersCardProduct = function() {
       const sliderCardProductFooter = new Swiper('.recommendation__slider', {
 
         direction: 'horizontal',
-        loop: true,
-      
-
+        slidesPerView: 4, 
+        spaceBetween: 24, 
         pagination: {
           el: '.swiper-pagination',
         },

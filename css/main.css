@@ -3296,19 +3296,52 @@ label {
 .recommendation {
   scroll-margin-top: 160px;
 }
+.recommendation__wrapper {
+  padding-bottom: 100px;
+}
 .recommendation__title {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
 }
 .recommendation__slider-footer {
   padding-left: 48px;
 }
 .recommendation__slider {
   width: 100%;
-  height: 510px;
+  height: 432px;
+  margin-bottom: 55px;
+  padding: 10px 0 0 10px;
+}
+.recommendation__slider-navigation {
+  display: flex;
+  height: 44px;
+  align-items: center;
 }
 .recommendation__slider-button-prev.swiper-button-prev, .recommendation__slider-button-next.swiper-button-next {
+  position: static;
   width: 44px;
+  height: 44px;
+  margin: 0;
+}
+.recommendation__slider-button-prev.swiper-button-prev::after, .recommendation__slider-button-next.swiper-button-next::after {
+  display: none;
+}
+.recommendation .swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: static;
+  background-color: #E0E0E0;
+}
+.recommendation .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag {
+  background-color: #2D2D2D;
+}
+.recommendation__prev-wrapper, .recommendation__next-wrapper {
+  position: relative;
+  font-size: 0;
+}
+.recommendation__slider-button-prev.swiper-button-disabled {
+  visibility: hidden;
+}
+.recommendation__slider-button-next.swiper-button-disabled {
+  visibility: hidden;
 }
 .recommendation__slider-button-prev-line {
   left: 23px;
@@ -3353,6 +3386,9 @@ label {
 }
 .recommendation__slider-button-next:active .recommendation__slider-button-next-line {
   background-color: #B81429;
+}
+.recommendation__slider-scrollbar-container {
+  background-color: #E0E0E0;
 }
 
 .wrp {
