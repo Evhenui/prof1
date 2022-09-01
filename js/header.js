@@ -36,7 +36,8 @@ export let headerProfi = function() {
               accordionItems = header.querySelectorAll('[data-accordion-mobile]'),
               submenuMobileItems = header.querySelectorAll('[data-select-submenu-mobile]'),
               buttonSearch = header.querySelector('[data-button-search]'),
-              buttonCloseSearch = header.querySelector('[data-button-close-search]');
+              buttonCloseSearch = header.querySelector('[data-button-close-search]'),
+              linksHeader = header.querySelectorAll('[data-default-link]');
         //----add/remove class groop------
         addActiveClass(selectLanguage)
         //----catalog---------------------
@@ -55,6 +56,7 @@ export let headerProfi = function() {
             const clickButton = e.composedPath().includes(buttonCatalog);
             if(!click && !clickButton) {
               catalogMenu.classList.remove('active');
+              blur.classList.remove('active');
             }
           })
          //----open submenu---------------------
@@ -175,6 +177,13 @@ export let headerProfi = function() {
         buttonCloseSearch.addEventListener('click', function(event) {
           event.preventDefault()
           header.classList.remove('active-search');
+        })
+
+        //---------default links-------
+        linksHeader.forEach(item=> {
+          item.addEventListener('click',function(event) {
+            event.preventDefault();
+          })
         })
     }
 
