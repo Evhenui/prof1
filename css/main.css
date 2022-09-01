@@ -2406,12 +2406,6 @@ label {
   text-align: center;
   color: #2D2D2D;
 }
-.catalog__description-section {
-  display: none;
-}
-.catalog__description-section.active {
-  display: block;
-}
 .catalog__description-title {
   margin-bottom: 12px;
   font-family: "Open Sans", sans-serif;

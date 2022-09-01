@@ -56,13 +56,6 @@
         @include text( $size: 1.25rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
     }
 
-    &__description-section {
-        display: none;
-        &.active {
-            display: block;
-        }
-    }
-
     &__description-title {
         margin-bottom: 12px;
         @include text( $size: 1rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 700, $lineHeight: 24px);
