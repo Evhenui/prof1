@@ -326,3 +326,13 @@ html {
     z-index: 1;
   }
 }
+
+
+.btn-basket {
+
+  &__text {
+    @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);  
+  }
+
+}
+

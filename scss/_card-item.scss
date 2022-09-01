@@ -11,7 +11,6 @@
     width: 100%;
 
     &__wrapper {
-        padding-bottom: 12px;
     }
 
     &__sentence {
@@ -76,6 +75,7 @@
     }
 
     &__main {
+        padding-left: 8px;
         display: flex;
         justify-content: space-between;
     }
@@ -91,6 +91,7 @@
         display: flex;
         flex-direction: column;
         row-gap: 4px;
+        margin-bottom: 10px;
     }
 
     &__button-like, &__button-compare {
@@ -128,45 +129,130 @@
     }
 
     &__navigation-colors {
+        @extend %centre-flex-columb;
     }
 
     &__color {
+        width: 32px;
+        height: 32px;
+        @extend %centre-flex-columb;
+        display: none;
+        &:nth-child(-n+4) {
+            display: flex;
+        }
+    }
+
+    &__color.active &__color-item{
+        width: 20px;
+        height: 20px;
+    }
+
+    &__color:hover &__color-item{
+        width: 20px;
+        height: 20px;
     }
 
     &__color-item {
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        display: block;
+        width: 12px;
+        height: 12px;
+        outline: 1px solid rgba(177, 177, 177, 0.5);
+        &.red {
+            background-color: $color-red;
+        }
+        &.black {
+            background-color: $color-black;
+        }
+        &.white {
+            background-color: $color-white;
+        }
+        &.blue {
+            background-color: #70CBFE;
+        }
+        &.green {
+            background-color: #70FE8F;
+        }
+        &.pink {
+            background-color: #F270FE;
+        }
+        &.yellow {
+            background-color: #FEF070;
+        }
+        &.grey {
+            background-color: #DFDFDF;
+        }
     }
 
-    &__reviews {
+    &__color-more {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;  
+        @extend %centre-flex-columb; 
     }
 
-    &__reviews-stars {
-    }
-
-    &__amount-reviews {
-    }
-
-    &__amount-review-image {
-    }
-
-    &__subtitle {
-    }
-
-    &__name-item {
+    &__color-item-more {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);  
     }
 
     &__footer {
+       padding: 0 12px 12px 12px;
+    }
+
+
+    &__reviews {
+        display: flex;
+        column-gap: 4px;
+        margin-bottom: 12px;
+    }
+
+    &__reviews-stars {
+        @extend %left-flex;
+    }
+
+    &__amount-reviews {
+        cursor: pointer;
+        @extend %left-flex;
+        column-gap: 4px
+    }
+
+    &__amount-review-image {
+        font-size: 0;
+    }
+
+    &__subtitle {
+        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 20px);  
+    }
+
+    &__name-item {
+        margin-bottom: 12px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+    }
+
+    &__footer-navigation {
+        @extend %centre-space-between;
     }
 
     &__price {
     }
 
     &__price-discount {
+    
     }
 
     &__price-text {
+        text-decoration-line: line-through;
+        @include text( $size: 0.75rem, $textAlign: left, $color: #686464, $fontWeight: 400, $lineHeight: 20px); 
+        &.discount {
+            font-weight: 700;
+            text-decoration: none;
+            color: $color-red;
+        }
     }
 
     &__full-price {
+        @include text( $size: 1.125rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px); 
     }
 
     &__button-basket {

@@ -1,5 +1,6 @@
 export let cardProduct = function() {
-    const cardProduct = document.querySelector('[data-card-product]');
+    const cardProduct = document.querySelector('[data-card-product]'),
+          allAbout = document.querySelector('[data-all-about-section]');
 
     function delActiv(param) {
         param.forEach((el) => {
@@ -79,5 +80,15 @@ export let cardProduct = function() {
             reviwsSection.classList.toggle('active');
           })
         }
+    }
+
+    if(allAbout !== null) {
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 879) {
+          allAbout.classList.add('active');
+        } else {
+          allAbout.classList.remove('active');
+        }
+      });
     }
 }

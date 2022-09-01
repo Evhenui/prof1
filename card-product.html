@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="icon/page-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <title>Prof1 sport</title>
 </head>
 
@@ -956,25 +958,15 @@
                 </section>
                 <section class="header-page-navigation">
                     <div class="header-page-navigation__wrapper">
-                        <nav>
-                            <ul class="header-page-navigation__list">
-                                <li data-navigation-item class="header-page-navigation__item active">
-                                    <a class="header-page-navigation__item-link" href="#">Всё о товаре</a>
-                                </li>
-                                <li data-navigation-item class="header-page-navigation__item">
-                                    <a class="header-page-navigation__item-link" href="#">Характеристики</a>
-                                </li>
-                                <li data-navigation-item class="header-page-navigation__item">
-                                    <a class="header-page-navigation__item-link" href="#">Отзывы (4)</a>
-                                </li>
-                                <li data-navigation-item class="header-page-navigation__item">
-                                    <a class="header-page-navigation__item-link" href="#">Запчасти и Комплектующие</a>
-                                </li>
-                            </ul>
+                        <nav class="header-page-navigation__list">
+                            <a data-navigation-item class="header-page-navigation__item-link active" href="#all-about">Всё о товаре</a>
+                            <a data-navigation-item class="header-page-navigation__item-link" href="#characteristics">Характеристики</a>
+                            <a data-navigation-item class="header-page-navigation__item-link" href="#reviews">Отзывы (4)</a>
+                            <a data-navigation-item class="header-page-navigation__item-link" href="#recommendation">Запчасти и Комплектующие</a>
                         </nav>
                     </div>
                 </section>
-                <section class="all-about">
+                <section id="all-about" data-all-about-section class="all-about">
                     <div class="all-about__wrapper">
                         <section class="main-slider"></section>
                         <section class="main-information">
@@ -1221,7 +1213,7 @@
                         </section>
                     </div> 
                 </section>
-                <section data-characteristics-section class="characteristics">
+                <section id="characteristics" data-characteristics-section class="characteristics">
                     <div class="characteristics__wrapper">
                         <div class="characteristics__main">
                             <h1 class="card-product-title characteristics__title">ХАРАКТЕРИСТИКИ</h1>
@@ -1429,7 +1421,7 @@
                         </div>
                     </div>
                 </section>
-                <section data-reviews-section class="reviews">
+                <section id="reviews" data-reviews-section class="reviews">
                 <div class="reviews__wrapper">
                     <div class="reviews__main">
                         <h1 class="card-product-title reviews__title">Отзывы</h1>
@@ -1593,12 +1585,38 @@
                     </div>                   
                 </div>               
                 </section>
-                <section class="recommendation">
+                <section id="recommendation" class="recommendation">
                     <div class="recommendation__wrapper">
                         <h1 class="card-product-title recommendation__title">Рекомендованные товары</h1>
-                        <section class="slider">
+                        <section class="recommendation__slider-footer">
+                            <div class="swiper recommendation__slider">
 
+                                <div class="swiper-wrapper recommendation__slider-wrapper">
+       
+                                    <div class="swiper-slide recommendation__slide">Slide 1</div>
+                                    <div class="swiper-slide recommendation__slide">Slide 2</div>
+                                    <div class="swiper-slide recommendation__slide">Slide 3</div>
+    
+                                </div>
+                                <section class="recommendation__slider-buttons">
+                                    <div class="swiper-button-prev recommendation__slider-button-prev">
+                                        <span class="recommendation__slider-button-prev-line"></span>
+                                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="recommendation__slider-button-prev-svg" d="M18 30L12 22L18 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </div>
+                                    <div class="swiper-button-next recommendation__slider-button-next">
+                                        <span class="recommendation__slider-button-next-line"></span>
+                                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="recommendation__slider-button-next-svg" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>                                   
+                                    </div>
+                                </section>
+  
+                                <div class="swiper-scrollbar"></div>
+                                </div>
                         </section>
+                          
                     </div>                  
                 </section>
             </div>           
