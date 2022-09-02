@@ -2,7 +2,8 @@ export let inputsValidate = function() {
     const footerSection = document.querySelector('[data-footer]'),
           headerSection = document.querySelector('[data-header]'),
           modalEnter = document.querySelector('[data-modal-enter]'),
-          phoneInputs = document.querySelectorAll('[data-tel-input]');
+          phoneInputs = document.querySelectorAll('[data-tel-input]'),
+          mainSection = document.querySelector('[data-main]');
 
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
@@ -235,6 +236,52 @@ export let inputsValidate = function() {
             inputPhone.addEventListener('input', function(){
                 exam(regPhone, inputPhone, button, containerInput);
             }); 
+          }
+
+          if(mainSection !== null) {
+            const inputs = mainSection.querySelectorAll('[data-input-main]'),
+                  button = mainSection.querySelector('[data-button-stay-partner]'),
+                  inputPhone = mainSection.querySelector('[data-tel-input]'),
+                  containerInputPhone = mainSection.querySelector('[data-input-phone-main-container]'),
+                  inputName = mainSection.querySelector('[data-input-name]'),
+                  containerInputName = mainSection.querySelector('[data-input-name-main-container]');
+                
+                function exam(reg, input, container) {
+                    if (!validate(reg, input.value) && input.value != "") {
+                        valid(false, container);
+                    } else {
+                        valid(true, container);
+                    }
+                }
+
+                function valid(value, container) {
+                        if (value) {
+                            container.classList.remove('error');
+                        } else {
+                            container.classList.add('error');
+                        }
+                } 
+
+                inputPhone.addEventListener('input', function(){
+                    exam(regPhone, inputPhone, containerInputPhone);
+                }); 
+                inputName.addEventListener('input', function(){
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regText, inputName, containerInputName);
+                }); 
+
+                function inputsChange(inputs, button) {
+                    inputs.forEach((item)=>{
+                      item.addEventListener('input', function() {
+                       if(inputs[0].innerText !== '' && inputs[1].value && inputs[2].value && inputs[3].value ) {
+                          if(validate(regText, inputs[1].value)) {
+                            button.disabled = false;
+                          }
+                       }
+                      })
+                    })
+                }
+                inputsChange(inputs, button)
           }
      
 }

@@ -34,10 +34,27 @@
     }
 
     &__item {
+        position: relative;
         background: $color-white;
         box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
         max-width: 424px;
         width: 100%;
+        &:hover {
+            outline: 1px solid $color-red-30;
+        }
+    }
+
+    &__item:hover &__button-hidden {
+        opacity: 1;
+    }
+
+    &__button-hidden {
+        transition: all .2s ease-in-out;
+        opacity: 0;
+        max-width: 139px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 
     &__image-wrapper {
@@ -76,96 +93,179 @@
     }
 }
 
+.stay-partner {
+
+    &__wrapper {
+        @extend %size-page;
+        padding: 135px 48px;
+        display: flex;
+        justify-content: space-between;
+        background-image: url('/img/backgroung_3.png');
+        background-repeat: no-repeat;
+        background-position: right, bottom;
+        padding-top: 168px;
+    }
+
+    &__inputs-wrapper {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    &__inputs-title {
+        margin-bottom: 40px;
+        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
+    }
+
+    &__form {
+
+    }
+
+    &__input {
+        max-width: 100%;
+    }
+
+    &__input-container.text {
+        margin-bottom: 40px;
+    }
+
+    &__button {
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    &__description-wrapper {
+        max-width: 564px;
+        width: 100%;
+    }
+
+    &__dropdown {
+        margin-bottom: 32px;
+    }
 
 
-//------------------------
+    &__button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
 
-.basket__dropdown {
+    &__description-title {
+        margin-bottom: 48px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    &__subtitle {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+    }
+
+    &__button-title {
+    }
+
+    &__button-arrorw {
+    }
+
+    &__button-line-active {
+    }
+
+    &__button-arrow-state {
+    }
+}
+
+.name-register {
+}
+
+
+
+.type-of-trade-dropdown {
     position: relative;
+
+    &.active &__list {
+        visibility: visible;
+        opacity: 1;
+    }
+    &.active &__arrow {
+        transform: rotateZ(180deg);
+    }
+    &.active &__arrow-hover {
+        stroke: $color-red;
+    }
+    &:hover &__input {
+        border-color: $color-red;
+    }
+    &:hover &__arrow-hover {
+        stroke: $color-red;
+    }
+
+    &__input {
+        border-bottom: 1px solid $color-gray-50;
+        width: 100%;
+        height: 44px;
+        padding: 10px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &.is-invalid {
+            border-color: $color-red-60;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        position: absolute;
+        left: 16px;
+        top: 11px;
+        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: center, $fontWeight: 400, $lineHeight: 24px);
+        background-color: $color-white;
+        transition: all .2s ease-in-out;
+        &.active{
+            font-size: 0.75rem;
+            top: -17px;
+        }
+    }
+
+    &__selected-item {
+        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+    }
+
+    &__arrow {
+        transform: rotateZ(0deg);
+        transition: all .2s ease-in-out;
+    }
+
+    &__list {
+        z-index: 2;
+        width: 100%;
+        top: 44px;
+        visibility: hidden;
+        width: 100%;
+        position: absolute;
+        top: 56px;
+        background-color: $color-white;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s ease-in;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding-left: 16px;
+    }
+
+    &__item {
+        cursor: pointer;
+    }
+
+    &__item-name {
+        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+    }
 }
-
-.basket__dropdown:hover .basket__dropdown-input{
-    border-color: $color-red-60;
-}
-
-.basket__dropdown:hover .basket__dropdown-arrow-hover{
-    fill: $color-red-60;
-}
-
-.basket__dropdown:hover .basket__dropdown-label.active{
-    color: $color-red-60;
-}
-
-.basket__dropdown.active .basket__dropdown-arrow{
-    transform: rotateZ(180deg);
-}
-
-.basket__dropdown.active .basket__dropdown-arrow-hover{
-    fill: $color-red-60;
-}
-
-.basket__dropdown-label.active{
-    font-size: 0.75rem;
-    top: -17px;
-}
-
-.basket__dropdown.active .basket__dropdown-list{
-    visibility: visible;
-    opacity: 1;
-}
-
-.basket__dropdown-input {
-    border: 1px solid $color-gray-60;
-    border-radius: 1px;
-    padding: 10px 20px;
-    width: 300px;
-    height: 44px;
-    padding: 10px 16px 10px 20px;
-    display: flex;
-    @extend %centre-space-between;
-}
-
-.basket__dropdown-input.is-invalid {
-    border-color: $color-red-60;
-}
-
-.basket__dropdown-label {
-    display: inline-block;
-    padding: 0 4px;
-    position: absolute;
-    left: 16px;
-    top: 11px;
-    @include text($size: 0.875rem, $color: $color-gray-60, $textAlign: center, $fontWeight: 400, $lineHeight: 24px);
-    background-color: $color-white;
-    transition: all .2s ease-in-out;
-}
-
-.basket__dropdown-selected-text {
-    @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
-}
-
-.basket__dropdown-arrow {
-    transform: rotateZ(0deg);
-    transition: all .2s ease-in-out;
-}
-
-.basket__dropdown-list {
-    z-index: 2;
-    width: 100%;
-    top: 44px;
-    visibility: hidden;
-    width: 260px;
-    position: absolute;
-    top: 56px;
-    row-gap: 4px;
-    background-color: #ffffff;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease-in;
-} 
-
-//------------------------
-
 
 .about-company {
 
@@ -216,12 +316,11 @@
     }
 }
 
-
-
 .main-title {
     text-transform: uppercase;
     @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);  
 }
+
 .main-subtitle {
     @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
 }

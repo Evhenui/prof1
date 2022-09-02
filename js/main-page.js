@@ -1,4 +1,6 @@
 export let mainPage = function() {
+    const mainPage = document.querySelector('[data-main]');
+
     function changeLable (items, dropdown) {
         items.forEach((item)=> {
             item.addEventListener('click', ()=> {
@@ -6,36 +8,52 @@ export let mainPage = function() {
             })
         })
     }
-
-
-
-        function delActive (params) {
-            params.forEach((el) => {
-                el.classList.remove('active');
-              })
-        } 
-
-
-        const   dropdownRegionSelectItems = document.querySelectorAll('[data-dropdown-region-item]'),
-                dropdownRegionSelected = document.querySelector('[data-dropdown-region-selected]'),
-                dropdownRegionLabel = document.querySelector('[data-dropdown-region-label]'),
-                dropdownRegion = document.querySelector('[data-dropdown-region]'),
-                dropdowns= document.querySelectorAll('[data-dropdown]');
-
-                dropdownRegion.addEventListener('click', function() {
-        if (this.classList.contains('active')) {
-            this.classList.remove('active');
-        }
-        else {
-            delActive(dropdowns);
-            this.classList.add('active');
-        }
-        
-        if(dropdownRegionSelected.innerText === '') {
-            dropdownRegionLabel.classList.toggle('active');
-        } 
-        //close
-
+    function delActive (params) {
+        params.forEach((el) => {
+            el.classList.remove('active');
+            })
+    } 
+    function closeMenu (section, dropdown ,selected, label) {
+        section.addEventListener('click', function(e) {
+            const click = e.composedPath().includes(dropdown);
+            if(!click) {
+                dropdown.classList.remove('active');
+                if(selected.innerText === '') {
+                    label.classList.remove('active');
+                }   
+            }
         })
-        changeLable(dropdownRegionSelectItems, dropdownRegionSelected)
+    }
+
+    if(mainPage !== null) {
+
+        const dropdownTypeOfTrade = mainPage.querySelector('[data-dropdown-type-of-trade]');
+        
+        if(dropdownTypeOfTrade !== null) {
+
+            const  itemsSelect = document.querySelectorAll('[data-type-of-trade-item]'),
+                   itemSelected = document.querySelector('[data-dropdown-selected]'),
+                   itemLabel = document.querySelector('[data-dropdown-label]'),
+                   dropdowns = document.querySelectorAll('[data-dropdown]');
+
+        dropdownTypeOfTrade.addEventListener('click', function() {
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+            }
+            else {
+                delActive(dropdowns);
+                this.classList.add('active');
+            }
+            if(itemSelected.innerText === '') {
+                itemLabel.classList.toggle('active');
+            } 
+            closeMenu(mainPage, dropdownTypeOfTrade, itemSelected, itemLabel)
+        })
+        changeLable(itemsSelect, itemSelected)
+        }
+
+
+
+    }
+  
 }

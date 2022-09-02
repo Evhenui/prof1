@@ -1020,9 +1020,9 @@
         </div>  
     </header>
 
-    <main data-main class="js-main">
+    <main class="js-main">
 
-        <section class="main-page">
+        <section data-main class="main-page">
             <div class="main-page__wrapper">
                 <section class="title-slider"></section>
                 <section class="product-selection">
@@ -1056,6 +1056,15 @@
                                         </div>
                                         <h3 class="news__description-title">Трюковые самокаты: как выбрать и правильно использовать</h3>
                                         <p class="news__subtitle">Трюковой самокат – это самокат, который предназначен для больших нагрузок, возникающих ...</p>
+                                        <button class="news__button-hidden btn-arrow-right">
+                                            <span class="btn-arrow-right__title">Подробнее</span>
+                                            <div class="btn-arrow-right__arrow">
+                                                <span class="btn-arrow-right__line-active"></span>
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg> 
+                                            </div>
+                                        </button>
                                     </div>
                                 </section>
                             </section>
@@ -1070,6 +1079,15 @@
                                         </div>
                                         <h3 class="news__description-title">Трюковые самокаты: как выбрать и правильно использовать</h3>
                                         <p class="news__subtitle">Трюковой самокат – это самокат, который предназначен для больших нагрузок, возникающих ...</p>
+                                        <button class="news__button-hidden btn-arrow-right">
+                                            <span class="btn-arrow-right__title">Подробнее</span>
+                                            <div class="btn-arrow-right__arrow">
+                                                <span class="btn-arrow-right__line-active"></span>
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg> 
+                                            </div>
+                                        </button>
                                     </div>
                                 </section>
                             </section>
@@ -1084,6 +1102,15 @@
                                         </div>
                                         <h3 class="news__description-title">Трюковые самокаты: как выбрать и правильно использовать</h3>
                                         <p class="news__subtitle">Трюковой самокат – это самокат, который предназначен для больших нагрузок, возникающих ...</p>
+                                        <button class="news__button-hidden btn-arrow-right">
+                                            <span class="btn-arrow-right__title">Подробнее</span>
+                                            <div class="btn-arrow-right__arrow">
+                                                <span class="btn-arrow-right__line-active"></span>
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg> 
+                                            </div>
+                                        </button>
                                     </div>
                                 </section>
                             </section>
@@ -1096,74 +1123,71 @@
                             <h3 class="stay-partner__inputs-title">Оставьте свои контакты и мы Вам перезвоним</h3>
                             <form class="stay-partner__form" action="">
 
-                                <section data-dropdown-region data-dropdown class="basket__dropdown region">
-                                    <div class="basket__dropdown-input region">
-                                      <span data-dropdown-region-label class="basket__dropdown-label">Область</span>
-                                      <span data-input-selected data-dropdown-region-selected class="basket__dropdown-selected-text"></span>
-                                      <svg class="basket__dropdown-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path class="basket__dropdown-arrow-hover" d="M16.7071 17.2929L16 16.5858L14.5858 18L15.2929 18.7071L16.7071 17.2929ZM20 22L19.2929 22.7071L20 23.4142L20.7071 22.7071L20 22ZM24.7071 18.7071L25.4142 18L24 16.5858L23.2929 17.2929L24.7071 18.7071ZM15.2929 18.7071L19.2929 22.7071L20.7071 21.2929L16.7071 17.2929L15.2929 18.7071ZM20.7071 22.7071L24.7071 18.7071L23.2929 17.2929L19.2929 21.2929L20.7071 22.7071Z" fill="#4E4B4B"/>
-                                      </svg> 
+                                <section data-dropdown-type-of-trade data-dropdown class="type-of-trade-dropdown stay-partner__dropdown">
+                                    <div class="type-of-trade-dropdown__input">
+                                      <span data-dropdown-label class="type-of-trade-dropdown__label">Выберите вид торговли*</span>
+                                      <span data-input-selected data-dropdown-selected data-input-main class="type-of-trade-dropdown__selected-item"></span> 
+                                      <svg class="type-of-trade-dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="type-of-trade-dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
                                     </div>
-                                    <div class="basket__dropdown-list">
+                                    <div class="type-of-trade-dropdown__list">
                                       <div>
-                                        <ul class="sorting-navigation__menu">
-                                          <li data-dropdown-region-item class="lunge__item sorting-navigation__item">
-                                            <p class="basket__dropdown-list-item lunge__item-text">Одесская</p>
-                                            <span class="red-diamonds"></span>
+                                        <ul class="type-of-trade-dropdown__menu">
+                                          <li data-type-of-trade-item class="type-of-trade-dropdown__item">
+                                            <p class="type-of-trade-dropdown__item-name">Вид торговли 1</p>
                                           </li>
-                                          <li data-dropdown-region-item class="lunge__item sorting-navigation__item">
-                                            <p class="basket__dropdown-list-item lunge__item-text">Киевская</p>
-                                            <span class="red-diamonds"></span>
+                                          <li data-type-of-trade-item class="type-of-trade-dropdown__item">
+                                            <p class="type-of-trade-dropdown__item-name">Вид торговли 2</p>
                                           </li>
-                                          <li data-dropdown-region-item class="lunge__item sorting-navigation__item">
-                                            <p class="basket__dropdown-list-item lunge__item-text">Львовская</p>
-                                            <span class="red-diamonds"></span>
+                                          <li data-type-of-trade-item class="type-of-trade-dropdown__item">
+                                            <p class="type-of-trade-dropdown__item-name">Вид торговли 3</p>
                                           </li>
                                         </ul>
                                       </div>
                                     </div>
                                 </section>
 
-                                <div data-input-name-modal-register-container class="input-wrapper-white main-modal__input-wrapper name-register">
-                                    <input data-input-register data-input-name-modal-register class="input-wrapper-white__input main-modal__input name-register" type="text" required>
+                                <div data-input-name-main-container class="input-wrapper-white stay-partner__input-container name">
+                                    <input data-input-name data-input-main class="input-wrapper-white__input stay-partner__input" type="text" required>
                                     <div class="input-wrapper-white__image-error">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
                                         </svg>     
                                     </div>
-                                    <label class="input-wrapper-white__label">Введите имя</label>
+                                    <label class="input-wrapper-white__label stay-partner__label">Ваше имя</label>
                                     <div class="input-wrapper-white__prompt-wrapper">
                                         <span class="input-wrapper-white__prompt">Additional description about error</span>
                                     </div>
                                 </div>
 
-                                <div data-input-phone-header-cotainer class="input-wrapper-black header-navigation-menu__submenu-input-wrapper">
-                                    <input data-tel-input data-input-tel-header class="input-wrapper-black__input" type="tel" required>
-                                    <div class="input-wrapper-black__image-error">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
-                                        </svg>     
-                                    </div>
-                                    <label class="input-wrapper-black__label">Введите номер телефона</label>
-                                    <div class="input-wrapper-black__prompt-wrapper">
-                                        <span class="input-wrapper-black__prompt">Additional description about error</span>
-                                    </div>
-                                </div>
-
-                                <div data-input-name-modal-register-container class="input-wrapper-white main-modal__input-wrapper name-register">
-                                    <input data-input-register data-input-name-modal-register class="input-wrapper-white__input main-modal__input name-register" type="text" required>
+                                <div data-input-phone-main-container class="input-wrapper-white stay-partner__input-container phone">
+                                    <input data-tel-input data-input-main  class="input-wrapper-white__input stay-partner__input" type="tel" required>
                                     <div class="input-wrapper-white__image-error">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
                                         </svg>     
                                     </div>
-                                    <label class="input-wrapper-white__label">Введите имя</label>
+                                    <label class="input-wrapper-white__label stay-partner__label">+38 (0__) -__-__-___</label>
                                     <div class="input-wrapper-white__prompt-wrapper">
                                         <span class="input-wrapper-white__prompt">Additional description about error</span>
                                     </div>
                                 </div>
 
-                                <button class="stay-partner__button btn-red">Отправить сообщение</button>
+                                <div data-input-text-main-container class="input-wrapper-white stay-partner__input-container text">
+                                    <input data-input-text data-input-main class="input-wrapper-white__input stay-partner__input" type="text" required>
+                                    <div class="input-wrapper-white__image-error">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                        </svg>     
+                                    </div>
+                                    <label class="input-wrapper-white__label stay-partner__label">Ваше сообщение</label>
+                                    <div class="input-wrapper-white__prompt-wrapper">
+                                        <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                    </div>
+                                </div>
+
+                                <button data-button-stay-partner disabled class="stay-partner__button btn-red">Отправить сообщение</button>
                             </form>
                         </section>
                         <section class="stay-partner__description-wrapper">
@@ -1174,15 +1198,17 @@
                                 <p class="stay-partner__subtitle">Для этого крайне важно избежать такого проявления недобросовестной конкуренции, как демпинг. РРЦ позволит всем Партнерам получать стабильную прогнозированную прибыль, не зависимо от рыночных колебаний.</p>
                                 <p class="stay-partner__subtitle">Если у вас есть вопросы о наших продуктах или услугах, воспользуйтесь формой обратной связи.</p>
                             </section>
-                            <button class="stay-partner__button btn-arrow-right">
-                                <span class="stay-partner__button-title btn-arrow-right__title">Подробнее</span>
-                                <div class="stay-partner__button-arrorw btn-arrow-right__arrow">
-                                    <span class="stay-partner__button-line-active btn-arrow-right__line-active"></span>
-                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path class="stay-partner__button-arrow-state btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg> 
-                                </div>
-                            </button>
+                            <section class="stay-partner__button-wrapper">
+                                <button class="stay-partner__button btn-arrow-right">
+                                    <span class="stay-partner__button-title btn-arrow-right__title">Подробнее</span>
+                                    <div class="stay-partner__button-arrorw btn-arrow-right__arrow">
+                                        <span class="stay-partner__button-line-active btn-arrow-right__line-active"></span>
+                                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="stay-partner__button-arrow-state btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </div>
+                                </button>
+                            </section>
                         </section>
                     </div>
                 </section>
