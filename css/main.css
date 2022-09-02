@@ -139,7 +139,7 @@ label {
   flex-direction: column;
 }
 
-.catalog__description-text, .catalog__item-wrapper, .dropdown-search__list, .header-navigation-mobile__footer-timetable, .header-navigation-mobile__select-list, .header-navigation-mobile__items-list {
+.main-slider__navigation-buttons, .catalog__description-text, .catalog__item-wrapper, .dropdown-search__list, .header-navigation-mobile__footer-timetable, .header-navigation-mobile__select-list, .header-navigation-mobile__items-list {
   display: flex;
   flex-direction: column;
 }
@@ -542,7 +542,7 @@ label {
 }
 .blur.active {
   background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 3;
 }
 
 .btn-basket {
@@ -594,7 +594,7 @@ label {
   background-color: #2D2D2D;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 4;
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
 }
 .header::before {
@@ -2499,9 +2499,10 @@ label {
 }
 
 .header-page-navigation {
+  border-bottom: 1px solid #E0E0E0;
   position: -webkit-sticky;
   position: sticky;
-  z-index: 6;
+  z-index: 3;
   top: 68px;
   margin-bottom: 28px;
   background-color: #FEFEFE;
@@ -2565,6 +2566,46 @@ label {
 .main-slider {
   flex: 0 0 648px;
   height: 600px;
+}
+.main-slider__navigation-buttons {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  row-gap: 4px;
+  z-index: 2;
+}
+.main-slider__navigation-button {
+  font-size: 0;
+}
+.main-slider__navigation-button-state {
+  transition: all 0.1s ease-in-out;
+}
+.main-slider__navigation-button.rotate:hover .main-slider__navigation-button-state {
+  stroke: #2D2D2D;
+}
+.main-slider__navigation-button.video:hover .main-slider__navigation-button-state {
+  fill: #2D2D2D;
+}
+.main-slider__zoom {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+}
+.main-slider__navigation-button-zoom {
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+}
+.main-slider__navigation-button-zoom:hover .main-slider__navigation-button-zoom-hover {
+  opacity: 1;
+}
+.main-slider__navigation-button-zoom-hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.1s ease-in-out;
 }
 
 .main-information {
@@ -3417,7 +3458,7 @@ label {
   flex-direction: column;
   width: 72px;
   height: 600px;
-  margin-right: 12px;
+  margin-right: 16px;
 }
 @media (max-width: 960px) {
   .main-slider__slider-navigation {
@@ -3443,9 +3484,11 @@ label {
   }
 }
 .main-slider__button-next.swiper-button-disabled, .main-slider__button-prev.swiper-button-disabled {
-  opacity: 0.35;
   cursor: auto;
   pointer-events: none;
+}
+.main-slider__basic-slider {
+  position: relative;
 }
 @media (max-width: 960px) {
   .main-slider__basic-slider {
@@ -3453,7 +3496,11 @@ label {
     align-items: center;
   }
 }
+.main-slider .card-item__offers.slider {
+  z-index: 2;
+}
 .main-slider__nav-slider {
+  overflow: hidden;
   height: 512px;
 }
 @media (max-width: 960px) {
@@ -3472,6 +3519,9 @@ label {
     height: 66px;
   }
 }
+.main-slider__navigation-wrapper.swiper-wrapper {
+  row-gap: 16px;
+}
 @media (max-width: 960px) {
   .main-slider__navigation-wrapper.swiper-wrapper {
     height: 66px;
@@ -3483,6 +3533,7 @@ label {
   }
 }
 .main-slider__slide.preview {
+  cursor: pointer;
   flex: 0;
 }
 @media (max-width: 960px) {
@@ -3520,10 +3571,10 @@ label {
   height: 72px;
 }
 .main-slider__image.preview:hover {
-  outline: 1px solid #FAD1D6;
+  border: 1px solid #FAD1D6;
 }
 .main-slider__image.preview:active {
-  outline-color: #F07585;
+  border-color: #F07585;
 }
 .main-slider__image.preview::after {
   content: "";
@@ -3540,11 +3591,20 @@ label {
   width: 100%;
   height: 100%;
 }
+.main-slider__button-prev.swiper-button-disabled .main-slider__arrow-prev, .main-slider__button-next.swiper-button-disabled .main-slider__arrow-next {
+  stroke: #949494;
+}
 .main-slider__button-prev:hover .main-slider__arrow-prev {
   stroke: #E61E37;
 }
+.main-slider__button-prev:active .main-slider__arrow-prev {
+  stroke: #B81429;
+}
 .main-slider__button-next:hover .main-slider__arrow-next {
   stroke: #E61E37;
+}
+.main-slider__button-next:active .main-slider__arrow-next {
+  stroke: #B81429;
 }
 .main-slider__button-prev-mobile {
   left: -28px;

@@ -5,7 +5,8 @@ export let headerProfi = function() {
 
     function addActiveClass(list) {
       list.forEach((item) => {
-        item.addEventListener("click", function () {
+        item.addEventListener("click", function (event) {
+          event.preventDefault();
           if (!item.classList.contains("active")) {
             list.forEach(function (item) {
               item.classList.remove("active");
@@ -40,6 +41,7 @@ export let headerProfi = function() {
               linksHeader = header.querySelectorAll('[data-default-link]');
         //----add/remove class groop------
         addActiveClass(selectLanguage)
+
         //----catalog---------------------
         if(catalogMenu !== null) {
           const buttonCatalog = header.querySelector('[data-button-show-catalog]'),
@@ -113,7 +115,8 @@ export let headerProfi = function() {
         if(menuAccount !== null) {
           const buttonOpen = header.querySelector('[data-button-account]'),
                 section = header.querySelector('[data-section-account]');
-          buttonOpen.addEventListener('click', function() {
+          buttonOpen.addEventListener('click', function(event) {
+            event.preventDefault();
             this.classList.toggle('active');
             menuAccount.classList.toggle('active');
             section.classList.toggle('active');

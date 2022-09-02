@@ -21,7 +21,6 @@ export let slidersCardProduct = function() {
       const sliderMain = new Swiper('.main-slider__container-navigation', {
         direction: 'horizontal',
         slidesPerView: 6, 
-        spaceBetween: 16, 
         navigation: { 
         nextEl: '.main-slider__button-next', 
         prevEl: '.main-slider__button-prev'
@@ -30,11 +29,9 @@ export let slidersCardProduct = function() {
         breakpoints: { 
         0: { 
             slidesPerView: 4.6, 
-            spaceBetween: 8, 
             direction: 'horizontal',
         },
         960: { 
-            spaceBetween: 12, 
             direction: 'vertical', 
         }
         }
