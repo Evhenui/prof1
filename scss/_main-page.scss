@@ -1,0 +1,228 @@
+.main-page {
+    &__wrapper {
+        padding: 68px 0 100px 0;
+        @include __960 {
+            padding: 68px 0 80px 0;
+        }
+    }
+}
+
+
+
+
+.news {
+    &__wrapper {
+        padding: 100px 48px 100px 48px;
+        @extend %size-page;
+        background-image: url('/img/backgroung_2.png'), url('/img/backgroung_1.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position: left, right;
+    }
+
+    &__header {
+        @extend %centre-space-between;
+        margin-bottom: 44px;
+    }
+
+    &__button {
+        max-width: 173px
+    }
+
+    &__items-wrapper {
+        align-items: stretch;
+        @extend %centre-space-between;
+    }
+
+    &__item {
+        background: $color-white;
+        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+        max-width: 424px;
+        width: 100%;
+    }
+
+    &__image-wrapper {
+        max-width: 424px;
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__description {
+        padding: 20px 12px 24px 12px;
+    }
+
+    &__description-wrapper {
+    }
+
+    &__description-top {
+        @extend %centre-space-between;
+        margin-bottom: 4px;
+    }
+
+    &__description-data {
+        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);  
+    }
+
+    &__description-title {
+        margin-bottom: 12px;
+        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
+    }
+
+    &__subtitle {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+    }
+}
+
+
+
+//------------------------
+
+.basket__dropdown {
+    position: relative;
+}
+
+.basket__dropdown:hover .basket__dropdown-input{
+    border-color: $color-red-60;
+}
+
+.basket__dropdown:hover .basket__dropdown-arrow-hover{
+    fill: $color-red-60;
+}
+
+.basket__dropdown:hover .basket__dropdown-label.active{
+    color: $color-red-60;
+}
+
+.basket__dropdown.active .basket__dropdown-arrow{
+    transform: rotateZ(180deg);
+}
+
+.basket__dropdown.active .basket__dropdown-arrow-hover{
+    fill: $color-red-60;
+}
+
+.basket__dropdown-label.active{
+    font-size: 0.75rem;
+    top: -17px;
+}
+
+.basket__dropdown.active .basket__dropdown-list{
+    visibility: visible;
+    opacity: 1;
+}
+
+.basket__dropdown-input {
+    border: 1px solid $color-gray-60;
+    border-radius: 1px;
+    padding: 10px 20px;
+    width: 300px;
+    height: 44px;
+    padding: 10px 16px 10px 20px;
+    display: flex;
+    @extend %centre-space-between;
+}
+
+.basket__dropdown-input.is-invalid {
+    border-color: $color-red-60;
+}
+
+.basket__dropdown-label {
+    display: inline-block;
+    padding: 0 4px;
+    position: absolute;
+    left: 16px;
+    top: 11px;
+    @include text($size: 0.875rem, $color: $color-gray-60, $textAlign: center, $fontWeight: 400, $lineHeight: 24px);
+    background-color: $color-white;
+    transition: all .2s ease-in-out;
+}
+
+.basket__dropdown-selected-text {
+    @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+}
+
+.basket__dropdown-arrow {
+    transform: rotateZ(0deg);
+    transition: all .2s ease-in-out;
+}
+
+.basket__dropdown-list {
+    z-index: 2;
+    width: 100%;
+    top: 44px;
+    visibility: hidden;
+    width: 260px;
+    position: absolute;
+    top: 56px;
+    row-gap: 4px;
+    background-color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in;
+} 
+
+//------------------------
+
+
+.about-company {
+
+    &__wrapper {
+       @extend %size-page;
+       padding: 0 152px;
+        @include __960 {
+            @include padding-mob;
+        }
+    }
+
+    &__title {
+       margin-bottom: 48px; 
+    }
+
+    &__description {
+    }
+
+    &__description-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    &__subtitle {
+    }
+
+    &__button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__description-button {
+       
+    }
+
+    &__button-title {
+    }
+
+    &__button-arrorw {
+    }
+
+    &__button-line-active {
+    }
+
+    &__button-arrow-state {
+    }
+}
+
+
+
+.main-title {
+    text-transform: uppercase;
+    @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);  
+}
+.main-subtitle {
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+}
+

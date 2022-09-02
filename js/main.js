@@ -16,4 +16,6 @@ import {cardItem} from './card-item.js';
 import {slidersCardProduct} from './sliders-card-product.js';
         slidersCardProduct();
 
+import {mainPage} from './main-page.js';
+        mainPage();
   

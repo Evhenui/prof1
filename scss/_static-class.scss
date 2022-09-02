@@ -367,3 +367,57 @@ html {
 
 }
 
+.btn-arrow-right {
+  max-width: 139px;
+  width: 100%;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  &:hover &__title {
+    color: $color-red;
+  }
+  &:active &__title {
+    color: $color-red-70;
+  }
+  &:hover &__line-active {
+    left: 11px;
+    opacity: 1;
+    background-color: $color-red;
+  }
+  &:active &__line-active {
+    background-color: $color-red-70;
+  }
+  &:hover &__arrow-state {
+    stroke: $color-red;
+  }
+  &:active &__arrow-state {
+    stroke: $color-red-70;
+  }
+  &__title {
+    transition: all .1s ease-in-out;
+    @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 20px);  
+  }
+
+  &__arrow {
+    position: relative;
+    font-size: 0;
+  }
+
+  &__line-active {
+    width: 20px;
+    height: 1px;
+    display: flex;
+    background-color: $color-black;
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__arrow-state {
+    transition: all 0.2s ease-in-out;
+  }
+}
+
