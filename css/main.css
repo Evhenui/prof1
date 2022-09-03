@@ -1834,6 +1834,13 @@ label {
   font-size: 0;
 }
 
+.test {
+  background-repeat: no-repeat;
+  background-image: url("/icon/Property 1=2.png");
+  width: 44px;
+  height: 44px;
+}
+
 .footer {
   background-color: #141414;
 }
