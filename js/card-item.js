@@ -9,7 +9,7 @@ export let cardItem = function() {
 
     if(cardItem !== null) {
         const items = cardItem.querySelectorAll('[data-card-color-item]'),
-              likeButton = cardItem.querySelector('[data-card-button-like]');
+              likeButton = document.querySelectorAll('[data-card-button-like]');
 
         items.forEach((item) => {
             item.addEventListener("click", function () {
@@ -17,9 +17,12 @@ export let cardItem = function() {
               item.classList.add('active');
             });
         });
-
-        likeButton.addEventListener('click', function() {
-            this.classList.toggle('active');
+        likeButton.forEach(item=> {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                this.classList.toggle('active');
+            })
         })
+        
     }
 }

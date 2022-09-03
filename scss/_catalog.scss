@@ -6,6 +6,11 @@
             @include padding-mob;
         }
     }
+    .catalog__page-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
 
     &__name-page {
         margin-bottom: 40px;

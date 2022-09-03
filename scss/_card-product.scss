@@ -2,7 +2,6 @@
     padding-top: 68px;
     &__page {
         @extend %size-page;
-        padding: 16px 48px 20px 48px;
     }
 }
 
@@ -141,6 +140,7 @@
     }
 
     &__title {
+        text-transform: uppercase;
         @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
     }
 
@@ -491,7 +491,7 @@
 }
 .characteristics {
     position: relative;
-    margin-bottom: 180px;
+    margin-bottom: 80px;
     scroll-margin-top: 120px;
     &__wrapper {
         @extend %size-page;     
@@ -499,11 +499,14 @@
     }
 
     &__main {
-        padding: 80px 48px ;
+        padding: 84px 48px 80px 48px;
         max-width: 880px;
         width: 100%;
         background-color: $color-gray-5;
         border-radius: 0px 44px 44px 0px;
+        @include __960 {
+            padding: 84px 16px 80px 16px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -538,6 +541,7 @@
 
     &__title {
         margin-bottom: 52px;
+        text-transform: uppercase;
     }
 
     &.active &__details {
@@ -561,17 +565,26 @@
         align-items: baseline;
         -moz-column-gap: 8px;
         column-gap: 8px;
+        @include __520 {
+            max-width: 172px;  
+        }
     }
 
     &__characteristic-name {
         white-space: nowrap;
         @include text( $size: 0.875rem, $textAlign: left, $color: #4E4B4B, $fontWeight: 600, $lineHeight: 20px);
+        @include __520 {
+            white-space: normal;
+        }
     }
 
     &__line {
         width: 100%;
         height: 1px;
         background-color: $color-gray-20;
+        @include __520 {
+            
+        }
     }
 
     &__details-parameter-wrapper {
@@ -583,6 +596,12 @@
         max-width: 490px;
         width: 100%;
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);
+        @include __960 {
+            max-width: 300px;  
+        }
+        @include __520 {
+            max-width: 190px;  
+        }
     }
 
     &__open-all-information {
@@ -592,6 +611,9 @@
         align-items: center;
         justify-content: right;
         margin: 0 auto;
+        @include __960 {
+            margin: 0;
+        }
     }
 
     &__open-all-line, &__open-all-line-hidden {
@@ -710,12 +732,16 @@
     text-transform: uppercase;
     @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);
 }
+
 .reviews {
     margin-bottom: 160px;
     scroll-margin-top: 150px;
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
+        @include __960 {
+            @include padding-mob;
+        }
     }
 
     &__main {
@@ -725,14 +751,18 @@
 
     &__title {
         margin-bottom: 48px;
+        text-transform: uppercase;
     }
 
     &__user-rating {
         @extend %centre-space-end;
         margin-bottom: 44px;
-    }
-
-    &__rating-info {
+        @include __960 {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 40px;
+            margin-bottom: 48px;
+        }
     }
 
     &__subtitle {
@@ -749,6 +779,9 @@
         padding: 16px 0;
         max-width: 191px;
         width: 100%;
+        @include __960 {
+            max-width: 343px;
+        }
     }
 
     &__grade {
@@ -760,12 +793,6 @@
     &__balls {
         text-transform: uppercase;
         @include text( $size: 2rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 700, $lineHeight: 44px);
-    }
-
-    &__reviews-balls {
-    }
-
-    &__stars {
     }
 
     &__description {
@@ -829,9 +856,6 @@
         margin-bottom: 48px;
     }
 
-    &__review-grade {
-    }
-
     &__review-header {
         @extend %centre-space-between;
     }
@@ -840,19 +864,9 @@
         font-size: 0;
     }
 
-    &__review-comments.admin {
-       
-    }
-
     &__section-review-answer-wrapper {
         max-width: 720px;
         width: 100%;
-    }
-
-    &__section-arrow {
-    }
-
-    &__arrow {
     }
 
     &__button-show-all:hover &__arrow-line {
@@ -887,12 +901,12 @@
         display: none;
     }
 
-    &__reviews-comments {
+    &__review-comments {
+        padding-left: 24px;
+        @include __960 {
+            padding: 0;
+        }
     }
-
-    &__review-title {
-    }
-
 
     &__review-data {
         margin-bottom: 4px;
@@ -900,12 +914,10 @@
         &.user, &.admin {
             margin: 0;
             font-size: 0.875rem;
-            padding-left: 24px;
         }
         &.admin {
             padding: 0;
         }
-
     }
 
     &__button-show-all {
@@ -917,13 +929,10 @@
             max-width: 113px;
         }
     }
-
 }
-
 
 .recommendation {
     scroll-margin-top: 160px;
-
     &__wrapper {
         @extend %size-page; 
         padding-bottom: 100px;
@@ -931,13 +940,20 @@
     }
 
     &__title {
+        text-transform: uppercase;
         text-align: center;
-        margin-bottom: 38px;
+        margin-bottom: 48px;
         @extend %padding-country;
+        @include __960 {
+            @include padding-mob;
+        }
     }
 
     &__slider-footer {
         padding-left: 38px;
+        @include __960 {
+            padding-left: 6px;
+        }
     }
 
     &__slider {
@@ -945,24 +961,22 @@
         height: 448px;
         margin-bottom: 23px;
         z-index: 0;
-        
+        @include __960 {
+            margin-bottom: 23px; 
+        }  
         &.swiper {
             padding: 10px 0 0 10px;
         }
     }
 
-    &__slider-wrapper {
-    }
-
-
-
     &__slider-navigation {
         display: flex;
         height: 44px;
         align-items: center;
-    }
-
-    &__slider-pagination {
+        @include __960 {
+            margin-bottom: 23px; 
+            height: 2px;
+        }
     }
 
     &__slider-button-prev.swiper-button-prev,
@@ -974,11 +988,15 @@
         &::after {
             display: none;
         }
+        @include __960 {
+            display: none;
+        }
     }
 
     .swiper-scrollbar.swiper-scrollbar-horizontal {
         position: static;
         background-color: $color-gray-30;
+        height: 2px;
         .swiper-scrollbar-drag {
             background-color: $color-black;
         }
@@ -992,6 +1010,7 @@
     &__slider-button-prev.swiper-button-disabled {
         visibility: hidden;
     }
+
     &__slider-button-next.swiper-button-disabled {
         visibility: hidden;
     }
@@ -999,6 +1018,7 @@
     &__slider-button-prev-line {
         left: 23px;
     } 
+
     &__slider-button-next-line {
         left: 0;
     } 
@@ -1007,7 +1027,7 @@
         width: 20px;
         height: 1px;
         display: flex;
-        background-color: #2D2D2D;
+        background-color: $color-black;
         position: absolute;
         top: 22px;
         opacity: 0;
@@ -1017,14 +1037,17 @@
     &__slider-button-prev:hover &__slider-button-prev-svg {
         stroke: $color-red;
     }
+
     &__slider-button-prev:active &__slider-button-prev-svg {
         stroke: $color-red-70;
     }
+
     &__slider-button-prev:hover &__slider-button-prev-line {
         background-color: $color-red;
         opacity: 1;
         left: 13px;
     }
+
     &__slider-button-prev:active &__slider-button-prev-line {
         background-color: $color-red-70;
     }
@@ -1032,22 +1055,24 @@
     &__slider-button-next:hover &__slider-button-next-svg {
         stroke: $color-red;
     }
+
     &__slider-button-next:active &__slider-button-next-svg {
         stroke: $color-red-70;
     }
+
     &__slider-button-next:hover &__slider-button-next-line {
         background-color: $color-red;
         opacity: 1;
         left: 13px;
     }
+
     &__slider-button-next:active &__slider-button-next-line {
         background-color: $color-red-70;
     }
 
     &__slider-scrollbar-container {
-       background-color: #E0E0E0;
-    }
-    
+       background-color: $color-gray-30;
+    } 
 }
 
 .main-slider {
@@ -1224,4 +1249,4 @@
         display: block;
       }
     }
-  }
+}

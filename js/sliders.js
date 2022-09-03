@@ -19,6 +19,29 @@ export let sliders = function() {
           el: '.swiper-scrollbar',
           draggable: true
         },
+        breakpoints: {
+          0: { 
+            slidesPerView: 1.1, 
+          }, 
+          400: { 
+            slidesPerView: 1.3, 
+          }, 
+          520: { 
+            slidesPerView: 1.5, 
+          },
+          600: { 
+            slidesPerView: 2, 
+          },
+          820: { 
+            slidesPerView: 2.5, 
+          },
+          1000: { 
+            slidesPerView: 3, 
+          },
+          1300: { 
+            slidesPerView: 4, 
+          }
+        }
       });
       
       const sliderMain = new Swiper('.main-slider__container-navigation', {
@@ -63,82 +86,85 @@ export let sliders = function() {
     }
 
     if(mainPage !== null) {
-
-      const sliderBestseller = new Swiper('.current-offers__slider-bestseller', {
-        direction: 'horizontal',
-        slidesPerView: 4, 
-        spaceBetween: 32, 
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        navigation: {
-          nextEl: '.current-offers__slider-bestseller-button-next',
-          prevEl: '.current-offers__slider-bestseller-button-prev',
-        },
-        scrollbar: {
-          el: '.current-offers__bestseller-scrollbar',
-          draggable: true
-        },
-        breakpoints: {
-          0: { 
-            slidesPerView: 1.1, 
-          }, 
-          400: { 
-            slidesPerView: 1.3, 
-          }, 
-          520: { 
-            slidesPerView: 1.5, 
-          },
-          600: { 
-            slidesPerView: 2, 
-          },
-          820: { 
-            slidesPerView: 2.5, 
-          },
-          1000: { 
-            slidesPerView: 3, 
-          },
-          1300: { 
+        const currentOffers = mainPage.querySelector('[data-current-offers]');
+        if(currentOffers !== null) {
+          const sliderBestseller = new Swiper('.current-offers__slider-bestseller', {
+            direction: 'horizontal',
             slidesPerView: 4, 
-          }
+            spaceBetween: 32, 
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            navigation: {
+              nextEl: '.current-offers__slider-bestseller-button-next',
+              prevEl: '.current-offers__slider-bestseller-button-prev',
+            },
+            scrollbar: {
+              el: '.current-offers__bestseller-scrollbar',
+              draggable: true
+            },
+            breakpoints: {
+              0: { 
+                slidesPerView: 1.1, 
+              }, 
+              400: { 
+                slidesPerView: 1.3, 
+              }, 
+              520: { 
+                slidesPerView: 1.5, 
+              },
+              600: { 
+                slidesPerView: 2, 
+              },
+              820: { 
+                slidesPerView: 2.5, 
+              },
+              1000: { 
+                slidesPerView: 3, 
+              },
+              1300: { 
+                slidesPerView: 4, 
+              }
+            }
+          });
+    
+          const sliderNovelties = new Swiper('.current-offers__slider-novelties', {
+            direction: 'horizontal',
+            slidesPerView: 4, 
+            spaceBetween: 32, 
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.current-offers__slider-novelties-button-next',
+              prevEl: '.current-offers__slider-novelties-button-prev',
+            },
+            scrollbar: {
+              el: '.current-offers__novelties-scrollbar',
+              draggable: true
+            },
+          });
+    
+          const sliderStock = new Swiper('.current-offers__slider-stock', {
+            direction: 'horizontal',
+            slidesPerView: 4, 
+            spaceBetween: 32, 
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.current-offers__slider-stock-button-next',
+              prevEl: '.current-offers__slider-stock-button-prev',
+            },
+            scrollbar: {
+              el: '.current-offers__stock-scrollbar',
+              draggable: true
+            },
+          });
         }
-      });
-
-      const sliderNovelties = new Swiper('.current-offers__slider-novelties', {
-        direction: 'horizontal',
-        slidesPerView: 4, 
-        spaceBetween: 32, 
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.current-offers__slider-novelties-button-next',
-          prevEl: '.current-offers__slider-novelties-button-prev',
-        },
-        scrollbar: {
-          el: '.current-offers__novelties-scrollbar',
-          draggable: true
-        },
-      });
-
-      const sliderStock = new Swiper('.current-offers__slider-stock', {
-        direction: 'horizontal',
-        slidesPerView: 4, 
-        spaceBetween: 32, 
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.current-offers__slider-stock-button-next',
-          prevEl: '.current-offers__slider-stock-button-prev',
-        },
-        scrollbar: {
-          el: '.current-offers__stock-scrollbar',
-          draggable: true
-        },
-      });
+     
     }
  
 }

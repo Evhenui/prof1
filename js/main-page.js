@@ -1,7 +1,7 @@
 export let mainPage = function() {
     const mainPage = document.querySelector('[data-main]'),
-          productSelection = mainPage.querySelector('[data-product-selection]'),
-          currentOffersSection = mainPage.querySelector('[data-current-offers]');
+          productSelection = document.querySelector('[data-product-selection]'),
+          currentOffersSection = document.querySelector('[data-current-offers]');
 
     function changeLable (items, dropdown) {
         items.forEach((item)=> {

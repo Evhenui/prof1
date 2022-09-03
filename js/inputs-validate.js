@@ -239,7 +239,10 @@ export let inputsValidate = function() {
           }
 
           if(mainSection !== null) {
-            const inputs = mainSection.querySelectorAll('[data-input-main]'),
+            const stayPartnerSection = mainSection.querySelector('[data-stey-partner-section]');
+
+            if(stayPartnerSection !== null) {
+                const inputs = mainSection.querySelectorAll('[data-input-main]'),
                   button = mainSection.querySelector('[data-button-stay-partner]'),
                   inputPhone = mainSection.querySelector('[data-tel-input]'),
                   containerInputPhone = mainSection.querySelector('[data-input-phone-main-container]'),
@@ -282,6 +285,7 @@ export let inputsValidate = function() {
                     })
                 }
                 inputsChange(inputs, button)
-          }
-     
+            }
+            
+    }  
 }

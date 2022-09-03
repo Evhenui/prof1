@@ -2457,6 +2457,10 @@ label {
     padding-right: 16px;
   }
 }
+.catalog .catalog__page-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
 .catalog__name-page {
   margin-bottom: 40px;
 }
@@ -2539,7 +2543,12 @@ label {
   background-color: #FEFEFE;
 }
 .page__wrapper {
-  padding: 16px 0 20px 0;
+  padding: 16px 48px 20px 48px;
+}
+@media (max-width: 960px) {
+  .page__wrapper {
+    padding: 16px 16px 20px 16px;
+  }
 }
 .page__title-link {
   transition: all 0.1s ease-in-out;
@@ -2557,10 +2566,6 @@ label {
 .card-product {
   padding-top: 68px;
 }
-.card-product__page {
-  padding: 16px 48px 20px 48px;
-}
-
 .header-page-navigation {
   border-bottom: 1px solid #E0E0E0;
   position: -webkit-sticky;
@@ -2682,6 +2687,7 @@ label {
   display: none;
 }
 .main-information__title {
+  text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -3012,18 +3018,23 @@ label {
 
 .characteristics {
   position: relative;
-  margin-bottom: 180px;
+  margin-bottom: 80px;
   scroll-margin-top: 120px;
 }
 .characteristics__wrapper {
   background-color: #FEFEFE;
 }
 .characteristics__main {
-  padding: 80px 48px;
+  padding: 84px 48px 80px 48px;
   max-width: 880px;
   width: 100%;
   background-color: #FAFAFA;
   border-radius: 0px 44px 44px 0px;
+}
+@media (max-width: 960px) {
+  .characteristics__main {
+    padding: 84px 16px 80px 16px;
+  }
 }
 .characteristics__main::before {
   content: "";
@@ -3055,6 +3066,7 @@ label {
 }
 .characteristics__title {
   margin-bottom: 52px;
+  text-transform: uppercase;
 }
 .characteristics.active .characteristics__details {
   display: flex;
@@ -3076,6 +3088,11 @@ label {
   -moz-column-gap: 8px;
   column-gap: 8px;
 }
+@media (max-width: 520px) {
+  .characteristics__details-wrapper {
+    max-width: 172px;
+  }
+}
 .characteristics__characteristic-name {
   white-space: nowrap;
   font-family: "Open Sans", sans-serif;
@@ -3084,6 +3101,11 @@ label {
   line-height: 20px;
   text-align: left;
   color: #4E4B4B;
+}
+@media (max-width: 520px) {
+  .characteristics__characteristic-name {
+    white-space: normal;
+  }
 }
 .characteristics__line {
   width: 100%;
@@ -3104,6 +3126,16 @@ label {
   text-align: left;
   color: #141414;
 }
+@media (max-width: 960px) {
+  .characteristics__characteristic-description {
+    max-width: 300px;
+  }
+}
+@media (max-width: 520px) {
+  .characteristics__characteristic-description {
+    max-width: 190px;
+  }
+}
 .characteristics__open-all-information {
   max-width: 203px;
   width: 100%;
@@ -3111,6 +3143,11 @@ label {
   align-items: center;
   justify-content: right;
   margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .characteristics__open-all-information {
+    margin: 0;
+  }
 }
 .characteristics__open-all-line, .characteristics__open-all-line-hidden {
   width: 20px;
@@ -3234,15 +3271,30 @@ label {
   margin-bottom: 160px;
   scroll-margin-top: 150px;
 }
+@media (max-width: 960px) {
+  .reviews__wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 .reviews__main {
   max-width: 832px;
   width: 100%;
 }
 .reviews__title {
   margin-bottom: 48px;
+  text-transform: uppercase;
 }
 .reviews__user-rating {
   margin-bottom: 44px;
+}
+@media (max-width: 960px) {
+  .reviews__user-rating {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 40px;
+    margin-bottom: 48px;
+  }
 }
 .reviews__subtitle {
   font-family: "Open Sans", sans-serif;
@@ -3262,6 +3314,11 @@ label {
   padding: 16px 0;
   max-width: 191px;
   width: 100%;
+}
+@media (max-width: 960px) {
+  .reviews__button-send-rewiew {
+    max-width: 343px;
+  }
 }
 .reviews__grade {
   display: flex;
@@ -3369,6 +3426,14 @@ label {
 .reviews__arrow-mobile {
   display: none;
 }
+.reviews__review-comments {
+  padding-left: 24px;
+}
+@media (max-width: 960px) {
+  .reviews__review-comments {
+    padding: 0;
+  }
+}
 .reviews__review-data {
   margin-bottom: 4px;
   font-family: "Open Sans", sans-serif;
@@ -3381,7 +3446,6 @@ label {
 .reviews__review-data.user, .reviews__review-data.admin {
   margin: 0;
   font-size: 0.875rem;
-  padding-left: 24px;
 }
 .reviews__review-data.admin {
   padding: 0;
@@ -3404,17 +3468,34 @@ label {
   z-index: 0;
 }
 .recommendation__title {
+  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 38px;
+  margin-bottom: 48px;
+}
+@media (max-width: 960px) {
+  .recommendation__title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 .recommendation__slider-footer {
   padding-left: 38px;
+}
+@media (max-width: 960px) {
+  .recommendation__slider-footer {
+    padding-left: 6px;
+  }
 }
 .recommendation__slider {
   width: 100%;
   height: 448px;
   margin-bottom: 23px;
   z-index: 0;
+}
+@media (max-width: 960px) {
+  .recommendation__slider {
+    margin-bottom: 23px;
+  }
 }
 .recommendation__slider.swiper {
   padding: 10px 0 0 10px;
@@ -3423,6 +3504,12 @@ label {
   display: flex;
   height: 44px;
   align-items: center;
+}
+@media (max-width: 960px) {
+  .recommendation__slider-navigation {
+    margin-bottom: 23px;
+    height: 2px;
+  }
 }
 .recommendation__slider-button-prev.swiper-button-prev, .recommendation__slider-button-next.swiper-button-next {
   position: static;
@@ -3433,9 +3520,15 @@ label {
 .recommendation__slider-button-prev.swiper-button-prev::after, .recommendation__slider-button-next.swiper-button-next::after {
   display: none;
 }
+@media (max-width: 960px) {
+  .recommendation__slider-button-prev.swiper-button-prev, .recommendation__slider-button-next.swiper-button-next {
+    display: none;
+  }
+}
 .recommendation .swiper-scrollbar.swiper-scrollbar-horizontal {
   position: static;
   background-color: #E0E0E0;
+  height: 2px;
 }
 .recommendation .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag {
   background-color: #2D2D2D;
@@ -4106,6 +4199,17 @@ label {
   .current-offers__button-hidden {
     display: flex;
     justify-content: right;
+  }
+}
+.current-offers__navigation {
+  display: flex;
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+}
+@media (max-width: 960px) {
+  .current-offers__navigation {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
   }
 }
 .current-offers__navigation-item {
