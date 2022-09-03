@@ -1025,7 +1025,7 @@
         <section data-main class="main-page">
             <div class="main-page__wrapper">
                 <section class="title-slider"></section>
-                <section class="product-selection">
+                <section data-product-selection class="product-selection">
                     <div class="product-selection__wrapper">
                         <div class="product-selection__image-wrapper">
                             <img class="product-selection__image" src="img/bicycle.png" alt="image" width="508" height="508">
@@ -1033,7 +1033,7 @@
                         <section class="product-selection__inputs">
                             <h1 class="main-title product-selection__title">Подбор товара</h1>
                             <section class="product-selection__sex">
-                                <div class="product-selection__wrapper-input-checkbox">
+                                <div data-checkbox-container class="product-selection__wrapper-input-checkbox">
                                     <div class="product-selection__input-image-wrapper">
                                         <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.3749 17.875V40.5625C18.3718 40.8342 18.423 41.1038 18.5256 41.3554C18.6281 41.6071 18.7799 41.8357 18.9721 42.0278C19.1642 42.22 19.3928 42.3718 19.6444 42.4743C19.8961 42.5769 20.1657 42.6281 20.4374 42.625V42.625C20.7091 42.6281 20.9787 42.5769 21.2303 42.4743C21.482 42.3718 21.7106 42.22 21.9027 42.0278C22.0949 41.8357 22.2467 41.6071 22.3492 41.3554C22.4518 41.1038 22.503 40.8342 22.4999 40.5625" stroke="#616161" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -1043,11 +1043,11 @@
                                         </svg>   
                                     </div>
                                     <div class="product-selection__checkbox-section">
-                                        <input checked class="product-selection__checkbox" type="radio" name="rb" id="rb2"> 
+                                        <input data-checkbox-input class="product-selection__checkbox" type="radio" name="rb" id="rb2"> 
                                         <label class="product-selection__checkbox-label" for="rb2">Женщина</label>
                                     </div>
                                 </div>
-                                <div class="product-selection__wrapper-input-checkbox">
+                                <div data-checkbox-container class="product-selection__wrapper-input-checkbox active">
                                     <div class="product-selection__input-image-wrapper">
                                         <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.3751 31.625V40.5625C18.372 40.8342 18.4232 41.1038 18.5258 41.3554C18.6283 41.6071 18.7802 41.8357 18.9723 42.0278C19.1644 42.22 19.393 42.3718 19.6447 42.4743C19.8963 42.5769 20.1659 42.6281 20.4376 42.625V42.625C20.7093 42.6281 20.9789 42.5769 21.2306 42.4743C21.4822 42.3718 21.7108 42.22 21.903 42.0278C22.0951 41.8357 22.2469 41.6071 22.3495 41.3554C22.452 41.1038 22.5032 40.8342 22.5001 40.5625" stroke="#141414" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -1058,11 +1058,11 @@
                                         </svg>    
                                     </div>
                                     <div class="product-selection__checkbox-section">
-                                        <input checked class="product-selection__checkbox" type="radio" name="rb" id="rb2"> 
-                                        <label class="product-selection__checkbox-label" for="rb2">Ребенок</label>
+                                        <input checked data-checkbox-input class="product-selection__checkbox" type="radio" name="rb" id="rb3"> 
+                                        <label class="product-selection__checkbox-label" for="rb3">Ребенок</label>
                                     </div>
                                 </div>
-                                <div class="product-selection__wrapper-input-checkbox">
+                                <div data-checkbox-container class="product-selection__wrapper-input-checkbox">
                                     <div class="product-selection__input-image-wrapper">
                                         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.0007 29V33.5965C17.9767 34.9761 18.5403 36.0109 20 35.9999C21.4597 36.0109 22.0233 34.9761 21.9993 33.5965V29" stroke="#616161" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -1073,8 +1073,8 @@
                                         </svg>     
                                     </div>
                                     <div class="product-selection__checkbox-section">
-                                        <input checked class="product-selection__checkbox" type="radio" name="rb" id="rb2"> 
-                                        <label class="product-selection__checkbox-label" for="rb2">Мужчина</label>
+                                        <input data-checkbox-input class="product-selection__checkbox" type="radio" name="rb" id="rb1"> 
+                                        <label class="product-selection__checkbox-label" for="rb1">Мужчина</label>
                                     </div>
                                 </div>
                             </section>
@@ -1260,7 +1260,7 @@
                                 <p class="stay-partner__subtitle">Если у вас есть вопросы о наших продуктах или услугах, воспользуйтесь формой обратной связи.</p>
                             </section>
                             <section class="stay-partner__button-wrapper">
-                                <button class="stay-partner__button btn-arrow-right">
+                                <button class="stay-partner__button-send btn-arrow-right">
                                     <span class="stay-partner__button-title btn-arrow-right__title">Подробнее</span>
                                     <div class="stay-partner__button-arrorw btn-arrow-right__arrow">
                                         <span class="stay-partner__button-line-active btn-arrow-right__line-active"></span>

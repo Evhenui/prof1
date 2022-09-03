@@ -10,51 +10,150 @@
 .product-selection {
 
     &__wrapper {
+        @extend %size-page;
+        @extend %padding-country;
+        justify-content: space-between;
+        display: flex;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-image: url('/img/backgroung_4.png');
+        @include __960 {
+            padding: 80px 16px;
+            justify-content: center;
+            background-position: center;
+            background-image: url('/img/backgroung_mobile.png');
+        }
     }
 
     &__image-wrapper {
+        max-width: 508px;
+        width: 100%;
+        @include __960 {
+            display: none;
+        }
     }
 
     &__image {
+
     }
 
     &__inputs {
+        max-width: 400px;
+        width: 100%;
+        @include __1050 {
+            max-width: 343px;
+        }
     }
 
-    &__title {
+    &__title.main-title {
+        margin-bottom: 48px;
+        @include __960 {
+            text-align: center;
+        }
     }
 
     &__sex {
+        @extend %centre-space-between;
+        margin-bottom: 10px;
     }
 
     &__wrapper-input-checkbox {
+        padding-right: 8px;
+        cursor: pointer;
+        position: relative;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $color-red; 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .2s ease-in-out;
+        }
+        &.active {
+            &::after { opacity: 1; }  
+        }
+        &:hover {
+            &::after { opacity: 1; }
+        }
     }
 
+
     &__input-image-wrapper {
+        @extend %flex-center-horizontal;
+        margin-bottom: 8px;
     }
 
     &__checkbox-section {
+        @extend %left-flex;
+        column-gap: 8px;
+        padding-bottom: 8px;
+    }
+
+    &__checkbox {
+        margin: 0;
+        position: relative;
+        height: 16px;
+        width: 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid $color-gray-60;
+        }
+    }
+
+    &__checkbox:checked::after { 
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $color-black;
+        transform: translate(-50%, -50%);
+        visibility: visible;
     }
 
     &__checkbox {
     }
 
     &__checkbox-label {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
 
     &__dropdowns {
     }
 
     &__button {
+        width: 100%;
+        padding: 16px 0;
+        margin-bottom: 20px;
     }
 
     &__search {
+       @extend %flex-center-horizontal;
+       column-gap: 12px;
     }
 
     &__search-title {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
 
     &__search-result {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
     }
 }
 .main-title {
@@ -160,6 +259,13 @@
         background-repeat: no-repeat;
         background-position: right, bottom;
         padding-top: 168px;
+        @include __960 {
+            @include padding-mob;
+            flex-direction: column-reverse;
+            align-items: center;
+            row-gap: 64px;
+            background-position: 20px 20px;
+        }
     }
 
     &__inputs-wrapper {
@@ -192,6 +298,12 @@
     &__description-wrapper {
         max-width: 564px;
         width: 100%;
+        @include __1150 {
+            max-width: 380px;
+        }
+        @include __960 {
+            padding-bottom: 64px;
+        }
     }
 
     &__dropdown {

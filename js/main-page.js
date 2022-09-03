@@ -1,5 +1,6 @@
 export let mainPage = function() {
-    const mainPage = document.querySelector('[data-main]');
+    const mainPage = document.querySelector('[data-main]'),
+          productSelection = mainPage.querySelector('[data-product-selection]');
 
     function changeLable (items, dropdown) {
         items.forEach((item)=> {
@@ -55,5 +56,18 @@ export let mainPage = function() {
 
 
     }
-  
+    
+    if(productSelection !== null) {
+        const containers = productSelection.querySelectorAll('[data-checkbox-container]');
+             
+              containers.forEach(itemContainer => {
+                itemContainer.addEventListener('click', function(event) {
+                    delActive(containers);
+                    const self = event.currentTarget;
+                    const targetInput = self.querySelector('[data-checkbox-input]');
+                    targetInput.checked = true;
+                    itemContainer.classList.add('active');
+                })
+              })
+    }
 }
