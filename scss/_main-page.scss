@@ -8,7 +8,7 @@
 }
 
 .product-selection {
-
+    margin-bottom: 204px;
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
@@ -156,13 +156,256 @@
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
     }
 }
-.main-title {
+
+
+.current-offers {
+
+    &__wrapper {
+        @extend %size-page;
+        padding: 0 38px 0 38px;
+        @include __960 {
+            @include padding-mob;
+        }
+    }
+
+    &__header {
+        @extend %centre-space-between;
+        margin-bottom: 38px;
+        padding: 0 10px;
+    }
+
+    &__button {
+        max-width: 173px;
+        @include __960 {
+            display: none;
+        }
+        &.hidden {
+            @include __960 {
+                display: flex;
+            } 
+        }
+    }
+
+    &__button-hidden {
+        display: none;
+        @include __960 {
+            display: flex;
+            justify-content: right;
+        }
+    }
+
+    &__navigation {
+    }
+
+    &__navigation-item {
+        position: relative;
+        transition: all .1s ease-in-out;
+        display: inline-block;
+        padding: 8px 12px;
+        @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 600, $lineHeight: 28px);  
+        &:hover {
+            color: $color-red;
+            &::after {
+                width: 100%;
+            }      
+        }
+        &.active {
+            color: $color-gray-100;
+            &::after {
+                width: 100%;
+            }
+        }
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: $color-red;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all .2s ease-in-out;
+        }
+        @include __960 {
+            font-size: 0.9375rem;
+        }
+    }
+
+    &__accordions {
+    }
+
+    &__accordion {
+        position: relative;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+    &__slider-bestseller.swiper, &__slider-novelties.swiper, &__slider-stock.swiper {
+        padding: 10px;
+    }
+
+    &__slider-bestseller {
+    }
+
+    &__slider-wrapper {
+    }
+
+    &__slider {
+        margin-bottom: 33px;
+    }
+
+    &__slider-navigation {
+        display: flex;
+        height: 44px;
+        align-items: center;
+    }
+
+    &__slider-prev.swiper-button-prev,
+    &__slider-next.swiper-button-next {
+        position: static;
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        &::after {
+            display: none;
+        }
+        @include __960 {
+            display: none;
+        }
+    }
+
+    &__slider-prev.swiper-button-disabled,
+    &__slider-next.swiper-button-disabled {
+        visibility: hidden;
+    }
+
+    &__scroll.swiper-scrollbar.swiper-scrollbar-horizontal {
+        position: static;
+        background-color: $color-gray-30;
+        height: 2px;
+        z-index: 1;
+    }
+
+    &__slider-button-prev-line {
+        left: 23px;
+    } 
+    &__slider-button-next-line {
+        left: 0;
+    } 
+
+    &__slider-button-prev-line, &__slider-button-next-line {
+        width: 20px;
+        height: 1px;
+        display: flex;
+        background-color: #2D2D2D;
+        position: absolute;
+        top: 22px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__prev-wrapper, &__next-wrapper {
+        position: relative;
+        font-size: 0;
+    }
+
+    &__slider-button-prev-line {
+        width: 20px;
+        height: 1px;
+        display: flex;
+        background-color: #2D2D2D;
+        position: absolute;
+        top: 22px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__slider-prev:active &__slider-button-prev-svg {
+        stroke: $color-red-70;
+    }
+    &__slider-prev:active &__slider-button-prev-line {
+        background-color: $color-red-70;
+    }
+    &__slider-prev:hover &__slider-button-prev-svg {
+        stroke: $color-red;
+    }
+    &__slider-prev:hover &__slider-button-prev-line {
+        background-color: $color-red;
+        opacity: 1;
+        left: 13px;
+    }
+
+    &__slider-next:hover &__slider-button-next-svg {
+        stroke: $color-red;
+    }
+    &__slider-next:active &__slider-button-next-line {
+        background-color: $color-red-70;
+    }
+    &__slider-next:active &__slider-button-next-line {
+        background-color: $color-red-70;
+    }
+    &__slider-next:active &__slider-button-next-svg {
+        stroke: $color-red-70;
+    }
+    &__slider-next:hover &__slider-button-next-line {
+        background-color: $color-red;
+        opacity: 1;
+        left: 13px;
+    }
+    
+
+    .swiper-scrollbar-drag {
+        background-color: #2D2D2D;
+    }
+
+    &__prev-wrapper {
+    }
+
+    &__slider-button-prev-line {
+    }
+
+    &__slider-button-prev-svg {
+    }
+
+    &__bestseller-scrollbar {
+    }
+
+    &__slider-bestseller-button-next {
+    }
+
+    &__next-wrapper {
+    }
+
+    &__slider-button-next-line {
+    }
+
+    &__slider-button-next-svg {
+    }
+
+    &__slider-novelties {
+    }
+
+    &__slider-novelties-button-prev {
+    }
+
+    &__novelties-scrollbar {
+    }
+
+    &__slider-novelties-button-next {
+    }
+
+    &__slider-stock {
+    }
+
+    &__slider-stock-button-prev {
+    }
+
+    
+
+    &__slider-stock-button-next {
+    }
 }
-.btn-red {
-}
-
-
-
 
 
 .news {
@@ -343,10 +586,6 @@
     &__button-arrow-state {
     }
 }
-
-.name-register {
-}
-
 
 
 .type-of-trade-dropdown {

@@ -1,6 +1,7 @@
 export let mainPage = function() {
     const mainPage = document.querySelector('[data-main]'),
-          productSelection = mainPage.querySelector('[data-product-selection]');
+          productSelection = mainPage.querySelector('[data-product-selection]'),
+          currentOffersSection = mainPage.querySelector('[data-current-offers]');
 
     function changeLable (items, dropdown) {
         items.forEach((item)=> {
@@ -69,5 +70,20 @@ export let mainPage = function() {
                     itemContainer.classList.add('active');
                 })
               })
+    }
+
+    if(currentOffersSection !== null) {
+        const menuItems = currentOffersSection.querySelectorAll('[data-menu-item]'),
+              menuList = currentOffersSection.querySelectorAll('[data-select-list]');
+
+              menuItems.forEach((item, index) => {
+                item.addEventListener("click", function (event) {
+                  event.preventDefault();
+                  delActive(menuItems);
+                  delActive(menuList);
+                  item.classList.add('active');
+                  menuList[index].classList.add('active');
+                });
+              });
     }
 }

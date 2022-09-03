@@ -13,8 +13,8 @@ import {cardProduct} from './card-product.js';
 import {cardItem} from './card-item.js';
         cardItem();
 
-import {slidersCardProduct} from './sliders-card-product.js';
-        slidersCardProduct();
+import {sliders} from './sliders.js';
+        sliders();
 
 import {mainPage} from './main-page.js';
         mainPage();
