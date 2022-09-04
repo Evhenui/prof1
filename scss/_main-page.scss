@@ -358,57 +358,9 @@
         opacity: 1;
         left: 13px;
     }
-    
 
     .swiper-scrollbar-drag {
         background-color: #2D2D2D;
-    }
-
-    &__prev-wrapper {
-    }
-
-    &__slider-button-prev-line {
-    }
-
-    &__slider-button-prev-svg {
-    }
-
-    &__bestseller-scrollbar {
-    }
-
-    &__slider-bestseller-button-next {
-    }
-
-    &__next-wrapper {
-    }
-
-    &__slider-button-next-line {
-    }
-
-    &__slider-button-next-svg {
-    }
-
-    &__slider-novelties {
-    }
-
-    &__slider-novelties-button-prev {
-    }
-
-    &__novelties-scrollbar {
-    }
-
-    &__slider-novelties-button-next {
-    }
-
-    &__slider-stock {
-    }
-
-    &__slider-stock-button-prev {
-    }
-
-    
-
-    &__slider-stock-button-next {
     }
 }
 
@@ -419,7 +371,19 @@
         @extend %size-page;
         background-image: url('/img/backgroung_2.png'), url('/img/backgroung_1.png');
         background-repeat: no-repeat, no-repeat;
-        background-position: left, right;
+        background-position: left bottom, right bottom;
+        @include __1390 {
+            background-position: -150px bottom, right bottom;
+        }
+        @include __1250 {
+            background-position: -350px bottom, right bottom;
+        }
+        @include __1050 {
+            background-position: -550px bottom, right bottom;
+        }
+        @include __960 {
+            padding: 80px 16px 156px 16px;
+        }
     }
 
     &__header {
@@ -428,12 +392,32 @@
     }
 
     &__button {
-        max-width: 173px
+        max-width: 173px;
+        @include __960 {
+            display: none;
+        }
     }
 
     &__items-wrapper {
         align-items: stretch;
         @extend %centre-space-between;
+    }
+
+    &__slider {
+        padding: 1px;
+        margin-bottom: 32px;
+    }
+
+    &__mobile-button {
+        display: none;
+        @include __960 {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__button-mobile-hidden {
+        max-width: 173px;
     }
 
     &__item {
@@ -500,19 +484,24 @@
 
     &__wrapper {
         @extend %size-page;
-        padding: 135px 48px;
+        padding: 168px 48px;
         display: flex;
         justify-content: space-between;
         background-image: url('/img/backgroung_3.png');
         background-repeat: no-repeat;
-        background-position: right, bottom;
-        padding-top: 168px;
+        background-position: right top;
+        margin-bottom: 100px;
         @include __960 {
-            @include padding-mob;
+            padding: 80px 16px 0 16px;
             flex-direction: column-reverse;
             align-items: center;
             row-gap: 64px;
-            background-position: 20px 20px;
+            background-position: 50px -71px;
+            margin-bottom: 160px;
+        }
+
+        @include __407 {
+            background-position: -45px 0px;
         }
     }
 

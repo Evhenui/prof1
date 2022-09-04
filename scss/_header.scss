@@ -151,13 +151,13 @@
             transition: all .3s ease-in-out;
         }
         &.active {
-            background-color: $color-gray-10;
+            background-color: #F7F7F7;
             &::before {
                 opacity: 1;
             }
         }
         &:hover {
-            background-color: $color-gray-10;
+            background-color: #F7F7F7;
             &::before {
                 opacity: 1;
             }
@@ -410,7 +410,7 @@
         width: 100%;
         position: absolute;
         top: 68px;
-        left: 40px;
+        left: 0;
         background-color: $color-black;
         transition: all .2s ease-in-out;
         opacity: 0;
@@ -664,15 +664,15 @@
         border-top: 1px solid #4E4B4B;
         transition: all .2s ease-in-out;
         &:hover {
-            color: $color-red;
+            color: #F07585;
         }
         &:hover .header-navigation__account-arrow-svg-hover {
-            stroke: $color-red;
+            stroke: #F07585;
         }
         &:hover .header-navigation__line-active {
             opacity: 1;
             left: 11px;
-            background-color: $color-red;
+            background-color: #F07585;
         }
     }
 

@@ -153,6 +153,7 @@ export let inputsValidate = function() {
             inputEmail.addEventListener('input', function(){
               this.value = this.value.replace(/\s+/gi,'');
               exam(regEmail, inputEmail, button, containerInput);
+           
             });     
           }
 
@@ -247,7 +248,8 @@ export let inputsValidate = function() {
                   inputPhone = mainSection.querySelector('[data-tel-input]'),
                   containerInputPhone = mainSection.querySelector('[data-input-phone-main-container]'),
                   inputName = mainSection.querySelector('[data-input-name]'),
-                  containerInputName = mainSection.querySelector('[data-input-name-main-container]');
+                  containerInputName = mainSection.querySelector('[data-input-name-main-container]'),
+                  containers = mainSection.querySelectorAll('[data-input-main-item]');
                 
                 function exam(reg, input, container) {
                     if (!validate(reg, input.value) && input.value != "") {
@@ -272,6 +274,25 @@ export let inputsValidate = function() {
                     this.value = this.value.replace(/\s+/gi,'');
                     exam(regText, inputName, containerInputName);
                 }); 
+/*
+                button.addEventListener('click', () => {
+                    inputs.forEach((el, index) => {
+                    if(el.value === '') {
+                        containers[index].classList.add('error')
+                    }
+                })
+                })
+
+                inputs.forEach((item, index) => {
+                    item.addEventListener('input', ()=>{
+                        if(item.value === '') {
+                            containers[index].classList.add('error')
+                            console.log('err');
+                        } elsa
+                    })
+                })*/
+
+                
 
                 function inputsChange(inputs, button) {
                     inputs.forEach((item)=>{

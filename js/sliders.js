@@ -86,7 +86,8 @@ export let sliders = function() {
     }
 
     if(mainPage !== null) {
-        const currentOffers = mainPage.querySelector('[data-current-offers]');
+        const currentOffers = mainPage.querySelector('[data-current-offers]'),
+              newsSection = mainPage.querySelector('[data-news-section]');
         if(currentOffers !== null) {
           const sliderBestseller = new Swiper('.current-offers__slider-bestseller', {
             direction: 'horizontal',
@@ -164,7 +165,32 @@ export let sliders = function() {
             },
           });
         }
-     
+
+        if(newsSection !== null) {
+          const sliderNews = new Swiper('.news__slider', {
+            direction: 'horizontal',
+            slidesPerView: 3, 
+            spaceBetween: 32, 
+            watchOverflow: true,
+            breakpoints: {
+              1150: { 
+                slidesPerView: 3,
+              }, 
+              960: { 
+                slidesPerView: 2.2,
+              }, 
+              860: { 
+                slidesPerView: 2,
+              }, 
+              640: { 
+                slidesPerView: 1.8,
+              },
+              0: { 
+                slidesPerView: 1.15,
+              },
+            }
+          });
+        }
+       
     }
- 
 }

@@ -56,6 +56,9 @@
       $fontWeight: 700,
     );
     line-height: 24px;
+    &:hover {
+      color: $color-white;
+    }
   }
   &__form {
     max-width: 240px;
@@ -110,7 +113,10 @@
 }
 
 .footer-logo {
-  margin-bottom: 36px;
+  margin-bottom: 38px;
+  @include __960 {
+    margin-bottom: 36px;
+  }
 }
 
 .footer-text {
@@ -119,6 +125,9 @@
   &.timetable {
     max-width: 125px;
     width: 100%;
+    &:hover {
+      color: $color-gray-50;
+    }
   }
   &:last-child {
     margin-bottom: 0;

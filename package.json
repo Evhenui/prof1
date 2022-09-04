@@ -1,0 +1,28 @@
+{
+  "name": "profi-webpack",
+  "version": "1.0.0",
+  "description": "webpack project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evhenui/prof1.git"
+  },
+  "keywords": [
+    "profi",
+    "js",
+    "webpack"
+  ],
+  "author": "Vitchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evhenui/prof1/issues"
+  },
+  "homepage": "https://github.com/Evhenui/prof1#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
