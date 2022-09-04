@@ -7,6 +7,9 @@
       visibility: visible;
       opacity: 1;
       z-index: 5;
+      @include __860 {
+        z-index: 4;
+      }
     }
   
     &__mask {
@@ -20,7 +23,7 @@
       display: table;
       transition: all 0.3s ease;
       @media (max-width: 860px) {
-        z-index: 2;
+        z-index: 4;
       }
     }
   
@@ -28,6 +31,10 @@
       display: table-cell;
       vertical-align: middle;
       transition: all 0.3s ease;
+      padding-top: 96px;
+      @include __860 {
+        padding: 0;
+      }
     }
   
     &__container {
@@ -35,9 +42,14 @@
       margin: 0 auto;
       max-width: 460px;
       width: 100%;
-      background-color: #FFFFFF;
+      background-color: #F5F5F5;
       @media (max-width: 860px) {
         max-width: 375px;
+        max-height: 100vh;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
       }
     }
   
@@ -45,13 +57,13 @@
       padding: 0 4px 0 60px;
       background-color: $color-black;
       @media (max-width: 860px) {
-        background-color: $color-white;
-        padding: 68px 16px 20px 16px;
+        background-color: #F5F5F5;
+        padding: 24px 16px 20px 16px;
       }
     }
     &__close-modal {
       padding: 12px 16px 12px 0px;
-      background-color: $color-gray-10;
+      background-color: $color-black;
       display: none;
       justify-content: flex-end;
       @media (max-width: 860px) {
@@ -98,6 +110,9 @@
             left: 0;
             background: $color-white;
             transition: width .3s ease-in-out;
+            @include __860 {
+              background: $color-black;
+            }
           }
           &:hover {
             &::before {
@@ -118,6 +133,9 @@
 
     &__navigation-item.active &__navigation-link{
         color: $color-white;
+        @include __860 {
+          color: $color-black;
+        }
     }
   
     &__navigation-link {
@@ -125,6 +143,9 @@
       display: inline-block;
       transition: all .1s ease-in-out;
       @include text( $size: 1.25rem, $textAlign: center, $color: $color-gray-50, $fontWeight: 600, $lineHeight: 28px);
+      @include __860 {
+        color: $color-gray-60;;
+      }
     }
   
     &__close-button {
@@ -146,8 +167,12 @@
     }
 
     &__close-button:hover &__close-button-svg-line{
-        fill: $color-white;
-      }
+        fill: $color-red;
+    }
+
+    &__close-button:active &__close-button-svg-line{
+      fill: $color-red-70;
+  }
   
   
     &__close-button.mobile {
@@ -161,7 +186,7 @@
     &__main-wrapper {
       padding: 40px 40px 0 40px;
       @media (max-width: 860px) {
-        padding: 56px 16px 0 16px;
+        padding: 40px 16px 0 16px;
       }
     }
   
@@ -179,6 +204,10 @@
     &__input-wrapper.password {
         margin-bottom: 4px;
     }
+
+    &__input-wrapper.email {
+      margin-bottom: 24px;
+  }
   
     &__subtitle-wrapper {
       padding-left: 16px;
@@ -188,7 +217,11 @@
   
     &__subtitle-link {
       display: inline-block;
+      transition: all .1s ease-in-out;
       @include text( $size: 0.75rem, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight: 20px);
+      &:hover {
+        color: $color-red;
+      }
     }
   
     &__button {
@@ -206,8 +239,24 @@
       }
     }
 
+    &__forget-password {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    &__forget-password-title {
+      margin-bottom: 40px;
+      @include text( $size: 1.25rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+    }
+
     &__input {
         max-width: 100%;
+    }
+
+    &__input-wrapper.email-forget {
+      margin-bottom: 36px;
     }
 
     &__footer {
@@ -226,18 +275,26 @@
         font-size: 0;
     }
 
-    &__show-password-button:hover &__password-calm{
-        background-color: $color-gray-40;
+    &__show-password-button:hover &__show-password-svg{
+        fill: $color-black;
     }
 
-    &__password-active {
-        display: none;
+    &__show-password-button:hover &__show-password-svg-on-hover{
+      fill: $color-black;
+  }
+
+    &__show-password-button.active &__show-password-svg-on {
+      display: inline-block;
     }
 
-    &__password-calm {
-        transition: all 0.2s ease-in-out;
-        border-radius: 50%;
+    &__show-password-button.active &__show-password-svg-off {
+      display: none;
     }
+
+    &__show-password-svg-on {
+      display: none;
+    }
+
   
     &__footer-title {
       display: block;
@@ -251,13 +308,14 @@
         column-gap: 12px;
       
       @media (max-width: 860px) {
-        max-width: 100%;
+        column-gap: 0;
+        justify-content: space-between;
       }
     }
     
     &__button-social-network.facebook {
       @media (max-width: 860px) {
-        display: none;
+        
       }
     }
     &__button-social-network {
@@ -267,6 +325,9 @@
       column-gap: 10px;
       padding: 16px 0;   
       transition: all .1s ease-in-out;
+      @include __860 {
+        max-width: 163px;
+      }
     }
 
     &__form-register {
@@ -281,7 +342,57 @@
     }
 
     &__input-wrapper.password-re-register {
-        margin-bottom: 60px;
+        margin-bottom: 36px;
     }
   }
   
+
+  .modal-send-email {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 343px;
+    width: 100%;
+    /*visibility: hidden;
+    opacity: 0;*/
+    transition: all .2s ease-in-out;
+    box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+		&__wrap {
+      background: $color-white;
+		}
+
+		&__header {
+      padding: 8px 8px 0 0;
+      display: flex;
+      justify-content: flex-end;
+		}
+
+		&__close {
+      font-size: 0;
+		}
+
+		&__close-svg {
+		}
+
+		&__close-svg-line {
+		}
+
+		&__main {
+      padding: 0 24px 48px 24px;
+		}
+
+		&__title {
+      margin-bottom: 16px;
+      @include text( $size: 1rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+		}
+
+		&__subtitle {
+      @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+		}
+}

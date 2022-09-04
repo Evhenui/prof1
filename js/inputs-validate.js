@@ -175,7 +175,15 @@ export let inputsValidate = function() {
                   button = modalEnter.querySelector('[data-modal-button-enter]'),
                   buttonRegister = modalEnter.querySelector('[data-modal-button-register]'),
                   inputsEnter = modalEnter.querySelectorAll('[data-input-enter]'),
-                  inputsRegister = modalEnter.querySelectorAll('[data-input-register]');
+                  inputsRegister = modalEnter.querySelectorAll('[data-input-register]'),
+
+                  containerInputForget = modalEnter.querySelector('[data-input-email-modal-forget-container]'),
+                  inputEmailForget = modalEnter.querySelector('[data-input-forget]'),
+                  buttonForget = modalEnter.querySelector('[data-button-forget-send]'),
+                  modalSendedEmail = modalEnter.querySelector('[data-modal-sended]');
+                  
+
+                  
 
             buttonRegister.addEventListener('click', function() {
                 validPassword(inputPasswordRegister, inputPasswordReRegister, containerInputPasswordRegister, containerInputPasswordReRegister);
@@ -206,6 +214,11 @@ export let inputsValidate = function() {
                 this.value = this.value.replace(/\s+/gi,'');
                 exam(regEmail, inputEmailEnter, button, containerInputEmailEnter);
             }); 
+
+            inputEmailForget.addEventListener('input', function() {
+                this.value = this.value.replace(/\s+/gi,'');
+                exam(regEmail, inputEmailForget, buttonForget, containerInputForget); 
+            })
 
             inputPasswordEnter.addEventListener('input', function(){
                 this.value = this.value.replace(/\s+/gi,'');

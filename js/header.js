@@ -1,7 +1,8 @@
-export let headerProfi = function() {
+export let header = function() {
+ 
     const header = document.querySelector('[data-header]'),
           modalEnter = document.querySelector('[data-modal-enter]'),
-          blur = document.querySelector('[data-blur]')
+          blur = document.querySelector('[data-blur]');
 
     function addActiveClass(list) {
       list.forEach((item) => {

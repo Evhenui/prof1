@@ -2053,6 +2053,11 @@ label {
   opacity: 1;
   z-index: 5;
 }
+@media (max-width: 860px) {
+  .main-modal.active {
+    z-index: 4;
+  }
+}
 .main-modal__mask {
   position: fixed;
   top: 0;
@@ -2067,24 +2072,35 @@ label {
 }
 @media (max-width: 860px) {
   .main-modal__mask {
-    z-index: 2;
+    z-index: 4;
   }
 }
 .main-modal__wrapper {
   display: table-cell;
   vertical-align: middle;
   transition: all 0.3s ease;
+  padding-top: 96px;
+}
+@media (max-width: 860px) {
+  .main-modal__wrapper {
+    padding: 0;
+  }
 }
 .main-modal__container {
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   max-width: 460px;
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: #F5F5F5;
 }
 @media (max-width: 860px) {
   .main-modal__container {
     max-width: 375px;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  .main-modal__container::-webkit-scrollbar {
+    width: 0;
   }
 }
 .main-modal__header-wrapper {
@@ -2093,13 +2109,13 @@ label {
 }
 @media (max-width: 860px) {
   .main-modal__header-wrapper {
-    background-color: #FEFEFE;
-    padding: 68px 16px 20px 16px;
+    background-color: #F5F5F5;
+    padding: 24px 16px 20px 16px;
   }
 }
 .main-modal__close-modal {
   padding: 12px 16px 12px 0px;
-  background-color: #EDEDED;
+  background-color: #2D2D2D;
   display: none;
   justify-content: flex-end;
 }
@@ -2141,6 +2157,11 @@ label {
   background: #FEFEFE;
   transition: width 0.3s ease-in-out;
 }
+@media (max-width: 860px) {
+  .main-modal__navigation-item::before {
+    background: #2D2D2D;
+  }
+}
 .main-modal__navigation-item:hover::before {
   width: 100%;
 }
@@ -2153,6 +2174,11 @@ label {
 .main-modal__navigation-item.active .main-modal__navigation-link {
   color: #FEFEFE;
 }
+@media (max-width: 860px) {
+  .main-modal__navigation-item.active .main-modal__navigation-link {
+    color: #2D2D2D;
+  }
+}
 .main-modal__navigation-link {
   text-transform: uppercase;
   display: inline-block;
@@ -2163,6 +2189,11 @@ label {
   line-height: 28px;
   text-align: center;
   color: #ADADAD;
+}
+@media (max-width: 860px) {
+  .main-modal__navigation-link {
+    color: #949494;
+  }
 }
 .main-modal__close-button {
   font-size: 0;
@@ -2182,7 +2213,10 @@ label {
   fill: #949494;
 }
 .main-modal__close-button:hover .main-modal__close-button-svg-line {
-  fill: #FEFEFE;
+  fill: #E61E37;
+}
+.main-modal__close-button:active .main-modal__close-button-svg-line {
+  fill: #B81429;
 }
 .main-modal__close-button.mobile {
   font-size: 0;
@@ -2198,7 +2232,7 @@ label {
 }
 @media (max-width: 860px) {
   .main-modal__main-wrapper {
-    padding: 56px 16px 0 16px;
+    padding: 40px 16px 0 16px;
   }
 }
 .main-modal__enter {
@@ -2213,6 +2247,9 @@ label {
 .main-modal__input-wrapper.password {
   margin-bottom: 4px;
 }
+.main-modal__input-wrapper.email {
+  margin-bottom: 24px;
+}
 .main-modal__subtitle-wrapper {
   padding-left: 16px;
   font-size: 0;
@@ -2220,12 +2257,16 @@ label {
 }
 .main-modal__subtitle-link {
   display: inline-block;
+  transition: all 0.1s ease-in-out;
   font-family: "Open Sans", sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
   color: #F07585;
+}
+.main-modal__subtitle-link:hover {
+  color: #E61E37;
 }
 .main-modal__button {
   width: 100%;
@@ -2242,8 +2283,26 @@ label {
 .main-modal__register.active {
   display: block;
 }
+.main-modal__forget-password {
+  display: none;
+}
+.main-modal__forget-password.active {
+  display: block;
+}
+.main-modal__forget-password-title {
+  margin-bottom: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  color: #2D2D2D;
+}
 .main-modal__input {
   max-width: 100%;
+}
+.main-modal__input-wrapper.email-forget {
+  margin-bottom: 36px;
 }
 .main-modal__footer {
   padding: 20px 40px 40px 40px;
@@ -2260,15 +2319,20 @@ label {
   cursor: pointer;
   font-size: 0;
 }
-.main-modal__show-password-button:hover .main-modal__password-calm {
-  background-color: #C7C7C7;
+.main-modal__show-password-button:hover .main-modal__show-password-svg {
+  fill: #2D2D2D;
 }
-.main-modal__password-active {
+.main-modal__show-password-button:hover .main-modal__show-password-svg-on-hover {
+  fill: #2D2D2D;
+}
+.main-modal__show-password-button.active .main-modal__show-password-svg-on {
+  display: inline-block;
+}
+.main-modal__show-password-button.active .main-modal__show-password-svg-off {
   display: none;
 }
-.main-modal__password-calm {
-  transition: all 0.2s ease-in-out;
-  border-radius: 50%;
+.main-modal__show-password-svg-on {
+  display: none;
 }
 .main-modal__footer-title {
   display: block;
@@ -2288,12 +2352,9 @@ label {
 }
 @media (max-width: 860px) {
   .main-modal__buttons-wrapper {
-    max-width: 100%;
-  }
-}
-@media (max-width: 860px) {
-  .main-modal__button-social-network.facebook {
-    display: none;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    justify-content: space-between;
   }
 }
 .main-modal__button-social-network {
@@ -2304,6 +2365,11 @@ label {
   padding: 16px 0;
   transition: all 0.1s ease-in-out;
 }
+@media (max-width: 860px) {
+  .main-modal__button-social-network {
+    max-width: 163px;
+  }
+}
 .main-modal__form-register {
   display: flex;
   flex-direction: column;
@@ -2313,7 +2379,55 @@ label {
   margin: 0;
 }
 .main-modal__input-wrapper.password-re-register {
-  margin-bottom: 60px;
+  margin-bottom: 36px;
+}
+
+.modal-send-email {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 343px;
+  width: 100%;
+  /*visibility: hidden;
+  opacity: 0;*/
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+}
+.modal-send-email.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-send-email__wrap {
+  background: #FEFEFE;
+}
+.modal-send-email__header {
+  padding: 8px 8px 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-send-email__close {
+  font-size: 0;
+}
+.modal-send-email__main {
+  padding: 0 24px 48px 24px;
+}
+.modal-send-email__title {
+  margin-bottom: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: #2D2D2D;
+}
+.modal-send-email__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #2D2D2D;
 }
 
 .dropdown-search {
