@@ -220,6 +220,7 @@
         display: block;
         padding: 8px 0 8px 20px;
         background-color: $color-white;
+        transition: all .2s ease-in-out;
     }
 
 
@@ -228,6 +229,8 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+        transition: all .2s ease-in-out;
+        overflow: hidden;
     }
 
     &__submenu-wrapper.active {
@@ -300,6 +303,7 @@
     &__title-footer {
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 20px);
         transition: all .2s ease-in-out;
+        white-space: nowrap;
     }
 
     &__all-product:hover &__title-footer {

@@ -887,12 +887,15 @@ label {
   display: block;
   padding: 8px 0 8px 20px;
   background-color: #FEFEFE;
+  transition: all 0.2s ease-in-out;
 }
 .header-navigation-catalog__submenu-wrapper {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
 }
 .header-navigation-catalog__submenu-wrapper.active {
   display: flex;
@@ -975,6 +978,7 @@ label {
   text-align: left;
   color: #141414;
   transition: all 0.2s ease-in-out;
+  white-space: nowrap;
 }
 .header-navigation-catalog__all-product:hover .header-navigation-catalog__title-footer {
   color: #E61E37;
@@ -2086,6 +2090,16 @@ label {
     padding: 0;
   }
 }
+.main-modal__wrapper.active .main-modal__container {
+  position: relative;
+  z-index: -1;
+  filter: blur(10px);
+}
+.main-modal__wrapper.active .modal-send-email {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
 .main-modal__container {
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
@@ -2389,14 +2403,11 @@ label {
   transform: translate(-50%, -50%);
   max-width: 343px;
   width: 100%;
-  /*visibility: hidden;
-  opacity: 0;*/
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
-}
-.modal-send-email.active {
-  visibility: visible;
-  opacity: 1;
 }
 .modal-send-email__wrap {
   background: #FEFEFE;
@@ -2408,6 +2419,15 @@ label {
 }
 .modal-send-email__close {
   font-size: 0;
+}
+.modal-send-email__close:hover .modal-send-email__close-svg-line {
+  fill: #E61E37;
+}
+.modal-send-email__close:hover .modal-send-email__close-svg-line {
+  fill: #B81429;
+}
+.modal-send-email__close-svg-line {
+  transition: all 0.1s ease-in-out;
 }
 .modal-send-email__main {
   padding: 0 24px 48px 24px;
@@ -2920,9 +2940,6 @@ label {
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
 }
-.main-information__item-select:hover {
-  border-width: 1px;
-}
 .main-information__item-select.size {
   background-color: #F7F7F7;
 }
@@ -3228,6 +3245,11 @@ label {
   -moz-column-gap: 8px;
   column-gap: 8px;
 }
+@media (max-width: 960px) {
+  .characteristics__details-wrapper {
+    align-items: flex-end;
+  }
+}
 @media (max-width: 520px) {
   .characteristics__details-wrapper {
     max-width: 172px;
@@ -3251,6 +3273,11 @@ label {
   width: 100%;
   height: 1px;
   background-color: #EDEDED;
+}
+@media (max-width: 960px) {
+  .characteristics__line {
+    margin-bottom: 4px;
+  }
 }
 .characteristics__details-parameter-wrapper {
   padding-left: 24px;
@@ -3539,33 +3566,6 @@ label {
   max-width: 720px;
   width: 100%;
 }
-.reviews__button-show-all:hover .reviews__arrow-line {
-  left: 5px;
-  opacity: 1;
-  background-color: #E61E37;
-}
-.reviews__button-show-all:hover .reviews__arrow-line-hidden {
-  left: 21px;
-  opacity: 1;
-  background-color: #E61E37;
-}
-.reviews__arrow-line, .reviews__arrow-line-hidden {
-  width: 20px;
-  height: 1px;
-  display: flex;
-  background-color: #2D2D2D;
-  position: absolute;
-  top: 21px;
-  left: 0px;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-}
-.reviews__arrow-line-hidden {
-  left: 25px;
-}
-.reviews__arrow-mobile {
-  display: none;
-}
 .reviews__review-comments {
   padding-left: 24px;
 }
@@ -3591,13 +3591,22 @@ label {
   padding: 0;
 }
 .reviews__button-show-all {
-  max-width: 176px;
+  max-width: 203px;
   width: 100%;
   margin: 0 auto;
   justify-content: space-between;
 }
 .reviews__button-show-all.active {
   max-width: 113px;
+}
+.reviews__button-show-all.active .reviews__button-show-all-hidden-title {
+  display: block;
+}
+.reviews__button-show-all.active .reviews__button-show-all-title {
+  display: none;
+}
+.reviews__button-show-all-hidden-title {
+  display: none;
 }
 
 .recommendation {
@@ -3936,9 +3945,11 @@ label {
   box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
   max-width: 312px;
   width: 100%;
+  border: 1px solid #F5F5F5;
 }
 .card-item:hover {
-  outline: 1px solid #FAD1D6;
+  border-color: #FAD1D6;
+  box-shadow: none;
 }
 .card-item__offers {
   position: absolute;

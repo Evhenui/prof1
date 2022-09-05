@@ -1024,7 +1024,7 @@
         <!--main-modal 'active'-->
         <section data-modal-enter class="main-modal active">
             <div class="main-modal__mask">
-              <div class="main-modal__wrapper">
+              <div data-wrapper-modal class="main-modal__wrapper">
                 <div data-popup-modal-container class="main-modal__container">
                   <header class="main-modal__header">
                     <div class="main-modal__close-modal">
@@ -1215,30 +1215,24 @@
                     </div>
                   </footer>
                 </div>
-                
-              </div>
-            </div>
-        </section>
-
-        <section data-modal-enter class="main-modal active">
-            <div class="main-modal__mask">
-              <div class="modal-send-email">
-                <div class="modal-send-email__wrap">
-                    <header class="modal-send-email__header">
-                        <button data-close-modal-send class="modal-send-email__close">
-                            <svg class="modal-send-email__close-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path class="modal-send-email__close-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
-                              <path class="modal-send-email__close-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
-                            </svg>  
-                          </button>
-                    </header>
-                    <main class="modal-send-email__main">
-                        <h1 class="modal-send-email__title">На ваш адрес электронной почты была отправлена ссылка для установки нового пароля.</h1>
-                        <p class="modal-send-email__subtitle">Кроме папки «Входящие» проверьте также папку «Спам» вашего почтового ящика. Возможно, письмо попало туда.</p>
-                    </main>
+                <div data-modal-sended-email class="modal-send-email">
+                    <div class="modal-send-email__wrap">
+                        <header class="modal-send-email__header">
+                            <button data-close-modal-send class="modal-send-email__close">
+                                <svg class="modal-send-email__close-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path class="modal-send-email__close-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                                  <path class="modal-send-email__close-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                                </svg>  
+                            </button>
+                        </header>
+                        <main class="modal-send-email__main">
+                            <h1 class="modal-send-email__title">На ваш адрес электронной почты была отправлена ссылка для установки нового пароля.</h1>
+                            <p class="modal-send-email__subtitle">Кроме папки «Входящие» проверьте также папку «Спам» вашего почтового ящика. Возможно, письмо попало туда.</p>
+                        </main>
+                    </div>
                 </div>
-              </div>
-            </div>
+              </div>          
+            </div>         
         </section>
         <!-- do not delete, this is a blur !!!!!!!!!!!!!!! Should be on every page-->
         <div data-blur class="blur"></div>

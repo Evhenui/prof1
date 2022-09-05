@@ -19,3 +19,6 @@ import {sliders} from './sliders.js';
 import {mainPage} from './main-page.js';
         mainPage();
   
+import {modalEnter} from './modal-enter.js';
+        modalEnter();
+  
