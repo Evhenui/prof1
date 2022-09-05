@@ -16,9 +16,13 @@
         @extend %size-page;
         @extend %padding-country;
         @include __960 {
-            @include padding-mob;
+            padding-left: 16px;
             overflow-y: hidden;
             white-space: nowrap;
+            &::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+            }
         }
     }
 
@@ -81,6 +85,7 @@
        }
        @include __960 {
         @include padding-mob;
+        row-gap: 32px;
        }
     }
 }
@@ -113,7 +118,7 @@
     }
 
     &__navigation-button.rotate:hover &__navigation-button-state{
-        stroke: $color-black;
+        fill: $color-black;
     }
 
     &__navigation-button.video:hover &__navigation-button-state{
@@ -1239,6 +1244,66 @@
         height: 431px;
       }
     }
+
+    &__animation {   
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        width: 44px;
+        height: 44px;
+    }
+
+    &__animation-wrapper {
+        position: relative;
+        animation: arrows 2s linear infinite;
+    }
+
+    &__animation-wrapper-top {
+        position: relative;
+        display: flex;
+        column-gap: 15px;
+       
+    }
+
+    &__animation-arrow-left {
+
+    }
+
+    &__animation-arrow-right {
+        
+    }
+
+    &__animation-arm {
+        position: relative;
+        left: 12px;
+        animation: arm 2s linear infinite;
+    }
+
+    @keyframes arrows {
+        0% {
+            left: 0px;
+        }
+        50% {
+            left: 20px;
+        }
+        100% {
+            left: 0px;
+        }
+    }
+
+    @keyframes arm {
+        0% {
+            left: 12px;
+        }
+        50% {
+            left: 5px;
+        }
+        100% {
+            left: 12px;
+        }
+        
+    }
+
     &__slider-navigation {
       display: flex;
       flex-direction: column;
@@ -1406,18 +1471,23 @@
 }
 
 .mobile-price-line {
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
+    display: none;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+    transition: all .2s ease-in-out;
     @include __960 {
-        z-index: 4;
-        opacity: 1;
-        visibility: visible;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        &.active {
+            z-index: 4;
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &__wrapper {
@@ -1437,11 +1507,16 @@
     &__button-like, &__button-compare {
         font-size: 0;
         display: inline-block;
-
     }
 
-    &__button-compare {
+    &__button-like.active &__like{
+        fill: #2D2D2D;
+        stroke: #2D2D2D;
+    }
 
+    &__button-compare:active &__compare-svg {
+        fill: #2D2D2D;
+        stroke: #2D2D2D;
     }
 
     &__order {

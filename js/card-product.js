@@ -1,6 +1,7 @@
 export let cardProduct = function() {
     const cardProduct = document.querySelector('[data-card-product]'),
-          allAbout = document.querySelector('[data-all-about-section]');
+          allAbout = document.querySelector('[data-all-about-section]'),
+          navigationSection = document.querySelector('[data-mobile-navigation]');
 
     function delActiv(param) {
         param.forEach((el) => {
@@ -90,5 +91,28 @@ export let cardProduct = function() {
           allAbout.classList.remove('active');
         }
       });
+    }
+
+    if(navigationSection !== null) {
+      const buttonLike = navigationSection.querySelector('[data-button-like-mobile-footer]'),
+            buttonCompare = navigationSection.querySelector('[data-button-compare-mobile-footer]');
+
+      buttonLike.addEventListener('click', function(event) {
+        event.preventDefault();
+        this.classList.toggle('active');
+      })
+      buttonCompare.addEventListener('click', (event)=> {
+        event.preventDefault();
+      })
+      if (window.scrollY < 500) {
+        navigationSection.classList.add("active");
+      }
+      window.addEventListener('scroll', function() {
+        if (window.scrollY < 500) {
+          navigationSection.classList.add("active");
+        } else {
+          navigationSection.classList.remove("active");
+        }
+      })
     }
 }
