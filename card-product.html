@@ -1099,11 +1099,6 @@
                                     <span class="card-item__offers-title">Новинка</span>
                                 </div>
                             </section>
-                            <div class="main-slider__button-prev main-slider__button-prev-mobile">
-                            <svg width="58" height="24" viewBox="0 0 58 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="main-slider__arrow-prev" d="M57 18L31.9252 8.14919C30.045 7.41054 27.955 7.41054 26.0748 8.14919L1 18" stroke="#827D7D"/>
-                            </svg>
-                            </div> 
                             <div class="swiper-container main-slider__container-basic">
                             <div class="swiper-wrapper main-slider__basic-wrapper">
                                 <div class="swiper-slide main-slider__slide">                       
@@ -1125,11 +1120,6 @@
                                     <div class="main-slider__image"><img src="img/slider-item-big.png" width="600" height="600" alt="name product"/></div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="main-slider__button-next main-slider__button-next-mobile">
-                            <svg width="58" height="24" viewBox="0 0 58 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="main-slider__arrow-next" d="M1 7L26.0748 16.8508C27.955 17.5895 30.045 17.5895 31.9252 16.8508L57 7" stroke="#827D7D"/>
-                            </svg>
                             </div>
                             <section class="main-slider__navigation-buttons">
                                 <a class="main-slider__navigation-button rotate" href="#">
@@ -1163,8 +1153,34 @@
                             </section>
                             <section class="main-slider__zoom">
                                 <a class="main-slider__navigation-button-zoom" href="#">
-                                <img class="main-slider__navigation-button-zoom-default" src="icon/zoom-default.png" alt="zoom">
-                                <img class="main-slider__navigation-button-zoom-hover" src="icon/zoom-hover.png" alt="zoom">
+                                    <svg class="main-slider__navigation-button-zoom-default" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_162_10512)">
+                                        <circle opacity="0.5" cx="22" cy="22" r="22" fill="#FEFEFE"/>
+                                        <path d="M21 30C26.5228 30 31 25.5228 31 20C31 14.4772 26.5228 10 21 10C15.4772 10 11 14.4772 11 20C11 25.5228 15.4772 30 21 30Z" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="27.7071" y1="28" x2="33" y2="33.2929" stroke="#2D2D2D" stroke-linecap="round"/>
+                                        <path d="M21 16V24" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17 20H25" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_162_10512">
+                                        <rect width="44" height="44" rx="22" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <svg class="main-slider__navigation-button-zoom-hover" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_162_10622)">
+                                        <circle cx="22" cy="22" r="22" fill="#FEFEFE"/>
+                                        <path d="M20 32C26.6274 32 32 26.6274 32 20C32 13.3726 26.6274 8 20 8C13.3726 8 8 13.3726 8 20C8 26.6274 13.3726 32 20 32Z" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="28.5401" y1="29" x2="34.833" y2="35.2929" stroke="#2D2D2D" stroke-linecap="round"/>
+                                        <path d="M20 16V24" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 20H24" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_162_10622">
+                                        <rect width="44" height="44" rx="22" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
                                 </a>
                             </section>
                         </div>
@@ -1172,6 +1188,7 @@
                         </div>
                     </div>
                         </section>
+                        <!--main-information has class 'active' when scroling page-->
                         <section class="main-information">
                             <div class="main-information__wrapper">
                                 <section class="main-information__title-wrapper">
@@ -2501,6 +2518,61 @@
                         </section>
                           
                     </div>                  
+                </section>
+                <section class="mobile-price-line">
+                    <div class="mobile-price-line__wrapper">
+                        <section class="mobile-price-line__buttons">
+                            <a data-button-like class="mobile-price-line__button-like" href="#">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_92_5258)">
+                                    <path d="M30.3845 14.6711C29.3373 13.599 27.9508 13.013 26.4711 13.013C24.9913 13.013 23.6006 13.6033 22.5533 14.6754L22.0064 15.2354L21.4509 14.6667C20.4037 13.5946 19.0087 13 17.5289 13C16.0534 13 14.6627 13.5903 13.6197 14.6581C12.5724 15.7302 11.9958 17.1538 12 18.6687C12 20.1835 12.5809 21.6028 13.6282 22.6749L21.5908 30.8264C21.7011 30.9392 21.8495 31 21.9936 31C22.1378 31 22.2862 30.9436 22.3964 30.8307L30.3761 22.6923C31.4233 21.6202 32 20.1965 32 18.6817C32.0042 17.1669 31.4318 15.7432 30.3845 14.6711ZM29.5705 21.8633L21.9936 29.5893L14.4338 21.8503C13.6027 20.9995 13.1448 19.871 13.1448 18.6687C13.1448 17.4664 13.5985 16.3378 14.4295 15.4914C15.2563 14.645 16.3587 14.1763 17.5289 14.1763C18.7034 14.1763 19.8101 14.645 20.6411 15.4958L21.5993 16.4767C21.824 16.7068 22.1844 16.7068 22.4092 16.4767L23.3589 15.5045C24.1899 14.6537 25.2966 14.185 26.4668 14.185C27.637 14.185 28.7394 14.6537 29.5705 15.5001C30.4015 16.3509 30.8552 17.4794 30.8552 18.6817C30.8594 19.884 30.4015 21.0125 29.5705 21.8633Z" fill="#2D2D2D"/>
+                                    <path class="main-information__like-svg" d="M30.3845 14.6711C29.3373 13.599 27.9508 13.013 26.4711 13.013C24.9913 13.013 23.6006 13.6033 22.5533 14.6754L22.0064 15.2354L21.4509 14.6667C20.4037 13.5946 19.0087 13 17.5289 13C16.0534 13 14.6627 13.5903 13.6197 14.6581C12.5724 15.7302 11.9958 17.1538 12 18.6687C12 20.1835 12.5809 21.6028 13.6282 22.6749L21.5908 30.8264C21.7011 30.9392 21.8495 31 21.9936 31C22.1378 31 22.2862 30.9436 22.3964 30.8307L30.3761 22.6923C31.4233 21.6202 32 20.1965 32 18.6817C32.0042 17.1669 31.4318 15.7432 30.3845 14.6711Z" fill="#2D2D2D"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_92_5258">
+                                    <rect width="44" height="44" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>       
+                            </a>
+                            <a data-button-compare class="mobile-price-line__button-compare" href="#">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_92_5247)">
+                                    <path class="main-information__compare-svg" d="M22 19V10" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" d="M14.7998 20.8L21.9998 19L29.1998 17.2" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" d="M24.4004 25.6L29.2004 17.2" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" d="M34.0002 25.6L29.2002 17.2" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" d="M19.5998 29.2001L14.7998 20.8" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" d="M10 29.2001L14.8 20.8" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" fill-rule="evenodd" clip-rule="evenodd" d="M14.8 34C17.451 34 19.6 31.8509 19.6 29.2H10C10 31.8509 12.149 34 14.8 34Z" fill="#FEFEFE" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="main-information__compare-svg" fill-rule="evenodd" clip-rule="evenodd" d="M29.2004 30.4C31.8514 30.4 34.0004 28.251 34.0004 25.6H24.4004C24.4004 28.251 26.5494 30.4 29.2004 30.4Z" fill="#FEFEFE" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_92_5247">
+                                    <rect width="44" height="44" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>   
+                            </a>
+                        </section>
+                        <section class="mobile-price-line__order">
+                            <section class="mobile-price-line__order-prices">
+                                <div class="mobile-price-line__discount">
+                                    <span class="mobile-price-line__old-price">15 678</span>
+                                    <span class="mobile-price-line__discount-percent">-30%</span>
+                                </div>
+                                <h1 class="mobile-price-line__full-price">10 974,6 грн</h1>
+                            </section>
+                            <button class="mobile-price-line__order-button">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="mobile-price-line__order-button-svg" d="M17.7142 32.5009C18.5181 32.5009 19.1785 31.8544 19.1785 31.0463C19.1785 30.2383 18.5181 29.5918 17.7142 29.5918C16.9103 29.5918 16.25 30.2383 16.25 31.0463C16.25 31.8544 16.9103 32.5009 17.7142 32.5009Z" stroke="#E61E37" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="mobile-price-line__order-button-svg" d="M31.2133 32.5009C32.0172 32.5009 32.6775 31.8544 32.6775 31.0463C32.6775 30.2383 32.0172 29.5918 31.2133 29.5918C30.4094 29.5918 29.749 30.2383 29.749 31.0463C29.749 31.8544 30.4094 32.5009 31.2133 32.5009Z" stroke="#E61E37" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="mobile-price-line__order-button-svg" d="M10 11H13.8569L16.7496 27.2273H32.1773" stroke="#E61E37" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="mobile-price-line__order-button-svg" d="M16.7497 23.4087H31.7821C31.8936 23.4088 32.0017 23.3706 32.0879 23.3007C32.1742 23.2307 32.2333 23.1334 32.2552 23.0251L33.9908 14.4342C34.0048 14.3649 34.0031 14.2935 33.9858 14.2249C33.9685 14.1564 33.9361 14.0925 33.8908 14.0379C33.8455 13.9832 33.7886 13.9392 33.7241 13.9091C33.6596 13.8789 33.5891 13.8632 33.5177 13.8633H14.8213" stroke="#E61E37" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </section>
+                    </div>
                 </section>
             </div>           
         </section>

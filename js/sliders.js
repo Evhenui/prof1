@@ -54,14 +54,16 @@ export let sliders = function() {
         freeMode: true, 
         breakpoints: { 
         0: { 
-            slidesPerView: 4.6, 
+            slidesPerView: 4, 
             direction: 'horizontal',
         },
         960: { 
+            slidesPerView: 4,
             direction: 'vertical', 
         }
         }
       });
+
       const sliderMainNav = new Swiper('.main-slider__container-basic', {
         direction: 'horizontal',
         slidesPerView: 1,
