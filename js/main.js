@@ -21,4 +21,7 @@ import {mainPage} from './main-page.js';
   
 import {modalEnter} from './modal-enter.js';
         modalEnter();
+
+import {modals} from './modals.js';
+modals(); 
   

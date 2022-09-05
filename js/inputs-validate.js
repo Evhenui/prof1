@@ -3,7 +3,8 @@ export let inputsValidate = function() {
           headerSection = document.querySelector('[data-header]'),
           modalEnter = document.querySelector('[data-modal-enter]'),
           phoneInputs = document.querySelectorAll('[data-tel-input]'),
-          mainSection = document.querySelector('[data-main]');
+          mainSection = document.querySelector('[data-main]'),
+          modalOnClick = document.querySelector('[data-modal-on-click]');
 
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
@@ -249,6 +250,15 @@ export let inputsValidate = function() {
 
             showPassword(btnShowPassModal)
             inputsChange(inputsEnter, button)
+          }
+
+          if(modalOnClick !== null) {
+
+            const button = modalOnClick.querySelector('[data-button-modal-on-click]');
+            button.addEventListener('click', function(event){
+                event.preventDefault();
+                  modalOnClick.classList.add('done'); 
+              });
           }
 
           if(headerSection !== null) {

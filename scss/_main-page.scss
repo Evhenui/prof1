@@ -291,6 +291,16 @@
         height: 2px;
         z-index: 1;
     }
+    .swiper-scrollbar-drag {
+        background-color: $color-black;
+        transition: all .1s ease-in-out;
+        &:hover {
+            background-color: $color-red;
+        }
+        &:active {
+            background-color: $color-red-70;
+        }
+    }
 
     &__slider-button-prev-line {
         left: 23px;
@@ -364,31 +374,30 @@
     }
 }
 
+.background-wrapper {
+    @extend %size-page;
+    @extend %padding-country;
+    background-repeat: no-repeat;
+    background-image: url('/img/bg.png');
+    background-position: right 0px;
+}
 
 .news {
     &__wrapper {
-        padding: 100px 48px 100px 48px;
+        padding: 100px 0 100px 0;
         @extend %size-page;
-        background-image: url('/img/backgroung_2.png'), url('/img/backgroung_1.png');
-        background-repeat: no-repeat, no-repeat;
-        background-position: left bottom, right bottom;
-        @include __1390 {
-            background-position: -150px bottom, right bottom;
-        }
-        @include __1250 {
-            background-position: -350px bottom, right bottom;
-        }
-        @include __1050 {
-            background-position: -550px bottom, right bottom;
-        }
         @include __960 {
-            padding: 80px 16px 156px 16px;
+            padding: 80px 0 156px 0;
         }
     }
 
     &__header {
         @extend %centre-space-between;
-        margin-bottom: 44px;
+        margin-bottom: 34px;
+        padding: 0 48px 0 48px;
+        @include __960 {
+            padding: 0 16px 0 16px;
+        }
     }
 
     &__button {
@@ -403,8 +412,15 @@
         @extend %centre-space-between;
     }
 
-    &__slider {
-        padding: 1px;
+    &__slider-wrp {
+        padding: 0 38px 0 38px;
+        @include __960 {
+            padding: 0 6px 0 6px;
+        }
+    }
+
+    &__slider.swiper {
+        padding: 10px;
         margin-bottom: 32px;
     }
 
@@ -427,6 +443,7 @@
         max-width: 424px;
         width: 100%;
         &:hover {
+            box-shadow: none;
             outline: 1px solid $color-red-30;
         }
     }
@@ -484,12 +501,9 @@
 
     &__wrapper {
         @extend %size-page;
-        padding: 168px 48px;
+        padding: 100px 48px;
         display: flex;
         justify-content: space-between;
-        background-image: url('/img/backgroung_3.png');
-        background-repeat: no-repeat;
-        background-position: right top;
         margin-bottom: 100px;
         @include __960 {
             padding: 80px 16px 0 16px;

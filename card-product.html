@@ -1312,6 +1312,7 @@
                                         </section>
                                     </div>
                                 </section>
+                                <!--main-information__buy has class "inactive"-->
                                 <section class="main-information__buy">
                                     <div class="main-information__buy-wrapper">
                                         <section class="main-information__prices">
@@ -1321,6 +1322,7 @@
                                                     <span class="main-information__price discount">-30%</span>
                                                 </div>
                                                 <h1 class="main-information__full-price">10 974,6 грн</h1>
+                                                <h1 class="main-information__full-price not">Нет в наличии</h1>
                                             </div>
                                             <div class="main-information__prices-buttons">
                                                 <a data-button-like class="main-information__button-like" href="#">
@@ -1367,8 +1369,8 @@
                                                 </svg>
                                                     <span class="main-information__button-text btn-red-basket__text">Купить</span>
                                             </button>
-                                            <button class="main-information__button-buy-on-click btn-transparent">
-                                                <span class="main-information__button-text">Быстрый заказ</span>
+                                            <button data-button-open-modal-on-click class="main-information__button-buy-on-click btn-transparent">
+                                                <span class="main-information__button-text on-click">Быстрый заказ</span>
                                             </button>
                                             <a data-button-like class="main-information__button-like" href="#">
                                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1448,6 +1450,8 @@
                                         </section>
                                     </div>
                                 </section>
+
+                                
                             </div>
                         </section>
                     </div> 
@@ -2592,6 +2596,61 @@
                                 </svg>
                             </button>
                         </section>
+                    </div>
+                </section>
+                <section data-modal-on-click class="modal-on-click">
+                    <div class="modal-on-click__mask">
+                      <div class="modal-on-click__wrapper">
+                        <div data-modal-on-click-container class="modal-on-click__container">
+                         <header class="modal-on-click__header">
+                          <h1 class="modal-on-click__title title-done">Быстрый заказ</h1>
+                          <button data-close-modal-on-click class="modal-on-click__button-close"> 
+                            <svg class="modal-on-click__button-close-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="modal-on-click__button-close-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 29.9999L14 15.4545Z" fill="#2D2D2D"/>
+                                <path class="modal-on-click__button-close-svg-line" d="M28.5459 14L30.0004 15.4545L15.455 30L14.0005 28.5454L28.5459 14Z" fill="#2D2D2D"/>
+                            </svg> 
+                          </button>
+                         </header>
+                         <main class="modal-on-click__main">
+                          <div data-main-modal-on-click class="modal-on-click__main-wrapper">
+                            <p class="modal-on-click__text-title">Оставьте свои данные и мы с вами свяжемся для уточнения заказа</p>
+                            <form data-form-on-click action="" class="modal-on-click__form" novalidate>
+                              <div class="modal-on-click__inputs">
+                                <div class="input-wrapper-white modal-on-click__input-container">
+                                    <input class="input-wrapper-white__input modal-on-click__input" type="text" required>
+                                    <div class="input-wrapper-white__image-error">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                        </svg>     
+                                    </div>
+                                    <label class="input-wrapper-white__label">Введите имя</label>
+                                    <div class="input-wrapper-white__prompt-wrapper">
+                                        <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                    </div>
+                                </div>
+                                <div class="input-wrapper-white modal-on-click__input-container tel">
+                                    <input data-tel-input class="input-wrapper-white__input modal-on-click__input" type="tel" required>
+                                    <div class="input-wrapper-white__image-error">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                        </svg>     
+                                    </div>
+                                    <label class="input-wrapper-white__label">Номер телефона</label>
+                                    <div class="input-wrapper-white__prompt-wrapper">
+                                        <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                    </div>
+                                </div>
+                              </div>
+                              <button data-button-modal-on-click class="modal-on-click__button btn-red">Оформить заказ</button>
+                            </form>
+                            <section class="modal-on-click__done">
+                              <h1 class="modal-on-click__title order">Ваш заказ №123 принят.</h1>
+                              <p class="modal-on-click__subtitle">В ближайшее время менеджер свяжется с Вами.</p>
+                            </section>
+                          </div>
+                         </main>
+                        </div>
+                      </div>
                     </div>
                 </section>
             </div>           

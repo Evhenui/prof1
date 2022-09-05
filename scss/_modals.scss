@@ -1,3 +1,137 @@
+.modal-on-click {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    &.active {
+        z-index: 5;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__mask {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        display: table;
+        transition: all 0.3s ease;
+    }
+
+    &__container {
+      box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.1);
+      background: #FEFEFE;
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+      @include __640 {
+        max-width: 343px;
+      }
+    }
+
+    &__wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        transition: all 0.3s ease;
+        padding-top: 96px;
+    }
+
+    &__header {
+      @extend %centre-space-between;
+      background: #F7F7F7;
+      padding: 12px 12px 12px 126px;
+      @include __640 {
+        padding-left: 24px;
+      }
+    }
+    &__title {
+        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+    }
+
+    &__button-close {
+        font-size: 0;
+    }
+
+    &__button-close-svg-line {
+        transition: all .1s ease-in-out;
+    }
+    
+    &__button-close:hover &__button-close-svg-line{
+        fill: $color-red;
+    }
+
+    &__button-close:active &__button-close-svg-line{
+        fill: $color-red-70;
+    }
+
+    &__main-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px 40px 40px;
+      @include __640 {
+        padding: 56px 20px 80px 20px;
+        min-height: auto;
+      }
+    }
+
+    &__text-title {
+        margin-bottom: 36px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+    }
+
+    &__input-container.tel {
+     margin-bottom: 60px;
+    }
+
+    &__input {
+        max-width: 100%;
+    }
+
+    &.done &__main-wrapper {
+        padding: 78px 34px 146px 40px;
+      @include __640 {
+        padding: 60px 34px 148px 40px;
+      }
+    }
+   
+    &.done &__form{
+      display: none;
+    }
+
+     &.done &__text-title{
+      display: none;
+    }
+
+    &.done &__done{
+      display: block;
+    }
+    &__done {
+      display: none;
+      text-align: center;
+    }
+    &__title.order {
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        @include text( $size: 1.25rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 24px);
+      @include __960 {
+        min-height: auto;
+      }
+    }
+
+    &__subtitle {
+        @include text( $size: 1rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+    }
+    &__button {
+        padding: 16px 0;
+        width: 100%;
+    }
+}
+
 .main-modal {
     transition: all .3s ease-in-out;
     visibility: hidden;
@@ -356,10 +490,9 @@
     &__input-wrapper.password-re-register {
         margin-bottom: 36px;
     }
-  }
+}
   
-
-  .modal-send-email {
+.modal-send-email {
     position: fixed;
     left: 50%;
     top: 50%;
