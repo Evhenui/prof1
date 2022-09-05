@@ -660,6 +660,34 @@ label {
   transition: all 0.2s ease-in-out;
 }
 
+.btn-red-basket {
+  display: flex;
+  background-color: #E61E37;
+  border: 1px solid #E61E37;
+  transition: all 0.2s ease-in-out;
+}
+.btn-red-basket:hover {
+  background-color: #B81429;
+  border-color: #B81429;
+}
+.btn-red-basket:active {
+  background-color: #B81429;
+  border-color: #B81429;
+}
+.btn-red-basket:disabled {
+  cursor: auto;
+  background-color: #949494;
+  border-color: #949494;
+}
+.btn-red-basket__text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #FEFEFE;
+}
+
 .header {
   width: 100%;
   background-color: #2D2D2D;
@@ -825,13 +853,13 @@ label {
   transition: all 0.3s ease-in-out;
 }
 .header-navigation-catalog__item.active {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
 .header-navigation-catalog__item.active::before {
   opacity: 1;
 }
 .header-navigation-catalog__item:hover {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
 .header-navigation-catalog__item:hover::before {
   opacity: 1;
@@ -884,21 +912,26 @@ label {
   color: #2D2D2D;
 }
 .header-navigation-catalog__submenu {
-  display: block;
+  display: flex;
   padding: 8px 0 8px 20px;
   background-color: #FEFEFE;
   transition: all 0.2s ease-in-out;
 }
+.header-navigation-catalog__submenu.active {
+  width: 100%;
+}
 .header-navigation-catalog__submenu-wrapper {
-  display: none;
+  width: 0;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
+  transition: 0.3s;
 }
 .header-navigation-catalog__submenu-wrapper.active {
-  display: flex;
+  width: 100%;
+  transition: 0.3s;
 }
 .header-navigation-catalog__menus {
   display: flex;
@@ -1224,7 +1257,7 @@ label {
   stroke: #2D2D2D;
 }
 .header-navigation__item-link.active .header-navigation__svg {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .header-navigation__wrapper {
   display: flex;
@@ -1301,7 +1334,7 @@ label {
   }
 }
 .header-navigation__list-item:hover .header-navigation__svg {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 @media (max-width: 960px) {
   .header-navigation__list-item:hover .header-navigation__svg {
@@ -1339,8 +1372,8 @@ label {
   font-weight: 600;
   line-height: 20px;
   text-align: left;
-  color: #FFFFFF;
-  border-bottom: 1px solid #4E4B4B;
+  color: #ffffff;
+  border-bottom: 1px solid #4e4b4b;
   padding: 12px;
 }
 .header-navigation__account-item.login-out {
@@ -1353,19 +1386,19 @@ label {
   -moz-column-gap: 4px;
        column-gap: 4px;
   padding: 4px 0 0 0;
-  border-top: 1px solid #4E4B4B;
+  border-top: 1px solid #4e4b4b;
   transition: all 0.2s ease-in-out;
 }
 .header-navigation__account-item.login-out:hover {
-  color: #F07585;
+  color: #f07585;
 }
 .header-navigation__account-item.login-out:hover .header-navigation__account-arrow-svg-hover {
-  stroke: #F07585;
+  stroke: #f07585;
 }
 .header-navigation__account-item.login-out:hover .header-navigation__line-active {
   opacity: 1;
   left: 11px;
-  background-color: #F07585;
+  background-color: #f07585;
 }
 .header-navigation__account-arrow-svg-hover {
   transition: all 0.2s ease-in-out;
@@ -1388,7 +1421,7 @@ label {
   font-weight: 400;
   line-height: 24px;
   text-align: left;
-  color: #E6E5E5;
+  color: #e6e5e5;
 }
 .header-navigation__account-item.menu {
   transition: all 0.1s ease-in-out;
@@ -1559,7 +1592,7 @@ label {
   display: block;
   width: 1px;
   height: 24px;
-  background-color: #B5B0B0;
+  background-color: #b5b0b0;
 }
 .header-navigation-mobile__login-out-wrapper {
   padding: 4px 0;
@@ -1720,7 +1753,7 @@ label {
   font-weight: 400;
   line-height: 20px;
   text-align: left;
-  color: #B5B0B0;
+  color: #b5b0b0;
 }
 .header-navigation-mobile__footer-social-networks {
   display: flex;
@@ -3282,6 +3315,7 @@ label {
   width: 100%;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  margin-right: 4px;
 }
 @media (max-width: 1250px) {
   .main-information__button-buy {

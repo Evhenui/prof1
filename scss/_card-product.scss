@@ -541,8 +541,10 @@
         max-width: 244px;
         width: 100%;
         column-gap: 10px;
+        margin-right: 4px;
         @include __1250 {
             max-width: 100%;
+            
         }
     }
 
