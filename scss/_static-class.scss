@@ -569,3 +569,32 @@ html {
       @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
   }
 }
+
+.scroll-to-top {
+  opacity: 0;
+  width: 0;
+  position: fixed;
+  bottom: 160px;
+  right: 4px;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+
+  &.active {
+    opacity: 1;
+    width: 40px;
+    transition: all .3s ease-in-out;
+  }
+  &__button-up {
+    width: 44px;
+    height: 44px;
+    background: $color-white;
+    box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+  }
+  &__button-up:active &__button-up-svg {
+    stroke: $color-red-70;
+  }
+  &__button-up:hover &__button-up-svg {
+    stroke: $color-red;
+  }
+}

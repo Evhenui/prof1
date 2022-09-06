@@ -810,6 +810,34 @@ label {
   color: #616161;
 }
 
+.scroll-to-top {
+  opacity: 0;
+  width: 0;
+  position: fixed;
+  bottom: 160px;
+  right: 4px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.scroll-to-top.active {
+  opacity: 1;
+  width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+.scroll-to-top__button-up {
+  width: 44px;
+  height: 44px;
+  background: #FEFEFE;
+  box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+.scroll-to-top__button-up:active .scroll-to-top__button-up-svg {
+  stroke: #B81429;
+}
+.scroll-to-top__button-up:hover .scroll-to-top__button-up-svg {
+  stroke: #E61E37;
+}
+
 .header {
   width: 100%;
   background-color: #2D2D2D;

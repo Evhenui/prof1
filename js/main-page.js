@@ -1,7 +1,8 @@
 export let mainPage = function() {
     const mainPage = document.querySelector('[data-main]'),
           productSelection = document.querySelector('[data-product-selection]'),
-          currentOffersSection = document.querySelector('[data-current-offers]');
+          currentOffersSection = document.querySelector('[data-current-offers]'),
+          buttonScrollTop = document.querySelector('[data-botton-up]');
 
     function changeLable (items, dropdown) {
         items.forEach((item)=> {
@@ -137,4 +138,23 @@ export let mainPage = function() {
                 });
               });
     }
+
+    //----btn up to top-----------------------
+
+    if(buttonScrollTop !== null) {
+        buttonScrollTop.addEventListener("click", function () {
+            window.scrollTo(0, 0);
+        });
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                buttonScrollTop.classList.add("active");
+            } else {
+                buttonScrollTop.classList.remove("active");
+            }
+          });
+    }
+  
+
+      
 }

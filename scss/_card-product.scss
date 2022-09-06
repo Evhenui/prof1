@@ -178,10 +178,7 @@
     &__title-image-wrapper {
         display: none; 
     }
-
-    &__title-image {
-    }
-
+    
     &.active &__title-wrapper {
         display: flex;
         align-items: center;
@@ -233,9 +230,6 @@
         column-gap: 4px
     }
 
-    &__stars {
-    }
-
     &__reviews-info {
         cursor: pointer;
         @extend %centre-space-between;
@@ -267,9 +261,6 @@
 
     &.active &__select-color-section {
         margin-bottom: 20px;
-    }
-
-    &__select {
     }
 
     &__select-wrapper {
@@ -432,10 +423,6 @@
         }
     }
 
-    &__prices-wrapper {
-
-    }
-
     &__prices-discount {
         display: flex;
         align-items: center;
@@ -568,9 +555,6 @@
             max-width: 100%;
             
         }
-    }
-
-    &__button-text {
     }
 
     &.active &__button-buy-on-click {
@@ -1298,14 +1282,6 @@
        
     }
 
-    &__animation-arrow-left {
-
-    }
-
-    &__animation-arrow-right {
-        
-    }
-
     &__animation-arm {
         position: relative;
         left: 12px;
@@ -1537,10 +1513,6 @@
         padding: 12px 16px;
     }
 
-    &__buttons {
-    
-    }
-
     &__button-like {
         margin-right: 4px;
     }
@@ -1564,12 +1536,6 @@
         display: flex;
         column-gap: 20px;
         align-items: flex-end;
-    }
-
-    &__order-prices {
-    }
-
-    &__discount {
     }
 
     &__old-price {
@@ -1621,3 +1587,112 @@
 
 
 
+.modal-stay-review {
+
+    &__mask {
+    }
+
+    &__wrapper {
+    }
+
+    &__container {
+    }
+
+    &__header {
+    }
+
+    &__title {
+    }
+
+    &__button-close {
+    }
+
+    &__button-close-svg {
+    }
+
+    &__button-close-svg-line {
+    }
+
+    &__main {
+    }
+
+    &__main-wrapper {
+    }
+
+    &__grade {
+    }
+
+    &__stars {
+    }
+
+    &__star {
+    }
+
+    &__star-svg {
+    }
+
+    &__subtitle {
+    }
+
+    &__inputs {
+    }
+
+    &__form {
+    }
+
+    &__input-container {
+    }
+
+    &__input {
+    }
+
+    &__label {
+    }
+
+    &__button {
+    }
+}
+.title-done {
+}
+.input-wrapper-white {
+
+    &__input {
+    }
+
+    &__image-error {
+    }
+
+    &__label {
+    }
+
+    &__prompt-wrapper {
+    }
+
+    &__prompt {
+    }
+}
+.name {
+}
+.phone {
+}
+.text {
+}
+.btn-red {
+}
+.modal-sended-review {
+
+    &__wrap {
+    }
+
+    &__title {
+    }
+
+    &__close {
+    }
+
+    &__close-svg {
+    }
+
+    &__close-svg-line {
+    }
+}
