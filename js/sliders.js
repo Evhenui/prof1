@@ -1,6 +1,7 @@
 export let sliders = function() {
   const cardProduct = document.querySelector('[data-card-product]'),
-        mainPage = document.querySelector('[data-main]');
+        mainPage = document.querySelector('[data-main]'),
+        titleSlider = document.querySelector('[data-title-slider]');
 
     if (cardProduct !== null) {
 
@@ -194,5 +195,41 @@ export let sliders = function() {
           });
         }
        
+    }
+
+    if(titleSlider !== null) {
+      const sliderWrapper = titleSlider.querySelector('[data-title-slides]'),
+            buttonNext = titleSlider.querySelector('[data-title-slider-next]'),
+            buttonPrev = titleSlider.querySelector('[data-title-slider-prev]'),
+            slides = titleSlider.querySelectorAll('[data-title-slide]');
+
+            let count = 0,
+                sizeSlide = sliderWrapper.offsetWidth,
+                maxSize = (slides.length - 1) * sizeSlide;
+
+                if(count === 0) {
+                  buttonPrev.disabled = true;
+                }
+        
+            buttonNext.addEventListener('click', function() {
+              buttonPrev.disabled = false;
+              if(count !== -maxSize) {
+                count -= sizeSlide;
+                sliderWrapper.style.transform = "translateX(" + count + 'px)';
+              } else {
+                this.disabled = true;
+              }
+            })
+
+            buttonPrev.addEventListener('click', function() {
+              
+              buttonNext.disabled = false;
+              if(count !== 0) {
+                count += sizeSlide;
+                sliderWrapper.style.transform = "translateX(" + count + 'px)';
+              } else {
+                this.disabled = true;
+              }
+            })
     }
 }

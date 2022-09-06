@@ -173,7 +173,7 @@ label {
   justify-content: left;
 }
 
-.about-company__wrapper, .stay-partner__wrapper, .news__wrapper, .background-wrapper, .current-offers__wrapper, .product-selection__wrapper, .recommendation__wrapper, .reviews__wrapper, .characteristics__wrapper, .all-about__wrapper, .header-page-navigation__wrapper, .card-product__page, .catalog__wrapper, .footer-special-documents__wrp, .footer__wrp {
+.about-company__wrapper, .stay-partner__wrapper, .news__wrapper, .background-wrapper, .current-offers__wrapper, .product-selection__wrapper, .title-slider__info-wrapper, .recommendation__wrapper, .reviews__wrapper, .characteristics__wrapper, .all-about__wrapper, .header-page-navigation__wrapper, .card-product__page, .catalog__wrapper, .footer-special-documents__wrp, .footer__wrp {
   max-width: 1440px;
   width: 100%;
   margin-left: auto;
@@ -185,7 +185,7 @@ label {
   flex-direction: column;
 }
 
-.product-selection__wrapper, .recommendation__title, .reviews__wrapper, .all-about__wrapper, .header-page-navigation__wrapper, .footer-special-documents__wrp {
+.recommendation__title, .reviews__wrapper, .all-about__wrapper, .header-page-navigation__wrapper, .footer-special-documents__wrp {
   padding-left: 48px;
   padding-right: 48px;
 }
@@ -4338,10 +4338,216 @@ label {
   }
 }
 
+.title-slider {
+  margin-bottom: 116px;
+}
+.title-slider__wrapper {
+  position: relative;
+}
+.title-slider__next-wrapper {
+  flex-direction: row-reverse;
+}
+.title-slider__prev-wrapper, .title-slider__next-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.title-slider__prev, .title-slider__next {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 2;
+  width: 44px;
+  height: 32px;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
+}
+.title-slider__prev:hover, .title-slider__next:hover {
+  background: #2D2D2D;
+}
+.title-slider__prev {
+  left: 26px;
+  padding-left: 12px;
+}
+.title-slider__prev:hover .title-slider__line-active-prev {
+  left: 1px;
+  opacity: 1;
+}
+.title-slider__prev:active {
+  background-color: #141414;
+}
+.title-slider__prev:disabled {
+  background: none;
+  cursor: auto;
+}
+.title-slider__prev:disabled .title-slider__arrow-prev {
+  stroke: #949494;
+}
+.title-slider__prev:disabled .title-slider__line-active-prev {
+  background: #949494;
+  opacity: 1;
+  left: 1px;
+}
+.title-slider__next {
+  right: 26px;
+  padding-right: 12px;
+}
+.title-slider__next:hover .title-slider__line-active-next {
+  left: 11px;
+  opacity: 1;
+}
+.title-slider__next:active {
+  background-color: #141414;
+}
+.title-slider__next:disabled {
+  background: none;
+  cursor: auto;
+}
+.title-slider__next:disabled .title-slider__arrow-next {
+  stroke: #949494;
+}
+.title-slider__next:disabled .title-slider__line-active-next {
+  background: #949494;
+  opacity: 1;
+  left: 11px;
+}
+.title-slider__line-active-prev, .title-slider__line-active-next {
+  z-index: 2;
+  width: 20px;
+  height: 1px;
+  display: flex;
+  background-color: #FEFEFE;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.title-slider__line-active-prev {
+  top: 8px;
+  left: 9px;
+}
+.title-slider__line-active-next {
+  left: 2px;
+}
+.title-slider__slides {
+  flex-shrink: 0;
+  width: 100%;
+  height: 660px;
+  position: relative;
+  display: flex;
+  margin-bottom: 12px;
+  transition: all 0.3s ease-in-out;
+}
+.title-slider__slide {
+  flex: 0 0 100%;
+}
+.title-slider__slide.tires {
+  padding-top: 94px;
+}
+.title-slider__slide-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 660px;
+}
+.title-slider__slide-wrapper.bike {
+  background-image: url("/img/background-main_1.jpg");
+}
+.title-slider__slide-wrapper.tires {
+  background-image: url("/img/background-main_2.jpg");
+}
+.title-slider__slide-wrapper.outfit {
+  background-image: url("/img/background-main_3.jpg");
+  background-size: auto;
+  background-position: right;
+}
+.title-slider__slide-wrapper.bike-new {
+  padding: 78px 0;
+}
+.title-slider__info {
+  background-repeat: no-repeat;
+}
+.title-slider__info.bike {
+  background-image: url("/img/backgroung-main_1.png");
+}
+.title-slider__info.bike-new {
+  background-color: #EDEDED;
+  position: relative;
+}
+.title-slider__image-wrapper {
+  position: absolute;
+  top: -47px;
+  right: 100px;
+}
+.title-slider__info-wrapper {
+  padding: 179px 0 125px 104px;
+}
+.title-slider__info-wrapper.tires {
+  padding: 85px 0 185px 104px;
+}
+.title-slider__info-wrapper.outfit {
+  padding: 179px 0 185px 104px;
+}
+.title-slider__info-wrapper.bike-new {
+  padding: 101px 0 107px 104px;
+}
+.title-slider__info-title {
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 68px;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 60px;
+  text-align: left;
+  color: #2D2D2D;
+}
+.title-slider__info-title.outfit, .title-slider__info-title.bike-new {
+  max-width: 590px;
+}
+.title-slider__info-button {
+  padding: 16px 36px;
+}
+.title-slider__pagintation {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.title-slider__point {
+  display: block;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  position: relative;
+}
+.title-slider__point:after {
+  transition: all 0.1s ease-in-out;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #ADADAD;
+  position: absolute;
+  top: 22px;
+  left: 13px;
+}
+.title-slider__point:hover::after {
+  background-color: #E61E37;
+}
+.title-slider__point:active::after {
+  background-color: #E61E37;
+  height: 12px;
+  width: 12px;
+  left: 16px;
+  top: 17px;
+}
+
 .product-selection {
   margin-bottom: 204px;
 }
 .product-selection__wrapper {
+  padding: 80px 48px 60px 48px;
   justify-content: space-between;
   display: flex;
   background-repeat: no-repeat;
@@ -4365,6 +4571,12 @@ label {
     display: none;
   }
 }
+.product-selection__dropdowns {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-bottom: 40px;
+}
 .product-selection__inputs {
   max-width: 400px;
   width: 100%;
@@ -4383,7 +4595,10 @@ label {
   }
 }
 .product-selection__sex {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+}
+.product-selection__label {
+  background-color: #F7F7F7;
 }
 .product-selection__wrapper-input-checkbox {
   padding-right: 8px;

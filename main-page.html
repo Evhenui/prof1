@@ -1026,7 +1026,83 @@
 
         <section data-main class="main-page">
             <div class="main-page__wrapper">
-                <section class="title-slider"></section>
+                <section data-title-slider class="title-slider">
+                    <div class="title-slider__wrapper">
+ 
+                        <button data-title-slider-prev class="title-slider__prev">
+                            <div class="title-slider__prev-wrapper">
+                                <span class="title-slider__line-active-prev"></span>
+                                <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="title-slider__arrow-prev" d="M7 17L1 9L7 1" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  
+                            </div>                                
+                        </button>
+                        <button data-title-slider-next class="title-slider__next">
+                            <div class="title-slider__next-wrapper">
+                                <span class="title-slider__line-active-next"></span>
+                                <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="title-slider__arrow-next" d="M1 17L7 9L1 1" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </button>
+
+                        <section data-title-slides class="title-slider__slides">
+                            <section data-title-slide class="title-slider__slide bike">
+                                <div class="title-slider__slide-wrapper bike">
+                                    <section class="title-slider__info bike">
+                                        <div class="title-slider__info-wrapper">
+                                            <h1 class="title-slider__info-title">Спортивные велосипеды ТМ Profi ’2022 уже в продаже!</h1>
+                                            <button class="title-slider__info-button btn-red">Подробнее</button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </section>
+    
+                            <section data-title-slide class="title-slider__slide tires">
+                                <div class="title-slider__slide-wrapper tires">
+                                    <section class="title-slider__info tires">
+                                        <div class="title-slider__info-wrapper tires">
+                                            <h1 class="title-slider__info-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                                            <button class="title-slider__info-button btn-red">Подробнее</button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </section>
+    
+                            <section data-title-slide class="title-slider__slide outfit">
+                                <div class="title-slider__slide-wrapper outfit">
+                                    <section class="title-slider__info outfit">
+                                        <div class="title-slider__info-wrapper outfit">
+                                            <h1 class="title-slider__info-title outfit">Lorem ipsum consectetur adipiscing elit</h1>
+                                            <button class="title-slider__info-button btn-red">Подробнее</button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </section>
+    
+                            <section data-title-slide class="title-slider__slide bike-new">
+                                <div class="title-slider__slide-wrapper bike-new">
+                                    <section class="title-slider__info bike-new">
+                                        <div class="title-slider__info-wrapper bike-new">
+                                            <h1 class="title-slider__info-title bike-new">Lorem ipsum consectetur adipiscing elit</h1>
+                                            <button class="title-slider__info-button btn-red">Подробнее</button>
+                                        </div>
+                                        <div class="title-slider__image-wrapper">
+                                            <img src="/img/background-main_4.png" alt="bike">
+                                        </div>
+                                    </section>                           
+                                </div>
+                            </section>
+                        </section>
+
+                        <section class="title-slider__pagintation">
+                            <span class="title-slider__point"></span>
+                            <span class="title-slider__point"></span>
+                            <span class="title-slider__point"></span>
+                            <span class="title-slider__point"></span>
+                        </section>
+                    </div>
+                </section>
                 <section data-product-selection class="product-selection">
                     <div class="product-selection__wrapper">
                         <div class="product-selection__image-wrapper">
@@ -1085,7 +1161,7 @@
 
                                 <section data-dropdown-category class="dropdown">
                                     <div class="dropdown__input">
-                                      <span data-dropdown-category-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-category-label class="dropdown__label product-selection__label">Категория</span>
                                       <span data-dropdown-category-selected class="dropdown__selected-item"></span> 
                                       <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1110,7 +1186,7 @@
 
                                 <section data-dropdown-growth class="dropdown">
                                     <div class="dropdown__input">
-                                      <span data-dropdown-growth-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-growth-label class="dropdown__label product-selection__label">Рост</span>
                                       <span data-dropdown-growth-selected class="dropdown__selected-item"></span> 
                                       <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1135,7 +1211,7 @@
 
                                 <section data-dropdown-test-one class="dropdown">
                                     <div class="dropdown__input">
-                                      <span data-dropdown-test-one-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-test-one-label class="dropdown__label product-selection__label">Lorem ipsum</span>
                                       <span data-dropdown-test-one-selected class="dropdown__selected-item"></span> 
                                       <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1160,7 +1236,7 @@
 
                                 <section data-dropdown-test-two class="dropdown">
                                     <div class="dropdown__input">
-                                      <span data-dropdown-test-two-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-test-two-label class="dropdown__label product-selection__label">Lorem ipsum</span>
                                       <span data-dropdown-test-two-selected class="dropdown__selected-item"></span> 
                                       <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
