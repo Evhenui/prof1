@@ -2,7 +2,11 @@ export let sliders = function() {
   const cardProduct = document.querySelector('[data-card-product]'),
         mainPage = document.querySelector('[data-main]'),
         titleSlider = document.querySelector('[data-title-slider]');
-
+        function delActiv(param) {
+          param.forEach((el) => {
+            el.classList.remove('active');
+          })
+        } 
     if (cardProduct !== null) {
 
       const sliderCardProductFooter = new Swiper('.recommendation__slider', {
@@ -201,17 +205,25 @@ export let sliders = function() {
       const sliderWrapper = titleSlider.querySelector('[data-title-slides]'),
             buttonNext = titleSlider.querySelector('[data-title-slider-next]'),
             buttonPrev = titleSlider.querySelector('[data-title-slider-prev]'),
-            slides = titleSlider.querySelectorAll('[data-title-slide]');
+            slides = titleSlider.querySelectorAll('[data-title-slide]'),
+            points = titleSlider.querySelectorAll('[data-point-title-slider]');
+
+            
+            
+           
+
 
             let count = 0,
+            i = 0,
                 sizeSlide = sliderWrapper.offsetWidth,
                 maxSize = (slides.length - 1) * sizeSlide;
-
+                points[i].classList.add('active')
                 if(count === 0) {
                   buttonPrev.disabled = true;
                 }
         
             buttonNext.addEventListener('click', function() {
+              i++;
               buttonPrev.disabled = false;
               if(count !== -maxSize) {
                 count -= sizeSlide;
@@ -219,10 +231,12 @@ export let sliders = function() {
               } else {
                 this.disabled = true;
               }
+              delActiv(points)
+              points[i].classList.add('active')
             })
 
             buttonPrev.addEventListener('click', function() {
-              
+              i--;
               buttonNext.disabled = false;
               if(count !== 0) {
                 count += sizeSlide;
@@ -230,6 +244,8 @@ export let sliders = function() {
               } else {
                 this.disabled = true;
               }
+              delActiv(points)
+              points[i].classList.add('active')
             })
     }
 }

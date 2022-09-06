@@ -4441,9 +4441,6 @@ label {
 .title-slider__slide {
   flex: 0 0 100%;
 }
-.title-slider__slide.tires {
-  padding-top: 94px;
-}
 .title-slider__slide-wrapper {
   background-repeat: no-repeat;
   background-size: cover;
@@ -4535,12 +4532,22 @@ label {
 .title-slider__point:hover::after {
   background-color: #E61E37;
 }
-.title-slider__point:active::after {
+.title-slider__point:hover::after {
   background-color: #E61E37;
   height: 12px;
   width: 12px;
   left: 16px;
   top: 17px;
+}
+.title-slider__point.active::after {
+  background-color: #E61E37;
+}
+.title-slider__point.active:hover::after {
+  background-color: #E61E37;
+  height: 2px;
+  width: 20px;
+  left: 13px;
+  top: 22px;
 }
 
 .product-selection {

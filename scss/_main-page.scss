@@ -127,9 +127,6 @@
     }
 
     &__slide {
-        &.tires {
-            padding-top: 94px;
-        }
         flex: 0 0 100%;
     }
 
@@ -229,7 +226,7 @@
                 background-color: $color-red;
             } 
         }
-        &:active {
+        &:hover {
             &::after {
                 background-color: $color-red;
                 height: 12px; 
@@ -238,6 +235,19 @@
                 top: 17px;
             } 
         }
+        &.active::after {
+            background-color: $color-red;
+        }
+
+        &.active:hover {
+            &::after {
+                background-color: $color-red;
+                height: 2px;
+                width: 20px;
+                left: 13px;
+                top: 22px;
+            } 
+        } 
     }
 }
 
