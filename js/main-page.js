@@ -26,10 +26,26 @@ export let mainPage = function() {
             }
         })
     }
+    function addActiveDropdown(dropdown, selected, label) {
+        dropdown.addEventListener('click', function() {
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            }
+            else {
+                dropdown.classList.add('active');
+            }
+            if(selected.innerText === '') {
+                label.classList.toggle('active');
+            } 
+            closeMenu(mainPage, dropdown, selected, label)
+        })
+
+    }
 
     if(mainPage !== null) {
 
-        const dropdownTypeOfTrade = mainPage.querySelector('[data-dropdown-type-of-trade]');
+        const dropdownTypeOfTrade = mainPage.querySelector('[data-dropdown-type-of-trade]'),
+              dropdownSex = mainPage.querySelector('[data-product-selection-dropdowns]');
         
         if(dropdownTypeOfTrade !== null) {
 
@@ -37,25 +53,60 @@ export let mainPage = function() {
                    itemSelected = document.querySelector('[data-dropdown-selected]'),
                    itemLabel = document.querySelector('[data-dropdown-label]'),
                    dropdowns = document.querySelectorAll('[data-dropdown]');
-
-        dropdownTypeOfTrade.addEventListener('click', function() {
-            if (this.classList.contains('active')) {
-                this.classList.remove('active');
-            }
-            else {
-                delActive(dropdowns);
-                this.classList.add('active');
-            }
-            if(itemSelected.innerText === '') {
-                itemLabel.classList.toggle('active');
-            } 
-            closeMenu(mainPage, dropdownTypeOfTrade, itemSelected, itemLabel)
-        })
-        changeLable(itemsSelect, itemSelected)
+                   
+                dropdownTypeOfTrade.addEventListener('click', function() {
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                    }
+                    else {
+                        delActive(dropdowns);
+                        this.classList.add('active');
+                    }
+                    if(itemSelected.innerText === '') {
+                        itemLabel.classList.toggle('active');
+                    } 
+                    closeMenu(mainPage, dropdownTypeOfTrade, itemSelected, itemLabel)
+                })
+                changeLable(itemsSelect, itemSelected)
         }
 
+        if(dropdownSex !== null) {
+                
+            const dropdownCategory = dropdownSex.querySelector('[data-dropdown-category]'),
+                  labelCategory = dropdownSex.querySelector('[data-dropdown-category-label]'),
+                  selectedCategory = dropdownSex.querySelector('[data-dropdown-category-selected]'),
+                  itemsCategory = dropdownSex.querySelectorAll('[data-category-item]'),
 
+                  dropdownGrowth = dropdownSex.querySelector('[data-dropdown-growth]'),
+                  labelGrowth = dropdownSex.querySelector('[data-dropdown-growth-label]'),
+                  selectedGrowth = dropdownSex.querySelector('[data-dropdown-growth-selected]'),
+                  itemsGrowth = dropdownSex.querySelectorAll('[data-growth-item]'),
 
+                  dropdownTestOne = dropdownSex.querySelector('[data-dropdown-test-one]'),
+                  labelTestOne = dropdownSex.querySelector('[data-dropdown-test-one-label]'),
+                  selectedTestOne = dropdownSex.querySelector('[data-dropdown-test-one-selected]'),
+                  itemsTestOne = dropdownSex.querySelectorAll('[data-test-one-item]'),
+
+                  dropdownTestTwo = dropdownSex.querySelector('[data-dropdown-test-two]'),
+                  labelTestTwo = dropdownSex.querySelector('[data-dropdown-test-two-label]'),
+                  selectedTestTwo = dropdownSex.querySelector('[data-dropdown-test-two-selected]'),
+                  itemsTestTwo = dropdownSex.querySelectorAll('[data-test-two-item]');
+                  
+
+                
+                addActiveDropdown(dropdownCategory, selectedCategory, labelCategory)
+                changeLable(itemsCategory, selectedCategory)
+
+                addActiveDropdown(dropdownGrowth, selectedGrowth, labelGrowth)
+                changeLable(itemsGrowth, selectedGrowth)
+
+                addActiveDropdown(dropdownTestOne, selectedTestOne, labelTestOne)
+                changeLable(itemsTestOne, selectedTestOne)
+
+                addActiveDropdown(dropdownTestTwo, selectedTestTwo, labelTestTwo)
+                changeLable(itemsTestTwo, selectedTestTwo)
+      
+        }
     }
     
     if(productSelection !== null) {

@@ -452,3 +452,120 @@ html {
     @include text( $size: 0.875rem, $textAlign: center, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
   }
 }
+
+.dropdown {
+  position: relative;
+
+  &.active &__list {
+      visibility: visible;
+      opacity: 1;
+  }
+  &.active &__arrow {
+      transform: rotateZ(180deg);
+  }
+  &.active &__arrow-hover {
+      stroke: $color-red;
+  }
+  &:hover &__input {
+      border-color: $color-red;
+  }
+  &:hover &__arrow-hover {
+      stroke: $color-red;
+  }
+  &:hover &__label {
+    color: $color-gray-100;
+  }
+  &.active &__input {
+      border-color: $color-red-50;
+  }
+
+  &__input {
+      border-bottom: 1px solid $color-gray-50;
+      width: 100%;
+      height: 44px;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &.is-invalid {
+          border-color: $color-red-60;
+      }
+  }
+
+  &__label {
+      display: inline-block;
+      position: absolute;
+      left: 16px;
+      top: 11px;
+      @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: center, $fontWeight: 400, $lineHeight: 24px);
+      background-color: $color-white;
+      transition: all .2s ease-in-out;
+      &.active{
+          font-size: 0.75rem;
+          top: -17px;
+          color: $color-gray-100;
+      }
+  }
+
+  &__selected-item {
+      @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+  }
+
+  &__arrow {
+      transform: rotateZ(0deg);
+      transition: all .2s ease-in-out;
+  }
+
+  &__list {
+      z-index: 2;
+      width: 100%;
+      top: 44px;
+      visibility: hidden;
+      width: 100%;
+      position: absolute;
+      top: 44px;
+      background-color: $color-white;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s ease-in;
+      box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+  }
+
+  &__menu {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+  }
+
+  &__item {
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all .1s ease-in-out;
+      position: relative;
+      &:hover {
+          background-color: #F7F7F7;
+          &::before {
+              opacity: 1;
+          }
+      }
+      &::before {
+          content: '';
+          width: 2px;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-color: $color-red-50;
+          opacity: 0;
+          transition: all .1s ease-in-out;
+      }
+
+  }
+  &__item:hover &__item-name {
+      color: $color-gray-100;
+  }
+
+  &__item-name {
+      @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+  }
+}

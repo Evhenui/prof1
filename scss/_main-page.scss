@@ -292,6 +292,7 @@
         z-index: 1;
     }
     .swiper-scrollbar-drag {
+        cursor: pointer;
         background-color: $color-black;
         transition: all .1s ease-in-out;
         &:hover {
@@ -376,8 +377,7 @@
 
 .background-wrapper {
     @extend %size-page;
-    @extend %padding-country;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat, no-repeat;
     background-image: url('/img/bg.png');
     background-position: right 0px;
 }
@@ -501,7 +501,7 @@
 
     &__wrapper {
         @extend %size-page;
-        padding: 100px 48px;
+        padding: 100px 48px 183px 48px;
         display: flex;
         justify-content: space-between;
         margin-bottom: 100px;
@@ -596,91 +596,7 @@
 }
 
 
-.type-of-trade-dropdown {
-    position: relative;
 
-    &.active &__list {
-        visibility: visible;
-        opacity: 1;
-    }
-    &.active &__arrow {
-        transform: rotateZ(180deg);
-    }
-    &.active &__arrow-hover {
-        stroke: $color-red;
-    }
-    &:hover &__input {
-        border-color: $color-red;
-    }
-    &:hover &__arrow-hover {
-        stroke: $color-red;
-    }
-
-    &__input {
-        border-bottom: 1px solid $color-gray-50;
-        width: 100%;
-        height: 44px;
-        padding: 10px 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &.is-invalid {
-            border-color: $color-red-60;
-        }
-    }
-
-    &__label {
-        display: inline-block;
-        position: absolute;
-        left: 16px;
-        top: 11px;
-        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: center, $fontWeight: 400, $lineHeight: 24px);
-        background-color: $color-white;
-        transition: all .2s ease-in-out;
-        &.active{
-            font-size: 0.75rem;
-            top: -17px;
-        }
-    }
-
-    &__selected-item {
-        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
-    }
-
-    &__arrow {
-        transform: rotateZ(0deg);
-        transition: all .2s ease-in-out;
-    }
-
-    &__list {
-        z-index: 2;
-        width: 100%;
-        top: 44px;
-        visibility: hidden;
-        width: 100%;
-        position: absolute;
-        top: 56px;
-        background-color: $color-white;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.2s ease-in;
-    }
-
-    &__menu {
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
-        padding-left: 16px;
-    }
-
-    &__item {
-        cursor: pointer;
-    }
-
-    &__item-name {
-        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
-    }
-}
 
 .about-company {
 

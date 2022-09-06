@@ -1079,10 +1079,112 @@
                                         <label class="product-selection__checkbox-label" for="rb1">Мужчина</label>
                                     </div>
                                 </div>
-                            </section>
-                            <section class="product-selection__dropdowns">
+                            </section>   
+
+                            <section data-product-selection-dropdowns class="product-selection__dropdowns">
+
+                                <section data-dropdown-category class="dropdown">
+                                    <div class="dropdown__input">
+                                      <span data-dropdown-category-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-category-selected class="dropdown__selected-item"></span> 
+                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    </div>
+                                    <div class="dropdown__list">
+                                      <div>
+                                        <ul class="dropdown__menu">
+                                          <li data-category-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-category-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-category-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                </section>
+
+                                <section data-dropdown-growth class="dropdown">
+                                    <div class="dropdown__input">
+                                      <span data-dropdown-growth-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-growth-selected class="dropdown__selected-item"></span> 
+                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    </div>
+                                    <div class="dropdown__list">
+                                      <div>
+                                        <ul class="dropdown__menu">
+                                          <li data-growth-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-growth-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-growth-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                </section>
+
+                                <section data-dropdown-test-one class="dropdown">
+                                    <div class="dropdown__input">
+                                      <span data-dropdown-test-one-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-test-one-selected class="dropdown__selected-item"></span> 
+                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    </div>
+                                    <div class="dropdown__list">
+                                      <div>
+                                        <ul class="dropdown__menu">
+                                          <li data-test-one-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-test-one-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-test-one-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                </section>
+
+                                <section data-dropdown-test-two class="dropdown">
+                                    <div class="dropdown__input">
+                                      <span data-dropdown-test-two-label class="dropdown__label">Выберите вид торговли*</span>
+                                      <span data-dropdown-test-two-selected class="dropdown__selected-item"></span> 
+                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    </div>
+                                    <div class="dropdown__list">
+                                      <div>
+                                        <ul class="dropdown__menu">
+                                          <li data-test-two-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-test-two-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                          <li data-test-two-item class="dropdown__item">
+                                            <p class="dropdown__item-name">Lorem ipsum dolor sit amet</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                </section>
 
                             </section>
+
                             <button class="btn-red product-selection__button">Подобрать</button>
                             <section class="product-selection__search">
                                 <span class="product-selection__search-title">Найдено товаров</span>
@@ -3383,25 +3485,25 @@
                                 <h3 class="stay-partner__inputs-title">Оставьте свои контакты и мы Вам перезвоним</h3>
                                 <form class="stay-partner__form" action="">
     
-                                    <section data-dropdown-type-of-trade data-dropdown class="type-of-trade-dropdown stay-partner__dropdown">
-                                        <div class="type-of-trade-dropdown__input">
-                                          <span data-dropdown-label class="type-of-trade-dropdown__label">Выберите вид торговли*</span>
-                                          <span data-input-selected data-dropdown-selected data-input-main class="type-of-trade-dropdown__selected-item"></span> 
-                                          <svg class="type-of-trade-dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path class="type-of-trade-dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <section data-dropdown-type-of-trade data-dropdown class="dropdown type-of-trade-dropdown stay-partner__dropdown">
+                                        <div class="dropdown__input type-of-trade-dropdown__input">
+                                          <span data-dropdown-label class="dropdown__label type-of-trade-dropdown__label">Выберите вид торговли*</span>
+                                          <span data-input-selected data-dropdown-selected data-input-main class="dropdown__selected-item type-of-trade-dropdown__selected-item"></span> 
+                                          <svg class="dropdown__arrow type-of-trade-dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="dropdown__arrow-hover type-of-trade-dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                           </svg>
                                         </div>
-                                        <div class="type-of-trade-dropdown__list">
+                                        <div class="dropdown__list type-of-trade-dropdown__list">
                                           <div>
-                                            <ul class="type-of-trade-dropdown__menu">
-                                              <li data-type-of-trade-item class="type-of-trade-dropdown__item">
-                                                <p class="type-of-trade-dropdown__item-name">Вид торговли 1</p>
+                                            <ul class="dropdown__menu type-of-trade-dropdown__menu">
+                                              <li data-type-of-trade-item class="dropdown__item type-of-trade-dropdown__item">
+                                                <p class="dropdown__item-name type-of-trade-dropdown__item-name">Lorem ipsum dolor sit amet</p>
                                               </li>
-                                              <li data-type-of-trade-item class="type-of-trade-dropdown__item">
-                                                <p class="type-of-trade-dropdown__item-name">Вид торговли 2</p>
+                                              <li data-type-of-trade-item class="dropdown__item type-of-trade-dropdown__item">
+                                                <p class="dropdown__item-name type-of-trade-dropdown__item-name">Lorem ipsum dolor sit amet</p>
                                               </li>
-                                              <li data-type-of-trade-item class="type-of-trade-dropdown__item">
-                                                <p class="type-of-trade-dropdown__item-name">Вид торговли 3</p>
+                                              <li data-type-of-trade-item class="dropdown__item type-of-trade-dropdown__item">
+                                                <p class="dropdown__item-name type-of-trade-dropdown__item-name">Lorem ipsum dolor sit amet</p>
                                               </li>
                                             </ul>
                                           </div>
