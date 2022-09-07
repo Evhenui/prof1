@@ -5348,6 +5348,11 @@ label {
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 640px) {
+  .modal-on-click.active {
+    z-index: 4;
+  }
+}
 .modal-on-click__mask {
   position: fixed;
   z-index: 3;
@@ -5361,6 +5366,19 @@ label {
   display: table;
   transition: all 0.3s ease;
 }
+@media (max-width: 640px) {
+  .modal-on-click__mask {
+    z-index: 4;
+  }
+}
+@media (max-width: 640px) {
+  .modal-on-click.done .modal-on-click__container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .modal-on-click__container {
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.1);
   background: #FEFEFE;
@@ -5370,7 +5388,9 @@ label {
 }
 @media (max-width: 640px) {
   .modal-on-click__container {
-    max-width: 343px;
+    max-width: 375px;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 }
 .modal-on-click__wrapper {
@@ -5379,6 +5399,11 @@ label {
   transition: all 0.3s ease;
   padding-top: 96px;
 }
+@media (max-width: 640px) {
+  .modal-on-click__wrapper {
+    padding: 0;
+  }
+}
 .modal-on-click__header {
   background: #F7F7F7;
   padding: 12px 12px 12px 126px;
@@ -5386,6 +5411,8 @@ label {
 @media (max-width: 640px) {
   .modal-on-click__header {
     padding-left: 24px;
+    background-color: #2D2D2D;
+    justify-content: flex-end;
   }
 }
 .modal-on-click__title {
@@ -5396,11 +5423,36 @@ label {
   text-align: left;
   color: #2D2D2D;
 }
+@media (max-width: 640px) {
+  .modal-on-click__title {
+    display: none;
+  }
+}
+.modal-on-click__title.hidden {
+  display: none;
+}
+@media (max-width: 640px) {
+  .modal-on-click__title.hidden {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 42px;
+  }
+}
+@media (max-width: 640px) {
+  .modal-on-click__title.order {
+    display: block;
+  }
+}
 .modal-on-click__button-close {
   font-size: 0;
 }
 .modal-on-click__button-close-svg-line {
   transition: all 0.1s ease-in-out;
+}
+@media (max-width: 640px) {
+  .modal-on-click__button-close-svg-line {
+    fill: #FEFEFE;
+  }
 }
 .modal-on-click__button-close:hover .modal-on-click__button-close-svg-line {
   fill: #E61E37;
@@ -5415,7 +5467,7 @@ label {
 }
 @media (max-width: 640px) {
   .modal-on-click__main-wrapper {
-    padding: 56px 20px 80px 20px;
+    padding: 80px 16px 100px 16px;
     min-height: auto;
   }
 }
@@ -5439,7 +5491,7 @@ label {
 }
 @media (max-width: 640px) {
   .modal-on-click.done .modal-on-click__main-wrapper {
-    padding: 60px 34px 148px 40px;
+    padding: 80px 16px 200px 16px;
   }
 }
 .modal-on-click.done .modal-on-click__form {

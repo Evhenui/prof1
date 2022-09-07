@@ -28,13 +28,17 @@ export let modals = function() {
 
     if(modalReview !== null) {
         const buttonSend = modalReview.querySelector('[data-button-modal-review]'),
+              buttonCloseModal = modalReview.querySelector('[data-close-modal-stay-review]'),
               buttonOpenModal = document.querySelector('[data-button-open-modal-review]'),
               modalSendedReview = modalReview.querySelector('[data-modal-sended-review]'),
               modalReviewContainer = modalReview.querySelector('[data-modal-stay-review-container]'),
-              buttonCloseModals = modalReview.querySelector('[data-close-modal-sended-review]');
+              buttonCloseModals = modalReview.querySelector('[data-close-modal-sended-review]'),
+              modalContainer = modalReview.querySelector('[data-modal-stay-review-container]'),
+              body = document.querySelector('#body-cont');
 
             buttonOpenModal.addEventListener('click', function() {
-                modalReview.classList.add('active')
+                modalReview.classList.add('active');
+                body.style.overflow = 'hidden';
             });
             buttonSend.addEventListener('click', function() {
                 modalSendedReview.classList.add('active');
@@ -44,7 +48,18 @@ export let modals = function() {
                 modalReview.classList.remove('active');
                 modalSendedReview.classList.remove('active');
                 modalReviewContainer.classList.remove('hidden');
-            })
-
+                body.style.overflow = 'auto';
+            });
+            buttonCloseModal.addEventListener('click', ()=> {
+                modalReview.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+            modalReview.addEventListener("click", function (e) {
+                const click = e.composedPath().includes(modalContainer);
+                if (!click) {
+                    modalReview.classList.remove("active");
+                    body.style.overflow = 'auto';
+                }
+                });
     }
 }   

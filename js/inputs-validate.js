@@ -255,11 +255,25 @@ export let inputsValidate = function() {
 
           if(modalOnClick !== null) {
 
-            const button = modalOnClick.querySelector('[data-button-modal-on-click]');
+            const button = modalOnClick.querySelector('[data-button-modal-on-click]'),
+                  inputTel = modalOnClick.querySelector('[data-input-tel-modal-on-click]'),
+                  containerInputTel = modalOnClick.querySelector('[data-input-tel-container-modal-on-click]'),
+                  inputs = modalOnClick.querySelectorAll('[data-input-modal-on-click]');
+
             button.addEventListener('click', function(event){
                 event.preventDefault();
                   modalOnClick.classList.add('done'); 
-              });
+            });
+            inputTel.addEventListener('input', function(){
+                exam(regPhone, inputTel, false, containerInputTel);
+            }); 
+            inputs.forEach(item => {
+                item.addEventListener('input', ()=> {
+                    if(inputs[0].value !== '' && inputs[1].value !== '' && validate(regPhone, inputs[1].value)) {
+                        button.disabled = false;
+                    }
+                })
+            })
           }
 
           if(headerSection !== null) {
@@ -343,6 +357,7 @@ export let inputsValidate = function() {
             }
             
           }  
+
           if(modalReview !== null) {
             const inputs = modalReview.querySelectorAll('[data-input-stay-review]'),
                   buttonSend = modalReview.querySelector('[data-button-modal-review]'),
