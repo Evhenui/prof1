@@ -4,7 +4,8 @@ export let inputsValidate = function() {
           modalEnter = document.querySelector('[data-modal-enter]'),
           phoneInputs = document.querySelectorAll('[data-tel-input]'),
           mainSection = document.querySelector('[data-main]'),
-          modalOnClick = document.querySelector('[data-modal-on-click]');
+          modalOnClick = document.querySelector('[data-modal-on-click]'),
+          modalReview = document.querySelector('[data-modal-stay-review]');
 
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
@@ -341,5 +342,24 @@ export let inputsValidate = function() {
                 inputsChange(inputs, button)
             }
             
-    }  
+          }  
+          if(modalReview !== null) {
+            const inputs = modalReview.querySelectorAll('[data-input-stay-review]'),
+                  buttonSend = modalReview.querySelector('[data-button-modal-review]'),
+                  inputTelContainer = modalReview.querySelector('[data-input-tel-stay-review-contaner]'),
+                  inputTel = modalReview.querySelector('[data-input-tel-stay-review]');
+
+                  preventDefaultButton(buttonSend);
+                  inputs.forEach(item => {
+                    item.addEventListener('input', () => {
+                        if(inputs[0].value !== '' &&  inputs[1].value !== '' && inputs[2].value !== '') {
+                            buttonSend.disabled = false;
+                        }
+                    })
+                  });
+
+                  inputTel.addEventListener('input', function(){
+                    exam(regPhone, inputTel, false, inputTelContainer);
+                  }); 
+          }
 }
