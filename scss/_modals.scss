@@ -586,3 +586,244 @@
       @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
 		}
 }
+
+.modal-sended-review {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+  background: $color-white;
+  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.1);
+  max-width: 465px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include __640 {
+    max-width: 375px;
+
+  }
+  &.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 2;
+      margin: 0 auto;
+      @include __640 {
+        z-index: 4;
+      }
+  }
+  &__wrap {
+      padding: 40px 12px;
+      @extend %centre-space-between;
+      @include __640 {
+        flex-direction: column-reverse;
+        row-gap: 246px;
+        padding: 16px 16px 200px 16px;
+        max-height: 100vh;
+        overflow-y: auto;
+      }
+  }
+  &__close {
+    @include __640 {
+      align-self: flex-end;
+    }
+  }
+
+  &__title {
+      width: 100%;
+      @include text($size: 1rem, $color: $color-black, $textAlign: center, $fontWeight: 700, $lineHeight: 24px);
+      @include __640 {
+        @include text($size: 2rem, $color: $color-black, $textAlign: center, $fontWeight: 700, $lineHeight: 44px);
+      }
+    }
+
+  &__close:hover &__close-svg-line {
+      fill: $color-red;
+  }
+
+  &__close:active &__close-svg-line {
+      fill: $color-red-70;
+  }
+
+  &__close-svg-line {
+      transition: all .1s ease-in-out;
+  }
+}
+
+.modal-stay-review {
+  transition: all .3s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+      z-index: 5;
+      opacity: 1;
+      visibility: visible;
+      @include __640 {
+        z-index: 4;
+      }
+  }
+
+  &__mask {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      display: table;
+      transition: all 0.3s ease;
+      @include __640 {
+        z-index: 4;
+      }
+  }
+
+  &__wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+      padding-top: 96px;
+  }
+
+  &__container {
+      max-width: 604px;
+      width: 100%;
+      background: $color-white;
+      box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+      margin: 0 auto;
+      transition: all .3s ease-in-out;
+      @include __640 {
+        max-width: 375px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-height: 100vh;
+        overflow-y: auto;
+      }
+      &.hidden {
+          opacity: 0;
+          visibility: hidden;
+      }
+  }
+
+  &__header {
+      padding: 12px 12px 12px 12px;
+      background-color: #F7F7F7;
+      @extend %centre-space-between;
+      @include __640 {
+        padding: 16px;
+      }
+  }
+
+  &__title {
+      width: 100%;
+      @include text($size: 1rem, $color: $color-black, $textAlign: center, $fontWeight: 700, $lineHeight: 24px);
+      @include __640 {
+        text-align: left;
+        max-width: 247px;
+      }
+    }
+
+  &__button-close {
+      font-size: 0;
+  }
+
+  &__button-close:hover &__button-close-svg-line {
+      fill: $color-red;
+  }
+
+  &__button-close:active &__button-close-svg-line {
+      fill: $color-red-70;
+  }
+
+  &__button-close-svg-line {
+      transition: all .1s ease-in-out;
+  }
+
+  &__main {
+  }
+
+  &__main-wrapper {
+      padding: 40px;
+      @include __640 {
+        padding: 56px 16px 200px 16px;
+      }
+  }
+
+  &__grade {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 18px;
+      margin-bottom: 60px;
+  }
+
+  &__stars {
+      display: flex;
+      column-gap: 4px;
+  }
+
+  &__star {
+      font-size: 0;
+  }
+
+  &__star:hover &__star-svg {
+      fill: $color-red-50;
+  }
+
+  &__star-svg {
+  }
+
+  &__subtitle {
+      @include text($size: 0.875rem, $color: $color-black, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
+  }
+
+  &__top-inputs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      @include __640 {
+        flex-direction: column;
+        row-gap: 24px;
+      }
+  }
+
+  &__inputs {
+  }
+
+  &__form {
+  }
+
+  &__input-container {
+      margin: 0;
+      &.text {
+          margin-bottom: 60px;
+      }
+  }
+
+
+  &__input.name, &__input.tel {
+      width: 250px;
+      @include __640 {
+        width: 100%;
+      }
+  }
+
+  &__input {
+      max-width: 100%;
+  }
+
+  &__label {
+  }
+
+  &__button {
+      width: 100%;
+      padding: 16px 0;
+  }
+}
