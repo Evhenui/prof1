@@ -5658,7 +5658,7 @@ label {
 .main-modal__show-password-button {
   position: absolute;
   top: 12px;
-  right: 14px;
+  right: 96px;
   cursor: pointer;
   font-size: 0;
 }
