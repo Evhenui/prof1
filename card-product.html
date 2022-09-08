@@ -291,7 +291,7 @@
             <nav class="header-navigation">
                 <div class="header-navigation__wrapper">
                     <ul class="header-navigation__list">
-                        <li data-button-search class="header-navigation__list-item">
+                        <li data-button-search class="header-navigation__list-item search">
                             <a data-default-link class="header-navigation__item-link" href="#">
                                 <svg class="header-navigation__svg" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_308_11511)">
@@ -306,7 +306,7 @@
                                 </svg>      
                             </a>
                         </li>
-                        <li class="header-navigation__list-item basket">
+                        <li class="header-navigation__list-item comparison">
                             <div class="amount-item">
                                 <span class="amount-item__title">2</span>
                             </div>
@@ -323,8 +323,9 @@
                                 </svg>             
                             </a>
                         </li>
-                        <li class="header-navigation__list-item">
-                            <a data-default-link class="header-navigation__item-link" href="#">
+                        <!--header-navigation__list-item has class empty-->
+                        <li data-button-open-basket class="header-navigation__list-item basket">
+                            <a data-default-link  class="header-navigation__item-link basket" href="#">
                                 <svg class="header-navigation__svg" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path class="header-navigation__svg-hover" d="M29.7137 44C30.2463 44 30.678 43.5726 30.678 43.0455C30.678 42.5183 30.2463 42.0909 29.7137 42.0909C29.1812 42.0909 28.7495 42.5183 28.7495 43.0455C28.7495 43.5726 29.1812 44 29.7137 44Z" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path class="header-navigation__svg-hover" d="M43.2133 44C43.7458 44 44.1775 43.5726 44.1775 43.0455C44.1775 42.5183 43.7458 42.0909 43.2133 42.0909C42.6807 42.0909 42.249 42.5183 42.249 43.0455C42.249 43.5726 42.6807 44 43.2133 44Z" stroke="#FEFEFE" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2766,6 +2767,459 @@
             </div>           
         </section>
 
+        <section data-modal-enter class="main-modal">
+            <div class="main-modal__mask">
+              <div data-wrapper-modal class="main-modal__wrapper">
+                <div data-popup-modal-container class="main-modal__container">
+                  <header class="main-modal__header">
+                    <div class="main-modal__close-modal">
+                      <button data-close-modal class="main-modal__close-button mobile">
+                        <svg class="main-modal__close-button-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path class="main-modal__close-button-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                          <path class="main-modal__close-button-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                        </svg>  
+                      </button>
+                    </div>
+                    <div class="main-modal__header-wrapper">
+                      <nav class="main-modal__navigation">
+                        <ul class="main-modal__navigation-list">
+                          <li data-modal-tab-item="#modal-enter" data-header-modal-item class="main-modal__navigation-item enter js-modal-tab-item active">
+                            <a href="#main-modal__enter" class="main-modal__navigation-link link-enter">Вход</a>
+                          </li>
+                          <li data-modal-tab-item="#modal-register" data-header-modal-item class="main-modal__navigation-item register js-modal-tab-item">
+                            <a href="#main-modal__register" class="main-modal__navigation-link link-register">Регистрация</a>
+                          </li>
+                        </ul>
+                        <button data-close-modal class="main-modal__close-button">
+                          <svg class="main-modal__close-button-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="main-modal__close-button-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                            <path class="main-modal__close-button-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                          </svg>  
+                        </button>
+                      </nav>
+                    </div>
+                  </header>
+                  <main class="main-modal__main">
+                    <div class="main-modal__main-wrapper">
+                      <section data-modal-tab-section class="main-modal__enter js-modal-tab-section active" id="modal-enter">
+    
+                        <form action="" class="main-modal__form-enter" novalidate>
+                            <div data-input-email-modal-enter-container class="input-wrapper-white main-modal__input-wrapper email">
+                                <input data-input-email-modal-enter data-input-enter class="input-wrapper-white__input main-modal__input" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+                            <div data-input-password-modal-enter-container class="input-wrapper-white main-modal__input-wrapper password">
+                                <input data-input-password-modal-enter data-input-enter class="input-wrapper-white__input main-modal__input password" type="password" id="main-modal__password" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Пароль</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                                <div data-show-password class="main-modal__show-password-button" data-target="#main-modal__password" >                              
+                                    <svg class="main-modal__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="main-modal__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                    </svg>
+                                    <svg class="main-modal__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
+                                        <path class="main-modal__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
+                                        <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
+                                    </svg>  
+                                </div>
+                            </div>
+                            <div class="main-modal__subtitle-wrapper">
+                            <a data-header-modal-item data-modal-tab-item="#modal-forget-password" class="main-modal__subtitle-link" href="#modal-forget-password">Забыли пароль? Восстановить</a>
+                            </div>
+                          <button disabled data-modal-button-enter class="main-modal__button btn-red" type="submit">Войти</button>
+                        </form>
+                      </section>
+                      <section data-modal-tab-section class="main-modal__register js-modal-tab-section" id="modal-register">
+                        <form action="" class="main-modal__form-register" novalidate>
+    
+                            <div data-input-name-modal-register-container class="input-wrapper-white main-modal__input-wrapper name-register">
+                                <input data-input-register data-input-name-modal-register class="input-wrapper-white__input main-modal__input name-register" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Введите имя</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+    
+                            <div data-input-email-modal-register-container class="input-wrapper-white main-modal__input-wrapper email-register">
+                                <input data-input-register data-input-email-modal-register class="input-wrapper-white__input main-modal__input email-register" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+    
+                            <div data-input-password-modal-register-container class="input-wrapper-white main-modal__input-wrapper password-register">
+                                <input data-register data-input-register data-input-password-modal-register data-input-register class="input-wrapper-white__input main-modal__input password" type="password" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Пароль</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+    
+                            <div data-input-password-re-modal-register-container class="input-wrapper-white main-modal__input-wrapper password-re-register">
+                                <input data-register data-input-register data-input-password-re-modal-register data-input-register class="input-wrapper-white__input main-modal__input password-re" type="password" id="main-modal__passwords" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Повторите пароль</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                                <div data-show-password class="main-modal__show-password-button" data-target="#main-modal__passwords" >                              
+                                    <svg class="main-modal__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="main-modal__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                    </svg>
+                                    <svg class="main-modal__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
+                                        <path class="main-modal__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
+                                        <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
+                                    </svg> 
+                                </div>
+                            </div>
+    
+                            <button disabled data-modal-button-register class="main-modal__button btn-red" type="submit">Зарегистрироваться</button>
+                        </form>
+                      </section>
+                      <section data-modal-tab-section class="main-modal__forget-password js-modal-tab-section" id="modal-forget-password">
+                        <h1 class="main-modal__forget-password-title">Восстановление пароля</h1>
+                        <form action="">
+                            <div data-input-email-modal-forget-container class="input-wrapper-white main-modal__input-wrapper email-forget">
+                                <input data-input-email-modal-forget data-input-forget class="input-wrapper-white__input main-modal__input" type="text" required>
+                                <div class="input-wrapper-white__image-error">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                    </svg>     
+                                </div>
+                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                <div class="input-wrapper-white__prompt-wrapper">
+                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                </div>
+                            </div>
+                            <button disabled data-button-forget-send class="main-modal__button btn-red">Отправить</button>
+                        </form>
+                      </section>
+                    </div>
+                  </main>
+                  <footer class="main-modal__footer">
+                    <span class="main-modal__footer-title">Войти через аккаунт:</span>
+                    <div class="main-modal__buttons-wrapper">
+                      <button class="main-modal__button-social-network google btn-transparent">
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_745_18021)">
+                          <path d="M4.88838 8.13711C5.66553 5.78219 7.87859 4.09091 10.4999 4.09091C11.909 4.09091 13.1817 4.59091 14.1817 5.40909L17.0908 2.5C15.3181 0.954545 13.0453 0 10.4999 0C6.55827 0 3.16467 2.24858 1.5332 5.54169L4.88838 8.13711Z" fill="#EA4335"/>
+                          <path d="M13.8673 15.0105C12.9591 15.5969 11.8051 15.9091 10.5 15.9091C7.88877 15.9091 5.68263 14.2307 4.89752 11.8899L1.53125 14.4458C3.16069 17.7447 6.5542 20 10.5 20C12.9441 20 15.2795 19.1312 17.0285 17.4996L13.8673 15.0105Z" fill="#34A853"/>
+                          <path d="M17.0285 17.4997C18.8576 15.7935 20.0455 13.2531 20.0455 10.0001C20.0455 9.40916 19.9545 8.77279 19.8182 8.18188H10.5V12.0455H15.8636C15.599 13.3448 14.8886 14.3511 13.8673 15.0106L17.0285 17.4997Z" fill="#4A90E2"/>
+                          <path d="M4.89748 11.89C4.69861 11.297 4.59091 10.6615 4.59091 10.0001C4.59091 9.34863 4.69536 8.7224 4.8885 8.13717L1.53333 5.54175C0.863823 6.88375 0.5 8.39621 0.5 10.0001C0.5 11.5997 0.870651 13.1085 1.53122 14.4459L4.89748 11.89Z" fill="#FBBC05"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_745_18021">
+                          <rect width="20" height="20" fill="white" transform="translate(0.5)"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
+                        <span class="main-modal__button-text">Google</span>
+                      </button>
+                      <button class="main-modal__button-social-network facebook btn-transparent">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1669 0H0.83375C0.373125 0 0 0.373125 0 0.833125V19.1669C0 19.6269 0.373125 20 0.83375 20H10.625V12.5H8.125V9.375H10.625V6.875C10.625 4.29187 12.2606 3.02062 14.565 3.02062C15.6687 3.02062 16.6175 3.10313 16.8937 3.13937V5.83937L15.2956 5.84C14.0425 5.84 13.75 6.43562 13.75 7.30937V9.375H16.875L16.25 12.5H13.75L13.8 20H19.1669C19.6269 20 20 19.6269 20 19.1669V0.833125C20 0.373125 19.6269 0 19.1669 0Z" fill="#3B5998"/>
+                        </svg>
+                        <span class="main-modal__button-text">Facebook</span>
+                      </button>
+                    </div>
+                  </footer>
+                </div>
+                <div data-modal-sended-email class="modal-send-email">
+                    <div class="modal-send-email__wrap">
+                        <header class="modal-send-email__header">
+                            <button data-close-modal-send class="modal-send-email__close">
+                                <svg class="modal-send-email__close-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path class="modal-send-email__close-svg-line" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#090102"/>
+                                  <path class="modal-send-email__close-svg-line" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#090102"/>
+                                </svg>  
+                            </button>
+                        </header>
+                        <main class="modal-send-email__main">
+                            <h1 class="modal-send-email__title">На ваш адрес электронной почты была отправлена ссылка для установки нового пароля.</h1>
+                            <p class="modal-send-email__subtitle">Кроме папки «Входящие» проверьте также папку «Спам» вашего почтового ящика. Возможно, письмо попало туда.</p>
+                        </main>
+                    </div>
+                </div>
+              </div>          
+            </div>         
+        </section>
+
+        <section data-modal-basket class="modal-basket">
+            <div class="modal-basket__mask">
+              <div data-wrapper-basket class="modal-basket__wrapper">
+                <div data-modal-basket-container class="modal-basket__container">
+                  <header class="modal-basket__header">
+                    <div class="modal-basket__header-text-section">
+                        <h1 class="modal-basket__header-title">корзина</h1>
+                    <button class="modal-basket__button-clear btn-arrow-right">
+                        <span class="modal-basket__button-title btn-arrow-right__title">Очистить корзину</span>
+                    </button>
+                    </div>
+                    <button data-button-close-modal-basket class="modal-basket__button-close">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="modal-basket__button-close-state" d="M14 15.4545L15.4545 14L30 28.5454L28.5454 30L14 15.4545Z" fill="#ADADAD"/>
+                            <path class="modal-basket__button-close-state" d="M28.5459 14L30.0004 15.4546L15.455 30L14.0005 28.5455L28.5459 14Z" fill="#ADADAD"/>
+                        </svg> 
+                    </button>
+                  </header>
+                  <main class="modal-basket__main">
+                    <div class="modal-basket__main-wrapper">
+                        <ul class="modal-basket__list">
+                            <li class="modal-basket__item">
+                                <div class="modal-basket__item-wrapper">
+                                    <section class="modal-basket__item-top">
+                                        <div class="modal-basket__item-image-wrapper">
+                                            <img src="/img/basket-item.png" alt="name product" width="44" height="44">
+                                        </div>
+                                        <p class="modal-basket__item-name">Название товара какое-то оооооооооочень длинное</p>
+                                        <button class="modal-basket__item-delete btn-delete">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="btn-delete__state" d="M17.0908 17.1538L17.7726 27.923C17.805 28.5453 18.2635 29 18.8635 29H25.1363C25.7387 29 26.1887 28.5453 26.2272 27.923L26.909 17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M16 17.1538H28" stroke="#7A7A7A" stroke-miterlimit="10" stroke-linecap="round"/>
+                                                <path class="btn-delete__state" d="M19.8179 17.1538V15.8077C19.8176 15.7015 19.8385 15.5964 19.8795 15.4982C19.9205 15.4001 19.9808 15.3109 20.0568 15.2359C20.1329 15.1608 20.2232 15.1013 20.3226 15.0609C20.422 15.0204 20.5285 14.9997 20.6361 15H23.3633C23.4709 14.9997 23.5774 15.0204 23.6768 15.0609C23.7762 15.1013 23.8665 15.1608 23.9426 15.2359C24.0186 15.3109 24.0789 15.4001 24.1199 15.4982C24.1609 15.5964 24.1818 15.7015 24.1815 15.8077V17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M22 19.3076V26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M19.5454 19.3076L19.8181 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M24.4544 19.3076L24.1816 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>   
+                                        </button>
+                                    </section>
+                                    <section class="modal-basket__item-bottom">
+                                        <div class="modal-basket__item-prices">
+                                            <span class="modal-basket__old-price">19 123 грн</span>
+                                            <h3 class="modal-basket__new-price">16 398,38 грн</h3>
+                                        </div>
+                                        <div class="modal-basket__navigation">
+                                            <button disabled class="modal-basket__del">
+                                                <svg class="modal-basket__del-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__del-state" x="14" y="21" width="16" height="2" fill="#474747"/>
+                                                </svg>
+                                            </button>
+                                            <span class="modal-basket__amount">1</span>
+                                            <button class="modal-basket__add">
+                                                <svg class="modal-basket__add-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__add-state" x="14" y="21" width="16" height="2" fill="#E61E37"/>
+                                                    <rect class="modal-basket__add-state" x="21" y="30" width="16" height="2" transform="rotate(-90 21 30)" fill="#E61E37"/>
+                                                </svg>  
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </li>
+                            <li class="modal-basket__item">
+                                <div class="modal-basket__item-wrapper">
+                                    <section class="modal-basket__item-top">
+                                        <div class="modal-basket__item-image-wrapper">
+                                            <img src="/img/basket-item.png" alt="name product" width="44" height="44">
+                                        </div>
+                                        <p class="modal-basket__item-name">Название товара какое-то оооооооооочень длинное</p>
+                                        <button class="modal-basket__item-delete btn-delete">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="btn-delete__state" d="M17.0908 17.1538L17.7726 27.923C17.805 28.5453 18.2635 29 18.8635 29H25.1363C25.7387 29 26.1887 28.5453 26.2272 27.923L26.909 17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M16 17.1538H28" stroke="#7A7A7A" stroke-miterlimit="10" stroke-linecap="round"/>
+                                                <path class="btn-delete__state" d="M19.8179 17.1538V15.8077C19.8176 15.7015 19.8385 15.5964 19.8795 15.4982C19.9205 15.4001 19.9808 15.3109 20.0568 15.2359C20.1329 15.1608 20.2232 15.1013 20.3226 15.0609C20.422 15.0204 20.5285 14.9997 20.6361 15H23.3633C23.4709 14.9997 23.5774 15.0204 23.6768 15.0609C23.7762 15.1013 23.8665 15.1608 23.9426 15.2359C24.0186 15.3109 24.0789 15.4001 24.1199 15.4982C24.1609 15.5964 24.1818 15.7015 24.1815 15.8077V17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M22 19.3076V26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M19.5454 19.3076L19.8181 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M24.4544 19.3076L24.1816 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>   
+                                        </button>
+                                    </section>
+                                    <section class="modal-basket__item-bottom">
+                                        <div class="modal-basket__item-prices">
+                                            <span class="modal-basket__old-price">19 123 грн</span>
+                                            <h3 class="modal-basket__new-price">16 398,38 грн</h3>
+                                        </div>
+                                        <div class="modal-basket__navigation">
+                                            <button class="modal-basket__del">
+                                                <svg class="modal-basket__del-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__del-state" x="14" y="21" width="16" height="2" fill="#474747"/>
+                                                </svg>
+                                            </button>
+                                            <span class="modal-basket__amount">2</span>
+                                            <button class="modal-basket__add">
+                                                <svg class="modal-basket__add-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__add-state" x="14" y="21" width="16" height="2" fill="#E61E37"/>
+                                                    <rect class="modal-basket__add-state" x="21" y="30" width="16" height="2" transform="rotate(-90 21 30)" fill="#E61E37"/>
+                                                </svg>  
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </li>
+                            <li class="modal-basket__item">
+                                <div class="modal-basket__item-wrapper">
+                                    <section class="modal-basket__item-top">
+                                        <div class="modal-basket__item-image-wrapper">
+                                            <img src="/img/basket-item.png" alt="name product" width="44" height="44">
+                                        </div>
+                                        <p class="modal-basket__item-name">Название товара какое-то оооооооооочень длинное</p>
+                                        <button class="modal-basket__item-delete btn-delete">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="btn-delete__state" d="M17.0908 17.1538L17.7726 27.923C17.805 28.5453 18.2635 29 18.8635 29H25.1363C25.7387 29 26.1887 28.5453 26.2272 27.923L26.909 17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M16 17.1538H28" stroke="#7A7A7A" stroke-miterlimit="10" stroke-linecap="round"/>
+                                                <path class="btn-delete__state" d="M19.8179 17.1538V15.8077C19.8176 15.7015 19.8385 15.5964 19.8795 15.4982C19.9205 15.4001 19.9808 15.3109 20.0568 15.2359C20.1329 15.1608 20.2232 15.1013 20.3226 15.0609C20.422 15.0204 20.5285 14.9997 20.6361 15H23.3633C23.4709 14.9997 23.5774 15.0204 23.6768 15.0609C23.7762 15.1013 23.8665 15.1608 23.9426 15.2359C24.0186 15.3109 24.0789 15.4001 24.1199 15.4982C24.1609 15.5964 24.1818 15.7015 24.1815 15.8077V17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M22 19.3076V26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M19.5454 19.3076L19.8181 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M24.4544 19.3076L24.1816 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>   
+                                        </button>
+                                    </section>
+                                    <section class="modal-basket__item-bottom">
+                                        <div class="modal-basket__item-prices">
+                                            <span class="modal-basket__old-price">19 123 грн</span>
+                                            <h3 class="modal-basket__new-price">16 398,38 грн</h3>
+                                        </div>
+                                        <div class="modal-basket__navigation">
+                                            <button disabled class="modal-basket__del">
+                                                <svg class="modal-basket__del-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__del-state" x="14" y="21" width="16" height="2" fill="#474747"/>
+                                                </svg> 
+                                            </button>
+                                            <span class="modal-basket__amount">1</span>
+                                            <button class="modal-basket__add">
+                                                <svg class="modal-basket__add-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__add-state" x="14" y="21" width="16" height="2" fill="#E61E37"/>
+                                                    <rect class="modal-basket__add-state" x="21" y="30" width="16" height="2" transform="rotate(-90 21 30)" fill="#E61E37"/>
+                                                </svg>  
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </li>
+                            <li class="modal-basket__item">
+                                <div class="modal-basket__item-wrapper">
+                                    <section class="modal-basket__item-top">
+                                        <div class="modal-basket__item-image-wrapper">
+                                            <img src="/img/basket-item.png" alt="name product" width="44" height="44">
+                                        </div>
+                                        <p class="modal-basket__item-name">Название товара какое-то оооооооооочень длинное</p>
+                                        <button class="modal-basket__item-delete btn-delete">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="btn-delete__state" d="M17.0908 17.1538L17.7726 27.923C17.805 28.5453 18.2635 29 18.8635 29H25.1363C25.7387 29 26.1887 28.5453 26.2272 27.923L26.909 17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M16 17.1538H28" stroke="#7A7A7A" stroke-miterlimit="10" stroke-linecap="round"/>
+                                                <path class="btn-delete__state" d="M19.8179 17.1538V15.8077C19.8176 15.7015 19.8385 15.5964 19.8795 15.4982C19.9205 15.4001 19.9808 15.3109 20.0568 15.2359C20.1329 15.1608 20.2232 15.1013 20.3226 15.0609C20.422 15.0204 20.5285 14.9997 20.6361 15H23.3633C23.4709 14.9997 23.5774 15.0204 23.6768 15.0609C23.7762 15.1013 23.8665 15.1608 23.9426 15.2359C24.0186 15.3109 24.0789 15.4001 24.1199 15.4982C24.1609 15.5964 24.1818 15.7015 24.1815 15.8077V17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M22 19.3076V26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M19.5454 19.3076L19.8181 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M24.4544 19.3076L24.1816 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>   
+                                        </button>
+                                    </section>
+                                    <section class="modal-basket__item-bottom">
+                                        <div class="modal-basket__item-prices">
+                                            <span class="modal-basket__old-price">19 123 грн</span>
+                                            <h3 class="modal-basket__new-price">16 398,38 грн</h3>
+                                        </div>
+                                        <div class="modal-basket__navigation">
+                                            <button disabled class="modal-basket__del">
+                                                <svg class="modal-basket__del-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__del-state" x="14" y="21" width="16" height="2" fill="#474747"/>
+                                                </svg>
+                                            </button>
+                                            <span class="modal-basket__amount">1</span>
+                                            <button class="modal-basket__add">
+                                                <svg class="modal-basket__add-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__add-state" x="14" y="21" width="16" height="2" fill="#E61E37"/>
+                                                    <rect class="modal-basket__add-state" x="21" y="30" width="16" height="2" transform="rotate(-90 21 30)" fill="#E61E37"/>
+                                                </svg>  
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </li>
+                            <li class="modal-basket__item">
+                                <div class="modal-basket__item-wrapper">
+                                    <section class="modal-basket__item-top">
+                                        <div class="modal-basket__item-image-wrapper">
+                                            <img src="/img/basket-item.png" alt="name product" width="44" height="44">
+                                        </div>
+                                        <p class="modal-basket__item-name">Название товара какое-то оооооооооочень длинное</p>
+                                        <button class="modal-basket__item-delete btn-delete">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="btn-delete__state" d="M17.0908 17.1538L17.7726 27.923C17.805 28.5453 18.2635 29 18.8635 29H25.1363C25.7387 29 26.1887 28.5453 26.2272 27.923L26.909 17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M16 17.1538H28" stroke="#7A7A7A" stroke-miterlimit="10" stroke-linecap="round"/>
+                                                <path class="btn-delete__state" d="M19.8179 17.1538V15.8077C19.8176 15.7015 19.8385 15.5964 19.8795 15.4982C19.9205 15.4001 19.9808 15.3109 20.0568 15.2359C20.1329 15.1608 20.2232 15.1013 20.3226 15.0609C20.422 15.0204 20.5285 14.9997 20.6361 15H23.3633C23.4709 14.9997 23.5774 15.0204 23.6768 15.0609C23.7762 15.1013 23.8665 15.1608 23.9426 15.2359C24.0186 15.3109 24.0789 15.4001 24.1199 15.4982C24.1609 15.5964 24.1818 15.7015 24.1815 15.8077V17.1538" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M22 19.3076V26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M19.5454 19.3076L19.8181 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path class="btn-delete__state" d="M24.4544 19.3076L24.1816 26.8461" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>   
+                                        </button>
+                                    </section>
+                                    <section class="modal-basket__item-bottom">
+                                        <div class="modal-basket__item-prices">
+                                            <span class="modal-basket__old-price">19 123 грн</span>
+                                            <h3 class="modal-basket__new-price">16 398,38 грн</h3>
+                                        </div>
+                                        <div class="modal-basket__navigation">
+                                            <button disabled class="modal-basket__del">
+                                                <svg class="modal-basket__del-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__del-state" x="14" y="21" width="16" height="2" fill="#474747"/>
+                                                </svg>
+                                            </button>
+                                            <span class="modal-basket__amount">1</span>
+                                            <button class="modal-basket__add">
+                                                <svg class="modal-basket__add-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="modal-basket__add-state" x="14" y="21" width="16" height="2" fill="#E61E37"/>
+                                                    <rect class="modal-basket__add-state" x="21" y="30" width="16" height="2" transform="rotate(-90 21 30)" fill="#E61E37"/>
+                                                </svg>  
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                  </main>
+                  <footer class="modal-basket__footer">
+                    <div class="modal-basket__footer-wrapper">
+                        <section class="modal-basket__full-price">
+                            <h3 class="modal-basket__full-price-title">32796,76 грн</h3>
+                        </section>
+                        <section class="modal-basket__footer-buttons">
+                            <button class="modal-basket__button-confirm btn-red">Оформить заказ</button>
+                            <button data-button-continue class="modal-basket__button-continue btn-transparent">Продолжить покупки</button>
+                        </section>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+        </section>
+        <!-- do not delete, this is a blur !!!!!!!!!!!!!!! Should be on every page-->
         <div data-blur class="blur"></div>
     </main>
     <footer data-footer class="footer">

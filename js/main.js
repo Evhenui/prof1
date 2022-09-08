@@ -23,5 +23,8 @@ import {modalEnter} from './modal-enter.js';
         modalEnter();
 
 import {modals} from './modals.js';
-modals(); 
+        modals(); 
+
+import {filter} from './filter.js';
+        filter(); 
   
