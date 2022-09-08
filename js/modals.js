@@ -1,6 +1,7 @@
 export let modals = function() {
     const modalOnClick = document.querySelector('[data-modal-on-click]'),
-          modalReview = document.querySelector('[data-modal-stay-review]');
+          modalReview = document.querySelector('[data-modal-stay-review]'),
+          modalBasket = document.querySelector('[data-modal-basket]');
 
     if(modalOnClick !== null) {
         const buttonOpenModalOnClick = document.querySelector('[data-button-open-modal-on-click]'),
@@ -60,6 +61,37 @@ export let modals = function() {
                     modalReview.classList.remove("active");
                     body.style.overflow = 'auto';
                 }
+            });
+    }
+
+    if(modalBasket !== null) {
+        const buttonOpenBasket = document.querySelector('[data-button-open-basket]'),
+              buttonCloseModal = modalBasket.querySelector('[data-button-close-modal-basket]'),
+              buttonContinue = modalBasket.querySelector('[data-button-continue]'),
+              modalContainer = modalBasket.querySelector('[data-modal-basket-container]'),
+              body = document.querySelector('#body-cont');
+
+              if(!buttonOpenBasket.classList.contains('empty')) {
+                buttonOpenBasket.addEventListener('click', function() {
+                    modalBasket.classList.add('active');
+                    body.style.overflow = 'hidden';
                 });
+              } 
+              
+              buttonCloseModal.addEventListener('click', function() {
+                modalBasket.classList.remove('active');
+                body.style.overflow = 'auto';
+              });
+              buttonContinue.addEventListener('click', function() {
+                modalBasket.classList.remove('active');
+                body.style.overflow = 'auto';
+              });
+              modalBasket.addEventListener("click", function (e) {
+                const click = e.composedPath().includes(modalContainer);
+                if (!click) {
+                    modalBasket.classList.remove("active");
+                    body.style.overflow = 'auto';
+                }
+              });
     }
 }   

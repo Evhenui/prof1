@@ -598,3 +598,13 @@ html {
     stroke: $color-red;
   }
 }
+
+.btn-delete {
+  font-size: 0;
+  &__state {
+    transition: all .1s ease-in-out;
+  }
+  &:hover &__state {
+    stroke: $color-black;
+  }
+}

@@ -257,6 +257,7 @@ export let inputsValidate = function() {
 
             const button = modalOnClick.querySelector('[data-button-modal-on-click]'),
                   inputTel = modalOnClick.querySelector('[data-input-tel-modal-on-click]'),
+                  inputText = modalOnClick.querySelector('[data-input-name-modal-on-click]'),
                   containerInputTel = modalOnClick.querySelector('[data-input-tel-container-modal-on-click]'),
                   inputs = modalOnClick.querySelectorAll('[data-input-modal-on-click]');
 
@@ -264,16 +265,36 @@ export let inputsValidate = function() {
                 event.preventDefault();
                   modalOnClick.classList.add('done'); 
             });
-            inputTel.addEventListener('input', function(){
+            inputTel.addEventListener('input', function() {
                 exam(regPhone, inputTel, false, containerInputTel);
             }); 
-            inputs.forEach(item => {
-                item.addEventListener('input', ()=> {
-                    if(inputs[0].value !== '' && inputs[1].value !== '' && validate(regPhone, inputs[1].value)) {
+            inputText.addEventListener('input', function() {
+                this.value = this.value.replace(/\s+/gi,'');
+            })
+            //not empty
+            inputs.forEach((el) => {
+                el.addEventListener('input', () => {
+                    let arr = []
+                    if(el.type === 'tel' && el.value !== '' && validate(regPhone, el.value)) {
+                        inputs.forEach((item, index) => {
+                            if (item.value !== '') {
+                                arr.push(inputs[index])
+                            }
+                        })
+                    } 
+                    else if (el.value !== '' && el.type === 'text') {
+                        inputs.forEach((item, index) => {
+                            if (item.value !== '') {
+                                arr.push(inputs[index])
+                            }
+                        })
+                    }
+                    if(arr.length === inputs.length) {
                         button.disabled = false;
                     }
                 })
-            })
+            });
+
           }
 
           if(headerSection !== null) {
@@ -365,9 +386,25 @@ export let inputsValidate = function() {
                   inputTel = modalReview.querySelector('[data-input-tel-stay-review]');
 
                   preventDefaultButton(buttonSend);
-                  inputs.forEach(item => {
-                    item.addEventListener('input', () => {
-                        if(inputs[0].value !== '' &&  inputs[1].value !== '' && inputs[2].value !== '') {
+
+                  inputs.forEach((el) => {
+                    el.addEventListener('input', () => {
+                        let arr = []
+                        if(el.type === 'tel' && el.value !== '' && validate(regPhone, el.value)) {
+                            inputs.forEach((item, index) => {
+                                if (item.value !== '') {
+                                    arr.push(inputs[index])
+                                }
+                            })
+                        } 
+                        else if (el.value !== '' && el.type === 'text') {
+                            inputs.forEach((item, index) => {
+                                if (item.value !== '') {
+                                    arr.push(inputs[index])
+                                }
+                            })
+                        }
+                        if(arr.length === inputs.length) {
                             buttonSend.disabled = false;
                         }
                     })

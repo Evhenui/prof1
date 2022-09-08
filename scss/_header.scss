@@ -632,7 +632,7 @@
       @include __960 {
         border: none;
       }
-      &.basket {
+      &.comparison {
         @include __960 {
           display: none;
         }
@@ -693,6 +693,22 @@
       @include __960 {
         background-color: $color-black;
       }
+    }
+
+    &__list-item.empty &__item-link {
+      cursor: context-menu;
+    }
+
+    &__list-item.empty:hover &__svg { 
+      background-color: $color-black;
+    }
+
+    &__list-item.empty &__svg-hover {
+      stroke: $color-gray-60;
+    }
+
+    &__list-item.empty:hover &__svg-hover { 
+      stroke: $color-gray-60;
     }
   
     &__list-item:hover &__svg-hover {
