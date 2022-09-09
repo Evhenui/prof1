@@ -1023,7 +1023,7 @@
 
     <main data-main class="js-main">
 
-        <section class="filter">
+        <section data-filter class="filter">
             <div class="filter__wrapper">
 
                 <section class="page">
@@ -1040,7 +1040,7 @@
 
                 <section class="top-navigation">
                     <div class="top-navigation__wrapper">
-                        <section class="top-navigation__filters">
+                        <section data-filter-switch class="top-navigation__filters active">
                             <div class="top-navigation__image">
                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="top-navigation__image-state" x="16" y="17" width="12" height="1" rx="0.5" fill="#E61E37"/>
@@ -1060,7 +1060,7 @@
                                <span class="top-navigation__amount-search">Найдено 124 товара</span> 
                                <nav class="top-navigation__navigation">
                                 <ul class="top-navigation__menu-list">
-                                    <li class="top-navigation__menu-item">
+                                    <li class="top-navigation__menu-item delete">
                                         <span class="top-navigation__menu-title">Очистить</span>
                                     </li>
                                     <li class="top-navigation__menu-item">
@@ -1125,19 +1125,20 @@
                                     </li>
                                    </ul>
                                </nav>
-                               <section class="top-navigation__dropdown">
-                                <span class="top-navigation__dropdown-title">От дешевых к дорогим</span>
+                            </div>
+                               <section data-dropdown-filter class="top-navigation__dropdown">
+
+                                <span data-dropdown-filter-selected class="top-navigation__dropdown-title">От дешевых к дорогим</span>
                                 <svg class="top-navigation__dropdown-arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path class="top-navigation__dropdown-arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                                 <ul class="top-navigation__dropdown-list">
-                                    <li class="top-navigation__dropdown-item">От дорогих к дешевым</li>
-                                    <li class="top-navigation__dropdown-item">От дешевых к дорогим</li>
-                                    <li class="top-navigation__dropdown-item">Lorem ipsum dolor sit amet</li>
-                                    <li class="top-navigation__dropdown-item">Lorem ipsum dolor sit amet</li>
+                                    <li data-dropdown-filter-item class="top-navigation__dropdown-item">От дорогих к дешевым</li>
+                                    <li data-dropdown-filter-item class="top-navigation__dropdown-item">От дешевых к дорогим</li>
+                                    <li data-dropdown-filter-item class="top-navigation__dropdown-item">Lorem ipsum dolor sit amet</li>
+                                    <li data-dropdown-filter-item class="top-navigation__dropdown-item">Lorem ipsum dolor sit amet</li>
                                 </ul>
-                               </section>
-                            </div>
+                               </section>                           
                         </section>
                     </div>
                 </section>
