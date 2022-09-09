@@ -7,6 +7,7 @@ export let sliders = function() {
             el.classList.remove('active');
           })
         } 
+
     if (cardProduct !== null) {
 
       const sliderCardProductFooter = new Swiper('.recommendation__slider', {
@@ -198,7 +199,7 @@ export let sliders = function() {
             }
           });
         }
-       
+      
     }
 
     if(titleSlider !== null) {
@@ -207,45 +208,126 @@ export let sliders = function() {
             buttonPrev = titleSlider.querySelector('[data-title-slider-prev]'),
             slides = titleSlider.querySelectorAll('[data-title-slide]'),
             points = titleSlider.querySelectorAll('[data-point-title-slider]');
-
-            
-            
-           
-
+            const wrpSliderCont = titleSlider.querySelector('[data-wrp-slider-cont]');
 
             let count = 0,
-            i = 0,
-                sizeSlide = sliderWrapper.offsetWidth,
-                maxSize = (slides.length - 1) * sizeSlide;
-                points[i].classList.add('active')
+                sizeSlide = sliderWrapper.offsetWidth;
+
+                points[count].classList.add('active');
+            
+      
+            points.forEach((el, index) => {
+              el.addEventListener('click', () => {
+                count = index;
+                translateFun(count);
+                delActiv(points);
+                points[count].classList.add('active');
+              })
+            })
+      
+            buttonNext.addEventListener('click', () => {
+              if((slides.length - 1) === count){
+                count = 0;
+                translateFun(count)
+                delActiv(points);
+                points[count].classList.add('active');
+      
+              } else {
+                count += 1;
+                translateFun(count);
+                delActiv(points);
+                points[count].classList.add('active');
+              }
+      
+            });
+      
+            buttonPrev.addEventListener('click', () => {
                 if(count === 0) {
-                  buttonPrev.disabled = true;
+                  count = (slides.length - 1);
+                  translateFun(count);
+                  delActiv(points);
+                  points[count].classList.add('active');
+                } else {
+                  count -= 1;
+                  translateFun(count);
+                  delActiv(points);
+                  points[count].classList.add('active');
                 }
         
-            buttonNext.addEventListener('click', function() {
-              i++;
-              buttonPrev.disabled = false;
-              if(count !== -maxSize) {
-                count -= sizeSlide;
-                sliderWrapper.style.transform = "translateX(" + count + 'px)';
-              } else {
-                this.disabled = true;
-              }
-              delActiv(points)
-              points[i].classList.add('active')
+            })
+      
+            function translateFun(param) {
+              window.getComputedStyle(sliderWrapper).getPropertyValue('--translateX');
+              sliderWrapper.style.setProperty('--translateX', (-param * wrpSliderCont.offsetWidth) + 'px');
+            }
+
+            function widthSliderFun(param) {
+              window.getComputedStyle(sliderWrapper).getPropertyValue('--width');
+              sliderWrapper.style.setProperty('--width', param + 'px');
+            }
+
+            window.addEventListener('resize', () => {
+              widthSliderFun(wrpSliderCont.offsetWidth);
+              translateFun(count);
             })
 
-            buttonPrev.addEventListener('click', function() {
-              i--;
-              buttonNext.disabled = false;
-              if(count !== 0) {
-                count += sizeSlide;
-                sliderWrapper.style.transform = "translateX(" + count + 'px)';
-              } else {
-                this.disabled = true;
-              }
-              delActiv(points)
-              points[i].classList.add('active')
-            })
+        //л6огика свайпа на моб
+        window.addEventListener('resize', () => {
+          if(window.innerWidth <= 860) {
+            sliderWrapper.addEventListener('touchstart', handleTouchStart, false);
+            sliderWrapper.addEventListener('touchmove', handleTouchMove, false);
+            sliderWrapper.addEventListener('touchend', handleTouchEnd, false);
+    
+            let x1 = null;
+            let count = 0;
+  
+            function handleTouchStart(event) {
+                const firstTouch = event.touches[0]
+                x1 = firstTouch.clientX;
+            }
+            let xDiffObj = {}
+  
+            function handleTouchMove(event) {
+                if(!x1) {
+                    return false;
+                }
+                let x2 =  event.touches[0].clientX;
+                let xDiff = x2 - x1;
+                xDiffObj.xDiff = xDiff;
+                x1 = null;
+            }
+            
+            function handleTouchEnd() {
+                if(xDiffObj.xDiff > 0) {
+                  if(count === 0) {
+                    count = (slides.length - 1);
+                    translateFun(count);
+                    delActiv(points);
+                    points[count].classList.add('active');
+                  } else {
+                    count -= 1;
+                    translateFun(count);
+                    delActiv(points);
+                    points[count].classList.add('active');
+                  }
+          
+                } else {
+                  if((slides.length - 1) === count){
+                    count = 0;
+                    translateFun(count)
+                    delActiv(points);
+                    points[count].classList.add('active');
+          
+                  } else {
+                    count += 1;
+                    translateFun(count);
+                    delActiv(points);
+                    points[count].classList.add('active');
+                  }   
+                }
+            }
+          }
+        })
+
     }
 }

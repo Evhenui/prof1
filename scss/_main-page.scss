@@ -1,3 +1,8 @@
+:root {
+    --translateX: 0;
+    --width: 500px;
+}
+
 .main-page {
     &__wrapper {
         padding: 68px 0 100px 0;
@@ -25,7 +30,7 @@
 
     &__prev, &__next {
         position: absolute;
-        top: 50%;
+        top: 46%;
         transform: translate(0, -50%);
         z-index: 2;
         width: 44px;
@@ -33,6 +38,9 @@
         border-radius: 22px;
         background: rgba(0, 0, 0, 0.5);
         transition: all .1s ease-in-out;
+        @include __860 {
+            display: none;
+        }
         &:hover {
             background: $color-black
         }
@@ -116,49 +124,36 @@
         left: 2px;
     }
 
-    &__slides {
-        flex-shrink: 0;
+    &__slides-wrapper {
         width: 100%;
-        height: 660px;
+        overflow: hidden;
+        margin-bottom: 8px;
+    }
+
+    &__slides {
+        transform: translateX(var(--translateX));
+        flex-shrink: 0;
+
+        height: 664px;
         position: relative;
         display: flex;
-        margin-bottom: 12px;
         transition: all .3s ease-in-out;
     }
 
     &__slide {
         flex: 0 0 100%;
+        width: var(--width);
     }
 
     &__slide-wrapper {
         background-repeat: no-repeat;
         background-size: cover;
-        height: 660px;
-        &.bike {
-            background-image: url('/img/background-main_1.jpg');
-        }
-        &.tires {
-            background-image: url('/img/background-main_2.jpg'); 
-        }
-        &.outfit {
-            background-image: url('/img/background-main_3.jpg'); 
-            background-size: auto;
-            background-position: right;
-        }
-        &.bike-new {
-           padding: 78px 0;
-        }
+        height: 664px;
     }
 
     &__info {
-        background-repeat: no-repeat;
-        &.bike {
-            background-image: url('/img/backgroung-main_1.png');
-        }
-        &.bike-new {
-            background-color: $color-gray-10;
-            position: relative;
-        }
+        background: $color-white;
+        opacity: 0.9;
     }
 
     &__image-wrapper {
@@ -169,15 +164,9 @@
 
     &__info-wrapper {
         @extend %size-page;
-        padding: 179px 0 125px 104px;
-        &.tires {
-            padding: 85px 0 185px 104px; 
-        }
-        &.outfit {
-            padding: 179px 0 185px 104px; 
-        }
-        &.bike-new {
-            padding: 101px 0 107px 104px;
+        padding: 180px 0 180px 104px;
+        @include __860 {
+            padding: 38px 24px 0 24px; 
         }
     }
 
@@ -186,14 +175,18 @@
         width: 100%;
         margin-bottom: 68px;
         text-transform: uppercase;
-        @include text($size: 2.75rem, $color: $color-black, $textAlign: left, $fontWeight: 800, $lineHeight: 60px);
-        &.outfit, &.bike-new {
-            max-width: 590px;
+        @include text($size: 2.75rem, $color: $color-black, $textAlign: left, $fontWeight: 800, $lineHeight: 44px);
+        @include __860 {
+            max-width: 327px;
+            margin-bottom: 40px;
+            @include text($size: 1.5rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 40px);
         }
     }
 
     &__info-button {
-        padding: 16px 36px;
+        padding: 16px 0;
+        max-width: 153px;
+        width: 100%;
     }
 
     &__pagintation {
@@ -251,6 +244,36 @@
     }
 }
 
+.pagination {
+    padding-top: 60px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    &__item {
+        width: 20px;
+        height: 20px;
+
+        display: flex;
+
+
+        border-radius: 50%;
+        background-color: aqua;
+        cursor: pointer;
+
+        &:hover {
+            background-color: aquamarine;
+        }
+
+        &.active{
+            background-color: black;
+        }
+    }
+}
 
 .product-selection {
     margin-bottom: 204px;
@@ -423,6 +446,9 @@
         @extend %centre-space-between;
         margin-bottom: 38px;
         padding: 0 10px;
+        @include __960 {
+            padding: 0;
+        }
     }
 
     &__button {
@@ -483,6 +509,7 @@
         }
         @include __960 {
             font-size: 0.9375rem;
+            padding: 8px;
         }
     }
 
