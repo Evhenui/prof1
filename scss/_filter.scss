@@ -257,28 +257,83 @@
     padding-right: 20px;
 
     &__filter-status {
+        padding: 36px 0 24px 4px;
     }
 
-    &__filter-status-title {
-    }
 
     &__filter-status-hidden {
 
     }
 
-    &__input-stock-container {
-    }
-
     &__input-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+
+      &__label-checkbox {
+        padding-left: 26px;
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        position: relative;
+        width: 100%;
+        height: 24px;
+        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            transition: all .1s ease-in-out;
+            border: 1px solid $color-gray-60;
+        }
     }
 
-    &__label-checkbox {
+      &__input-checkbox:checked + &__label-checkbox::before {
+        border-color: $color-red;
+        background-color: $color-red;
+        width: 8px;
+        height: 8px;
+      }
+
+ 
+      &__input-checkbox:not(:disabled):not(:checked) + &__label-checkbox:hover::before {
+        border-color: $color-gray-100;
+        width: 14px;
+        height: 14px;
+     }
+
+    &__input-checkbox:not(:disabled):active + &__label-checkbox::before {
+        background-color: $color-red;
+        border-color: $color-red;
     }
 
-    &__input-novelties-container {
-    }
-
-    &__input-top-sales-container {
+    &__input-container {
+        padding: 8px 0 8px 13px;
+        transition: all .1s ease-in-out;
+        position: relative;
+        &:before {
+            content: "";
+            width: 2px;
+            height: 100%;
+            background-color: #F07585;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.1s ease-in-out;
+        }
+        &:hover {
+            background-color: $color-gray-10;
+            &::before {
+                opacity: 1;
+            }
+        }
     }
 
     &__filter-price {
@@ -339,13 +394,28 @@
     }
 
     &__buttons {
+        padding-top: 60px;
+        display: flex;
+        align-items: center;
+        column-gap: 11px;
+    }
+
+    &__button-show, &__button-clear {
+        width: 100%;
+        padding: 16px 0;
     }
 
     &__button-show {
+        border: 1px solid $color-black;
+        &:hover {
+            border-color: $color-red;
+        }
+        &:active {
+            border-color: #B81429;
+        }
     }
 
-    &__button-clear {
-    }
+ 
 }
 .range-toggle-min {
 }
