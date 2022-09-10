@@ -1,9 +1,10 @@
 .filter {
     &__wrapper {   
-        padding: 68px 0 0 0;
+        padding: 68px 0 120px 0;
     }
 
     &__name-page {
+        padding: 0 48px;
         @extend %size-page;
         margin-bottom: 20px;
         @include text($size: 2rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 44px);
@@ -13,11 +14,9 @@
 
     &__wrapper {
         @extend %size-page;
-        padding: 16px 0px 20px 0px;
+        padding: 16px 48px 20px 48px;
     }
 
-    &__title-link {
-    }
 }
 
 .top-navigation {
@@ -25,6 +24,7 @@
     border-bottom: 1px solid $color-red-30;
 
     &__wrapper {
+        padding: 0 48px;
         @extend %size-page;
         display: flex;
     }
@@ -94,7 +94,8 @@
         height: 100%;
         border-left: 1px solid $color-red-30;
         border-right: 1px solid $color-red-30;
-        padding: 0 47px 0 12px;
+        padding: 0 8px;
+        flex: 1 0 788px;
     }
 
     &__amount-search {
@@ -117,14 +118,19 @@
         border: 1px solid $color-gray-40;
         background-color: $color-white;
         border-radius: 20px;
-        padding: 6px 6px 6px 12px;
+        width: 75px;
+        height: 32px;
+        padding-left: 12px;
         transition: all .1s ease-in-out;
         &:hover {
             border-color: $color-red-40;
             background-color: $color-red-10;
         }
         &.delete {
-            padding: 6px 12px;
+            padding: 0;
+            width: 80px;
+            height: 32px;
+            @extend %centre-flex-columb;
             border-color: $color-red-50;
             &:hover {
                 background-color: $color-red-50;
@@ -154,12 +160,12 @@
     }
 
     &__dropdown {
+        flex: 1 0 232px;
         position: relative;
         cursor: pointer;
         display: flex;
         align-items: center;
         padding-left: 16px;
-        column-gap: 16px;
         transition: all .2s ease-in-out;
         border-right: 1px solid #FAD1D6;
         &.active {
@@ -181,6 +187,9 @@
     }
 
     &__dropdown-title {
+        display: block;
+        max-width: 172px;
+        width: 100%;
         @include text($size: 0.875rem, $color: $color-black, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
     }
 
@@ -204,7 +213,7 @@
         transition: all .2s ease-in-out;
         opacity: 0;
         visibility: hidden;
-        top: 45px;
+        top: 46px;
         left: 0;
         display: flex;
         flex-direction: column;
@@ -238,8 +247,14 @@
 .section-title {
 }
 .main-info {
+    display: flex;
+    @extend %size-page;
+    @extend %padding-country;
 }
 .left-navigation {
+    max-width: 304px;
+    width: 100%;
+    padding-right: 20px;
 
     &__filter-status {
     }
@@ -248,6 +263,7 @@
     }
 
     &__filter-status-hidden {
+
     }
 
     &__input-stock-container {
@@ -342,180 +358,102 @@
 .items {
 
     &__wrapper {
+        padding: 24px 0 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        
     }
 
     &__navigation {
     }
 
     &__navigation-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0 176px 0;
+        row-gap: 36px;
     }
 
     &__navigation-button-more {
+        padding: 16px 0;
+        max-width: 175px;
+        width: 100%;
     }
 
     &__navigation-pages {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
     }
 
     &__button-right {
+        padding: 0;
     }
 
     &__pagination {
+        display: flex;
+        align-items: center
     }
 
     &__page-item {
+        position: relative;
+        transition: all .1s ease-in-out;
+        cursor: pointer;
+        @extend %centre-flex-columb;
+        width: 44px;
+        height: 44px;
+        &:after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $color-red;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all .1s ease-in-out;
+            opacity: 0;
+        }
+        @include text($size: 0.875rem, $color: $color-black, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
+        &.active {
+            color: $color-red;
+            &:hover {
+                &:after {
+                    opacity: 0;
+                }
+            }
+        }
+        &:hover {
+            color: $color-red;
+            &:after {
+                opacity: 1;
+            }
+        }
     }
 
     &__button-left {
+        padding: 0;
+        transform: rotateZ(180deg);
     }
 }
-.card-item {
 
-    &__wrapper {
-    }
-
-    &__offers {
-    }
-
-    &__offer {
-    }
-
-    &__offers-title {
-    }
-
-    &__main {
-    }
-
-    &__image {
-    }
-
-    &__navigation {
-    }
-
-    &__navigation-buttons {
-    }
-
-    &__button-like {
-    }
-
-    &__like-svg {
-    }
-
-    &__button-compare {
-    }
-
-    &__compare-svg {
-    }
-
-    &__navigation-colors {
-    }
-
-    &__color {
-    }
-
-    &__color-item {
-    }
-
-    &__color-more {
-    }
-
-    &__color-item-more {
-    }
-
-    &__footer {
-    }
-
-    &__reviews {
-    }
-
-    &__reviews-stars {
-    }
-
-    &__amount-reviews {
-    }
-
-    &__amount-review-image {
-    }
-
-    &__subtitle {
-    }
-
-    &__name-item {
-    }
-
-    &__footer-navigation {
-    }
-
-    &__price {
-    }
-
-    &__price-discount {
-    }
-
-    &__price-text {
-    }
-
-    &__full-price {
-    }
-
-    &__button-basket {
-    }
-
-    &__button-basket-text {
-    }
-}
-.stocks {
-}
-.bestseller {
-}
-.novelty {
-}
-.red {
-}
-.active {
-}
-.black {
-}
-.white {
-}
-.blue {
-}
-.green {
-}
-.pink {
-}
-.yellow {
-}
-.grey {
-}
-.discount {
-}
-.btn-basket {
-
-    &__svg {
-    }
-
-    &__text {
-    }
-}
-.btn-arrow-right {
-
-    &__arrow {
-    }
-
-    &__line-active {
-    }
-
-    &__arrow-state {
-    }
-}
 .filter-description {
+    @extend %size-page;
+    @extend %padding-country;
 
     &__title {
+        @include text($size: 1rem, $color: $color-gray-70, $textAlign: left, $fontWeight: 700, $lineHeight: 24px);
+        margin-bottom: 12px;
     }
 
     &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
     }
 
     &__subtitle {
+        @include text($size: 0.875rem, $color: $color-gray-70, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
     }
 }
