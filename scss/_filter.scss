@@ -259,6 +259,7 @@
 
     &__filter-status {
         padding: 36px 0 24px 4px;
+        border-bottom: 1px solid $color-red-30;
     }
 
 
@@ -330,38 +331,55 @@
             transition: all 0.1s ease-in-out;
         }
         &:hover {
-            background-color: $color-gray-10;
+            background-color: #F7F7F7;
             &::before {
                 opacity: 1;
             }
         }
     }
 
-    &__filter-price {
+    &__input-container:hover &__label-checkbox {
+        color: $color-gray-100;
+    }
 
+    &__input-container.active:hover &__label-checkbox {
+        color: $color-black;
+    }
+
+    &__filter-price {
+        padding: 36px 0 24px 4px;
+        border-bottom: 1px solid #FAD1D6;
     }
 
     &__filter-price-title {
+        cursor: pointer;
+        @extend %centre-space-between;
+        padding: 4px 4px 4px 12px;
+    }
+
+    &__filter-price-title:hover &__filter-name {
+        color: $color-red;
+    }
+
+    &__filter-price-title:hover &__filter-arrow-state {
+        stroke: $color-red;
+    }
+
+    &__filter-price.active &__filter-arrow-wrapper {
+        transform: rotateZ(180deg);
+    }
+
+    &__filter-price.active &__filter-price-hidden {
+        height: 80px;
     }
 
     &__filter-name {
+        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
     }
 
     &__filter-arrow-wrapper {
         font-size: 0;
-        cursor: pointer;
-    }
-
-    &__filter-arrow-wrapper:hover &__filter-arrow-state {
-        stroke: $color-red;
-    }
-
-    &__filter-arrow-wrapper.active:hover &__filter-arrow-state {
-        stroke: $color-black;
-    }
-
-    &__filter-arrow-wrapper.active &__filter-arrow {
-        transform: rotateZ(180deg);
+        transition: all .2s ease-in-out;
     }
 
     &__filter-arrow {
@@ -372,6 +390,9 @@
     }
 
     &__filter-price-hidden {
+        transition: all .2s ease-in-out;
+        height: 0;
+        overflow: hidden;
     }
 
     &__price-from {
@@ -403,12 +424,56 @@
 
     &__filter-checkbox {
         padding: 36px 0 24px 4px;
+        border-bottom: 1px solid $color-red-30;
+    }
+
+    &__filter-checkbox.active &__filter-checkbox-hidden {
+        height: 172px;
+    }
+
+    &__filter-checkbox.active &__filter-arrow {
+        transform: rotateZ(180deg);
+    }
+
+    &__filter-checkbox.last {
+        border-bottom: none;
     }
 
     &__filter-checkbox-title {
+        @extend %centre-space-between;
+        padding: 4px 4px 4px 12px;
+        cursor: pointer;
     }
 
+    &__filter-checkbox-title:hover &__filter-name {
+        color: $color-red;
+    }
+
+    &__filter-checkbox-title:hover &__filter-arrow-state {
+        stroke: $color-red;
+    }
+
+
     &__filter-checkbox-hidden {
+        transition: all .2s ease-in-out;
+        height: 0;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 4px; 
+        }
+        &::-webkit-scrollbar-track {
+            background: $color-white; 
+        }
+        &::-webkit-scrollbar-thumb {
+
+            border: 3px solid $color-gray-40;
+            &:hover {
+                border-color: $color-red-40;
+            }
+            &:active {
+                border-color: $color-red-50;
+            }
+        }
     }
 
     &__input-checkbox-container {
