@@ -6568,6 +6568,7 @@ label {
 .top-navigation__dropdown.active .top-navigation__dropdown-list {
   opacity: 1;
   visibility: visible;
+  z-index: 1;
 }
 .top-navigation__dropdown-list {
   width: 100%;
@@ -6695,6 +6696,25 @@ label {
 }
 .left-navigation__input-container:hover::before {
   opacity: 1;
+}
+.left-navigation__filter-arrow-wrapper {
+  font-size: 0;
+  cursor: pointer;
+}
+.left-navigation__filter-arrow-wrapper:hover .left-navigation__filter-arrow-state {
+  stroke: #E61E37;
+}
+.left-navigation__filter-arrow-wrapper.active:hover .left-navigation__filter-arrow-state {
+  stroke: #2D2D2D;
+}
+.left-navigation__filter-arrow-wrapper.active .left-navigation__filter-arrow {
+  transform: rotateZ(180deg);
+}
+.left-navigation__filter-arrow {
+  transition: all 0.2s ease-in-out;
+}
+.left-navigation__filter-checkbox {
+  padding: 36px 0 24px 4px;
 }
 .left-navigation__buttons {
   padding-top: 60px;

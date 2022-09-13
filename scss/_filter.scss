@@ -203,6 +203,7 @@
     &__dropdown.active &__dropdown-list {
         opacity: 1;
         visibility: visible;
+        z-index: 1;
     }
 
     &__dropdown-list {
@@ -337,6 +338,7 @@
     }
 
     &__filter-price {
+
     }
 
     &__filter-price-title {
@@ -346,6 +348,24 @@
     }
 
     &__filter-arrow-wrapper {
+        font-size: 0;
+        cursor: pointer;
+    }
+
+    &__filter-arrow-wrapper:hover &__filter-arrow-state {
+        stroke: $color-red;
+    }
+
+    &__filter-arrow-wrapper.active:hover &__filter-arrow-state {
+        stroke: $color-black;
+    }
+
+    &__filter-arrow-wrapper.active &__filter-arrow {
+        transform: rotateZ(180deg);
+    }
+
+    &__filter-arrow {
+        transition: all .2s ease-in-out;
     }
 
     &__filter-arrow-state {
@@ -382,6 +402,7 @@
     }
 
     &__filter-checkbox {
+        padding: 36px 0 24px 4px;
     }
 
     &__filter-checkbox-title {
