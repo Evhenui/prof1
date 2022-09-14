@@ -1166,7 +1166,7 @@
                         </section>
                         
                         <section data-filter-price class="left-navigation__filter-price active">
-                            <section class="left-navigation__filter-price-title">
+                            <section data-filter-range-title class="left-navigation__filter-price-title">
                                 <h3 class="left-navigation__filter-name">Цена</h3>
                                 <div class="left-navigation__filter-arrow-wrapper">
                                     <svg class="left-navigation__filter-arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1175,20 +1175,18 @@
                                 </div>
                             </section>
                             <section class="left-navigation__filter-price-hidden">
-                                <section class="left-navigation__price-from">
-                                    <span class="left-navigation__from">50</span>
-                                    <span class="left-navigation__line">-</span>
-                                    <span class="left-navigation__to">134567</span>
-                                </section>
-                                <section class="left-navigation__price-select">
-                                    <div class="left-navigation__range-controls">
-                                        <div class="left-navigation__scale">
-                                          <div class="left-navigation__bar"></div>
-                                        </div>
-                                        <div class="left-navigation__range-toggle range-toggle-min"></div>
-                                        <div class="left-navigation__range-toggle range-toggle-max"></div>
-                                      </div>
-                                </section>
+                                <div class="left-navigation__price-controls">
+                                    <label class="left-navigation__min-price"> <input data-input-range type="text" maxlength="6" name="min-price" value="50"> </label> 
+                                    <span class="left-navigation__price-controls-line"></span>
+                                    <label class="left-navigation__max-price"> <input data-input-range  type="text" maxlength="6" name="max-price" value="134567"> </label>
+                                  </div>
+                                  <div class="left-navigation__range-controls">
+                                    <div class="left-navigation__scale">
+                                      <div class="left-navigation__bar"></div>
+                                    </div>
+                                    <div class="left-navigation__range-toggle range-toggle-min"></div>
+                                    <div class="left-navigation__range-toggle range-toggle-max"></div>
+                                  </div>
                             </section>
                         </section>
 

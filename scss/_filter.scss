@@ -357,6 +357,7 @@
         padding: 4px 4px 4px 12px;
     }
 
+
     &__filter-price-title:hover &__filter-name {
         color: $color-red;
     }
@@ -370,7 +371,7 @@
     }
 
     &__filter-price.active &__filter-price-hidden {
-        height: 80px;
+        height: 104px;
     }
 
     &__filter-name {
@@ -395,31 +396,77 @@
         overflow: hidden;
     }
 
-    &__price-from {
+    &__price-controls {
+        position: relative;
+        height: 40px;
+        @extend %flex-center-horizontal;
+        column-gap: 12px;
+        margin-bottom: 38px;
+        input {
+            width: 50px;
+            margin: 0;
+            color: inherit;
+            font: inherit;
+            background: none;
+            border: none;
+            outline: none;
+        }
     }
 
-    &__from {
+    &__price-controls-line {
+        display: block;
+        width: 12px;
+        height: 1px;
+        background-color: $color-gray-60;
     }
 
-    &__line {
-    }
-
-    &__to {
-    }
-
-    &__price-select {
+    &__min-price, &__max-price {
+        border-bottom: 1px solid $color-gray-50;
+        display: inline-block;
+        width: 100px;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
+        cursor: pointer;
+        padding: 8px 16px;
     }
 
     &__range-controls {
+        position: relative;
     }
 
     &__scale {
+        height: 2px;
+        background: $color-white;
     }
 
     &__bar {
+        width: 98%;
+        height: 2px;
+        background: #EB475C;
+        border-radius: 2px;
     }
 
     &__range-toggle {
+        transition: all .1s ease-in-out;
+        position: absolute;
+        top: -7px;
+        background-color: $color-white;
+        width: 16px;
+        height: 16px;
+        border: 3px solid #F07585;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+            border-color: $color-red;
+            width: 24px;
+            height: 24px;
+            top: -10px;
+        }
+        &.range-toggle-min {
+            left: 0px;
+        }
+        &.range-toggle-max {
+            right: 0;
+        }
     }
 
     &__filter-checkbox {
@@ -613,3 +660,6 @@
         @include text($size: 0.875rem, $color: $color-gray-70, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
     }
 }
+
+
+

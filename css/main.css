@@ -168,7 +168,7 @@ label {
           flex-direction: column;
 }
 
-.product-selection__input-image-wrapper, .product-selection__search {
+.product-selection__input-image-wrapper, .product-selection__search, .left-navigation__price-controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8747,7 +8747,7 @@ label {
 }
 
 .left-navigation__filter-price.active .left-navigation__filter-price-hidden {
-  height: 80px;
+  height: 104px;
 }
 
 .left-navigation__filter-name {
@@ -8775,6 +8775,89 @@ label {
   transition: all .2s ease-in-out;
   height: 0;
   overflow: hidden;
+}
+
+.left-navigation__price-controls {
+  position: relative;
+  height: 40px;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+  margin-bottom: 38px;
+}
+
+.left-navigation__price-controls input {
+  width: 50px;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.left-navigation__price-controls-line {
+  display: block;
+  width: 12px;
+  height: 1px;
+  background-color: #949494;
+}
+
+.left-navigation__min-price, .left-navigation__max-price {
+  border-bottom: 1px solid #ADADAD;
+  display: inline-block;
+  width: 100px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #616161;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.left-navigation__range-controls {
+  position: relative;
+}
+
+.left-navigation__scale {
+  height: 2px;
+  background: #FEFEFE;
+}
+
+.left-navigation__bar {
+  width: 98%;
+  height: 2px;
+  background: #EB475C;
+  border-radius: 2px;
+}
+
+.left-navigation__range-toggle {
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  position: absolute;
+  top: -7px;
+  background-color: #FEFEFE;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #F07585;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.left-navigation__range-toggle:hover {
+  border-color: #E61E37;
+  width: 24px;
+  height: 24px;
+  top: -10px;
+}
+
+.left-navigation__range-toggle.range-toggle-min {
+  left: 0px;
+}
+
+.left-navigation__range-toggle.range-toggle-max {
+  right: 0;
 }
 
 .left-navigation__filter-checkbox {

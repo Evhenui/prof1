@@ -6,7 +6,8 @@ export let filter = function() {
               dropdownFilter = filterSection.querySelector('[data-dropdown-filter]'),
               inputsCheckbox = filterSection.querySelectorAll('[data-checkbox-input]'),
               titleCheckBox = filterSection.querySelectorAll('[data-title-checkbox]'),
-              filterPrice = filterSection.querySelector('[data-filter-price]');
+              filterPrice = filterSection.querySelector('[data-filter-price]'),
+              filterRange = filterSection.querySelector('[data-filter-range-title]');
 
 
         filterSwitch.addEventListener('click', function() {
@@ -17,8 +18,8 @@ export let filter = function() {
             this.classList.toggle('active');
         });
 
-        filterPrice.addEventListener('click', function() {
-            this.classList.toggle('active');
+        filterRange.addEventListener('click', function() {
+            filterPrice.classList.toggle('active');
         })
 
 

@@ -5,7 +5,8 @@ export let inputsValidate = function() {
           phoneInputs = document.querySelectorAll('[data-tel-input]'),
           mainSection = document.querySelector('[data-main]'),
           modalOnClick = document.querySelector('[data-modal-on-click]'),
-          modalReview = document.querySelector('[data-modal-stay-review]');
+          modalReview = document.querySelector('[data-modal-stay-review]'),
+          filterSection = document.querySelector('[data-filter]');
 
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
@@ -413,5 +414,15 @@ export let inputsValidate = function() {
                   inputTel.addEventListener('input', function(){
                     exam(regPhone, inputTel, false, inputTelContainer);
                   }); 
+          }
+
+          if(filterSection !== null) {
+            const inputsRange = filterSection.querySelectorAll('[data-input-range]');
+            
+            inputsRange.forEach(item => {
+                item.addEventListener('input', function(event) {
+                    this.value = this.value.replace(/[^\d.]/g, '');
+                })
+            })
           }
 }
