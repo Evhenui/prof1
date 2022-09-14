@@ -1,6 +1,7 @@
 .filter {
     &__wrapper {   
         padding: 68px 0 120px 0;
+        position: relative;
     }
 
     &__name-page {
@@ -8,6 +9,9 @@
         @extend %size-page;
         margin-bottom: 20px;
         @include text($size: 2rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 44px);
+        @include __960 {
+            padding-left: 16px;
+        }
     }
 }
 .page {
@@ -15,6 +19,9 @@
     &__wrapper {
         @extend %size-page;
         padding: 16px 48px 20px 48px;
+        @include __960 {
+            @include padding-mob;
+        }
     }
 
 }
@@ -22,18 +29,65 @@
 .top-navigation {
     border-top: 1px solid $color-red-30;
     border-bottom: 1px solid $color-red-30;
+    background-color: $color-white;
+    @include __960 {
+        border: none;
+    }
+    &.active {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+    }
+
+    &__mobile-wrapper {
+        display: flex;
+        column-gap: 4px;
+    }
+
+   
+
+    &__number-filter {
+        display: none;
+        width: 20px;
+        height: 21px;
+        border-radius: 50%;
+        background-color: $color-black;
+        @include text( $size: 0.75rem, $textAlign: center, $color: #FEFEFE, $fontWeight: 700, $lineHeight: 20px);
+        @include __960 {
+            display: inline-block;
+        }
+    }
 
     &__wrapper {
+        transition: all .2s ease-in-out;
         padding: 0 48px;
         @extend %size-page;
         display: flex;
+        @include __960 {
+            padding: 0 16px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__empty-section {
+        display: none;
     }
 
     &__filters {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         cursor: pointer;
         display: flex;
         align-items: center;
         column-gap: 8px;
+        @include __960 {
+            column-gap: 4px;
+            outline: 1px solid $color-red-30;
+            padding-left: 16px;
+        }
     }
 
     &__filters:hover &__name-section {
@@ -46,6 +100,7 @@
 
     &__filters.active &__arrow-wrapper {
         transform: rotateZ(0deg);
+        
     }
 
     &__filters.active:hover &__name-section {
@@ -58,6 +113,9 @@
 
     &__image {
         font-size: 0;
+        @include __960 {
+            display: none;
+        }
     }
 
     &__image-state {
@@ -67,12 +125,27 @@
         transition: all .1s ease-in-out;
         width: 212px;
         @include text($size: 1rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 24px);
+        @include __1250 {
+            width: 100px; 
+        }
+        @include __960 {
+            display: none;
+        }
+    }
+
+    &__name-section-mobile {
+        display: none;
+        @include __960 {
+            display: block;
+            @include text($size: 0.75rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 20px);
+        }
     }
 
     &__arrow-wrapper {
         font-size: 0;
         transition: all .2s ease-in-out;
         transform: rotateZ(180deg);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
     &__arrow {
@@ -85,18 +158,98 @@
     &__title-menu {
        display: flex;
        align-items: center;
+
+    }
+
+    &__change-view {
+        display: none;
+        @include __960 {
+            display: block;
+        }
+    }
+
+    &__button-normal, &__button-palit {
+        font-size: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    &__button-normal.active &__button-normal-state{
+        fill: $color-red;
+    }
+
+    &__button-palit.active &__button-palit-state{
+        fill: $color-red;
+    }
+
+    &__button-normal:active &__button-normal-state {
+        fill: $color-red;
+    }
+
+    &__button-palit:active &__button-palit-state{
+        fill: $color-red;
+    }
+    
+    &.active &__title-menu-wrapper {
+        row-gap: 8px;
     }
 
     &__title-menu-wrapper {
+        border-left: 1px solid $color-red-30;
+        flex: 1 0 788px;
+        display: flex;
+        flex-direction: column;
+        padding: 4px 8px;
+        @include __1410 {
+            flex: 1 0 645px;
+        }
+        @include __1280 {
+            flex: 1 0 400px;
+        }
+        @include __960 {
+            display: none;
+            &.mobile {
+                display: flex;
+                border: none;
+                flex: 0;
+                
+            }
+        }
+    }
+
+   
+
+    &__navigation-main {
         display: flex;
         align-items: center;
         column-gap: 8px;
         height: 100%;
-        border-left: 1px solid $color-red-30;
-        border-right: 1px solid $color-red-30;
-        padding: 0 8px;
-        flex: 1 0 788px;
+        @include __1410 {
+            column-gap: 4px;
+        }
+        @include __960 {
+            column-gap: 8px;
+            &.mobile {
+                white-space: nowrap;
+                overflow-y: hidden;
+                &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                }
+            }
+        }
     }
+
+    &__navigation-scroll {
+        overflow: hidden;
+        height: 0;
+        transition: all .2s ease-in-out;
+    }
+
+    &.active &__navigation-scroll {
+      height: 32px;
+    }
+
+    
 
     &__amount-search {
         @include text($size: 0.75rem, $color: $color-black, $textAlign: left, $fontWeight: 400, $lineHeight: 20px);
@@ -108,6 +261,14 @@
     &__menu-list {
         display: flex;
         column-gap: 12px;
+        flex-wrap: wrap;
+        row-gap: 4px;
+        @include __1410 {
+            column-gap: 8px;
+        }
+        @include __960 {
+            flex-wrap: nowrap;
+        }
     }
 
     &__menu-item {
@@ -168,9 +329,13 @@
         padding-left: 16px;
         transition: all .2s ease-in-out;
         border-right: 1px solid #FAD1D6;
+        border-left: 1px solid #FAD1D6;
         &.active {
            outline: 1px solid $color-red;
            border-color: $color-white;
+        }
+        @include __960 {
+            display: none;
         }
     }
 
@@ -245,18 +410,51 @@
         }
     }
 }
-.section-title {
-}
+
+.empty-section.active {
+    display: block;
+    width: 100%;
+    height: 46.22px;
+} 
+
+
 .main-info {
     display: flex;
     @extend %size-page;
     @extend %padding-country;
+    @include __960 {
+        flex-direction: column;
+        @include padding-mob;
+        padding-top: 12px;
+    }
+
+    &__result-search-mobile {
+        display: none;
+        @include __960 {
+            display: block;
+        }
+    } 
 }
 .left-navigation {
     max-width: 304px;
     width: 100%;
     padding-right: 20px;
+    height: 1736px;
+    transition: all .2s ease-in-out;
+    @include __1250 {
+        max-width: 206px; 
+    }
 
+    @include __960 {
+        max-width: 100%;
+        height: 1125px;
+    }
+    &.active {
+        width: 0;
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+    }
     &__filter-status {
         padding: 36px 0 24px 4px;
         border-bottom: 1px solid $color-red-30;
@@ -470,6 +668,7 @@
     }
 
     &__filter-checkbox {
+        position: relative;
         padding: 36px 0 24px 4px;
         border-bottom: 1px solid $color-red-30;
     }
@@ -550,14 +749,7 @@
 
  
 }
-.range-toggle-min {
-}
-.range-toggle-max {
-}
-.btn-red {
-}
-.btn-transparent {
-}
+
 .items {
 
     &__wrapper {
@@ -565,7 +757,9 @@
         display: flex;
         flex-wrap: wrap;
         gap: 32px;
-        
+        &.active {
+            padding-left: 0;
+        }
     }
 
     &__navigation {
@@ -641,6 +835,47 @@
     }
 }
 
+.result-search {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    top: 42px;
+    right: -190px;
+    box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    @include __960 {
+        display: none;
+    }
+    &__wrapper {
+       position: relative;
+       @extend %centre-flex-columb;
+       row-gap: 8px;
+       padding: 4px 8px;
+       background-color: $color-white;
+        &::before {
+            content: '';
+            width: 8px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -8px;
+            background-repeat: no-repeat;
+            background-image: url('/icon/range-coube.png');
+        }
+    }
+    &__title {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+    }
+    &__button {
+        padding: 4px;
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-red, $fontWeight: 700, $lineHeight: 20px);
+        &:hover {
+          color: #ca1d31;
+        }
+    }
+}
+
 .filter-description {
     @extend %size-page;
     @extend %padding-country;
@@ -662,4 +897,53 @@
 }
 
 
+.notification {
+    position: absolute;
+    top: 88px;
+    right: 0;
+    transition: all .2s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    max-width: 294px;
+    width: 100%;
+    background-color:  $color-white;
+    filter: drop-shadow(0px 4px 11px rgba(0, 0, 0, 0.08));
+    @include __960 {
+        display: none;
+    }
+    &.active {
+        opacity: 1;
+        z-index: 1;
+        visibility: visible;
+    }
 
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        border-bottom: 4px solid $color-gray-30;
+        padding: 12px 12px 0 0;
+    }
+
+    &__title {
+        white-space: nowrap;
+        padding: 24px 11px 24px 24px;
+        position: relative;
+        max-width: 147px;
+        width: 100%;
+        display: block;
+        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
+        &::after {         
+            content: '';
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            background-color: $color-red;
+        }
+    }
+    &__button {
+        white-space: nowrap;
+    }
+}

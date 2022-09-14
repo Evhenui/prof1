@@ -1024,6 +1024,7 @@
     <main class="js-main">
         <div class="wrp">
 
+            <!--card-item has class palit-->
             <section data-card-item-section class="card-item">
                 <div class="card-item__wrapper">
                     <!--'card-item__offers' has class 'stocks', 'bestseller', 'novelty'-->
@@ -1040,7 +1041,7 @@
                     </section>               
                     <section class="card-item__main">
                         <section class="card-item__image">
-                            <img src="img/card-item.png" alt="name item" width="260" height="260">
+                            <img src="img/card-item.png" alt="name item">
                         </section>
                         <section class="card-item__navigation">
                             <section class="card-item__navigation-buttons">
@@ -1156,8 +1157,54 @@
                                  <span class="card-item__button-basket-text btn-basket__text">Купить</span>   
                             </button>
                         </section>
-                    </section>                  
+                    </section>  
+                    <section class="card-item__palit-button">
+                        <a data-card-button-like class="card-item__button-like" href="#">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_92_5258)">
+                                <path d="M30.3845 14.6711C29.3373 13.599 27.9508 13.013 26.4711 13.013C24.9913 13.013 23.6006 13.6033 22.5533 14.6754L22.0064 15.2354L21.4509 14.6667C20.4037 13.5946 19.0087 13 17.5289 13C16.0534 13 14.6627 13.5903 13.6197 14.6581C12.5724 15.7302 11.9958 17.1538 12 18.6687C12 20.1835 12.5809 21.6028 13.6282 22.6749L21.5908 30.8264C21.7011 30.9392 21.8495 31 21.9936 31C22.1378 31 22.2862 30.9436 22.3964 30.8307L30.3761 22.6923C31.4233 21.6202 32 20.1965 32 18.6817C32.0042 17.1669 31.4318 15.7432 30.3845 14.6711ZM29.5705 21.8633L21.9936 29.5893L14.4338 21.8503C13.6027 20.9995 13.1448 19.871 13.1448 18.6687C13.1448 17.4664 13.5985 16.3378 14.4295 15.4914C15.2563 14.645 16.3587 14.1763 17.5289 14.1763C18.7034 14.1763 19.8101 14.645 20.6411 15.4958L21.5993 16.4767C21.824 16.7068 22.1844 16.7068 22.4092 16.4767L23.3589 15.5045C24.1899 14.6537 25.2966 14.185 26.4668 14.185C27.637 14.185 28.7394 14.6537 29.5705 15.5001C30.4015 16.3509 30.8552 17.4794 30.8552 18.6817C30.8594 19.884 30.4015 21.0125 29.5705 21.8633Z" fill="#2D2D2D"/>
+                                <path class="card-item__like-svg" d="M30.3845 14.6711C29.3373 13.599 27.9508 13.013 26.4711 13.013C24.9913 13.013 23.6006 13.6033 22.5533 14.6754L22.0064 15.2354L21.4509 14.6667C20.4037 13.5946 19.0087 13 17.5289 13C16.0534 13 14.6627 13.5903 13.6197 14.6581C12.5724 15.7302 11.9958 17.1538 12 18.6687C12 20.1835 12.5809 21.6028 13.6282 22.6749L21.5908 30.8264C21.7011 30.9392 21.8495 31 21.9936 31C22.1378 31 22.2862 30.9436 22.3964 30.8307L30.3761 22.6923C31.4233 21.6202 32 20.1965 32 18.6817C32.0042 17.1669 31.4318 15.7432 30.3845 14.6711Z" fill="#FEFEFE" stroke="#7A7A7A"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_92_5258">
+                                <rect width="44" height="44" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>       
+                        </a>
+                        <a class="card-item__button-compare" href="#">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_92_5247)">
+                                <path class="card-item__compare-svg" d="M22 19V10" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" d="M14.7998 20.8L21.9998 19L29.1998 17.2" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" d="M24.4004 25.6L29.2004 17.2" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" d="M34.0002 25.6L29.2002 17.2" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" d="M19.5998 29.2001L14.7998 20.8" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" d="M10 29.2001L14.8 20.8" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" fill-rule="evenodd" clip-rule="evenodd" d="M14.8 34C17.451 34 19.6 31.8509 19.6 29.2H10C10 31.8509 12.149 34 14.8 34Z" fill="#FEFEFE" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="card-item__compare-svg" fill-rule="evenodd" clip-rule="evenodd" d="M29.2004 30.4C31.8514 30.4 34.0004 28.251 34.0004 25.6H24.4004C24.4004 28.251 26.5494 30.4 29.2004 30.4Z" fill="#FEFEFE" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_92_5247">
+                                <rect width="44" height="44" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>   
+                        </a>
+                    </section>                
                 </div>
+                <section class="card-item__footer-palit">
+                    <h3 class="card-item__full-price">16 398,38 грн</h3>
+                    <button class="card-item__palit-button-basket">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.7142 32.7509C18.6538 32.7509 19.4285 31.9949 19.4285 31.0463C19.4285 30.0978 18.6538 29.3418 17.7142 29.3418C16.7746 29.3418 16 30.0978 16 31.0463C16 31.9949 16.7746 32.7509 17.7142 32.7509Z" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M31.2133 32.7509C32.1528 32.7509 32.9275 31.9949 32.9275 31.0463C32.9275 30.0978 32.1528 29.3418 31.2133 29.3418C30.2737 29.3418 29.499 30.0978 29.499 31.0463C29.499 31.9949 30.2737 32.7509 31.2133 32.7509Z" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 11H13.8569L16.7496 27.2273H32.1773" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.7497 23.4087H31.7821C31.8936 23.4088 32.0017 23.3706 32.0879 23.3007C32.1742 23.2307 32.2333 23.1334 32.2552 23.0251L33.9908 14.4342C34.0048 14.3649 34.0031 14.2935 33.9858 14.2249C33.9685 14.1564 33.9361 14.0925 33.8908 14.0379C33.8455 13.9832 33.7886 13.9392 33.7241 13.9091C33.6596 13.8789 33.5891 13.8632 33.5177 13.8633H14.8213" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                        <span class="card-item__palit-button-text">Купить</span>
+                    </button>
+                </section>
             </section>
 
         </div>
@@ -1797,7 +1844,6 @@
             </div>
         </section>
     </footer>
-    <script  src="dist/bundle.js"></script>
 </body>
 
 </html>
