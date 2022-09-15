@@ -42,10 +42,12 @@ export let personalArea = function() {
 
     if(personalArea !== null) {
         const navigationBar = personalArea.querySelector('[data-navigation-bar]'),
-              favorites = personalArea.querySelector('[data-favorites]');
+              favorites = personalArea.querySelector('[data-favorites]'),
+              privateData = personalArea.querySelector('[data-private-data]');
 
         if(navigationBar !== null) {
-            const tabs = navigationBar.querySelectorAll('[data-tab-item]');
+            const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
+                  sections = personalArea.querySelectorAll('[data-section-personal-area]');
             
             tabs.forEach(item => {
                 item.addEventListener('click', function() {
@@ -53,8 +55,9 @@ export let personalArea = function() {
                     let tabId = currentBtn.getAttribute("data-tab");
                     let currentTub = document.querySelector(tabId);
                     delActiv(tabs)
-                        currentBtn.classList.add("active");
-                        currentTub.classList.add("active");                      
+                    delActiv(sections)
+                    currentBtn.classList.add("active");
+                    currentTub.classList.add("active");                      
                     });
             });
         }
@@ -79,6 +82,12 @@ export let personalArea = function() {
              closeMenu(personalArea, dropdown, itemSelected, itemLabel)
          })
          changeLable(itemsSelect, itemSelected)
+        }
+
+        if(privateData !== null) {
+            const inputs = privateData.querySelectorAll('[data-input-password-private-data]');
+
+        
         }
     }
 }

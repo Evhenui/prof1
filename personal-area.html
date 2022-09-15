@@ -1040,7 +1040,7 @@
                             <span class="navigation-bar__user-name">Здравствуйте, Татьяна</span>
                             <section class="navigation-bar__tabs">
                                 <!--navigation-bar__menu-item has class 'active' and 'disabled'-->
-                                <a data-tab-item data-tab="#favorites" class="navigation-bar__menu-item" href="#">Избранное (4)</a>
+                                <a data-tab-item data-tab="#favorites" class="navigation-bar__menu-item active" href="#">Избранное (4)</a>
                                 <a data-tab-item data-tab="#comparison" class="navigation-bar__menu-item" href="#">Сравнение (3)</a>
                                 <a data-tab-item data-tab="#my-orders" class="navigation-bar__menu-item" href="#">Мои заказы </a>
                                 <a data-tab-item data-tab="#private-data" class="navigation-bar__menu-item" href="#">Личные данные</a>
@@ -1058,7 +1058,7 @@
                     </div>   
                 </section>
 
-                <section data-favorites id="favorites" class="favorites active">
+                <section data-section-personal-area data-favorites id="favorites" class="favorites active">
                     <div class="favorites__wrapper">
                         <!--favorites__not-empty has class 'active'-->
                         <section class="favorites__not-empty active">
@@ -1843,11 +1843,159 @@
                     
                 </section>
 
-                <section id="comparison" class="comparison"></section>
+                <section data-section-personal-area id="comparison" class="comparison"></section>
 
-                <section id="my-orders" class="my-orders"></section>
+                <section data-section-personal-area id="my-orders" class="my-orders"></section>
 
-                <section id="private-data" class="private-data"></section>
+                <section data-section-personal-area data-private-data id="private-data" class="private-data">
+                    <div class="private-data__wrapper">
+                        <section class="private-data__inputs-wrapper">
+                            <section class="private-data__private-info">
+                                <div class="private-data__private-info-wrapper">
+                                    <h1 class="private-data__title">Личная  информация</h1>
+                                    <form class="private-data__form" action="">
+
+                                        <div data-input-name-private-data-container class="input-wrapper-white private-data__input-wrp">
+                                            <input data-input-private-data class="input-wrapper-white__input private-data__input" type="text" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">Ваше имя</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                        </div>
+
+                                        <div data-input-surname-private-data-container class="input-wrapper-white private-data__input-wrp">
+                                            <input data-input-private-data class="input-wrapper-white__input private-data__input" type="text" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">Ваша фамилия</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                        </div>
+
+                                        <div data-input-phone-private-data-cotainer class="input-wrapper-white private-data__input-wrp">
+                                            <input data-tel-input data-input-tel-private-data class="input-wrapper-white__input private-data__input" type="tel" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">+38 (0__) -__-__-___</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                        </div>
+
+                                        <div data-input-email-private-data-container class="input-wrapper-white private-data__input-wrp last">
+                                            <input data-input-email-private-data data-input-private-data class="input-wrapper-white__input private-data__input" type="text" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">Email</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="private-data__input-container">
+                                            <input type="checkbox" class="private-data__input-checkbox custom-checkbox" id="get" name="get" value="yes">
+                                            <label class="private-data__label-checkbox" for="get">Получать рассылку с акциями и новинками</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                            <section class="private-data__change-password">
+                                <div class="private-data__change-password-wrapper">
+                                    <h1 class="private-data__title">Изменить пароль</h1>
+                                    <form class="private-data__form" action="">
+
+                                        <div data-input-old-password-private-data-container class="input-wrapper-white">
+                                            <input data-input-password-private-data class="input-wrapper-white__input private-data__input" type="password" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">Старый пароль</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                            <div data-show-password-private-data class="main-modal__show-password-button private-data__show-password-button" data-target="#main-modal__passwords" >                              
+                                                <svg class="main-modal__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="main-modal__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                                </svg>
+                                                <svg class="main-modal__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
+                                                    <path class="main-modal__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
+                                                    <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
+                                                </svg> 
+                                            </div>
+                                        </div>
+
+                                        <div data-input-password-private-data-container class="input-wrapper-white">
+                                            <input data-input-password-private-data class="input-wrapper-white__input private-data__input" type="password" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">Новый пароль</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                            <div data-show-password-private-data class="main-modal__show-password-button private-data__show-password-button" data-target="#main-modal__passwords" >                              
+                                                <svg class="main-modal__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="main-modal__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                                </svg>
+                                                <svg class="main-modal__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
+                                                    <path class="main-modal__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
+                                                    <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
+                                                </svg> 
+                                            </div>
+                                        </div>
+                
+                                        <div data-input-password-re-private-data-container class="input-wrapper-white">
+                                            <input data-input-password-private-data class="input-wrapper-white__input private-data__input" type="password" required>
+                                            <div class="input-wrapper-white__image-error">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                </svg>     
+                                            </div>
+                                            <label class="input-wrapper-white__label">Повторите пароль</label>
+                                            <div class="input-wrapper-white__prompt-wrapper">
+                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            </div>
+                                            <div data-show-password-private-data class="main-modal__show-password-button private-data__show-password-button" data-target="#main-modal__passwords" >                              
+                                                <svg class="main-modal__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="main-modal__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                                </svg>
+                                                <svg class="main-modal__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
+                                                    <path class="main-modal__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
+                                                    <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
+                                                </svg> 
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </section>
+                        <div class="private-data__button-wrapper">
+                            <button class="btn-red private-data__button">Сохранить изменения</button>
+                        </div>                       
+                    </div>  
+                </section>
 
 
             </div>
