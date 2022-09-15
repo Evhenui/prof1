@@ -27,4 +27,7 @@ import {modals} from './modals.js';
 
 import {filter} from './filter.js';
         filter(); 
+
+import {personalArea} from './presonal-area.js';
+        personalArea(); 
   
