@@ -199,6 +199,39 @@
         }
     }
 
+    &__empty {
+    }
+
+    &__empty-wrapper {
+        padding-top: 104px;
+        @extend %centre-flex-columb;
+        @include __640 {
+            padding-top: 42px;
+        }
+    }
+
+    &__empty-title {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        @include text( $size: 1.25rem, $textAlign: center, $color: #000000, $fontWeight: 600, $lineHeight: 28px);
+    }
+
+    &__empty-subtitle {
+        display: flex;
+        align-items: center;
+        @include text( $size: 0.825rem, $textAlign: center, $color: #2D2D2D, $fontWeight: 400, $lineHeight: 24px);
+        &.img {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__empty-button {
+        padding: 16px 0;
+        max-width: 240px;
+        width: 100%;
+    }
+
+
 }
 
 .private-data {

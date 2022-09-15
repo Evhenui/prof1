@@ -98,7 +98,7 @@ export let personalArea = function() {
                     targetImg.classList.remove('active');
                   }
                 })
-            })
+            });
         
         }
     }
