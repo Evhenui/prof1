@@ -1061,7 +1061,7 @@
                 <section data-section-personal-area data-favorites id="favorites" class="favorites active">
                     <div class="favorites__wrapper">
                         <!--favorites__not-empty has class 'active'-->
-                        <section class="favorites__not-empty ">
+                        <section class="favorites__not-empty active">
                             <nav class="favorites__navigation">
 
                                 <button class="favorites__button btn-transparent">
@@ -1832,7 +1832,7 @@
                             </section>
                         </section>
                        <!--favorites__empty has class 'active'-->
-                        <section class="favorites__empty active">
+                        <section class="favorites__empty">
                             <div class="favorites__empty-wrapper">
                                 <h1 class="favorites__empty-title">Вы пока не добавили товар в избранное</h1>
                                 <p class="favorites__empty-subtitle">Чтобы добавить товар в избранное, воспользуйтесь
@@ -1857,9 +1857,790 @@
                     
                 </section>
 
-                <section data-section-personal-area id="comparison" class="comparison"></section>
+                <section data-section-personal-area data-comparison id="comparison" class="comparison"></section>
 
-                <section data-section-personal-area id="my-orders" class="my-orders"></section>
+                <section data-section-personal-area data-my-orders id="my-orders" class="my-orders">
+                    <div class="my-orders__wrapper">
+
+                        <!--order has 3 class "in-the-process", "canceled", "success"-->
+                        <section data-order-item class="order in-the-process">
+                            <section  class="order__short-information">
+                                <div class="order__short-information-wrapper">
+                                    <section class="order__short-information-left-section">
+                                        <section class="order__status">
+                                            <div class="order__status-wrp">
+                                                <img class="order__status-img in-the-process" src="/icon/in-the-process.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img canceled" src="/icon/cancel.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img success" src="/icon/success.png" alt="in the process" width="20" height="20">
+                                                <span class="order__status-title in-the-process">В процессе</span>
+                                                <span class="order__status-title canceled">Отменен</span>
+                                                <span class="order__status-title success">Выполнен</span>
+                                            </div>
+                                            <div data-order-arrow-mobile class="order__arrow mobile">
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>  
+                                            </div>
+                                        </section>
+                                        <section class="order__data-order">
+                                            <span class="order__data">24 августа 2022</span>
+                                            <span class="order__data-subtitle-order">Заказ №021097</span>
+                                        </section>
+                                        <section class="order__sum">
+                                            <span class="order__sum-title">Сумма заказа:</span>
+                                            <span class="order__sum-subtitle">13 812 грн</span>
+                                        </section>
+                                        <section class="order__amount-product">
+                                            <span class="order__amount-title">Товаров: </span>
+                                            <span class="order__amount-subtitle">4</span>
+                                        </section>
+                                        <section class="order__images-product">
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="order__short-information-right-section">
+                                        <div data-order-arrow class="order__arrow">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>  
+                                        </div>
+                                    </section>                                 
+                                </div>
+                            </section>
+                            <section data-order-item-content class="order__full-information">
+                                <div class="order__full-information-wrapper">
+                                    <div class="order__full-information-wrapper-section">
+                                        <section class="order__full-information-left-section">
+                                            <span class="order__about-order">Информация о заказе</span>
+                                            <ul class="order__list-info">
+                                                <li class="order__list-item">Город, улица, номер дома</li>
+                                                <li class="order__list-item">Имя, Фамилия, Отчество</li>
+                                                <li class="order__list-item">Номер телефона</li>
+                                                <li class="order__list-item">emal</li>
+                                            </ul>
+                                        </section>
+                                        <section class="order__full-information-right-section">
+                                            <section class="order__title-navigation">
+                                                <p class="order__title-navigation-item">Товар</p>
+                                                <p class="order__title-navigation-item">Цена</p>
+                                                <p class="order__title-navigation-item">Количество</p>
+                                                <p class="order__title-navigation-item">Сумма</p>
+                                            </section>
+                                            <section class="order__full-info-details">
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <section class="order__footer">
+                                        <div class="order__full-information-footer">
+                                            <section class="order__payment">
+                                                <span class="order__payment-title">Оплата</span>
+                                                <span class="order__payment-subtitle">Оплата при получении товара</span>
+                                            </section>
+                                            <section class="order__total">
+                                                <span class="order__total-title">Итого</span>
+                                                <span class="order__total-subtitle">98390,28грн</span>
+                                            </section>
+                                            <section class="order__button-repeat-order-wrapper">
+                                                <button class="btn-red order__button-repeat-order">Повторить заказ</button>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    
+                                </div>                              
+                            </section>
+                        </section>
+
+                        <section data-order-item class="order canceled">
+                            <section  class="order__short-information">
+                                <div class="order__short-information-wrapper">
+                                    <section class="order__short-information-left-section">
+                                        <section class="order__status">
+                                            <div class="order__status-wrp">
+                                                <img class="order__status-img in-the-process" src="/icon/in-the-process.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img canceled" src="/icon/cancel.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img success" src="/icon/success.png" alt="in the process" width="20" height="20">
+                                                <span class="order__status-title in-the-process">В процессе</span>
+                                                <span class="order__status-title canceled">Отменен</span>
+                                                <span class="order__status-title success">Выполнен</span>
+                                            </div>
+                                            <div data-order-arrow-mobile class="order__arrow mobile">
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>  
+                                            </div>
+                                        </section>
+                                        <section class="order__data-order">
+                                            <span class="order__data">24 августа 2022</span>
+                                            <span class="order__data-subtitle-order">Заказ №021097</span>
+                                        </section>
+                                        <section class="order__sum">
+                                            <span class="order__sum-title">Сумма заказа:</span>
+                                            <span class="order__sum-subtitle">13 812 грн</span>
+                                        </section>
+                                        <section class="order__amount-product">
+                                            <span class="order__amount-title">Товаров: </span>
+                                            <span class="order__amount-subtitle">4</span>
+                                        </section>
+                                        <section class="order__images-product">
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="order__short-information-right-section">
+                                        <div data-order-arrow class="order__arrow">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>  
+                                        </div>
+                                    </section>                                 
+                                </div>
+                            </section>
+                            <section data-order-item-content class="order__full-information">
+                                <div class="order__full-information-wrapper">
+                                    <div class="order__full-information-wrapper-section">
+                                        <section class="order__full-information-left-section">
+                                            <span class="order__about-order">Информация о заказе</span>
+                                            <ul class="order__list-info">
+                                                <li class="order__list-item">Город, улица, номер дома</li>
+                                                <li class="order__list-item">Имя, Фамилия, Отчество</li>
+                                                <li class="order__list-item">Номер телефона</li>
+                                                <li class="order__list-item">emal</li>
+                                            </ul>
+                                        </section>
+                                        <section class="order__full-information-right-section">
+                                            <section class="order__title-navigation">
+                                                <p class="order__title-navigation-item">Товар</p>
+                                                <p class="order__title-navigation-item">Цена</p>
+                                                <p class="order__title-navigation-item">Количество</p>
+                                                <p class="order__title-navigation-item">Сумма</p>
+                                            </section>
+                                            <section class="order__full-info-details">
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <section class="order__footer">
+                                        <div class="order__full-information-footer">
+                                            <section class="order__payment">
+                                                <span class="order__payment-title">Оплата</span>
+                                                <span class="order__payment-subtitle">Оплата при получении товара</span>
+                                            </section>
+                                            <section class="order__total">
+                                                <span class="order__total-title">Итого</span>
+                                                <span class="order__total-subtitle">98390,28грн</span>
+                                            </section>
+                                            <section class="order__button-repeat-order-wrapper">
+                                                <button class="btn-red order__button-repeat-order">Повторить заказ</button>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    
+                                </div>                              
+                            </section>
+                        </section>
+
+                        <section data-order-item class="order success">
+                            <section  class="order__short-information">
+                                <div class="order__short-information-wrapper">
+                                    <section class="order__short-information-left-section">
+                                        <section class="order__status">
+                                            <div class="order__status-wrp">
+                                                <img class="order__status-img in-the-process" src="/icon/in-the-process.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img canceled" src="/icon/cancel.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img success" src="/icon/success.png" alt="in the process" width="20" height="20">
+                                                <span class="order__status-title in-the-process">В процессе</span>
+                                                <span class="order__status-title canceled">Отменен</span>
+                                                <span class="order__status-title success">Выполнен</span>
+                                            </div>
+                                            <div data-order-arrow-mobile class="order__arrow mobile">
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>  
+                                            </div>
+                                        </section>
+                                        <section class="order__data-order">
+                                            <span class="order__data">24 августа 2022</span>
+                                            <span class="order__data-subtitle-order">Заказ №021097</span>
+                                        </section>
+                                        <section class="order__sum">
+                                            <span class="order__sum-title">Сумма заказа:</span>
+                                            <span class="order__sum-subtitle">13 812 грн</span>
+                                        </section>
+                                        <section class="order__amount-product">
+                                            <span class="order__amount-title">Товаров: </span>
+                                            <span class="order__amount-subtitle">4</span>
+                                        </section>
+                                        <section class="order__images-product">
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="order__short-information-right-section">
+                                        <div data-order-arrow class="order__arrow">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>  
+                                        </div>
+                                    </section>                                 
+                                </div>
+                            </section>
+                            <section data-order-item-content class="order__full-information">
+                                <div class="order__full-information-wrapper">
+                                    <div class="order__full-information-wrapper-section">
+                                        <section class="order__full-information-left-section">
+                                            <span class="order__about-order">Информация о заказе</span>
+                                            <ul class="order__list-info">
+                                                <li class="order__list-item">Город, улица, номер дома</li>
+                                                <li class="order__list-item">Имя, Фамилия, Отчество</li>
+                                                <li class="order__list-item">Номер телефона</li>
+                                                <li class="order__list-item">emal</li>
+                                            </ul>
+                                        </section>
+                                        <section class="order__full-information-right-section">
+                                            <section class="order__title-navigation">
+                                                <p class="order__title-navigation-item">Товар</p>
+                                                <p class="order__title-navigation-item">Цена</p>
+                                                <p class="order__title-navigation-item">Количество</p>
+                                                <p class="order__title-navigation-item">Сумма</p>
+                                            </section>
+                                            <section class="order__full-info-details">
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <section class="order__footer">
+                                        <div class="order__full-information-footer">
+                                            <section class="order__payment">
+                                                <span class="order__payment-title">Оплата</span>
+                                                <span class="order__payment-subtitle">Оплата при получении товара</span>
+                                            </section>
+                                            <section class="order__total">
+                                                <span class="order__total-title">Итого</span>
+                                                <span class="order__total-subtitle">98390,28грн</span>
+                                            </section>
+                                            <section class="order__button-repeat-order-wrapper">
+                                                <button class="btn-red order__button-repeat-order">Повторить заказ</button>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    
+                                </div>                              
+                            </section>
+                        </section>
+
+                        <section data-order-item class="order success">
+                            <section  class="order__short-information">
+                                <div class="order__short-information-wrapper">
+                                    <section class="order__short-information-left-section">
+                                        <section class="order__status">
+                                            <div class="order__status-wrp">
+                                                <img class="order__status-img in-the-process" src="/icon/in-the-process.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img canceled" src="/icon/cancel.png" alt="in the process" width="20" height="20">
+                                                <img class="order__status-img success" src="/icon/success.png" alt="in the process" width="20" height="20">
+                                                <span class="order__status-title in-the-process">В процессе</span>
+                                                <span class="order__status-title canceled">Отменен</span>
+                                                <span class="order__status-title success">Выполнен</span>
+                                            </div>
+                                            <div data-order-arrow-mobile class="order__arrow mobile">
+                                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>  
+                                            </div>
+                                        </section>
+                                        <section class="order__data-order">
+                                            <span class="order__data">24 августа 2022</span>
+                                            <span class="order__data-subtitle-order">Заказ №021097</span>
+                                        </section>
+                                        <section class="order__sum">
+                                            <span class="order__sum-title">Сумма заказа:</span>
+                                            <span class="order__sum-subtitle">13 812 грн</span>
+                                        </section>
+                                        <section class="order__amount-product">
+                                            <span class="order__amount-title">Товаров: </span>
+                                            <span class="order__amount-subtitle">4</span>
+                                        </section>
+                                        <section class="order__images-product">
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                            <div class="order__image-wrapper">
+                                                <img src="/img/product-item_1.png" alt="name product" width="60" height="60">
+                                            </div>
+                                        </section>
+                                    </section>
+                                    <section class="order__short-information-right-section">
+                                        <div data-order-arrow class="order__arrow">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="order__arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>  
+                                        </div>
+                                    </section>                                 
+                                </div>
+                            </section>
+                            <section data-order-item-content class="order__full-information">
+                                <div class="order__full-information-wrapper">
+                                    <div class="order__full-information-wrapper-section">
+                                        <section class="order__full-information-left-section">
+                                            <span class="order__about-order">Информация о заказе</span>
+                                            <ul class="order__list-info">
+                                                <li class="order__list-item">Город, улица, номер дома</li>
+                                                <li class="order__list-item">Имя, Фамилия, Отчество</li>
+                                                <li class="order__list-item">Номер телефона</li>
+                                                <li class="order__list-item">emal</li>
+                                            </ul>
+                                        </section>
+                                        <section class="order__full-information-right-section">
+                                            <section class="order__title-navigation">
+                                                <p class="order__title-navigation-item">Товар</p>
+                                                <p class="order__title-navigation-item">Цена</p>
+                                                <p class="order__title-navigation-item">Количество</p>
+                                                <p class="order__title-navigation-item">Сумма</p>
+                                            </section>
+                                            <section class="order__full-info-details">
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+    
+                                                <section class="order__details-item">
+                                                    <section class="order__details-name-product">
+                                                        <img src="img/product-item_1.png" alt="name product" width="60" height="60">
+                                                        <h3 class="order__details-name">Название товара какое-то оооооооооочень длинное</h3>
+                                                    </section>
+                                                    <section class="order__details-central-wrapper">
+                                                        <section class="order__details-price">
+                                                            <span class="order__details-price-title">Цена</span>
+                                                            <span class="order__details-price-subtitle">16 398,38 грн</span>
+                                                        </section>
+                                                        <section class="order__details-amount">
+                                                            <span class="order__details-amount-title">Количество</span>
+                                                            <span class="order__details-amount-subtitle">1</span>
+                                                        </section>
+                                                        <section class="order__details-sum">
+                                                            <span class="order__details-sum-title">Сумма</span>
+                                                            <span class="order__details-sum-subtitle">32796,76 грн</span>
+                                                        </section>
+                                                    </section>
+                                                  <section class="order__button-wrapper">
+                                                    <button class="order__button-stay-review btn-transparent">Оставить отзыв</button>
+                                                  </section>
+                                                </section>
+                                            </section>
+                                        </section>
+                                    </div>
+                                    <section class="order__footer">
+                                        <div class="order__full-information-footer">
+                                            <section class="order__payment">
+                                                <span class="order__payment-title">Оплата</span>
+                                                <span class="order__payment-subtitle">Оплата при получении товара</span>
+                                            </section>
+                                            <section class="order__total">
+                                                <span class="order__total-title">Итого</span>
+                                                <span class="order__total-subtitle">98390,28грн</span>
+                                            </section>
+                                            <section class="order__button-repeat-order-wrapper">
+                                                <button class="btn-red order__button-repeat-order">Повторить заказ</button>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    
+                                </div>                              
+                            </section>
+                        </section>
+
+                    </div>
+                </section>
 
                 <section data-section-personal-area data-private-data id="private-data" class="private-data">
                     <div class="private-data__wrapper">

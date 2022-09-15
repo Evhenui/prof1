@@ -43,7 +43,8 @@ export let personalArea = function() {
     if(personalArea !== null) {
         const navigationBar = personalArea.querySelector('[data-navigation-bar]'),
               favorites = personalArea.querySelector('[data-favorites]'),
-              privateData = personalArea.querySelector('[data-private-data]');
+              privateData = personalArea.querySelector('[data-private-data]'),
+              myOrders = personalArea.querySelector('[data-my-orders]');
       
         if(navigationBar !== null) {
             const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
@@ -100,6 +101,29 @@ export let personalArea = function() {
                 })
             });
         
+        }
+
+        if(myOrders !== null) {
+            const accordionItem = myOrders.querySelectorAll('[data-order-item]');
+
+            accordionItem.forEach((item) => {
+              item.addEventListener('click', function(event) {
+
+               const self = event.currentTarget;
+               const accordionContent = self.querySelector('[data-order-item-content]');
+               const accordionArrow = self.querySelector('[data-order-arrow]');
+
+               this.classList.toggle('active');
+               accordionArrow.classList.toggle('active');
+
+               if(this.classList.contains('active')){
+                accordionContent.style.height = accordionContent.scrollHeight + 'px';
+               } else {
+                accordionContent.style.height = 0 + 'px';
+               }
+              })
+             })
+          
         }
     }
 }
