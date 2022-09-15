@@ -44,7 +44,7 @@ export let personalArea = function() {
         const navigationBar = personalArea.querySelector('[data-navigation-bar]'),
               favorites = personalArea.querySelector('[data-favorites]'),
               privateData = personalArea.querySelector('[data-private-data]');
-
+      
         if(navigationBar !== null) {
             const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
                   sections = personalArea.querySelectorAll('[data-section-personal-area]');
@@ -85,8 +85,20 @@ export let personalArea = function() {
         }
 
         if(privateData !== null) {
-            const inputs = privateData.querySelectorAll('[data-input-password-private-data]');
+            const containerPasswordInput = personalArea.querySelectorAll('[data-input-password-private-data-container]');
 
+            containerPasswordInput.forEach(item => {
+              item.addEventListener('input', function(event) {
+                  const self = event.currentTarget;
+                  const targetInput = self.querySelector('[data-input-password-private-data]');
+                  const targetImg = self.querySelector('[data-show-password-private-data]');
+                  if(targetInput.value !== '') {
+                    targetImg.classList.add('active');
+                  } else {
+                    targetImg.classList.remove('active');
+                  }
+                })
+            })
         
         }
     }
