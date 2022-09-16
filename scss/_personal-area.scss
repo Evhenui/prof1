@@ -4,7 +4,24 @@
     }
 }
 
+.navigation-bar-empty {
+    height: 50px;
+    width: 100%;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
 .navigation-bar {
+    &.active {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        z-index: 1;
+        background-color: $color-white;
+        width: 100%;
+    }
 
     &__wrapper {
         border-top: 1px solid $color-gray-30;

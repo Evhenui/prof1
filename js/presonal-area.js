@@ -48,7 +48,8 @@ export let personalArea = function() {
       
         if(navigationBar !== null) {
             const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
-                  sections = personalArea.querySelectorAll('[data-section-personal-area]');
+                  sections = personalArea.querySelectorAll('[data-section-personal-area]'),
+                  emptyNav = personalArea.querySelector('[data-navigation-bar-empty]');
             
             tabs.forEach(item => {
                 item.addEventListener('click', function() {
@@ -60,6 +61,16 @@ export let personalArea = function() {
                     currentBtn.classList.add("active");
                     currentTub.classList.add("active");                      
                     });
+            });
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 56) {
+                    navigationBar.classList.add('active');
+                    emptyNav.classList.add('active');
+                } else {
+                    navigationBar.classList.remove('active');
+                    emptyNav.classList.remove('active');
+                }
             });
         }
 

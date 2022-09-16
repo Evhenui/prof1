@@ -9617,6 +9617,25 @@ label {
   padding: 68px 0 100px 0;
 }
 
+.navigation-bar-empty {
+  height: 50px;
+  width: 100%;
+  display: none;
+}
+
+.navigation-bar-empty.active {
+  display: block;
+}
+
+.navigation-bar.active {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  z-index: 1;
+  background-color: #FEFEFE;
+  width: 100%;
+}
+
 .navigation-bar__wrapper {
   border-top: 1px solid #E0E0E0;
   border-bottom: 1px solid #E0E0E0;
