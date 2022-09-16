@@ -680,6 +680,10 @@
         @include __960 {
             width: auto;
             height: auto;
+            display: none;
+            &.mobile {
+                display: block;
+            }
         }
     }
 
@@ -822,6 +826,9 @@
         @include __1390 {
             column-gap: 5px;
         }
+        @include __960 {
+            column-gap: 12px; 
+        }
     }
 
     &__details-name-product:hover &__details-name {
@@ -836,6 +843,9 @@
         @include __1390 {
             max-width: 135px;
         }
+        @include __960{
+            max-width: 218px; 
+        }
     }
 
     &__details-central-wrapper {
@@ -849,7 +859,12 @@
         }
     }
 
-    &__details-price {
+    &__details-price, &__details-amount, &__details-sum {
+        @include __960 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+        }
     }
 
     &__details-price-title, &__details-amount-title, &__details-sum-title {
