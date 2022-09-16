@@ -401,7 +401,9 @@
     &__wrapper {
         @extend %size-page;
         padding: 24px 48px 120px 48px;
-
+        @include __960 {
+            @include padding-mob;
+        }
     }
 
     &__not-empty {
@@ -410,6 +412,13 @@
             display: flex;
             flex-direction: column;
             row-gap: 20px;
+        }
+    }
+
+    &__empty {
+        display: none;
+        &.active {
+            display: block;
         }
     }
 
@@ -431,6 +440,10 @@
     }
 }
 .order {
+
+    @include __960 {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
     &.active {
         outline: 1px solid $color-red-30;
     }
@@ -473,18 +486,42 @@
         transition: all .1s ease-in-out;
     }
 
+    &.active &__short-information-wrapper {
+        @include __960 {
+            padding: 8px 12px 16px 12px;
+        }
+    }
+
     &__short-information-wrapper {
+        transition: all .3s ease-in-out;
         @extend %centre-space-between;
         padding: 12px 24px;
+        @include __960 {
+            padding: 8px 12px;
+            display: block;
+        }
     }
 
     &__short-information-left-section {
         display: flex;
         align-items: center;
+        @include __960 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__status {
         margin-right: 60px;
+        @include __1290 {
+            margin-right: 20px;
+        }
+        @include __960 {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 12px 0;
+            width: 100%;
+        }
     }
 
     &__status-wrp {
@@ -545,12 +582,30 @@
 
     &__data-order {
         margin-right: 96px;
+        @include __1290 {
+            margin-right: 20px;
+        }
+        @include __960 {
+            margin: 0 0 8px 0;
+        }
     }
 
     &__data-order, &__sum, &__amount-product{
         display: flex;
         flex-direction: column;
         row-gap: 4px;
+        @include __960 {
+            margin-right: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    &__amount-product {
+        @include __960 {
+            display: none;
+        }
     }
 
     &__data {
@@ -561,8 +616,20 @@
         @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
     }
 
+    &.active &__sum{
+        @include __960 {
+            margin-bottom: 0;
+        }
+    }
+
     &__sum {
         margin-right: 128px;
+        @include __1290 {
+            margin-right: 20px;
+        }
+        @include __960 {
+            margin: 0 0 12px 0;
+        }
     }
 
     &__sum-title, &__amount-title, &__amount-product {
@@ -583,19 +650,63 @@
     &.active &__images-product {
         opacity: 0;
         visibility: hidden;
+        @include __960 {
+            height: 0;
+            overflow: hidden;
+        }
     }
 
     &__images-product {
         transition: all .3s ease-in-out;
         display: flex;
         column-gap: 12px;
+        @include __1390 {
+            column-gap: 5px; 
+            align-items: center;
+        }
+        @include __960 {
+            max-width: 319px;
+            width: 100%;
+            justify-content: space-between;
+            height: 60px;
+        }
     }
 
     &__image-wrapper {
+        @include __1090 {
+            width: 40px;
+            height: 40px;
+        }
+        @include __960 {
+            width: auto;
+            height: auto;
+        }
+    }
 
+    &__image-more {
+        width: 60px;
+        height: 60px;
+        background-color: $color-white;
+        @extend %centre-flex-columb;
+        outline: 1px solid $color-gray-20;
+        @include __1090 {
+            width: 40px;
+            height: 40px;
+        }
+        @include __960 {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__more-number {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
     }
 
     &__short-information-right-section {
+        @include __960 {
+            display: none;
+        }
     }
 
     &__full-information {
@@ -608,14 +719,24 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 60px;
+        column-gap: 10px;
+        @include __960 {
+            flex-direction: column;
+            row-gap: 24px;
+        }
     }
 
     &__full-information-wrapper {
-       
         padding: 24px 24px 40px 24px;
+        @include __960{
+            padding: 0 0 8px 0;
+        }
     }
 
     &__full-information-left-section {
+        @include __960 {
+            padding: 0 12px;
+        }
     }
 
     &__about-order {
@@ -642,6 +763,10 @@
         column-gap: 40px;
         border-bottom: 1px solid $color-gray-30;
         padding: 0 247px 0 88px;
+        @include __1390 {
+            padding: 0 13px;
+            column-gap: 10px;
+        }
         
     }
 
@@ -651,6 +776,21 @@
         &:nth-child(1) {
             width: 41px;
             margin-right: 178px;
+            @include __1390 {
+                margin-right: 163px;
+            }
+        }
+
+        &:nth-child(2) {
+            @include __1390 {
+                width: 70px;
+            }
+        }
+        @include __1390 {
+            width: 90px;
+        }
+        @include __960 {
+            display: none;
         }
     }
 
@@ -663,6 +803,15 @@
         column-gap: 40px;
         padding: 8px 16px;
         border-bottom: 1px solid $color-gray-30;
+        @include __1390 {
+            column-gap: 10px;
+        }
+        @include __960 {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 12px;
+            row-gap: 40px;
+        }
     }
 
     &__details-name-product {
@@ -670,6 +819,9 @@
         column-gap: 12px;
         align-items: center;
         cursor: pointer;
+        @include __1390 {
+            column-gap: 5px;
+        }
     }
 
     &__details-name-product:hover &__details-name {
@@ -681,17 +833,27 @@
         max-width: 218px;
         width: 100%;
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
+        @include __1390 {
+            max-width: 135px;
+        }
     }
 
     &__details-central-wrapper {
         display: flex;
         column-gap: 40px;
+        @include __1390 {
+            column-gap: 15px;
+        }
+        @include __960 {
+            column-gap: 31px; 
+        }
     }
 
     &__details-price {
     }
 
-    &__details-price-title {
+    &__details-price-title, &__details-amount-title, &__details-sum-title {
+        @include text( $size: 0.75rem, $textAlign: center, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 20px);
         display: none;
         @include __960 {
             display: block;
@@ -702,42 +864,49 @@
         display: inline-block;
         width: 120px;
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
-    }
-
-    &__details-amount {
-    }
-
-    &__details-amount-title {
-        display: none;
+        @include __1390 {
+            width: 70px;
+            text-align: center;
+        }
         @include __960 {
-            display: block;
+            width: auto;
         }
     }
 
-
+    &__details-amount {
+        @include __960 {
+            text-align: center;
+        }
+    }
 
     &__details-sum {
     }
 
-    &__details-sum-title {
-        display: none;
-        @include __960 {
-            display: block;
-        }
-    }
-
-
-
     &__button-wrapper {
+        @include __960 {
+            max-width: 375px;
+            width: 100%;
+        }
     }
 
     &__button-stay-review {
         padding: 12px 36.5px;
+        @include __1390 {
+            padding: 12px 4px;
+        }
+        @include __960 {
+            max-width: 375px;
+            width: 100%;
+        }
     }
 
     &__footer {
         display: flex;
         justify-content: flex-end;
+        @include __960 {
+            justify-content: flex-start;
+            padding: 0 12px;
+        }
     }
 
 
