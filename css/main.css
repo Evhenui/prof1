@@ -142,7 +142,7 @@ label {
           justify-content: center;
 }
 
-.header-navigation .amount-item, .header-navigation__select-language-wrapper, .header-navigation-mobile__navigation-amount, .main-information__item-select, .main-information__button-like, .main-information__button-compare, .card-item__navigation-colors, .card-item__color, .card-item__color-more, .main-modal__footer, .top-navigation__menu-item.delete, .items__page-item, .result-search__wrapper, .favorites__empty-wrapper {
+.header-navigation .amount-item, .header-navigation__select-language-wrapper, .header-navigation-mobile__navigation-amount, .main-information__item-select, .main-information__button-like, .main-information__button-compare, .card-item__navigation-colors, .card-item__color, .card-item__color-more, .main-modal__footer, .top-navigation__menu-item.delete, .items__page-item, .result-search__wrapper, .favorites__empty-wrapper, .my-orders__empty-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10127,6 +10127,13 @@ label {
 
 .my-orders__wrapper {
   padding: 24px 48px 120px 48px;
+}
+
+.my-orders__not-empty {
+  display: none;
+}
+
+.my-orders__not-empty.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10137,8 +10144,33 @@ label {
   row-gap: 20px;
 }
 
+.my-orders__empty-wrapper {
+  padding-top: 97px;
+}
+
+.my-orders__empty-titlte {
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+  color: #000000;
+}
+
+.my-orders__empty-button {
+  max-width: 240px;
+  width: 100%;
+  padding: 12px 0;
+}
+
 .order.active {
   outline: 1px solid #FAD1D6;
+}
+
+.order.active .order__short-information {
+  outline: none;
 }
 
 .order__short-information {
@@ -10326,7 +10358,14 @@ label {
   margin-right: 47px;
 }
 
+.order.active .order__images-product {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .order__images-product {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
