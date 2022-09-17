@@ -19,7 +19,8 @@
         "../scss/_filter.scss",
         "../scss/_personal-area.scss",
         "../scss/_order-awaiting-payment.scss",
-        "../scss/_order-waiting-call.scss"
+        "../scss/_order-waiting-call.scss",
+        "../scss/_ordering.scss"
     ],
     "names": [],
     "file": "main.css"

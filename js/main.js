@@ -31,3 +31,5 @@ import {filter} from './filter.js';
 import {personalArea} from './presonal-area.js';
         personalArea(); 
   
+import {ordering} from './ordering.js';
+        ordering(); 
