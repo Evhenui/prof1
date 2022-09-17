@@ -1858,7 +1858,143 @@
                     
                 </section>
 
-                <section data-section-personal-area data-comparison id="comparison" class="comparison"></section>
+                <section data-section-personal-area data-comparison id="comparison" class="comparison">
+                    <div class="comparison__wrapper">
+                        <!--comparison__not-empty has class 'active'-->
+                        <section class="comparison__not-empty active">
+                            <nav class="comparison__navigation">
+                                <div class="comparison__navigation-left-wrapper">
+                                    <section class="comparison__category">
+                                        <h3 class="comparison__category-title">Категория сравнения:</h3>
+
+                                        <section data-dropdown-category class="comparison__dropdown">
+                                            <span data-dropdown-category-selected class="comparison__dropdown-title">Велосипеды</span>
+                                            <svg class="comparison__dropdown-arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="comparison__dropdown-arrow-state" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <ul class="comparison__dropdown-list">
+                                                <li data-dropdown-category-item class="comparison__dropdown-item">Велосипеды</li>
+                                                <li data-dropdown-category-item class="comparison__dropdown-item">Lorem</li>
+                                                <li data-dropdown-category-item class="comparison__dropdown-item">Lorem</li>
+                                                <li data-dropdown-category-item class="comparison__dropdown-item">Lorem</li>
+                                            </ul>
+                                        </section> 
+                                        
+                                    </section>
+                                    <section class="comparison__buttons">
+                                        <button class="comparison__button-add btn-red">Добавить товар</button>
+                                        <button class="comparison__button-clear btn-transparent">Очистить</button>
+                                    </section>
+                                </div>                             
+                                <section class="comparison__switch">
+                                    <span class="comparison__switch-title">Только отличия</span>
+                                    <label class="comparison__switch-wrapper">
+                                        <input class="comparison__checkbox" type="checkbox">
+                                        <span class="comparison__slider-checkbox"></span>
+                                    </label>
+                                </section>
+                            </nav>
+                            <section class="comparison__slider"> 
+                                <section class="comparison-slider__titlte-slider">
+                                    <div class="comparison-slider__titlte-slider-wrapper">
+                                        <header class="comparison-slider__titlte-slider-header">
+                                            <!--comparison-slider__offers has class 'stocks', 'bestseller', 'novelty', 'none'-->
+                                            <section class="comparison-slider__offers bestseller">
+                                                <div class="comparison-slider__offer stocks">
+                                                    <span class="comparison-slider__offers-title">Акция</span>
+                                                </div>
+                                                <div class="comparison-slider__offer bestseller">
+                                                    <span class="comparison-slider__offers-title">Хит продаж</span>
+                                                </div>
+                                                <div class="comparison-slider__offer novelty">
+                                                    <span class="comparison-slider__offers-title">Новинка</span>
+                                                </div>
+                                            </section> 
+                                            <div class="comparison-slider__image-wrapper">
+                                                <img src="/img/comparison-item.png" alt="product name" width="100" height="100">
+                                            </div>
+                                            <section class="comparison-slider__main-info">
+                                                <div class="comparison-slider__review">
+                                                    <div class="comparison-slider__stars">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.9791 5.02309C9.92674 4.85405 9.78306 4.73399 9.61307 4.71801L7.30406 4.49923L6.39102 2.26922C6.3237 2.10579 6.17037 2 6.00002 2C5.82967 2 5.67634 2.10579 5.60902 2.2696L4.69598 4.49923L2.3866 4.71801C2.21692 4.73438 2.07361 4.85405 2.02093 5.02309C1.96826 5.19212 2.01691 5.37753 2.14527 5.4944L3.8906 7.09164L3.37594 9.45731C3.33828 9.63125 3.40298 9.81105 3.54129 9.91538C3.61563 9.97142 3.70261 9.99996 3.79032 9.99996C3.86594 9.99996 3.94096 9.97868 4.00828 9.93665L6.00002 8.69448L7.99103 9.93665C8.13672 10.0281 8.32038 10.0198 8.45838 9.91538C8.59675 9.81073 8.66139 9.63087 8.62373 9.45731L8.10907 7.09164L9.85441 5.49472C9.98277 5.37753 10.0318 5.19244 9.9791 5.02309Z" fill="#F07585"/>
+                                                        </svg>
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.9791 5.02309C9.92674 4.85405 9.78306 4.73399 9.61307 4.71801L7.30406 4.49923L6.39102 2.26922C6.3237 2.10579 6.17037 2 6.00002 2C5.82967 2 5.67634 2.10579 5.60902 2.2696L4.69598 4.49923L2.3866 4.71801C2.21692 4.73438 2.07361 4.85405 2.02093 5.02309C1.96826 5.19212 2.01691 5.37753 2.14527 5.4944L3.8906 7.09164L3.37594 9.45731C3.33828 9.63125 3.40298 9.81105 3.54129 9.91538C3.61563 9.97142 3.70261 9.99996 3.79032 9.99996C3.86594 9.99996 3.94096 9.97868 4.00828 9.93665L6.00002 8.69448L7.99103 9.93665C8.13672 10.0281 8.32038 10.0198 8.45838 9.91538C8.59675 9.81073 8.66139 9.63087 8.62373 9.45731L8.10907 7.09164L9.85441 5.49472C9.98277 5.37753 10.0318 5.19244 9.9791 5.02309Z" fill="#F07585"/>
+                                                        </svg>
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.9791 5.02309C9.92674 4.85405 9.78306 4.73399 9.61307 4.71801L7.30406 4.49923L6.39102 2.26922C6.3237 2.10579 6.17037 2 6.00002 2C5.82967 2 5.67634 2.10579 5.60902 2.2696L4.69598 4.49923L2.3866 4.71801C2.21692 4.73438 2.07361 4.85405 2.02093 5.02309C1.96826 5.19212 2.01691 5.37753 2.14527 5.4944L3.8906 7.09164L3.37594 9.45731C3.33828 9.63125 3.40298 9.81105 3.54129 9.91538C3.61563 9.97142 3.70261 9.99996 3.79032 9.99996C3.86594 9.99996 3.94096 9.97868 4.00828 9.93665L6.00002 8.69448L7.99103 9.93665C8.13672 10.0281 8.32038 10.0198 8.45838 9.91538C8.59675 9.81073 8.66139 9.63087 8.62373 9.45731L8.10907 7.09164L9.85441 5.49472C9.98277 5.37753 10.0318 5.19244 9.9791 5.02309Z" fill="#F07585"/>
+                                                        </svg>
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.9791 5.02309C9.92674 4.85405 9.78306 4.73399 9.61307 4.71801L7.30406 4.49923L6.39102 2.26922C6.3237 2.10579 6.17037 2 6.00002 2C5.82967 2 5.67634 2.10579 5.60902 2.2696L4.69598 4.49923L2.3866 4.71801C2.21692 4.73438 2.07361 4.85405 2.02093 5.02309C1.96826 5.19212 2.01691 5.37753 2.14527 5.4944L3.8906 7.09164L3.37594 9.45731C3.33828 9.63125 3.40298 9.81105 3.54129 9.91538C3.61563 9.97142 3.70261 9.99996 3.79032 9.99996C3.86594 9.99996 3.94096 9.97868 4.00828 9.93665L6.00002 8.69448L7.99103 9.93665C8.13672 10.0281 8.32038 10.0198 8.45838 9.91538C8.59675 9.81073 8.66139 9.63087 8.62373 9.45731L8.10907 7.09164L9.85441 5.49472C9.98277 5.37753 10.0318 5.19244 9.9791 5.02309Z" fill="#F07585"/>
+                                                        </svg>  
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M6.84224 4.68832L6.95657 4.96758L7.25699 4.99604L9.43465 5.20237L7.7722 6.72346L7.56042 6.91723L7.62144 7.19773L8.10478 9.41942L6.26417 8.27109L6.00007 8.10632L5.73594 8.27105L3.89494 9.4192L4.37823 7.19773L4.43925 6.91727L4.22751 6.7235L2.56532 5.20235L4.74304 4.99604L5.04344 4.96758L5.15779 4.68835L6.00009 2.63147L6.84224 4.68832ZM2.45207 5.15744L2.42828 5.15002L2.45207 5.15744Z" stroke="#F07585" stroke-width="0.998073"/>
+                                                            <path d="M5.50098 3.85028V8.41758L3.89494 9.4192L4.37823 7.19773L4.43925 6.91727L4.22751 6.7235L2.56532 5.20235L4.74304 4.99604L5.04344 4.96758L5.15779 4.68835L5.50098 3.85028Z" fill="#F07585" stroke="#F07585" stroke-width="0.998073"/>
+                                                        </svg>   
+                                                    </div>
+                                                    <a href="#" class="comparison-slider__review-link">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.625 2C1.59185 2 1.56005 2.01317 1.53661 2.03661C1.51317 2.06005 1.5 2.09185 1.5 2.125V8.375C1.5 8.444 1.556 8.5 1.625 8.5H2.875C2.97446 8.5 3.06984 8.53951 3.14017 8.60983C3.21049 8.68016 3.25 8.77554 3.25 8.875V10.47L5.11 8.61C5.18026 8.53965 5.27558 8.50009 5.375 8.5H10.375C10.4082 8.5 10.4399 8.48683 10.4634 8.46339C10.4868 8.43995 10.5 8.40815 10.5 8.375V2.125C10.5 2.09185 10.4868 2.06005 10.4634 2.03661C10.4399 2.01317 10.4082 2 10.375 2H1.625ZM0.75 2.125C0.75 1.642 1.142 1.25 1.625 1.25H10.375C10.858 1.25 11.25 1.642 11.25 2.125V8.375C11.25 8.60706 11.1578 8.82962 10.9937 8.99372C10.8296 9.15781 10.6071 9.25 10.375 9.25H5.53L3.7435 11.0365C3.64162 11.1383 3.51183 11.2077 3.37055 11.2358C3.22927 11.2639 3.08283 11.2494 2.94975 11.1943C2.81666 11.1392 2.70291 11.0459 2.62286 10.9261C2.5428 10.8063 2.50005 10.6655 2.5 10.5215V9.25H1.625C1.39294 9.25 1.17038 9.15781 1.00628 8.99372C0.842187 8.82962 0.75 8.60706 0.75 8.375V2.125Z" fill="#7A7A7A"/>
+                                                        </svg>
+                                                        <span class="comparison-slider__review-text">4 отзыва</span>
+                                                    </a>
+                                                </div>
+                                                <p class="comparison-slider__product-name">Название товара аж на много строк чтоб всё влезло</p>
+                                            </section>
+                                            <div data-wrapper-comparison-more class="comparison-slider__button-menu-wrapper">
+                                                <button data-button-comparison-more class="comparison-slider__button-more">
+                                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle class="comparison-slider__button-state" cx="22" cy="14" r="2" fill="#FAD1D6"/>
+                                                        <circle class="comparison-slider__button-state" cx="22" cy="22" r="2" fill="#FAD1D6"/>
+                                                        <circle class="comparison-slider__button-state" cx="22" cy="30" r="2" fill="#FAD1D6"/>
+                                                    </svg>  
+                                                </button>
+                                                <ul class="comparison-slider__button-menu">
+                                                    <li class="comparison-slider__button-menu-item">Добавить в избранное</li>
+                                                    <li class="comparison-slider__button-menu-item">Удалить</li>
+                                                </ul>
+                                            </div>
+                                        </header>
+                                        <footer class="comparison-slider__titlte-slider-footer">
+                                            <section class="comparison-slider__price">
+                                                <span class="comparison-slider__old-price">19 123 грн</span>
+                                                <h3 class="comparison-slider__new-price">16 398,38 грн</h3>
+                                            </section>
+                                            <section class="comparison-slider__button-wrapper">
+                                                <button class="comparison-slider__button-buy">
+                                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M17.7142 32.75C18.6538 32.75 19.4285 31.994 19.4285 31.0455C19.4285 30.097 18.6538 29.3409 17.7142 29.3409C16.7746 29.3409 16 30.097 16 31.0455C16 31.994 16.7746 32.75 17.7142 32.75Z" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M31.2123 32.75C32.1519 32.75 32.9265 31.994 32.9265 31.0455C32.9265 30.0969 32.1519 29.3409 31.2123 29.3409C30.2727 29.3409 29.498 30.0969 29.498 31.0455C29.498 31.994 30.2727 32.75 31.2123 32.75Z" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M10 11H13.8569L16.7496 27.2273H32.1773" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M16.7488 23.4091H31.7811C31.8926 23.4092 32.0007 23.371 32.087 23.301C32.1732 23.2311 32.2323 23.1337 32.2542 23.0255L33.9898 14.4346C34.0038 14.3653 34.0021 14.2938 33.9848 14.2253C33.9675 14.1567 33.9351 14.0928 33.8898 14.0382C33.8446 13.9836 33.7876 13.9396 33.7231 13.9094C33.6586 13.8792 33.5881 13.8636 33.5167 13.8636H14.8203" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>  
+                                                     <span class="comparison-slider__button-text">Купить</span>  
+                                                </button>
+                                            </section>
+                                        </footer>
+                                    </div>
+                                </section>
+                            </section>
+                        </section>
+                        <!--comparison__empty has class 'active'-->
+                        <section class="comparison__empty">
+                            <div class="comparison__empty-wrapper">
+                                <h1 class="comparison__empty-title">Вы пока не добавили товар к сравнению</h1>
+                                <section class="comparison__empty-subtitle-wrapper">
+                                    <p class="comparison__empty-subtitle">Чтобы добавить товар к сравнению, воспользуйтесь </p>
+                                    <p class="comparison__empty-subtitle image">иконкой <img src="/icon/comparison.png" alt="comparison"> на странице товара или в списке.</p>
+                                </section>
+                                <section class="comparison__empty-subtitle-wrapper mobile">
+                                    <p class="comparison__empty-subtitle">Чтобы добавить товар к сравнению,</p>
+                                    <p class="comparison__empty-subtitle image mobile">воспользуйтесь иконкой <img src="/icon/comparison.png" alt="comparison"></p>
+                                    <p class="comparison__empty-subtitle last">на странице товара или в списке </p>
+                                </section>
+                                <button class="comparison__empty-button btn-red">Перейти в каталог</button>
+                            </div>
+                        </section>
+                    </div>
+                </section>
 
                 <section data-section-personal-area data-my-orders id="my-orders" class="my-orders">
                     <div class="my-orders__wrapper">
@@ -1866,7 +2002,7 @@
                         <section class="my-orders__not-empty active">
                             <!--order has 3 class "in-the-process", "canceled", "success"-->
                             <section data-order-item class="order in-the-process">
-                                <section  class="order__short-information">
+                                <section data-order-item-short-content class="order__short-information">
                                     <div class="order__short-information-wrapper">
                                         <section class="order__short-information-left-section">
                                             <section class="order__status">
@@ -2066,7 +2202,7 @@
                             </section>
 
                             <section data-order-item class="order canceled">
-                                <section  class="order__short-information">
+                                <section data-order-item-short-content class="order__short-information">
                                     <div class="order__short-information-wrapper">
                                         <section class="order__short-information-left-section">
                                             <section class="order__status">
@@ -2260,7 +2396,7 @@
                             </section>
 
                             <section data-order-item class="order success">
-                                <section  class="order__short-information">
+                                <section data-order-item-short-content class="order__short-information">
                                     <div class="order__short-information-wrapper">
                                         <section class="order__short-information-left-section">
                                             <section class="order__status">
@@ -2454,7 +2590,7 @@
                             </section>
 
                             <section data-order-item class="order success">
-                                <section  class="order__short-information">
+                                <section data-order-item-short-content class="order__short-information">
                                     <div class="order__short-information-wrapper">
                                         <section class="order__short-information-left-section">
                                             <section class="order__status">

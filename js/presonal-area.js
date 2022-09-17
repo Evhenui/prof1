@@ -44,7 +44,8 @@ export let personalArea = function() {
         const navigationBar = personalArea.querySelector('[data-navigation-bar]'),
               favorites = personalArea.querySelector('[data-favorites]'),
               privateData = personalArea.querySelector('[data-private-data]'),
-              myOrders = personalArea.querySelector('[data-my-orders]');
+              myOrders = personalArea.querySelector('[data-my-orders]'),
+              comparison = personalArea.querySelector('[data-comparison]');
       
         if(navigationBar !== null) {
             const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
@@ -115,26 +116,47 @@ export let personalArea = function() {
         }
 
         if(myOrders !== null) {
-            const accordionItem = myOrders.querySelectorAll('[data-order-item]');
+            const headerAccordion = myOrders.querySelectorAll('[data-order-item-short-content]');
 
-            accordionItem.forEach((item) => {
-              item.addEventListener('click', function(event) {
-
-               const self = event.currentTarget;
-               const accordionContent = self.querySelector('[data-order-item-content]');
-               const accordionArrow = self.querySelector('[data-order-arrow]');
-
-               this.classList.toggle('active');
-               accordionArrow.classList.toggle('active');
-
-               if(this.classList.contains('active')){
-                accordionContent.style.height = accordionContent.scrollHeight + 'px';
-               } else {
-                accordionContent.style.height = 0 + 'px';
-               }
-              })
-             })
+            headerAccordion.forEach((item)=> {
+                item.addEventListener('click', function() {
+                    const bodyAccordion = this.nextElementSibling;
+                    this.classList.toggle("active");
+                    
+                    if(this.classList.contains('active')){
+                        bodyAccordion.style.height = bodyAccordion.scrollHeight + 'px';
+                        bodyAccordion.classList.add('active')
+                       } else {
+                        bodyAccordion.style.height = 0 + 'px';
+                        bodyAccordion.classList.remove('active')
+                       }
+                })
+            })
           
+        }
+
+        if(comparison !== null) {
+            const   itemsSelect = comparison.querySelectorAll('[data-dropdown-category-item]'),
+                    itemSelected = comparison.querySelector('[data-dropdown-category-selected]'),
+                    dropdown = comparison.querySelector('[data-dropdown-category]'),
+
+                    buttonMore = comparison.querySelector('[data-button-comparison-more]'),
+                    wrapperMoreSection = comparison.querySelector('[data-wrapper-comparison-more]');
+            
+                    dropdown.addEventListener('click', function() {
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                    }
+                    else {
+                        this.classList.add('active');
+                    }
+                    if(itemSelected.innerText === '') {
+                        itemLabel.classList.toggle('active');
+                    } 
+                    closeMenu(personalArea, dropdown, itemSelected, false)
+                    });
+                    changeLable(itemsSelect, itemSelected);
+
         }
     }
 }

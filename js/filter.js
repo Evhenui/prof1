@@ -37,6 +37,14 @@ export let filter = function() {
             this.classList.toggle('active');
         });
 
+        filterSection.addEventListener('click',(e)=>{
+            const click = e.composedPath().includes(dropdownFilter);
+            console.log(click)
+            if(!click) {
+                dropdownFilter.classList.remove('active');
+            }
+        });
+
         filterRange.addEventListener('click', function() {
             filterPrice.classList.toggle('active');
         });

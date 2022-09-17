@@ -1,0 +1,72 @@
+.order-waiting {
+
+    &__wrapper {
+        padding: 108px 0 50px 0;
+        @extend %centre-flex-columb;
+    }
+
+    &__image-wrapper {
+        margin-bottom: 52px;
+    }
+
+    &__title.call {
+        margin-bottom: 36px;
+    }
+
+    &__test {
+        width: 200px;
+        height: 44px;
+        background: #82A848;
+        border-radius: 4px;
+    }
+
+    &__btn-wrp {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 48px;
+    }
+
+    &__title, &__subtitle {
+        @include text( $size: 2rem, $textAlign: center, $color: $color-green, $fontWeight: 700, $lineHeight: 44px);
+        margin-bottom: 19px;
+    }
+
+    &__subtitle {
+        color: $color-black;
+        margin-bottom: 65px;
+    }
+
+    &__waiting-subtitle {
+        margin-bottom: 12px;
+    }
+
+    &__waiting-subtitle, &__social-networks-title {
+        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+    }
+
+    &__working-mode {
+        @include text( $size: 1rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        margin-bottom: 40px;
+    }
+
+    &__social-networks-title {
+        margin-bottom: 12px;
+    }
+
+    &__social-networks-items {
+        display: flex;
+        justify-content: center;
+        column-gap: 4px;
+    }
+
+    &__social-networks-link {
+        transition: all .2s ease-in-out;
+        font-size: 0;
+        border-bottom: 1px solid $color-white;
+    }
+
+    &__social-networks-link:hover {
+        border-color: $color-black;
+    }
+
+}
