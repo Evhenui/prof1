@@ -185,7 +185,7 @@ label {
   margin-right: auto;
 }
 
-.header-navigation-catalog__item, .header-navigation-menu__submenu-call-title, .header-navigation-mobile__select-header, .footer-content, .footer-content__social-wrp, .footer-special-documents__wrp, .catalog__items-wrapper, .main-information__subtitles-wrapper, .main-information__reviews, .main-information__reviews-info, .main-information__product-code, .main-information__dropdown-header, .reviews__review-header, .mobile-price-line__wrapper, .card-item.palit .card-item__footer-palit, .card-item__footer-navigation, .product-selection__sex, .current-offers__header, .news__header, .news__items-wrapper, .news__description-top, .modal-on-click__header, .main-modal__navigation, .modal-sended-review__wrap, .modal-stay-review__header, .modal-basket__header, .modal-basket__item-bottom, .left-navigation__filter-price-title, .left-navigation__filter-checkbox-title, .favorites__navigation, .order__short-information-wrapper, .comparison__navigation, .comparison-slider__titlte-slider-footer {
+.header-navigation-catalog__item, .header-navigation-menu__submenu-call-title, .header-navigation-mobile__select-header, .footer-content, .footer-content__social-wrp, .footer-special-documents__wrp, .catalog__items-wrapper, .main-information__subtitles-wrapper, .main-information__reviews, .main-information__reviews-info, .main-information__product-code, .main-information__dropdown-header, .reviews__review-header, .mobile-price-line__wrapper, .card-item.palit .card-item__footer-palit, .card-item__footer-navigation, .product-selection__sex, .current-offers__header, .news__header, .news__items-wrapper, .news__description-top, .modal-on-click__header, .main-modal__navigation, .modal-sended-review__wrap, .modal-stay-review__header, .modal-basket__header, .modal-basket__item-bottom, .left-navigation__filter-price-title, .left-navigation__filter-checkbox-title, .favorites__navigation, .order__short-information-wrapper, .comparison__navigation, .comparison-slider__titlte-slider-footer, .ordering__basket-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,7 +221,7 @@ label {
           justify-content: left;
 }
 
-.footer__wrp, .footer-special-documents__wrp, .catalog__wrapper, .card-product__page, .header-page-navigation__wrapper, .all-about__wrapper, .characteristics__wrapper, .reviews__wrapper, .recommendation__wrapper, .title-slider__info-wrapper, .product-selection__wrapper, .current-offers__wrapper, .background-wrapper, .news__wrapper, .stay-partner__wrapper, .about-company__wrapper, .filter__name-page, .page__wrapper, .top-navigation__wrapper, .main-info, .filter-description, .navigation-bar__navigation, .favorites__wrapper, .private-data__wrapper, .my-orders__wrapper, .comparison {
+.footer__wrp, .footer-special-documents__wrp, .catalog__wrapper, .card-product__page, .header-page-navigation__wrapper, .all-about__wrapper, .characteristics__wrapper, .reviews__wrapper, .recommendation__wrapper, .title-slider__info-wrapper, .product-selection__wrapper, .current-offers__wrapper, .background-wrapper, .news__wrapper, .stay-partner__wrapper, .about-company__wrapper, .filter__name-page, .page__wrapper, .top-navigation__wrapper, .main-info, .filter-description, .navigation-bar__navigation, .favorites__wrapper, .private-data__wrapper, .my-orders__wrapper, .comparison, .ordering__wrapper {
   max-width: 1440px;
   width: 100%;
   margin-left: auto;
@@ -11771,5 +11771,163 @@ label {
 
 .order-waiting__social-networks-link:hover {
   border-color: #2D2D2D;
+}
+
+.ordering__wrapper {
+  padding: 68px 48px 96px 48px;
+}
+
+.ordering__page-wrapper {
+  padding: 16px 0 20px 0;
+}
+
+.ordering__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: left;
+  color: #2D2D2D;
+  margin-bottom: 52px;
+}
+
+.ordering__sections-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ordering__enter {
+  display: none;
+}
+
+.ordering__basket {
+  max-width: 464px;
+  width: 100%;
+}
+
+.ordering__basket-wrapper {
+  padding: 16px;
+  background: #FEFEFE;
+  -webkit-box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+}
+
+.ordering__basket-header {
+  margin-bottom: 16px;
+}
+
+.ordering__basket-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  color: #2D2D2D;
+}
+
+.ordering__button-header {
+  max-width: 210px;
+  width: 100%;
+}
+
+.ordering__basket-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ordering__order-item {
+  outline: 1px solid #FAD1D6;
+  padding: 12px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+}
+
+.ordering__image-wrapper {
+  max-width: 44px;
+  width: 100%;
+}
+
+.ordering__image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.ordering__name-product {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  color: #2D2D2D;
+}
+
+.ordering__price {
+  max-width: 148px;
+  width: 100%;
+}
+
+.ordering__old-price {
+  display: block;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: right;
+  color: #7A7A7A;
+}
+
+.ordering__new-price {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: right;
+  color: #2D2D2D;
+}
+
+.ordering__amount {
+  padding: 12px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+}
+
+.ordering__footer-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #949494;
+}
+
+.ordering__footer-full-price {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #2D2D2D;
 }
 /*# sourceMappingURL=main.css.map */
