@@ -41,7 +41,8 @@ export let ordering = function() {
     }
 
     if(ordering !== null) {
-        const selectDelivery = ordering.querySelector('[data-dropdown-select-delivery]');
+        const selectDelivery = ordering.querySelector('[data-dropdown-select-delivery]'),
+              orderingTabSection = ordering.querySelector('[data-ordering-section]');
 
         if(selectDelivery !== null) {
             const   dropdownCategory = selectDelivery.querySelector('[data-dropdown-city]'),
@@ -69,6 +70,40 @@ export let ordering = function() {
                     addActiveDropdown(dropdownTestOne, selectedTestOne, labelTestOne)
                     changeLable(itemsTestOne, selectedTestOne)
     
+        }
+
+        if(orderingTabSection !== null) {
+            const menuItems = orderingTabSection.querySelectorAll('[data-ordering-tab]'),
+                  tabItems = orderingTabSection.querySelectorAll('[data-ordering-tab-section]'),
+
+                  forgetPass = orderingTabSection.querySelector('[data-ordering-tab-link]'),
+                  forgetPassSection = orderingTabSection.querySelector('[data-ordering-tab-forget-pass]'),
+                  containerEnter = orderingTabSection.querySelector('[data-ordering-login-wrapper]');
+
+            menuItems.forEach(function(item) {
+                item.addEventListener("click", function () {
+                    const tabId = item.getAttribute("data-ordering-tab-item"),
+                        currentTub = orderingTabSection.querySelector(tabId);
+                    if (!item.classList.contains("active")) {
+                    menuItems.forEach(function (item) {
+                        item.classList.remove("active");
+                    });
+                    tabItems.forEach(function (item) {
+                        item.classList.remove("active");
+                    });
+                    item.classList.add("active");
+                    currentTub.classList.add("active");
+                    }
+                })
+            });
+
+            forgetPass.addEventListener('click', function(event) {
+                event.preventDefault()
+                const tabId = forgetPass.getAttribute("data-ordering-tab-item"),
+                currentTub = orderingTabSection.querySelector(tabId);
+                containerEnter.classList.add("active");
+                currentTub.classList.add("active");
+            })
         }
 
     }

@@ -32,10 +32,11 @@
     }
 
     &__new-user, &__regular-user {
+        transition: all .1s ease-in-out;
         position: relative;
         padding: 12px 0;
         text-transform: uppercase;
-        @include text( $size: 1.25rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+        @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 28px);
         &::after {
             content: '';
             position: absolute;
@@ -49,11 +50,23 @@
         &.active::after {
             width: 100%;
         }
+        &:hover {
+            color: $color-black;
+        }
+        &.active {
+            color: $color-black;
+            &:after {
+                width: 100%;
+            }
+        }
     }
 
     &__new-user-section {
-        display: flex;
+        display: none;
         flex-direction: column;
+        &.active {
+            display: flex;
+        }
     }
 
     &__regular-user {
@@ -252,42 +265,82 @@
 
     &__enter {
         display: none;
+        max-width: 380px;
+        width: 100%;
+        margin: 0 auto;
+        &.active {
+            display: block;
+        }
     }
 
     &__enter-wrapper {
+        padding: 36px 0 120px 0;
+    }
+
+    &__forget-password {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+    &__show-password-button {
+        right: 16px;
+
+    }
+
+    &__enter-login {
+        &.active {
+            display: none;
+        }
     }
 
     &__form-enter {
     }
 
-    &__input-wrapper {
+    &__input-container.pass {
+        margin-bottom: 4px;
     }
 
-    &__show-password-button {
+    &__input {
+        &.enter {
+            max-width: 100%;
+        }
     }
 
-    &__show-password-svg-off {
-    }
+    &__forget-password-title {
 
-    &__show-password-svg {
-    }
-
-    &__show-password-svg-on {
-    }
-
-    &__show-password-svg-on-hover {
     }
 
     &__subtitle-wrapper {
+        margin-bottom: 36px;
     }
 
     &__subtitle-link {
     }
 
-    &__forget-password {
+    &__button-enter {
+       margin-bottom: 20px;
     }
 
-    &__forget-password-title {
+    &__footer.order {
+        align-items: flex-end;
+    }
+
+    &__footer-title {
+        margin-bottom: 20px;
+    }
+
+    &__buttons-wrapper {
+    }
+
+    &__button-social-network {
+    }
+
+    &__button-text {
+    }
+
+    &__forget-password {
     }
 
     &__basket {

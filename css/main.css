@@ -11813,6 +11813,8 @@ label {
 }
 
 .ordering__new-user, .ordering__regular-user {
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
   position: relative;
   padding: 12px 0;
   text-transform: uppercase;
@@ -11821,7 +11823,7 @@ label {
   font-weight: 600;
   line-height: 28px;
   text-align: left;
-  color: #2D2D2D;
+  color: #949494;
 }
 
 .ordering__new-user::after, .ordering__regular-user::after {
@@ -11840,14 +11842,30 @@ label {
   width: 100%;
 }
 
+.ordering__new-user:hover, .ordering__regular-user:hover {
+  color: #2D2D2D;
+}
+
+.ordering__new-user.active, .ordering__regular-user.active {
+  color: #2D2D2D;
+}
+
+.ordering__new-user.active:after, .ordering__regular-user.active:after {
+  width: 100%;
+}
+
 .ordering__new-user-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.ordering__new-user-section.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .ordering__user-tabs {
@@ -12058,6 +12076,59 @@ label {
 
 .ordering__enter {
   display: none;
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ordering__enter.active {
+  display: block;
+}
+
+.ordering__enter-wrapper {
+  padding: 36px 0 120px 0;
+}
+
+.ordering__forget-password {
+  display: none;
+}
+
+.ordering__forget-password.active {
+  display: block;
+}
+
+.ordering__show-password-button {
+  right: 16px;
+}
+
+.ordering__enter-login.active {
+  display: none;
+}
+
+.ordering__input-container.pass {
+  margin-bottom: 4px;
+}
+
+.ordering__input.enter {
+  max-width: 100%;
+}
+
+.ordering__subtitle-wrapper {
+  margin-bottom: 36px;
+}
+
+.ordering__button-enter {
+  margin-bottom: 20px;
+}
+
+.ordering__footer.order {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.ordering__footer-title {
+  margin-bottom: 20px;
 }
 
 .ordering__basket {

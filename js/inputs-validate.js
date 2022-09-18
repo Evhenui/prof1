@@ -6,7 +6,9 @@ export let inputsValidate = function() {
           mainSection = document.querySelector('[data-main]'),
           modalOnClick = document.querySelector('[data-modal-on-click]'),
           modalReview = document.querySelector('[data-modal-stay-review]'),
-          filterSection = document.querySelector('[data-filter]');
+          filterSection = document.querySelector('[data-filter]'),
+          formOrderingEnter = document.querySelector('[data-ordering-form-enter]'),
+          forgetPasswordOrdering = document.querySelector('[data-ordering-tab-forget-pass]');
 
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
@@ -344,25 +346,7 @@ export let inputsValidate = function() {
                     this.value = this.value.replace(/\s+/gi,'');
                     exam(regText, inputName, containerInputName);
                 }); 
-/*
-                button.addEventListener('click', () => {
-                    inputs.forEach((el, index) => {
-                    if(el.value === '') {
-                        containers[index].classList.add('error')
-                    }
-                })
-                })
-
-                inputs.forEach((item, index) => {
-                    item.addEventListener('input', ()=>{
-                        if(item.value === '') {
-                            containers[index].classList.add('error')
-                            console.log('err');
-                        } elsa
-                    })
-                })*/
-
-                
+             
 
                 function inputsChange(inputs, button) {
                     inputs.forEach((item)=>{
@@ -390,11 +374,11 @@ export let inputsValidate = function() {
 
                   inputs.forEach((el) => {
                     el.addEventListener('input', () => {
-                        let arr = []
+                        let arr = [];
                         if(el.type === 'tel' && el.value !== '' && validate(regPhone, el.value)) {
                             inputs.forEach((item, index) => {
                                 if (item.value !== '') {
-                                    arr.push(inputs[index])
+                                    arr.push(inputs[index]);
                                 }
                             })
                         } 
@@ -424,5 +408,71 @@ export let inputsValidate = function() {
                     this.value = this.value.replace(/[^\d.]/g, '');
                 })
             })
+          }
+
+          if(formOrderingEnter !== null) {
+            const   inputs = formOrderingEnter.querySelectorAll('[data-input-ordering-enter]'),
+                    buttonSend = formOrderingEnter.querySelector('[data-ordering-button-enter]'),
+                    inputEmail = formOrderingEnter.querySelector('[data-input-email-ordering-enter]'),
+                    containerInputEmail = formOrderingEnter.querySelector('[data-input-email-ordering-enter-container]'),
+                    inputPassword = formOrderingEnter.querySelector('[data-input-password-ordering-enter]'),
+                    buttonShowPassword = formOrderingEnter.querySelector('[data-show-password-ordering-enter]');
+
+            preventDefaultButton(buttonSend); 
+            
+            inputEmail.addEventListener('input', function(){
+                this.value = this.value.replace(/\s+/gi,'');
+                exam(regEmail, inputEmail, false, containerInputEmail);
+            });
+
+            inputs.forEach((el) => {
+              el.addEventListener('input', () => {
+                  let arr = [];
+                  if (el.value !== '' && el.type === 'text') {
+                      inputs.forEach((item, index) => {
+                          if (item.value !== '') {
+                              arr.push(inputs[index])
+                          }
+                      })
+                  } else if(el.value !== '' && el.type === 'password') {
+                    inputs.forEach((item, index) => {
+                        if (item.value !== '') {
+                            arr.push(inputs[index])
+                        }
+                    })
+                  }
+
+                  if(arr.length === inputs.length) {
+                      buttonSend.disabled = false;
+                  }
+              })
+            });
+
+            buttonShowPassword.addEventListener('click', function() {
+                let target = this.getAttribute("data-target"),
+                    input = document.querySelector(target);                       
+                    if (input.getAttribute("type") === "password") {
+                        input.setAttribute("type", "text");
+                        this.classList.add("active");
+                    } else {
+                        input.setAttribute("type", "password");
+                        this.classList.remove("active");
+                    } 
+            })
+          }
+
+          if(forgetPasswordOrdering !== null) {
+            const containerInput = forgetPasswordOrdering.querySelector('[data-input-email-ordering-forget-container]'),
+                  inputEmail = forgetPasswordOrdering.querySelector('[data-input-email-ordering-forget]'),
+                  buttonSend = forgetPasswordOrdering.querySelector('[data-button-ordering-forget-send]');
+
+
+            inputEmail.addEventListener('input', function(){
+                this.value = this.value.replace(/\s+/gi,'');
+                exam(regEmail, inputEmail, false, containerInput);
+                if(this.value !== '' && validate(regEmail, this.value)) {
+                    buttonSend.disabled = false;
+                }
+            });
           }
 }

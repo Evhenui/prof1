@@ -1033,14 +1033,14 @@
                     </div>
                 </section> 
                 <h1 class="ordering__title">Оформление заказа</h1>
-                <div class="ordering__sections-wrapper">
+                <div data-ordering-section class="ordering__sections-wrapper">
                     <section class="ordering__user-information">
                         <nav class="ordering__navigation">
-                            <a class="ordering__new-user active" href="#">Новый покупатель</a>
-                            <a class="ordering__regular-user" href="#">Постоянный клиент</a>
+                            <a data-ordering-tab data-ordering-tab-item="#new-user" class="ordering__new-user active" href="#">Новый покупатель</a>
+                            <a data-ordering-tab data-ordering-tab-item="#enter" class="ordering__regular-user" href="#">Постоянный клиент</a>
                         </nav>
                         <section class="ordering__user-tabs">
-                            <section class="ordering__new-user-section">
+                            <section data-ordering-tab-section id="new-user" class="ordering__new-user-section active">
                                 <section class="ordering__contacts">
                                     <h3 class="ordering__section-title">1. Контактные данные</h3>
                                     <form class="ordering__contacts-form" action="">
@@ -1106,7 +1106,7 @@
                                         <form class="ordering__form-select-post" action="">
                                             <section class="ordering__post-checkbox">
                                                 <div class="product-selection__checkbox-section ordering__checkbox-section">
-                                                    <input data-checkbox-input class="product-selection__checkbox ordering__checkbox" type="radio" name="new-post" id="new-post"> 
+                                                    <input checked data-checkbox-input class="product-selection__checkbox ordering__checkbox" type="radio" name="new-post" id="new-post"> 
                                                     <label class="product-selection__checkbox-label ordering__checkbox-label" for="new-post">Новая Почта до отделения</label>
                                                 </div>
                 
@@ -1201,7 +1201,7 @@
                                     <section class="ordering__checkbox-wrapper">
                                         <form class="ordering__checkbox-form-pay" action="">
                                             <div class="product-selection__checkbox-section ordering__checkbox-section pay">
-                                                <input data-checkbox-input class="product-selection__checkbox ordering__checkbox" type="radio" name="post-pay" id="c-o-d"> 
+                                                <input checked data-checkbox-input class="product-selection__checkbox ordering__checkbox" type="radio" name="post-pay" id="c-o-d"> 
                                                 <label class="product-selection__checkbox-label ordering__checkbox-label" for="c-o-d">Наложенный платёж</label>
                                                 <div class="ordering__tip">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1265,69 +1265,96 @@
                                 </section>
                             </section>
                            
-                           <section class="ordering__enter">
+                           <section data-ordering-tab-section id="enter" class="ordering__enter">
                                 <div class="ordering__enter-wrapper">
-                                  <section data-ordering-tab-section class="ordering__enter active" id="ordering-enter">
-                
-                                    <form action="" class="ordering__form-enter" novalidate>
-                                        <div data-input-email-ordering-container class="input-wrapper-white ordering__input-wrapper email">
-                                            <input data-input-email-ordering data-input-enter class="input-wrapper-white__input ordering__input" type="text" required>
-                                            <div class="input-wrapper-white__image-error">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
-                                                </svg>     
+                                    <section data-ordering-login-wrapper class="ordering__enter-login">
+                                        <form data-ordering-form-enter action="" class="ordering__form-enter" novalidate>
+                                            <div data-input-email-ordering-enter-container class="input-wrapper-white ordering__input-container">
+                                                <input data-input-email-ordering-enter data-input-ordering-enter class="input-wrapper-white__input ordering__input enter" type="text" required>
+                                                <div class="input-wrapper-white__image-error">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                    </svg>     
+                                                </div>
+                                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                                <div class="input-wrapper-white__prompt-wrapper">
+                                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                                </div>
                                             </div>
-                                            <label class="input-wrapper-white__label">Электронная почта</label>
-                                            <div class="input-wrapper-white__prompt-wrapper">
-                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                            <div data-input-password-ordering-enter-container class="input-wrapper-white ordering__input-container pass">
+                                                <input data-input-password-ordering-enter data-input-ordering-enter class="input-wrapper-white__input ordering__input enter" type="password" id="ordering__password" required>
+                                                <div class="input-wrapper-white__image-error">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                    </svg>     
+                                                </div>
+                                                <label class="input-wrapper-white__label">Пароль</label>
+                                                <div class="input-wrapper-white__prompt-wrapper">
+                                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                                </div>
+                                                <div data-show-password-ordering-enter class="main-modal__show-password-button ordering__show-password-button" data-target="#ordering__password" >                              
+                                                    <svg class="main-modal__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="main-modal__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                                    </svg>
+                                                    <svg class="main-modal__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
+                                                        <path class="main-modal__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
+                                                        <path class="main-modal__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
+                                                    </svg>  
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div data-input-password-ordering-container class="input-wrapper-white ordering__input-wrapper password">
-                                            <input data-input-password-ordering data-input-enter class="input-wrapper-white__input ordering__input password" type="password" id="ordering__password" required>
-                                            <div class="input-wrapper-white__image-error">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
-                                                </svg>     
+                                            <div class="ordering__subtitle-wrapper">
+                                            <a data-ordering-tab-link data-ordering-tab-item="#ordering-forget-password" class="main-modal__subtitle-link ordering__subtitle-link " href="#ordering-forget-password">Забыли пароль? Восстановить</a>
                                             </div>
-                                            <label class="input-wrapper-white__label">Пароль</label>
-                                            <div class="input-wrapper-white__prompt-wrapper">
-                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
-                                            </div>
-                                            <div data-show-password-ordering class="ordering__show-password-button" data-target="#ordering__password" >                              
-                                                <svg class="ordering__show-password-svg-off" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path class="ordering__show-password-svg" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM12 8C9.27273 8 6.94364 9.65867 6 12C6.94364 14.3413 9.27273 16 12 16C14.7273 16 17.0564 14.3413 18 12C17.0564 9.65867 14.7273 8 12 8ZM12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667ZM12 9.6C10.6473 9.6 9.54545 10.6773 9.54545 12C9.54545 13.3227 10.6473 14.4 12 14.4C13.3527 14.4 14.4545 13.3227 14.4545 12C14.4545 10.6773 13.3527 9.6 12 9.6Z" fill="#949494"/>
+                                          <button disabled data-ordering-button-enter class="ordering__button-enter btn-red main-modal__button" type="submit">Войти</button>
+                                        </form>
+                                        <footer class="ordering__footer">
+                                            <span class="ordering__footer-title">Войти через аккаунт:</span>
+                                            <div class="main-modal__buttons-wrapper ordering__buttons-wrapper">
+                                              <button class="ordering__button-social-network main-modal__button-social-network google btn-transparent">
+                                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <g clip-path="url(#clip0_745_18021)">
+                                                  <path d="M4.88838 8.13711C5.66553 5.78219 7.87859 4.09091 10.4999 4.09091C11.909 4.09091 13.1817 4.59091 14.1817 5.40909L17.0908 2.5C15.3181 0.954545 13.0453 0 10.4999 0C6.55827 0 3.16467 2.24858 1.5332 5.54169L4.88838 8.13711Z" fill="#EA4335"/>
+                                                  <path d="M13.8673 15.0105C12.9591 15.5969 11.8051 15.9091 10.5 15.9091C7.88877 15.9091 5.68263 14.2307 4.89752 11.8899L1.53125 14.4458C3.16069 17.7447 6.5542 20 10.5 20C12.9441 20 15.2795 19.1312 17.0285 17.4996L13.8673 15.0105Z" fill="#34A853"/>
+                                                  <path d="M17.0285 17.4997C18.8576 15.7935 20.0455 13.2531 20.0455 10.0001C20.0455 9.40916 19.9545 8.77279 19.8182 8.18188H10.5V12.0455H15.8636C15.599 13.3448 14.8886 14.3511 13.8673 15.0106L17.0285 17.4997Z" fill="#4A90E2"/>
+                                                  <path d="M4.89748 11.89C4.69861 11.297 4.59091 10.6615 4.59091 10.0001C4.59091 9.34863 4.69536 8.7224 4.8885 8.13717L1.53333 5.54175C0.863823 6.88375 0.5 8.39621 0.5 10.0001C0.5 11.5997 0.870651 13.1085 1.53122 14.4459L4.89748 11.89Z" fill="#FBBC05"/>
+                                                  </g>
+                                                  <defs>
+                                                  <clipPath id="clip0_745_18021">
+                                                  <rect width="20" height="20" fill="white" transform="translate(0.5)"/>
+                                                  </clipPath>
+                                                  </defs>
                                                 </svg>
-                                                <svg class="ordering__show-password-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path class="ordering__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M16.8109 12C15.9109 10.2027 14.0673 9.06667 12 9.06667C9.93273 9.06667 8.08909 10.2027 7.18909 12C8.08909 13.7973 9.92727 14.9333 12 14.9333C14.0727 14.9333 15.9109 13.7973 16.8109 12ZM6 12C6.94364 9.65867 9.27273 8 12 8C14.7273 8 17.0564 9.65867 18 12C17.0564 14.3413 14.7273 16 12 16C9.27273 16 6.94364 14.3413 6 12Z" fill="#949494"/>
-                                                    <path class="ordering__show-password-svg-on-hover" d="M12 10.6667C12.7527 10.6667 13.3636 11.264 13.3636 12C13.3636 12.736 12.7527 13.3333 12 13.3333C11.2473 13.3333 10.6364 12.736 10.6364 12C10.6364 11.264 11.2473 10.6667 12 10.6667Z" fill="#949494"/>
-                                                    <path class="ordering__show-password-svg-on-hover" fill-rule="evenodd" clip-rule="evenodd" d="M12 9.06667C14.0673 9.06667 15.9109 10.2027 16.8109 12C15.9109 13.7973 14.0727 14.9333 12 14.9333C9.92727 14.9333 8.08909 13.7973 7.18909 12C8.08909 10.2027 9.93273 9.06667 12 9.06667ZM9.54545 12C9.54545 10.6773 10.6473 9.6 12 9.6C13.3527 9.6 14.4545 10.6773 14.4545 12C14.4545 13.3227 13.3527 14.4 12 14.4C10.6473 14.4 9.54545 13.3227 9.54545 12Z" fill="#949494"/>
-                                                </svg>  
+                                                <span class="ordering__button-text">Google</span>
+                                              </button>
+                                              <button class="ordering__button-social-network main-modal__button-social-network facebook btn-transparent">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1669 0H0.83375C0.373125 0 0 0.373125 0 0.833125V19.1669C0 19.6269 0.373125 20 0.83375 20H10.625V12.5H8.125V9.375H10.625V6.875C10.625 4.29187 12.2606 3.02062 14.565 3.02062C15.6687 3.02062 16.6175 3.10313 16.8937 3.13937V5.83937L15.2956 5.84C14.0425 5.84 13.75 6.43562 13.75 7.30937V9.375H16.875L16.25 12.5H13.75L13.8 20H19.1669C19.6269 20 20 19.6269 20 19.1669V0.833125C20 0.373125 19.6269 0 19.1669 0Z" fill="#3B5998"/>
+                                                </svg>
+                                                <span class="ordering__button-text">Facebook</span>
+                                              </button>
                                             </div>
-                                        </div>
-                                        <div class="ordering__subtitle-wrapper">
-                                        <a data-header-ordering-item data-modal-tab-item="#modal-forget-password" class="ordering__subtitle-link" href="#modal-forget-password">Забыли пароль? Восстановить</a>
-                                        </div>
-                                      <button disabled data-ordering-button-enter class="ordering__button btn-red" type="submit">Войти</button>
-                                    </form>
-                                  </section>
-                                  <section data-ordering-tab-section class="ordering__forget-password" id="orderig-forget-password">
-                                    <h1 class="ordering__forget-password-title">Восстановление пароля</h1>
-                                    <form action="">
-                                        <div data-input-email-ordering-forget-container class="input-wrapper-white ordering__input-wrapper email-forget">
-                                            <input data-input-email-ordering-forget data-input-forget class="input-wrapper-white__input ordering__input" type="text" required>
-                                            <div class="input-wrapper-white__image-error">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
-                                                </svg>     
+                                        </footer>
+                                    </section>
+
+                                    <section data-ordering-tab-forget-pass class="ordering__forget-password" id="ordering-forget-password">
+                                        <h1 class="main-modal__forget-password-title ordering__forget-password-title">Восстановление пароля</h1>
+                                        <form action="">
+                                            <div data-input-email-ordering-forget-container class="input-wrapper-white ordering__input-wrapper email-forget">
+                                                <input data-input-email-ordering-forget class="input-wrapper-white__input ordering__input" type="text" required>
+                                                <div class="input-wrapper-white__image-error">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1055 5.78887C11.4741 5.05182 12.5259 5.05182 12.8944 5.78887L19.2763 18.5528C19.6088 19.2177 19.1253 20 18.3819 20H5.61799C4.87461 20 4.39111 19.2177 4.72356 18.5528L11.1055 5.78887ZM11 10C11 9.44773 11.4477 9.00002 12 9.00002C12.5522 9.00002 13 9.44773 13 10V14C13 14.5523 12.5522 15 12 15C11.4477 15 11 14.5523 11 14V10ZM12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C12.5522 19 13 18.5523 13 18C13 17.4477 12.5522 17 12 17Z" fill="#EB475C"/>
+                                                    </svg>     
+                                                </div>
+                                                <label class="input-wrapper-white__label">Электронная почта</label>
+                                                <div class="input-wrapper-white__prompt-wrapper">
+                                                    <span class="input-wrapper-white__prompt">Additional description about error</span>
+                                                </div>
                                             </div>
-                                            <label class="input-wrapper-white__label">Электронная почта</label>
-                                            <div class="input-wrapper-white__prompt-wrapper">
-                                                <span class="input-wrapper-white__prompt">Additional description about error</span>
-                                            </div>
-                                        </div>
-                                        <button disabled data-button-forget-send class="ordering__button btn-red">Отправить</button>
-                                    </form>
-                                  </section>
+                                            <button disabled data-button-ordering-forget-send class="main-modal__button ordering__button btn-red">Отправить</button>
+                                        </form>
+                                    </section>
                                 </div>                  
                            </section> 
                         </section>
@@ -1392,7 +1419,7 @@
                                     </section>
                                 </main>
     
-                                <footer class="ordering__footer">
+                                <footer class="ordering__footer order">
                                     <section class="ordering__amount">
                                         <span class="ordering__footer-title">Итого:</span>
                                         <h1 class="ordering__footer-full-price">32796,76 грн</h1>
