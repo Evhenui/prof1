@@ -8,7 +8,8 @@ export let inputsValidate = function() {
           modalReview = document.querySelector('[data-modal-stay-review]'),
           filterSection = document.querySelector('[data-filter]'),
           formOrderingEnter = document.querySelector('[data-ordering-form-enter]'),
-          forgetPasswordOrdering = document.querySelector('[data-ordering-tab-forget-pass]');
+          forgetPasswordOrdering = document.querySelector('[data-ordering-tab-forget-pass]'),
+          orderingNewUser = document.querySelector('[data-new-user-section]');
 
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
@@ -428,7 +429,8 @@ export let inputsValidate = function() {
             inputs.forEach((el) => {
               el.addEventListener('input', () => {
                   let arr = [];
-                  if (el.value !== '' && el.type === 'text') {
+                 
+                  if (el.value !== '' && el.type === 'text' && validate(regEmail, el.value)) {
                       inputs.forEach((item, index) => {
                           if (item.value !== '') {
                               arr.push(inputs[index])
@@ -441,7 +443,7 @@ export let inputsValidate = function() {
                         }
                     })
                   }
-
+                  console.log(arr.length)
                   if(arr.length === inputs.length) {
                       buttonSend.disabled = false;
                   }
@@ -474,5 +476,93 @@ export let inputsValidate = function() {
                     buttonSend.disabled = false;
                 }
             });
+          }
+
+          if(orderingNewUser !== null) {
+            const containerName = orderingNewUser.querySelector('[data-input-name-ordering-container]'),
+                  containerSurname = orderingNewUser.querySelector('[data-input-surname-ordering-container]'),
+                  containerPhone = orderingNewUser.querySelector('[data-input-phone-ordering-cotainer]'),
+                  containerEmail = orderingNewUser.querySelector('[data-input-email-ordering-container]'),
+                  inputEmail = orderingNewUser.querySelector('[data-input-email-ordering]'),
+                  inputPhone = orderingNewUser.querySelector('[data-input-tel-ordering]'),
+                  inputName = orderingNewUser.querySelector('[data-input-ordering-name]'),
+                  inputSurname = orderingNewUser.querySelector('[data-input-ordering-surname]'),
+                  inputs = orderingNewUser.querySelectorAll('[data-input-ordering]'),
+                  buttonOrder = orderingNewUser.querySelector('[data-button-ordering]'),
+                  dropdownCity = orderingNewUser.querySelector('[data-dropdown-city-selected]'),
+                  dropdownRegion = orderingNewUser.querySelector('[data-dropdown-region-selected]'),
+                  dropdownNumberPost = orderingNewUser.querySelector('[data-dropdown-number-post-selected]');
+
+                 /* const   inputCity = document.querySelector('[data-input-city]'),
+                        itemsSelect = document.querySelectorAll('[data-item-city]'),
+                        listCity = document.querySelector('[data-list-city]'),
+                        dropCity = document.querySelector('[data-drop-city]'),
+                        sectDrop = document.querySelector('[data-drop-section-city]');
+
+                        const sectionDropdowns = document.querySelector('[data-ordering]');*/
+
+                inputEmail.addEventListener('input', function(){
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regEmail, inputEmail, false, containerEmail);
+                });
+
+                inputName.addEventListener('input', function(){
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regText, inputName, false, containerName);
+                });
+
+                inputSurname.addEventListener('input', function(){
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regText, inputSurname, false, containerSurname);
+                });
+
+                inputPhone.addEventListener('input', function(){
+                    exam(regPhone, inputPhone, false, containerPhone);
+                }); 
+
+                inputs.forEach((el) => {
+                    el.addEventListener('input', () => {
+                        let arr = [];
+                        
+                        if (el.value !== '') {
+                            inputs.forEach((item, index) => {
+                                if (item.value !== '') {
+                                    arr.push(inputs[index])
+                                }
+                            })
+                        }
+                        if(arr.length === inputs.length) {
+                            buttonOrder.disabled = false;
+                        }
+                    })
+                });
+
+                
+/*
+                        function changeInput (items, input) {
+                            items.forEach((item)=> {
+                                item.addEventListener('click', ()=> {
+                                    input.value = item.innerText;
+                                    sectDrop.classList.remove('active');
+                                })
+                            })
+                        }  
+
+                        function closeMenu (dropdown, section) {
+                            sectionDropdowns.addEventListener('click', function(e) {
+                                const click = e.composedPath().includes(dropdown);
+                                if(!click) {
+                                    section.classList.remove('active');
+                                }
+                            })
+                        }                     
+                        
+                        inputCity.addEventListener('click', function() {
+                            sectDrop.classList.toggle('active');
+                        })
+
+                        closeMenu(dropCity, sectDrop)
+                        changeInput(itemsSelect, inputCity, listCity);
+*/
           }
 }

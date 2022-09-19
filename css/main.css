@@ -11681,15 +11681,32 @@ label {
 }
 
 .order-waiting__wrapper {
-  padding: 108px 0 50px 0;
+  padding: 108px 48px 50px 48px;
+}
+
+@media (max-width: 960px) {
+  .order-waiting__wrapper {
+    padding: 108px 16px 50px 16px;
+  }
 }
 
 .order-waiting__image-wrapper {
-  margin-bottom: 52px;
+  padding-right: 60px;
+  max-width: 284px;
+  width: 100%;
 }
 
-.order-waiting__title.call {
-  margin-bottom: 36px;
+@media (max-width: 960px) {
+  .order-waiting__image-wrapper {
+    max-width: 204px;
+    margin-bottom: 24px;
+    padding-right: 39px;
+  }
+}
+
+.order-waiting__image {
+  width: 100%;
+  height: auto;
 }
 
 .order-waiting__test {
@@ -11709,19 +11726,62 @@ label {
   margin-bottom: 48px;
 }
 
-.order-waiting__title, .order-waiting__subtitle {
+.order-waiting__title {
   font-family: "Open Sans", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   line-height: 44px;
   text-align: center;
   color: #15BC26;
-  margin-bottom: 19px;
+}
+
+@media (max-width: 960px) {
+  .order-waiting__title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+    color: #15BC26;
+    max-width: 280px;
+    width: 100%;
+  }
+}
+
+.order-waiting__title {
+  margin-bottom: 36px;
+}
+
+@media (max-width: 960px) {
+  .order-waiting__title {
+    margin-bottom: 24px;
+    margin: 0 auto 24px auto;
+  }
 }
 
 .order-waiting__subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: center;
+  color: #2D2D2D;
+  margin-bottom: 19px;
   color: #2D2D2D;
   margin-bottom: 65px;
+}
+
+@media (max-width: 960px) {
+  .order-waiting__subtitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+    color: #2D2D2D;
+    max-width: 323px;
+    width: 100%;
+  }
 }
 
 .order-waiting__waiting-subtitle {
@@ -12256,5 +12316,41 @@ label {
   line-height: 24px;
   text-align: left;
   color: #2D2D2D;
+}
+
+.test__container:hover .test__list {
+  opacity: 1;
+}
+
+.test {
+  position: relative;
+}
+
+.test.active .test__list {
+  opacity: 1;
+}
+
+.test__wrapper {
+  margin: 0;
+}
+
+.test__list {
+  position: absolute;
+  top: 47px;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+
+.test__list span {
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
