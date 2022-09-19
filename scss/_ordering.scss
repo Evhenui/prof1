@@ -47,7 +47,7 @@
             border: none;
         }
         @include __520 {
-            width: 100%;
+            width: 343px;
         }
     }
 
@@ -329,6 +329,7 @@
         margin: 0 auto;
         &.active {
             display: block;
+            max-width: 100%;
         }
     }
 

@@ -11912,7 +11912,7 @@ label {
 
 @media (max-width: 520px) {
   .ordering__navigation {
-    width: 100%;
+    width: 343px;
   }
 }
 
@@ -12276,6 +12276,7 @@ label {
 
 .ordering__enter.active {
   display: block;
+  max-width: 100%;
 }
 
 .ordering__enter-wrapper {
