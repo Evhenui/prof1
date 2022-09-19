@@ -42,7 +42,8 @@ export let ordering = function() {
 
     if(ordering !== null) {
         const selectDelivery = ordering.querySelector('[data-dropdown-select-delivery]'),
-              orderingTabSection = ordering.querySelector('[data-ordering-section]');
+              orderingTabSection = ordering.querySelector('[data-ordering-section]'),
+              orderingBasket = ordering.querySelector('[data-ordering-basket]');
 
         if(selectDelivery !== null) {
             const   dropdownCategory = selectDelivery.querySelector('[data-dropdown-city]'),
@@ -104,6 +105,24 @@ export let ordering = function() {
                 containerEnter.classList.add("active");
                 currentTub.classList.add("active");
             })
+        }
+
+        if(orderingBasket !== null) {
+           const buttonShowMore = orderingBasket.querySelector('[data-button-ordering-show-full-info]');
+
+           
+                    buttonShowMore.addEventListener('click', function() {
+                        const bodyAccordion = this.nextElementSibling;
+                        this.classList.toggle("active");
+                        
+                        if(this.classList.contains('active')){
+                            bodyAccordion.style.height = bodyAccordion.scrollHeight + 'px';
+                            bodyAccordion.classList.add('active')
+                            } else {
+                            bodyAccordion.style.height = 0 + 'px';
+                            bodyAccordion.classList.remove('active')
+                            }      
+            })        
         }
 
     }

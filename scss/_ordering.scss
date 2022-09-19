@@ -2,7 +2,10 @@
 
     &__wrapper {
         @extend %size-page;
-        padding: 68px 48px 96px 48px;
+            padding: 68px 48px 96px 48px;
+            @include __960 {
+                padding: 68px 16px 96px 16px;
+            }
     }
 
     &__page-wrapper {
@@ -12,11 +15,19 @@
     &__title {
         @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
         margin-bottom: 52px;
+        @include __960 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
     }
 
     &__sections-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
+        @include __960 {
+            flex-direction: column-reverse;
+        }
     }
 
     &__user-information {
@@ -24,19 +35,32 @@
 
     &__navigation {
         display: flex;
-        column-gap: 134px;
-        max-width: 584px;
-        width: 100%;
+        justify-content: space-between;
+        width: 584px;
         border-bottom: 1px solid $color-gray-30;
         margin-bottom: 24px;
+        @include __1250 {
+            width: 504px;
+        }
+        @include __960 {
+            width: 464px;
+            border: none;
+        }
+        @include __520 {
+            width: 100%;
+        }
     }
 
     &__new-user, &__regular-user {
         transition: all .1s ease-in-out;
         position: relative;
-        padding: 12px 0;
+        padding: 12px;
         text-transform: uppercase;
         @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 28px);
+        @include __960 {
+            text-transform: none;
+            @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 20px); 
+        }
         &::after {
             content: '';
             position: absolute;
@@ -81,6 +105,9 @@
     &__contacts, &__delivery, &__payment-method {
         padding: 48px 52px 48px 0;
         margin-bottom: 44px;
+        @include __1356 {
+            padding: 48px 30px 48px 0; 
+        }
     }
 
     &__section-title {
@@ -93,16 +120,36 @@
         justify-content: space-between;
         row-gap: 32px;
         flex-wrap: wrap;
+        @include __960 {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
     }
+    
 
     &__input-wrp {
         margin: 0;
         max-width: 360px;
         width: 100%;
+        &.name {
+            order: 2;
+        }
+        &.phone {
+            order: 3;
+        }
+        &.surname {
+            order: 1;
+        }
+        &.email {
+            order: 4;
+        }
     }
 
     &__input {
         max-width: 360px;
+        @include __1356 {
+            max-width: 327px; 
+        }
     }
 
     &__label {
@@ -121,6 +168,10 @@
         display: flex;
         column-gap: 84px;
         margin-bottom: 32px;
+        @include __1090 {
+            flex-direction: column;
+            row-gap: 32px;
+        }
     }
 
     &__checkbox-section {
@@ -150,6 +201,14 @@
         display: flex;
         align-items: center;
         column-gap: 94px;
+        @include __1324 {
+            column-gap: 30px;
+        }
+        @include __1175 {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 32px;
+        }
     }
 
     &__checkbox-post {
@@ -346,27 +405,86 @@
     &__basket {
         max-width: 464px;
         width: 100%;
-      
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+        @include __960 {
+            margin-bottom: 72px;
+        }
     }
 
     &__basket-wrapper {
         padding: 16px;
         background: $color-white;
-        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+        @include __960 {
+            padding: 8px 16px; 
+        }
     }
 
     &__basket-header {
+        transition: all .2s ease-in-out;
         @extend %centre-space-between;
+        padding: 4px 0;
         margin-bottom: 16px;
+        @include __960 {
+            margin: 0;
+            &.active {
+                margin-bottom: 16px;
+            }
+        }
     }
 
     &__basket-title {
         @include text( $size: 1.25rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+        @include __960 {
+            @include text( $size: 1.125rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px); 
+        }
+    }
+
+    &__mobile-hidden-title { 
+        transition: all .2s ease-in-out;
+    }
+
+    &__basket-header.active &__mobile-hidden-title {
+        @include __960 {
+            opacity: 0;
+        }
     }
 
     &__button-header {
         max-width: 210px;
         width: 100%;
+        @include __960 {
+            display: none;
+        }
+    }
+
+    &__button-header-mobile {
+        display: none; 
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        @include __960 {
+            display: flex;
+            align-items: center;
+            column-gap: 16px;
+        }
+    }
+
+    &__basket-header.active &__arrow.mobile{
+        transform: rotateZ(0deg);
+    }
+
+    &__arrow.mobile {
+        font-size: 0;
+        transition: all .2s ease-in-out;
+        transform: rotateZ(180deg);
+    }
+
+    &__basket-dropdown {
+        transition: all .2s ease-in-out;
+        height: auto;
+        @include __960 {
+            overflow: hidden;
+            height: 0;
+            transition: all .2s ease-in-out;
+        }
     }
 
     &__basket-main {
@@ -377,10 +495,14 @@
     }
 
     &__order-item {
-        outline: 1px solid $color-red-30;
+        border: 1px solid $color-red-30;
         padding: 12px 16px;
         display: flex;
         column-gap: 8px;
+        align-items: center;
+        @include __960 {
+            padding: 8px 12px;
+        }
     }
 
     &__image-wrapper {
@@ -392,6 +514,7 @@
         }
     }
 
+
     &__name-product {
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
     }
@@ -399,6 +522,9 @@
     &__price {
         max-width: 148px;
         width: 100%;
+        @include __960 {
+            max-width: 80px;
+        }
     }
 
     &__old-price {
@@ -409,6 +535,10 @@
 
     &__new-price {
         @include text( $size: 1rem, $textAlign: right, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        @include __960 {
+            font-size: 0.75rem;
+            line-height: 20px;
+        }
     }
 
     &__amount {
@@ -426,19 +556,6 @@
         @include text( $size: 1.125rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
     }
 }
-
-.left-navigation {
-
-    &__input-container {
-    }
-
-    &__input-checkbox {
-    }
-
-    &__label-checkbox {
-    }
-}
-
 
 
 

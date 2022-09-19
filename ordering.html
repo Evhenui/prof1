@@ -1044,8 +1044,7 @@
                                 <section class="ordering__contacts">
                                     <h3 class="ordering__section-title">1. Контактные данные</h3>
                                     <form class="ordering__contacts-form" action="">
-        
-                                        <div data-input-surname-ordering-container class="input-wrapper-white ordering__input-wrp">
+                                        <div data-input-surname-ordering-container class="input-wrapper-white ordering__input-wrp surname">
                                             <input data-input-ordering data-input-ordering-surname class="input-wrapper-white__input ordering__input" type="text" required>
                                             <div class="input-wrapper-white__image-error">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1058,7 +1057,7 @@
                                             </div>
                                         </div>
         
-                                        <div data-input-phone-ordering-cotainer class="input-wrapper-white ordering__input-wrp">
+                                        <div data-input-phone-ordering-cotainer class="input-wrapper-white ordering__input-wrp phone">
                                             <input data-tel-input data-input-tel-ordering data-input-ordering class="input-wrapper-white__input ordering__input" type="tel" required>
                                             <div class="input-wrapper-white__image-error">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1071,7 +1070,7 @@
                                             </div>
                                         </div>                               
         
-                                        <div data-input-name-ordering-container class="input-wrapper-white ordering__input-wrp">
+                                        <div data-input-name-ordering-container class="input-wrapper-white ordering__input-wrp name">
                                             <input data-input-ordering data-input-ordering-name class="input-wrapper-white__input ordering__input" type="text" required>
                                             <div class="input-wrapper-white__image-error">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1084,7 +1083,7 @@
                                             </div>
                                         </div>
         
-                                        <div data-input-email-ordering-container class="input-wrapper-white ordering__input-wrp">
+                                        <div data-input-email-ordering-container class="input-wrapper-white ordering__input-wrp email">
                                             <input data-input-email-ordering data-input-ordering class="input-wrapper-white__input ordering__input" type="text" required>
                                             <div class="input-wrapper-white__image-error">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1369,9 +1368,9 @@
                            </section> 
                         </section>
                     </section>
-                    <section class="ordering__basket">
+                    <section data-ordering-basket class="ordering__basket">
                             <div class="ordering__basket-wrapper">
-                                <header class="ordering__basket-header">
+                                <header data-button-ordering-show-full-info class="ordering__basket-header">
                                     <h1 class="ordering__basket-title">Корзина</h1>
                                     <button class="btn-arrow-right ordering__button-header">
                                         <span class="btn-arrow-right__title">Редактировать заказ</span>
@@ -1382,59 +1381,70 @@
                                             </svg> 
                                         </div>
                                     </button>
+                                    <button class="ordering__button-header-mobile">
+                                        <span class="btn-arrow-right__title ordering__mobile-hidden-title">Редактировать</span>
+                                        <div class="ordering__arrow mobile">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path class="btn-arrow-right__arrow-mobile-state" d="M30 25L22 19L14 25" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg> 
+                                        </div>
+                                    </button>
+
                                 </header>
-                                <main class="ordering__basket-main">
-                                    <section class="ordering__order-item">
-                                        <div class="ordering__image-wrapper">
-                                            <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
-                                        </div>
-                                        <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
-                                        <section class="ordering__price">
-                                            <span class="ordering__old-price">19 123 грн</span>
-                                            <h3 class="ordering__new-price">16 398,38 грн</h3>
+                                <section class="ordering__basket-dropdown">
+                                    <main class="ordering__basket-main">
+                                        <section class="ordering__order-item">
+                                            <div class="ordering__image-wrapper">
+                                                <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
+                                            </div>
+                                            <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
+                                            <section class="ordering__price">
+                                                <span class="ordering__old-price">19 123 грн</span>
+                                                <h3 class="ordering__new-price">16 398,38 грн</h3>
+                                            </section>
                                         </section>
-                                    </section>
-    
-                                    <section class="ordering__order-item">
-                                        <div class="ordering__image-wrapper">
-                                            <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
-                                        </div>
-                                        <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
-                                        <section class="ordering__price">
-                                            <span class="ordering__old-price">19 123 грн</span>
-                                            <h3 class="ordering__new-price">16 398,38 грн</h3>
+        
+                                        <section class="ordering__order-item">
+                                            <div class="ordering__image-wrapper">
+                                                <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
+                                            </div>
+                                            <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
+                                            <section class="ordering__price">
+                                                <span class="ordering__old-price">19 123 грн</span>
+                                                <h3 class="ordering__new-price">16 398,38 грн</h3>
+                                            </section>
                                         </section>
-                                    </section>
-    
-                                    <section class="ordering__order-item">
-                                        <div class="ordering__image-wrapper">
-                                            <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
-                                        </div>
-                                        <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
-                                        <section class="ordering__price">
-                                            <span class="ordering__old-price">19 123 грн</span>
-                                            <h3 class="ordering__new-price">16 398,38 грн</h3>
+        
+                                        <section class="ordering__order-item">
+                                            <div class="ordering__image-wrapper">
+                                                <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
+                                            </div>
+                                            <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
+                                            <section class="ordering__price">
+                                                <span class="ordering__old-price">19 123 грн</span>
+                                                <h3 class="ordering__new-price">16 398,38 грн</h3>
+                                            </section>
                                         </section>
-                                    </section>
-    
-                                    <section class="ordering__order-item">
-                                        <div class="ordering__image-wrapper">
-                                            <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
-                                        </div>
-                                        <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
-                                        <section class="ordering__price">
-                                            <span class="ordering__old-price">19 123 грн</span>
-                                            <h3 class="ordering__new-price">16 398,38 грн</h3>
+        
+                                        <section class="ordering__order-item">
+                                            <div class="ordering__image-wrapper">
+                                                <img src="img/ordering-item.png" alt="name product" width="44px" height="44px">
+                                            </div>
+                                            <p class="ordering__name-product">Название товара какое-то оооооооооочень длинное</p>
+                                            <section class="ordering__price">
+                                                <span class="ordering__old-price">19 123 грн</span>
+                                                <h3 class="ordering__new-price">16 398,38 грн</h3>
+                                            </section>
                                         </section>
-                                    </section>
-                                </main>
-    
-                                <footer class="ordering__footer order">
-                                    <section class="ordering__amount">
-                                        <span class="ordering__footer-title">Итого:</span>
-                                        <h1 class="ordering__footer-full-price">32796,76 грн</h1>
-                                    </section>
-                                </footer>
+                                    </main>
+        
+                                    <footer class="ordering__footer order">
+                                        <section class="ordering__amount">
+                                            <span class="ordering__footer-title">Итого:</span>
+                                            <h1 class="ordering__footer-full-price">32796,76 грн</h1>
+                                        </section>
+                                    </footer>
+                                </section>                              
                             </div>
                             
                     </section>
