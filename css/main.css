@@ -221,7 +221,7 @@ label {
           justify-content: left;
 }
 
-.footer__wrp, .footer-special-documents__wrp, .catalog__wrapper, .card-product__page, .header-page-navigation__wrapper, .all-about__wrapper, .characteristics__wrapper, .reviews__wrapper, .recommendation__wrapper, .title-slider__info-wrapper, .product-selection__wrapper, .current-offers__wrapper, .background-wrapper, .news__wrapper, .stay-partner__wrapper, .about-company__wrapper, .filter__name-page, .page__wrapper, .top-navigation__wrapper, .main-info, .filter-description, .navigation-bar__navigation, .favorites__wrapper, .private-data__wrapper, .my-orders__wrapper, .comparison, .ordering__wrapper {
+.footer__wrp, .footer-special-documents__wrp, .catalog__wrapper, .card-product__page, .header-page-navigation__wrapper, .all-about__wrapper, .characteristics__wrapper, .reviews__wrapper, .recommendation__wrapper, .title-slider__info-wrapper, .product-selection__wrapper, .current-offers__wrapper, .background-wrapper, .news__wrapper, .stay-partner__wrapper, .about-company__wrapper, .filter__name-page, .page__wrapper, .top-navigation__wrapper, .main-info, .filter-description, .navigation-bar__navigation, .favorites__wrapper, .private-data__wrapper, .my-orders__wrapper, .comparison, .ordering__wrapper, .news-section__wrapper {
   max-width: 1440px;
   width: 100%;
   margin-left: auto;
@@ -12606,5 +12606,39 @@ label {
 
 .test__list span {
   cursor: pointer;
+}
+
+.news-section__wrapper {
+  padding: 68px 48px 120px 48px;
+}
+
+@media (max-width: 960px) {
+  .news-section__wrapper {
+    padding: 68px 16px 120px 16px;
+  }
+}
+
+.news-section__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: left;
+  color: #2D2D2D;
+  margin-bottom: 40px;
+}
+
+.news-section__news-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 36px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.page__wrapper {
+  padding: 16px 0px 20px 0px;
 }
 /*# sourceMappingURL=main.css.map */
