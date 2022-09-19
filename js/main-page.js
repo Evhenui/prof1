@@ -46,7 +46,16 @@ export let mainPage = function() {
     if(mainPage !== null) {
 
         const dropdownTypeOfTrade = mainPage.querySelector('[data-dropdown-type-of-trade]'),
-              dropdownSex = mainPage.querySelector('[data-product-selection-dropdowns]');
+              dropdownSex = mainPage.querySelector('[data-product-selection-dropdowns]'); 
+
+        const slideHeight = mainPage.querySelector('[data-title-slides]'),
+              slideWrapper = mainPage.querySelector('[data-slider-wrapper-get-height]'),
+              sizeNavigation = 120;
+
+              window.getComputedStyle(slideHeight).getPropertyValue('--height');
+              slideHeight.style.setProperty('--height', (window.innerHeight - sizeNavigation) + 'px');
+              window.getComputedStyle(slideWrapper).getPropertyValue('--height');
+              slideWrapper.style.setProperty('--height', (window.innerHeight - sizeNavigation) + 'px');
         
         if(dropdownTypeOfTrade !== null) {
 

@@ -5826,6 +5826,7 @@ label {
 :root {
   --translateX: 0;
   --width: 500px;
+  --height: 664px;
 }
 
 .main-page__wrapper {
@@ -5844,6 +5845,7 @@ label {
 
 .title-slider__wrapper {
   position: relative;
+  height: var(--height);
 }
 
 .title-slider__next-wrapper {
@@ -5979,7 +5981,7 @@ label {
           transform: translateX(var(--translateX));
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  height: 664px;
+  height: var(--height);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;

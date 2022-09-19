@@ -1,6 +1,7 @@
 :root {
     --translateX: 0;
     --width: 500px;
+    --height: 664px;
 }
 
 .main-page {
@@ -16,6 +17,7 @@
     margin-bottom: 116px;
     &__wrapper {
         position: relative;
+        height: var(--height);
     }
 
     &__next-wrapper {
@@ -134,7 +136,7 @@
         transform: translateX(var(--translateX));
         flex-shrink: 0;
 
-        height: 664px;
+        height: var(--height);
         position: relative;
         display: flex;
         transition: all .3s ease-in-out;
