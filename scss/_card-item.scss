@@ -116,6 +116,9 @@
             max-width: 83px;
             width: 100%;
         }
+        &.none {
+            display: none;
+        }
     }
 
     &__offers.stocks &__offer.stocks {

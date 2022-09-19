@@ -589,13 +589,24 @@ html {
     height: 44px;
     background: $color-white;
     box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+    font-size: 0;
+    transition: all .1s ease-in-out;
   }
+
   &__button-up:active &__button-up-svg {
-    stroke: $color-red-70;
+    stroke: $color-white;
   }
+
+  &:active &__button-up {
+    background-color: $color-gray-100;
+  }
+
+  &__button-up:hover {
+    background-color: $color-black;
+  }
+
   &__button-up:hover &__button-up-svg {
-    stroke: $color-red;
+    stroke: $color-white;
   }
 }
 

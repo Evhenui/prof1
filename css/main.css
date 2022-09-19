@@ -1046,15 +1046,25 @@ label {
   background: #FEFEFE;
   -webkit-box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  font-size: 0;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
 }
 
 .scroll-to-top__button-up:active .scroll-to-top__button-up-svg {
-  stroke: #B81429;
+  stroke: #FEFEFE;
+}
+
+.scroll-to-top:active .scroll-to-top__button-up {
+  background-color: #141414;
+}
+
+.scroll-to-top__button-up:hover {
+  background-color: #2D2D2D;
 }
 
 .scroll-to-top__button-up:hover .scroll-to-top__button-up-svg {
-  stroke: #E61E37;
+  stroke: #FEFEFE;
 }
 
 .btn-delete {
@@ -5523,6 +5533,10 @@ label {
 .card-item__offers.novelty {
   max-width: 83px;
   width: 100%;
+}
+
+.card-item__offers.none {
+  display: none;
 }
 
 .card-item__offers.stocks .card-item__offer.stocks {
