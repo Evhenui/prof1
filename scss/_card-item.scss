@@ -217,6 +217,7 @@
     }
 
     &__color {
+        position: relative;
         width: 32px;
         height: 32px;
         @extend %centre-flex-columb;
@@ -224,6 +225,27 @@
         &:nth-child(-n+4) {
             display: flex;
         }
+        &.none {
+            cursor: default;
+        }
+    }
+    
+    &__color.none &__color-item {
+        cursor: default;
+    }
+
+    &__color.none &__color-none {
+        display: block;
+    }
+
+    &__color-none {
+        display: none;
+        position: absolute;
+    }
+
+    &__color.none:hover &__color-item {
+        width: 12px;
+        height: 12px;
     }
 
     &__color.active &__color-item{

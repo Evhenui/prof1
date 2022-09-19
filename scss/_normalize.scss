@@ -16,6 +16,10 @@ body {
         min-width: 100%;
     }
 }
+
+html {
+    overflow-x: hidden;
+}
 /* Указываем box sizing */
 *,
 *::before,

@@ -19,6 +19,10 @@ body {
   min-width: 100%;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Указываем box sizing */
 *,
 *::before,
@@ -5636,6 +5640,7 @@ label {
 }
 
 .card-item__color {
+  position: relative;
   width: 32px;
   height: 32px;
   display: none;
@@ -5645,6 +5650,28 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.card-item__color.none {
+  cursor: default;
+}
+
+.card-item__color.none .card-item__color-item {
+  cursor: default;
+}
+
+.card-item__color.none .card-item__color-none {
+  display: block;
+}
+
+.card-item__color-none {
+  display: none;
+  position: absolute;
+}
+
+.card-item__color.none:hover .card-item__color-item {
+  width: 12px;
+  height: 12px;
 }
 
 .card-item__color.active .card-item__color-item {

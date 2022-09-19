@@ -108,9 +108,11 @@ export let ordering = function() {
         }
 
         if(orderingBasket !== null) {
-           const buttonShowMore = orderingBasket.querySelector('[data-button-ordering-show-full-info]');
-
-           
+            function res() {
+                if(window.innerWidth <= 960) {
+                    const buttonShowMore = orderingBasket.querySelector('[data-button-ordering-show-full-info]');
+    
+               
                     buttonShowMore.addEventListener('click', function() {
                         const bodyAccordion = this.nextElementSibling;
                         this.classList.toggle("active");
@@ -121,8 +123,16 @@ export let ordering = function() {
                             } else {
                             bodyAccordion.style.height = 0 + 'px';
                             bodyAccordion.classList.remove('active')
-                            }      
-            })        
+                        }      
+                    })   
+                }
+            }
+            res();
+            window.addEventListener('resize', () =>{
+                res();
+                
+            })
+            
         }
 
     }
