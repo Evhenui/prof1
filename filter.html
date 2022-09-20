@@ -1026,7 +1026,7 @@
         <section data-filter class="filter">
             <div class="filter__wrapper">
 
-                <section class="page">
+                <section data-page class="page">
                     <div class="page__wrapper">
                         <a class="page__title-link item" href="#">Главная</a>
                         <span class="page__title-link slash">/</span>
@@ -1036,7 +1036,7 @@
                     </div>
                 </section>
 
-                <h1 class="filter__name-page">Велосипеды</h1>
+                <h1 data-title-page-size class="filter__name-page">Велосипеды</h1>
 
                 <section data-scroll-bar class="top-navigation">
                     <div data-top-navigation-section class="top-navigation__wrapper">
@@ -1214,7 +1214,7 @@
                 <section data-empty-section class="empty-section"></section>
                 <section class="main-info">                 
                     <section data-left-navigation-bar class="left-navigation">
-
+                        
                         <section class="main-info__result-search-mobile">
                             <div class="top-navigation__title-menu-wrapper mobile">
                                 <div class="top-navigation__navigation-main mobile">
@@ -1379,13 +1379,7 @@
                                     <input type="checkbox" class="left-navigation__input-checkbox custom-checkbox" id="text7" name="text7" value="yes">
                                     <label class="left-navigation__label-checkbox" for="text7">Text</label>
                                 </div>
-                            </section>
-                            <section class="result-search">
-                                <div class="result-search__wrapper">
-                                    <span class="result-search__title">Найдено 124 товаров</span>
-                                    <button class="result-search__button">Показать</button>
-                                </div>
-                            </section>
+                            </section>                         
                         </section>
 
                         <section data-title-checkbox class="left-navigation__filter-checkbox active last">
@@ -1443,7 +1437,12 @@
                     </section>
                     <section class="items">
                         <div data-catalog-items class="items__wrapper">
-
+                            <section class="result-search">
+                                <div class="result-search__wrapper">
+                                    <span class="result-search__title">Найдено 124 товаров</span>
+                                    <button class="result-search__button">Показать</button>
+                                </div>
+                            </section>
                             <section data-card-item-section data-product-item-change-view class="card-item">
                                 <div class="card-item__wrapper">
                                     <!--'card-item__offers' has class 'stocks', 'bestseller', 'novelty', 'none'-->
