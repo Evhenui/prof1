@@ -4,6 +4,12 @@
     }
 }
 
+.page.personal-area {
+    &__wrapper.personal-area {
+        padding: 16px 48px 20px 48px;
+    }
+}
+
 .navigation-bar-empty {
     height: 50px;
     width: 100%;
@@ -1010,6 +1016,7 @@
 
     &__navigation {
         @extend %centre-space-between;
+        margin-bottom: 24px;
     }
 
     &__navigation-left-wrapper {
@@ -1172,7 +1179,7 @@
             height: 20px;
             width: 20px;
             left: -2px;
-            bottom: -4px;
+            bottom: -5px;
             background-color: $color-gray-30;
             border-radius: 8px;
             border: 1px solid $color-gray-50;
@@ -1265,6 +1272,259 @@
         width: 100%;
         padding: 16px 0;
     }
+
+		&__slider-wrapper {
+            position: relative;
+		}
+
+		&__slider {
+            overflow: hidden;
+            border-top: 1px solid #FAD1D6;
+            border-left: 1px solid #FAD1D6;
+            border-right: 1px solid #FAD1D6;
+		}
+
+.comparison-slider {
+
+		&__header {
+            display: flex;
+            flex-wrap: nowrap;
+            width: max-content;
+		}
+
+		&__titlte-slider {
+            &:nth-child(1) {
+                border-left: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+		}
+
+		&__titlte-slider-wrapper {
+		}
+
+		&__titlte-slider-header {
+		}
+
+		&__offers {
+		}
+
+		&__offer {
+		}
+
+		&__offers-title {
+		}
+
+		&__image-wrapper {
+		}
+
+		&__main-info {
+		}
+
+		&__review {
+		}
+
+		&__stars {
+		}
+
+		&__review-link {
+		}
+
+		&__review-text {
+		}
+
+		&__product-name {
+		}
+
+		&__button-menu-wrapper {
+		}
+
+		&__button-more {
+		}
+
+		&__button-state {
+		}
+
+		&__button-menu {
+		}
+
+		&__button-menu-item {
+		}
+
+		&__titlte-slider-footer {
+		}
+
+		&__price {
+		}
+
+		&__old-price {
+		}
+
+		&__new-price {
+		}
+
+		&__button-wrapper {
+		}
+
+		&__button-buy {
+		}
+
+		&__button-text {
+		}
+
+		&__main {
+            width: max-content;
+            &:last-child {
+
+            }
+		}
+
+		&__title-characteristic {
+            flex: 0 0 auto;
+            min-height: 36px;
+            background-color: $color-gray-10;
+            border-bottom: 1px solid #FAD1D6;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+		}
+
+		&__title-characteristic-center {
+            position: absolute;
+            left: 50%;
+            width: max-content;
+            transform: translateX(-50%);
+            align-items: center;
+		}
+
+		&__title-characteristic-item {
+            @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
+		}
+
+		&__description-characteristic {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+		}
+
+		&__description-value-item {
+            display: flex;
+            border-right: 1px solid #FAD1D6;
+		}
+
+		&__description-item {
+            padding: 8px;
+            display: inline-block;
+            border-right: 1px solid #FAD1D6;
+            border-bottom: 1px solid #FAD1D6;
+            width: 100%;
+            @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+            flex: 0 0 336px;
+		}
+
+		&__button-prev, &__button-next{
+            width: 44px;
+            height: 44px;
+            font-size: 0;
+            position: absolute;
+            top: 74px;
+            background-color: $color-white;
+            &:disabled {
+                cursor: auto;
+            }
+		}
+
+        &__button-next {
+            right: 0;
+        }
+
+        &__button-prev:hover .comparison-slider__button-prev-active-line {
+            transform: translateX(-6px);
+            background-color: $color-red;
+            opacity: 1;
+        }
+
+        &__button-prev:active .comparison-slider__button-prev-active-line {
+            background-color: $color-red-70;
+        }
+
+        &__button-prev:disabled .comparison-slider__button-prev-active-line {
+            opacity: 0;
+        }
+
+        &__button-prev:disabled .comparison-slider__button-prev-arrow-state {
+            stroke: $color-gray-60;
+        }
+
+        &__button-prev:disabled:hover .comparison-slider__button-prev-arrow-state {
+            stroke: $color-gray-60;
+        }
+
+        &__button-prev:hover .comparison-slider__button-prev-arrow-state {
+            stroke: $color-red;
+        }
+
+        &__button-prev:active .comparison-slider__button-prev-arrow-state {
+            stroke: $color-red-70;
+        }
+
+        &__button-next:hover .comparison-slider__button-next-active-line {
+            transform: translateX(6px);
+            background-color: $color-red;
+            opacity: 1;
+        }
+
+        &__button-next:active .comparison-slider__button-next-active-line {
+            background-color: $color-red-70;
+        }
+
+        &__button-next:hover .comparison-slider__button-next-arrow-state {
+            stroke: $color-red;
+        }
+
+        &__button-next:active .comparison-slider__button-next-arrow-state {
+            stroke: $color-red-70;
+        }
+
+        &__button-next:disabled .comparison-slider__button-next-active-line {
+            opacity: 0;
+        }
+
+        &__button-next:disabled .comparison-slider__button-next-arrow-state {
+            stroke: $color-gray-60;
+        }
+
+        &__button-next:disabled:hover .comparison-slider__button-next-arrow-state {
+            stroke: $color-gray-60;
+        }
+
+		&__button-prev-wrapper, &__button-next-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+		}
+
+        &__button-prev-wrapper {
+            flex-direction: row-reverse;
+        }
+
+		&__button-prev-active-line, &__button-next-active-line {
+            transition: all .2s ease-in-out;
+            display: block;
+            height: 1px;
+            width: 22px;
+            background-color: $color-black;
+            opacity: 0;
+		}
+
+}
+
 }
 
 .comparison-slider {
@@ -1273,13 +1533,13 @@
         position: relative;
         max-width: 336px;
         width: 100%;
-        border-top: 1px solid $color-red-30;
         border-bottom: 1px solid $color-red-30;
         border-left: 1px solid $color-red-30;
     }
 
     &__titlte-slider-wrapper {
         padding: 8px;
+        position: relative;
     }
 
     &__titlte-slider-header {
@@ -1413,12 +1673,20 @@
     }
 
     &__button-more {
+        outline: 1px solid $color-white;
         transition: all .1s ease-in-out;
         font-size: 0;
+        &.active {
+            outline-color: $color-red-30;
+        }
     }
 
     &__button-more:hover &__button-state {
         fill: $color-red;
+    }
+
+    &__button-more.active &__button-state {
+        fill: $color-red-70;
     }
 
     &__button-state {
@@ -1426,9 +1694,9 @@
     }
 
     &__button-menu {
-        opacity: 1;
-        z-index: 1;
-        visibility: visible;
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
         transition: all .2s ease-in-out;
         position: absolute;
         top: 46px;
@@ -1438,6 +1706,11 @@
         display: flex;
         flex-direction: column;
         box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+        &.active {
+            opacity: 1;
+            z-index: 1;
+            visibility: visible;
+        }
     }
 
     &__button-menu-item {

@@ -26,12 +26,10 @@
     &__navigation {
     }
 }
-.page {
+.page.news {
 
-    &__wrapper {
+    &__wrapper.news {
         padding: 16px 0px 20px 0px;
     }
 
-    &__title-link {
-    }
 }

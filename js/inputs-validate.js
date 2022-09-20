@@ -9,8 +9,8 @@ export let inputsValidate = function() {
           filterSection = document.querySelector('[data-filter]'),
           formOrderingEnter = document.querySelector('[data-ordering-form-enter]'),
           forgetPasswordOrdering = document.querySelector('[data-ordering-tab-forget-pass]'),
-          orderingNewUser = document.querySelector('[data-new-user-section]');
-
+          orderingNewUser = document.querySelector('[data-new-user-section]'),
+          personalArea = document.querySelector('[data-personal-arae]');
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
             regEmail = /[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]/;
@@ -564,5 +564,61 @@ export let inputsValidate = function() {
                         closeMenu(dropCity, sectDrop)
                         changeInput(itemsSelect, inputCity, listCity);
 */
+          }
+
+          if(personalArea !== null) {
+            const inputNamePersonalArea = personalArea.querySelector('[data-input-name-private-data]'),
+                  inputSurnamePersonalArea = personalArea.querySelector('[data-input-surname-private-data]'),
+                  inputPhonePersonalArea = personalArea.querySelector('[data-input-tel-private-data]'),
+                  inputEmailPersonalArea = personalArea.querySelector('[data-input-email-private-data]'),
+                  inputPassPersonalArea = personalArea.querySelector('[data-input-password-new-private-data]'),
+                  inputPassRePersonalArea = personalArea.querySelector('[data-input-password-re-private-data]'),
+                  containerNamePersonalArea = personalArea.querySelector('[data-input-name-private-data-container]'),
+                  containerSurnamePersonalArea = personalArea.querySelector('[data-input-surname-private-data-container]'),
+                  containerPhonePersonalArea = personalArea.querySelector('[data-input-phone-private-data-cotainer]'),
+                  containerEmailPersonalArea = personalArea.querySelector('[data-input-email-private-data-container]'),
+                  containerPassPersonalArea = personalArea.querySelector('[data-input-password-new-private-data-container]'),
+                  containerPassRePersonalArea = personalArea.querySelector('[data-input-password-re-private-data-container]'),
+                  buttonSaveChange = personalArea.querySelector('[data-button-save-change]'),
+                  buttonsShowPassPersonalArea = personalArea.querySelectorAll('[data-show-password-private-data]');
+
+                inputPhonePersonalArea.addEventListener('input', function() {
+                    exam(regPhone, inputPhonePersonalArea, false, containerPhonePersonalArea);
+                }); 
+                inputNamePersonalArea.addEventListener('input', function() {
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regText, inputNamePersonalArea, false, containerNamePersonalArea);
+                });
+                inputSurnamePersonalArea.addEventListener('input', function() {
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regText, inputSurnamePersonalArea, false, containerSurnamePersonalArea);
+                });
+                inputEmailPersonalArea.addEventListener('input', function() {
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regEmail, inputEmailPersonalArea, false, containerEmailPersonalArea);
+                });
+
+                function showPassword(buttons) {
+                    buttons.forEach((item) => {
+                    item.addEventListener('click', function() {
+                        let target = this.getAttribute("data-target"),
+                            input = document.querySelector(target);                       
+                            if (input.getAttribute("type") === "password") {
+                                input.setAttribute("type", "text");
+                            } else {
+                                input.setAttribute("type", "password");
+                            } 
+                    })
+                    })
+                };
+
+                showPassword(buttonsShowPassPersonalArea);
+         
+                
+                buttonSaveChange.addEventListener('click', function(event) {
+                    event.preventDefault(); 
+                    validPassword(inputPassPersonalArea, inputPassRePersonalArea, containerPassPersonalArea, containerPassRePersonalArea);
+                })
+                
           }
 }

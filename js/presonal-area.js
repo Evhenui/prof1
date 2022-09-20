@@ -140,8 +140,9 @@ export let personalArea = function() {
                     itemSelected = comparison.querySelector('[data-dropdown-category-selected]'),
                     dropdown = comparison.querySelector('[data-dropdown-category]'),
 
-                    buttonMore = comparison.querySelector('[data-button-comparison-more]'),
-                    wrapperMoreSection = comparison.querySelector('[data-wrapper-comparison-more]');
+                    
+                    buttonsMore = comparison.querySelectorAll('[data-wrapper-comparison-more]');
+                   
             
                     dropdown.addEventListener('click', function() {
                     if (this.classList.contains('active')) {
@@ -156,6 +157,30 @@ export let personalArea = function() {
                     closeMenu(personalArea, dropdown, itemSelected, false)
                     });
                     changeLable(itemsSelect, itemSelected);
+
+                    //------------------button more---------------------
+                    buttonsMore.forEach(function(item) {
+                        const buttonMore = comparison.querySelectorAll('[data-button-comparison-more]'),
+                              wrapperMoreSection = comparison.querySelectorAll('[data-wrapper-comparison-more]');
+                        item.addEventListener('click', function(event) {
+                          const self = event.currentTarget,
+                                productMenu = self.querySelector('[data-buuton-more-list]'),
+                                activeProductButton = self.querySelector('[data-button-comparison-more]');
+                                personalArea.addEventListener('click',(e)=>{
+                            const click = e.composedPath().includes(item);
+                            if(!click) {
+                                productMenu.classList.remove('active');
+                                activeProductButton.classList.remove('active');
+                            }
+                          })
+                          if(!activeProductButton.classList.contains('active')) {
+                            delActiv(buttonMore);
+                            delActiv(wrapperMoreSection);
+                            productMenu.classList.add('active');
+                            activeProductButton.classList.add('active');
+                          }     
+                        })
+                    });
 
         }
     }
