@@ -1,7 +1,9 @@
 export let sliders = function() {
   const cardProduct = document.querySelector('[data-card-product]'),
         mainPage = document.querySelector('[data-main]'),
-        titleSlider = document.querySelector('[data-title-slider]');
+        titleSlider = document.querySelector('[data-title-slider]'),
+        newsOne = document.querySelector('[data-news-one]');
+
         function delActiv(param) {
           param.forEach((el) => {
             el.classList.remove('active');
@@ -338,5 +340,31 @@ export let sliders = function() {
           }
         })
 
+    }
+
+    if(newsOne !== null) {
+      const sliderNewsOne = new Swiper('.news-one__slider', {
+        direction: 'horizontal',
+        slidesPerView: 3, 
+        spaceBetween: 32, 
+        watchOverflow: true,
+        breakpoints: {
+          1150: { 
+            slidesPerView: 3,
+          }, 
+          960: { 
+            slidesPerView: 2.2,
+          }, 
+          860: { 
+            slidesPerView: 2,
+          }, 
+          640: { 
+            slidesPerView: 1.8,
+          },
+          0: { 
+            slidesPerView: 1.15,
+          },
+        }
+      });
     }
 }
