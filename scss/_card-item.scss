@@ -15,8 +15,6 @@
         box-shadow: none;
     }
 
-    //---------if palit class
-
     &.palit {
         max-width: 343px;
     }
@@ -72,7 +70,6 @@
         align-items: center;
     }
 
-    //---------
 
     &__palit-button-basket {
         background-color: $color-red;
@@ -171,9 +168,6 @@
         padding-top: 24px;
     }
 
-    &__navigation {
-    }
-
     &__navigation-buttons {
         display: flex;
         flex-direction: column;
@@ -207,12 +201,6 @@
 
     &__like-svg {
         transition: all .1s ease-in-out;
-    }
-
-    &__button-compare {
-    }
-
-    &__compare-svg {
     }
 
     &__navigation-colors {
@@ -341,13 +329,6 @@
 
     &__footer-navigation {
         @extend %centre-space-between;
-    }
-
-    &__price {
-    }
-
-    &__price-discount {
-    
     }
 
     &__price-text {

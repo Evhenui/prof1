@@ -746,9 +746,6 @@
       transition: all .1s ease-in-out;
   }
 
-  &__main {
-  }
-
   &__main-wrapper {
       padding: 40px;
       @include __640 {
@@ -777,9 +774,6 @@
       fill: $color-red-50;
   }
 
-  &__star-svg {
-  }
-
   &__subtitle {
       @include text($size: 0.875rem, $color: $color-black, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
   }
@@ -792,12 +786,6 @@
         flex-direction: column;
         row-gap: 24px;
       }
-  }
-
-  &__inputs {
-  }
-
-  &__form {
   }
 
   &__input-container {
@@ -817,9 +805,6 @@
 
   &__input {
       max-width: 100%;
-  }
-
-  &__label {
   }
 
   &__button {
@@ -926,6 +911,22 @@
     }
   }
 
+  &__item-delete:hover &__item-delete-def {
+    display: none;
+  }
+
+  &__item-delete:hover &__item-delete-hover {
+    display: block;
+  }
+
+  &__item-delete-def {
+
+  }
+
+  &__item-delete-hover {
+    display: none;
+  }
+
   &__button-clear:hover &__button-arrow-state,
   &__button-clear:active &__button-arrow-state {
     stroke: #f07585;
@@ -944,15 +945,6 @@
 
   &__button-title {
     @include text($size: 0.875rem, $color: $color-white, $textAlign: left, $fontWeight: 600, $lineHeight: 20px);
-  }
-
-  &__arrow {
-  }
-
-  &__button-line-active {
-  }
-
-  &__button-arrow-state {
   }
 
   &__button-close {
@@ -1035,9 +1027,6 @@
 
   &__item-bottom {
     @extend %centre-space-between;
-  }
-
-  &__item-prices {
   }
 
   &__old-price {

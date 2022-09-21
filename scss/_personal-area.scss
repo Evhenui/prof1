@@ -135,9 +135,6 @@
         }
     }
 
-    &__line-active {
-    }
-
     &__arrow-state {
         stroke: $color-gray-60;
     }
@@ -222,9 +219,6 @@
         }
     }
 
-    &__empty {
-    }
-
     &__empty-wrapper {
         padding-top: 104px;
         @extend %centre-flex-columb;
@@ -278,9 +272,6 @@
             align-items: center;
             row-gap: 60px;
         }
-    }
-
-    &__private-info {
     }
 
     &__private-info-wrapper {
@@ -386,9 +377,6 @@
         color: $color-black;
     }
 
-    &__change-password {
-    }
-
     &__change-password-wrapper {
         padding: 48px;
         @include __960 {
@@ -464,7 +452,6 @@
 }
 
 .order {
-
     @include __960 {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
@@ -600,9 +587,6 @@
         }
     }
 
-    &__arrow-state {
-    }
-
     &__data-order {
         margin-right: 96px;
         @include __1290 {
@@ -665,9 +649,6 @@
 
     &__amount-product {
         margin-right: 47px;
-    }
-
-    &__amount-subtitle {
     }
 
     &__short-information.active &__images-product {
@@ -787,9 +768,6 @@
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
     }
 
-    &__full-information-right-section {
-    }
-
     &__title-navigation {
         display: flex;
         column-gap: 40px;
@@ -824,9 +802,6 @@
         @include __960 {
             display: none;
         }
-    }
-
-    &__full-info-details {
     }
 
     &__details-item {
@@ -922,9 +897,6 @@
         }
     }
 
-    &__details-sum {
-    }
-
     &__button-wrapper {
         @include __960 {
             max-width: 375px;
@@ -983,10 +955,6 @@
         @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
     }
 
-    &__button-repeat-order-wrapper {
-
-    }
-
     &__button-repeat-order {
         max-width: 100%;
         width: 100%;
@@ -1001,9 +969,6 @@
     @extend %padding-country;
     &.active {
         display: block;
-    }
-
-    &__wrapper {
     }
 
     &__not-empty {
@@ -1082,9 +1047,6 @@
     &__dropdown-arrow {
         font-size: 0;
         transition: all .2s ease-in-out;
-    }
-
-    &__dropdown-arrow-state {
     }
 
     &__dropdown-list {
@@ -1301,83 +1263,8 @@
             }
 		}
 
-		&__titlte-slider-wrapper {
-		}
-
-		&__titlte-slider-header {
-		}
-
-		&__offers {
-		}
-
-		&__offer {
-		}
-
-		&__offers-title {
-		}
-
-		&__image-wrapper {
-		}
-
-		&__main-info {
-		}
-
-		&__review {
-		}
-
-		&__stars {
-		}
-
-		&__review-link {
-		}
-
-		&__review-text {
-		}
-
-		&__product-name {
-		}
-
-		&__button-menu-wrapper {
-		}
-
-		&__button-more {
-		}
-
-		&__button-state {
-		}
-
-		&__button-menu {
-		}
-
-		&__button-menu-item {
-		}
-
-		&__titlte-slider-footer {
-		}
-
-		&__price {
-		}
-
-		&__old-price {
-		}
-
-		&__new-price {
-		}
-
-		&__button-wrapper {
-		}
-
-		&__button-buy {
-		}
-
-		&__button-text {
-		}
-
 		&__main {
             width: max-content;
-            &:last-child {
-
-            }
 		}
 
 		&__title-characteristic {
@@ -1617,11 +1504,6 @@
         margin-right: 8px;
     }
 
-    &__main-info {
-        
-
-    }
-
     &__review {
         padding-top: 32px;
         display: flex;
@@ -1740,9 +1622,6 @@
         @extend %centre-space-between;
     }
 
-    &__price {
-    }
-
     &__old-price {
         margin-bottom: 4px;
         text-decoration-line: line-through;
@@ -1752,10 +1631,7 @@
     &__new-price {
         @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
     }
-
-    &__button-wrapper {
-    }
-
+    
     &__button-buy {
         padding-right: 7px;
         column-gap: 4px;

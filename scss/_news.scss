@@ -1,5 +1,4 @@
 .news-section {
-
     &__wrapper {
         @extend %size-page;
         padding: 68px 48px 120px 48px;
@@ -13,21 +12,14 @@
         margin-bottom: 40px;
     }
 
-    &__news-blocks-wrapper {
-    }
-
     &__news-blocks {
         display: flex;
         gap: 36px;
         flex-wrap: wrap;
         margin-bottom: 60px;
     }
-
-    &__navigation {
-    }
 }
 .page.news {
-
     &__wrapper.news {
         padding: 16px 0px 20px 0px;
     }

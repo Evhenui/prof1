@@ -405,14 +405,8 @@
         visibility: visible;
     }
 
-    &__checkbox {
-    }
-
     &__checkbox-label {
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
-    }
-
-    &__dropdowns {
     }
 
     &__button {
@@ -516,9 +510,6 @@
         }
     }
 
-    &__accordions {
-    }
-
     &__accordion {
         position: relative;
         display: none;
@@ -529,12 +520,6 @@
 
     &__slider-bestseller.swiper, &__slider-novelties.swiper, &__slider-stock.swiper {
         padding: 10px;
-    }
-
-    &__slider-bestseller {
-    }
-
-    &__slider-wrapper {
     }
 
     &__slider {
@@ -757,9 +742,6 @@
         padding: 20px 12px 24px 12px;
     }
 
-    &__description-wrapper {
-    }
-
     &__description-top {
         @extend %centre-space-between;
         margin-bottom: 4px;
@@ -811,10 +793,6 @@
         @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
     }
 
-    &__form {
-
-    }
-
     &__input {
         max-width: 100%;
     }
@@ -863,22 +841,9 @@
     &__subtitle {
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
-
-    &__button-title {
-    }
-
-    &__button-arrorw {
-    }
-
-    &__button-line-active {
-    }
-
-    &__button-arrow-state {
-    }
 }
 
 .about-company {
-
     &__wrapper {
        @extend %size-page;
        padding: 0 152px;
@@ -891,9 +856,6 @@
        margin-bottom: 48px; 
     }
 
-    &__description {
-    }
-
     &__description-text {
         display: flex;
         flex-direction: column;
@@ -901,28 +863,9 @@
         margin-bottom: 12px;
     }
 
-    &__subtitle {
-    }
-
     &__button-wrapper {
         display: flex;
         justify-content: flex-end;
-    }
-
-    &__description-button {
-       
-    }
-
-    &__button-title {
-    }
-
-    &__button-arrorw {
-    }
-
-    &__button-line-active {
-    }
-
-    &__button-arrow-state {
     }
 }
 

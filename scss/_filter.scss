@@ -122,9 +122,6 @@
         }
     }
 
-    &__image-state {
-    }
-
     &__name-section {
         transition: all .1s ease-in-out;
         width: 212px;
@@ -150,9 +147,6 @@
         transition: all .2s ease-in-out;
         transform: rotateZ(180deg);
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-
-    &__arrow {
     }
 
     &__arrow-state {
@@ -253,13 +247,8 @@
       height: 32px;
     }
 
-    
-
     &__amount-search {
         @include text($size: 0.75rem, $color: $color-black, $textAlign: left, $fontWeight: 400, $lineHeight: 20px);
-    }
-
-    &__navigation {
     }
 
     &__menu-list {
@@ -364,9 +353,6 @@
 
     &__dropdown-arrow {
         transition: all .2s ease-in-out;
-    }
-
-    &__dropdown-arrow-state {
     }
 
     &__dropdown.active &__dropdown-list {
@@ -593,9 +579,6 @@
         transition: all .2s ease-in-out;
     }
 
-    &__filter-arrow-state {
-    }
-
     &__filter-price-hidden {
         transition: all .2s ease-in-out;
         height: 0;
@@ -730,9 +713,6 @@
         }
     }
 
-    &__input-checkbox-container {
-    }
-
     &__buttons {
         padding-top: 60px;
         display: flex;
@@ -769,9 +749,6 @@
         &.active {
             padding-left: 0;
         }
-    }
-
-    &__navigation {
     }
 
     &__navigation-wrapper {

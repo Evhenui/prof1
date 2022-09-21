@@ -1806,6 +1806,8 @@ label {
 .header-navigation__item-link {
   display: inline-block;
   font-size: 0;
+  width: 68px;
+  height: 68px;
 }
 
 .header-navigation__item-link.active .header-navigation__svg-hover {
@@ -1845,16 +1847,136 @@ label {
   }
 }
 
+.header-navigation__list-item.comparison-header {
+  position: relative;
+}
+
 @media (max-width: 960px) {
-  .header-navigation__list-item.comparison {
+  .header-navigation__list-item.comparison-header {
     display: none;
   }
+}
+
+.header-navigation__list-item.comparison-header:hover .header-navigation__img-comparison-default {
+  opacity: 0;
+}
+
+.header-navigation__list-item.comparison-header:hover .header-navigation__img-comparison-hover {
+  opacity: 1;
+}
+
+.header-navigation__list-item.comparison-header .header-navigation__img-comparison-hover {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.comparison-header .header-navigation__img-comparison-default {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.account {
+  position: relative;
 }
 
 @media (max-width: 960px) {
   .header-navigation__list-item.account {
     display: none;
   }
+}
+
+.header-navigation__list-item.account.account:hover .header-navigation__img-account-default {
+  opacity: 0;
+}
+
+.header-navigation__list-item.account.account:hover .header-navigation__img-account-hover {
+  opacity: 1;
+}
+
+.header-navigation__list-item.account .header-navigation__img-account-hover {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.account .header-navigation__img-account-default {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.search {
+  position: relative;
+}
+
+.header-navigation__list-item.search:hover .header-navigation__img-search-default {
+  opacity: 0;
+}
+
+.header-navigation__list-item.search:hover .header-navigation__img-search-hover {
+  opacity: 1;
+}
+
+.header-navigation__list-item.search .header-navigation__img-search-hover {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.search .header-navigation__img-search-default {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.basket {
+  position: relative;
+}
+
+.header-navigation__list-item.basket:hover .header-navigation__img-basket-default {
+  opacity: 0;
+}
+
+.header-navigation__list-item.basket:hover .header-navigation__img-basket-hover {
+  opacity: 1;
+}
+
+.header-navigation__list-item.basket .header-navigation__img-basket-hover {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-navigation__list-item.basket .header-navigation__img-basket-default {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .header-navigation .amount-item {
@@ -1865,6 +1987,11 @@ label {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  z-index: 1;
+}
+
+.header-navigation .amount-item.basket {
+  display: none;
 }
 
 .header-navigation .amount-item__title {
@@ -8153,6 +8280,18 @@ label {
   }
 }
 
+.modal-basket__item-delete:hover .modal-basket__item-delete-def {
+  display: none;
+}
+
+.modal-basket__item-delete:hover .modal-basket__item-delete-hover {
+  display: block;
+}
+
+.modal-basket__item-delete-hover {
+  display: none;
+}
+
 .modal-basket__button-clear:hover .modal-basket__button-arrow-state,
 .modal-basket__button-clear:active .modal-basket__button-arrow-state {
   stroke: #f07585;
@@ -12872,10 +13011,6 @@ label {
   line-height: 24px;
   text-align: left;
   color: #2D2D2D;
-}
-
-.test__container:hover .test__list {
-  opacity: 1;
 }
 
 .test {
