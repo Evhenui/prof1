@@ -1,0 +1,27 @@
+{
+  "name": "webpack_prof1",
+  "version": "1.0.0",
+  "description": "webpack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evhenui/prof1.git"
+  },
+  "keywords": [
+    "js",
+    "webpack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evhenui/prof1/issues"
+  },
+  "homepage": "https://github.com/Evhenui/prof1#readme",
+  "dependencies": {
+    "cli": "^1.0.1",
+    "webpack": "^5.74.0"
+  }
+}
