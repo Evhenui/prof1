@@ -6002,7 +6002,7 @@ label {
 .title-slider__slide-wrapper {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 664px;
+  height: 100%;
 }
 
 .title-slider__info {
