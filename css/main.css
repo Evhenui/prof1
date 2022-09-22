@@ -6012,6 +6012,7 @@ label {
 }
 
 .title-slider__slide-wrapper {
+  background-image: url("/img/background-main_1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -12974,7 +12975,7 @@ label {
   margin-bottom: 60px;
 }
 
-.page.news__wrapper.news {
+.page__wrapper.news {
   padding: 16px 0px 20px 0px;
 }
 
