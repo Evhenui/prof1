@@ -17,7 +17,19 @@ export let cardProduct = function() {
               buttonCompare = cardProduct.querySelectorAll('[data-button-compare]'),
               accordionItems = cardProduct.querySelectorAll('[data-accordion-all-info]'),
               characteristicsSection = cardProduct.querySelector('[data-characteristics-section]'),
-              reviwsSection = cardProduct.querySelector('[data-reviews-section]');
+              reviwsSection = cardProduct.querySelector('[data-reviews-section]'),
+              navigationPage = cardProduct.querySelector('[data-navigation-scroll-card-product]'),
+              navigationPageEmpty = cardProduct.querySelector('[data-navigation-scroll-card-product-empty]');
+
+              window.addEventListener('scroll', function() {
+                if (window.scrollY > 139) {
+                  navigationPage.classList.add("active");
+                  navigationPageEmpty.classList.add("active");
+                } else {
+                  navigationPage.classList.remove("active");
+                  navigationPageEmpty.classList.remove("active");
+                }
+              })
         //----------------navigation page----------------------------
         navigationPageItems.forEach((item) => {
             item.addEventListener("click", function () {

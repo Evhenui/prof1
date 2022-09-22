@@ -12,6 +12,10 @@
     top: 68px;
     margin-bottom: 28px;
     background-color: $color-white;
+    &.active {
+        position: fixed;
+        width: 100%
+    }
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
@@ -1585,7 +1589,12 @@
     }
 }
 
-
+.header-page-navigation-empty.active {
+    display: block;
+    width: 100%;
+    height: 49px;
+    margin-bottom: 28px;
+}
 
 
 

@@ -30,7 +30,7 @@ export let filter = function() {
               const sizeNavFilter = document.querySelector('[data-top-navigation-section]').offsetHeight,
                     sizeNamePage = document.querySelector('[data-title-page-size]').offsetHeight,
                     sizePage = document.querySelector('[data-page]').offsetHeight,
-                    sizeHeader = document.querySelector('[data-header]').offsetHeight;
+                    sizeHeader = 68;
               window.getComputedStyle(navigationBar).getPropertyValue('--heightNav');
               navigationBar.style.setProperty('--heightNav', (window.innerHeight) - sizeNavFilter - sizeNamePage - sizePage - sizeHeader + 'px');
 

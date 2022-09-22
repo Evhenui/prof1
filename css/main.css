@@ -3246,6 +3246,11 @@ label {
   background-color: #FEFEFE;
 }
 
+.header-page-navigation.active {
+  position: fixed;
+  width: 100%;
+}
+
 @media (max-width: 960px) {
   .header-page-navigation__wrapper {
     padding-left: 16px;
@@ -5400,6 +5405,13 @@ label {
 
 .mobile-price-line__order-button:disabled .mobile-price-line__order-button-svg {
   stroke: #949494;
+}
+
+.header-page-navigation-empty.active {
+  display: block;
+  width: 100%;
+  height: 49px;
+  margin-bottom: 28px;
 }
 
 .wrp {
