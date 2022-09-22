@@ -9681,6 +9681,10 @@ label {
   white-space: nowrap;
 }
 
+:root {
+  --transform: 0;
+}
+
 .personal-area__wrapper {
   padding: 68px 0 100px 0;
 }
@@ -11456,6 +11460,10 @@ label {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transform: translateX(var(--transform));
+          transform: translateX(var(--transform));
 }
 
 .comparison .comparison-slider__titlte-slider:nth-child(1) {
@@ -11516,6 +11524,8 @@ label {
 
 .comparison .comparison-slider__description-characteristic {
   position: relative;
+  -webkit-transform: translateX(var(--transform));
+          transform: translateX(var(--transform));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11526,6 +11536,8 @@ label {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .comparison .comparison-slider__description-value-item {
@@ -11666,7 +11678,7 @@ label {
   max-width: 336px;
   width: 100%;
   border-bottom: 1px solid #FAD1D6;
-  border-left: 1px solid #FAD1D6;
+  border-right: 1px solid #FAD1D6;
 }
 
 .comparison-slider__titlte-slider-wrapper {

@@ -182,6 +182,47 @@ export let personalArea = function() {
                         })
                     });
 
+                    const btnNext = comparison.querySelector('[data-button-next-comparison]'),
+                          btnPrev = comparison.querySelector('[data-button-prev-comparison]'),
+                          sliderHeader = comparison.querySelector('[data-comparison-slider-header]'),
+                          slideBody = comparison.querySelectorAll('[data-slide-comparison]'),
+                          slideItems = comparison.querySelectorAll('[data-slide-header-item-comparison]');
+                    let cur = 0,
+                        space = (slideItems.length),
+                        sizeSlide = 336,
+                        maxSlide = 5;
+                       
+                    btnNext.addEventListener('click', () => {
+                       
+                        if(cur <= (space - maxSlide)) {
+                            cur += 1;
+                            window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
+                            sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
+    
+                            slideBody.forEach(item=> {
+                                window.getComputedStyle(item).getPropertyValue('--transform');
+                                item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
+                            })
+                        }
+                       
+                                              
+                    })
+
+                    btnPrev.addEventListener('click', () => {
+                        if(cur !== 0) {
+                            cur -= 1;
+                        
+                            window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
+                            sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
+    
+                            slideBody.forEach(item => {
+                                window.getComputedStyle(item).getPropertyValue('--transform');
+                                item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
+                            })
+                        } 
+                      
+                    })
+
         }
     }
 }

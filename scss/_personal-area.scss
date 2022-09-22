@@ -1,3 +1,7 @@
+:root {
+    --transform: 0;
+}
+
 .personal-area {
     &__wrapper {
         padding: 68px 0 100px 0;
@@ -1252,6 +1256,8 @@
             display: flex;
             flex-wrap: nowrap;
             width: max-content;
+            transition: all .2s ease-in-out;
+            transform: translateX(var(--transform));
 		}
 
 		&__titlte-slider {
@@ -1293,10 +1299,11 @@
 
 		&__description-characteristic {
             position: relative;
-
+            transform: translateX(var(--transform));
             display: flex;
             flex-direction: column;
             align-items: stretch;
+            transition: all .2s ease-in-out;
 		}
 
 		&__description-value-item {
@@ -1421,7 +1428,7 @@
         max-width: 336px;
         width: 100%;
         border-bottom: 1px solid $color-red-30;
-        border-left: 1px solid $color-red-30;
+        border-right: 1px solid $color-red-30;
     }
 
     &__titlte-slider-wrapper {
