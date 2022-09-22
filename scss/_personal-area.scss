@@ -1264,9 +1264,6 @@
             &:nth-child(1) {
                 border-left: none;
             }
-            &:last-child {
-                border-right: none;
-            }
 		}
 
 		&__main {
@@ -1308,7 +1305,6 @@
 
 		&__description-value-item {
             display: flex;
-            border-right: 1px solid #FAD1D6;
 		}
 
 		&__description-item {

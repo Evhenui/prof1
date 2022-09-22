@@ -190,38 +190,48 @@ export let personalArea = function() {
                     let cur = 0,
                         space = (slideItems.length),
                         sizeSlide = 336,
-                        maxSlide = 5;
-                       
-                    btnNext.addEventListener('click', () => {
-                       
-                        if(cur <= (space - maxSlide)) {
+                        maxSlide = 5; 
+                        function addSlide() {
                             cur += 1;
                             window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
-                            sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
-    
+                            sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px'); 
                             slideBody.forEach(item=> {
                                 window.getComputedStyle(item).getPropertyValue('--transform');
                                 item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
                             })
-                        }
-                       
-                                              
-                    })
+                        }                 
+                    btnNext.addEventListener('click', () => {  
+                        if(window.innerWidth > 1440 ) {
+                            if(cur <= (space - maxSlide)) {
+                                addSlide();
+                            }  
+                        }  else if(window.innerWidth > 1110) {
+                            if(cur <= (space - 4)) {
+                                addSlide();
+                            }
+                        }  else if(window.innerWidth > 800) {
+                            if(cur <= (space - 3)) {
+                                addSlide();
+                            }
+                        }    else if(window.innerWidth > 300) {
+                            if(cur <= (space - 2)) {
+                                addSlide();
+                            }
+                        }            
+                                                                                       
+                    });
 
                     btnPrev.addEventListener('click', () => {
                         if(cur !== 0) {
-                            cur -= 1;
-                        
+                            cur -= 1;                     
                             window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
                             sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
-    
                             slideBody.forEach(item => {
                                 window.getComputedStyle(item).getPropertyValue('--transform');
                                 item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
                             })
-                        } 
-                      
-                    })
+                        }                      
+                    });
 
         }
     }

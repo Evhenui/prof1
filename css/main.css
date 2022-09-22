@@ -11483,10 +11483,6 @@ label {
   border-left: none;
 }
 
-.comparison .comparison-slider__titlte-slider:last-child {
-  border-right: none;
-}
-
 .comparison .comparison-slider__main {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -11557,7 +11553,6 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-right: 1px solid #FAD1D6;
 }
 
 .comparison .comparison-slider__description-item {
