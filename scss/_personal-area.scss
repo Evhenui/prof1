@@ -970,7 +970,6 @@
 .comparison {
     display: none;
     @extend %size-page;
-    @extend %padding-country;
     &.active {
         display: block;
     }
@@ -981,11 +980,20 @@
         &.active {
             display: block;
         }
+        @extend %padding-country;
+        @include __960 {
+            padding-left: 16px;
+        }
     }
 
     &__navigation {
         @extend %centre-space-between;
         margin-bottom: 24px;
+        @include __960 {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 20px;
+        }
     }
 
     &__navigation-left-wrapper {
@@ -994,6 +1002,13 @@
         column-gap: 40px;
         max-width: 798px;
         width: 100%;
+        @include __1090 {
+            column-gap: 12px;
+            max-width: 700px;
+        }
+        @include __960 {
+            max-width: 100%;
+        }
     }
 
     &__category {
@@ -1006,6 +1021,9 @@
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 20px);
         max-width: 163px;
         width: 100%;
+        @include __960 {
+            display: none;
+        }
     }
 
     &__dropdown {
@@ -1095,24 +1113,53 @@
         flex: 1 0 351px;
         display: flex;
         column-gap: 16px;
+        @include __1090 {
+            flex: 1 0 280px;
+        }
     }
 
     &__button-add {
         max-width: 191px;
         width: 100%;
         padding: 11px 0;
+        @include __1090 {
+            max-width: 165px;
+        }
+        &.mobile {
+            display: none;
+        }
+        @include __960 {
+            display: none;
+            &.mobile {
+                display: block;
+                padding: 12px 0;
+                max-width: 165px;
+            }
+        }
+    }
+
+    &__switch-wrapper-mob {
+        display: flex;
+        align-items: center;
+        column-gap: 19px;
     }
 
     &__button-clear {
         padding: 11px 0;
         max-width: 144px;
         width: 100%;
+        @include __1090 {
+            max-width: 99px;
+        }
     }
 
     &__switch {
         display: flex;
-        align-items: center;
-        column-gap: 19px;
+        column-gap: 12px;
+        @include __960 {
+            max-width: 370px;
+            width: 100%;
+        }
     }
 
     &__switch-title {
@@ -1248,10 +1295,27 @@
             border-top: 1px solid #FAD1D6;
             border-left: 1px solid #FAD1D6;
             border-right: 1px solid #FAD1D6;
+            max-width: 1344px;
+            width: 100%;
+            @include __1440 {
+                max-width: 1009px;
+                margin: 0 auto;
+            }
+            @include __1150 {
+                max-width: 673px;
+            }
+            @include __960 {
+                overflow: overlay;
+                margin: 0;
+                max-width: 100%;
+                &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                }
+            }
 		}
 
 .comparison-slider {
-
 		&__header {
             display: flex;
             flex-wrap: nowrap;
@@ -1326,6 +1390,9 @@
             background-color: $color-white;
             &:disabled {
                 cursor: auto;
+            }
+            @include __960 {
+                display: none;
             }
 		}
 

@@ -242,7 +242,7 @@ label {
           flex-direction: column;
 }
 
-.footer-special-documents__wrp, .header-page-navigation__wrapper, .all-about__wrapper, .reviews__wrapper, .recommendation__title, .main-info, .filter-description, .navigation-bar__navigation, .comparison, .news-one__title, .news-one__top-wrp, .news-one__buttom-wrp, .news-one__videos-wrapper {
+.footer-special-documents__wrp, .header-page-navigation__wrapper, .all-about__wrapper, .reviews__wrapper, .recommendation__title, .main-info, .filter-description, .navigation-bar__navigation, .comparison__not-empty, .news-one__title, .news-one__top-wrp, .news-one__buttom-wrp, .news-one__videos-wrapper {
   padding-left: 48px;
   padding-right: 48px;
 }
@@ -11102,8 +11102,27 @@ label {
   display: block;
 }
 
+@media (max-width: 960px) {
+  .comparison__not-empty {
+    padding-left: 16px;
+  }
+}
+
 .comparison__navigation {
   margin-bottom: 24px;
+}
+
+@media (max-width: 960px) {
+  .comparison__navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    row-gap: 20px;
+  }
 }
 
 .comparison__navigation-left-wrapper {
@@ -11117,6 +11136,20 @@ label {
           column-gap: 40px;
   max-width: 798px;
   width: 100%;
+}
+
+@media (max-width: 1090px) {
+  .comparison__navigation-left-wrapper {
+    -webkit-column-gap: 12px;
+            column-gap: 12px;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 960px) {
+  .comparison__navigation-left-wrapper {
+    max-width: 100%;
+  }
 }
 
 .comparison__category {
@@ -11139,6 +11172,12 @@ label {
   color: #2D2D2D;
   max-width: 163px;
   width: 100%;
+}
+
+@media (max-width: 960px) {
+  .comparison__category-title {
+    display: none;
+  }
 }
 
 .comparison__dropdown {
@@ -11267,19 +11306,42 @@ label {
           column-gap: 16px;
 }
 
+@media (max-width: 1090px) {
+  .comparison__buttons {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 280px;
+            flex: 1 0 280px;
+  }
+}
+
 .comparison__button-add {
   max-width: 191px;
   width: 100%;
   padding: 11px 0;
 }
 
-.comparison__button-clear {
-  padding: 11px 0;
-  max-width: 144px;
-  width: 100%;
+@media (max-width: 1090px) {
+  .comparison__button-add {
+    max-width: 165px;
+  }
 }
 
-.comparison__switch {
+.comparison__button-add.mobile {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .comparison__button-add {
+    display: none;
+  }
+  .comparison__button-add.mobile {
+    display: block;
+    padding: 12px 0;
+    max-width: 165px;
+  }
+}
+
+.comparison__switch-wrapper-mob {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11288,6 +11350,33 @@ label {
           align-items: center;
   -webkit-column-gap: 19px;
           column-gap: 19px;
+}
+
+.comparison__button-clear {
+  padding: 11px 0;
+  max-width: 144px;
+  width: 100%;
+}
+
+@media (max-width: 1090px) {
+  .comparison__button-clear {
+    max-width: 99px;
+  }
+}
+
+.comparison__switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+}
+
+@media (max-width: 960px) {
+  .comparison__switch {
+    max-width: 370px;
+    width: 100%;
+  }
 }
 
 .comparison__switch-title {
@@ -11462,6 +11551,33 @@ label {
   border-top: 1px solid #FAD1D6;
   border-left: 1px solid #FAD1D6;
   border-right: 1px solid #FAD1D6;
+  max-width: 1344px;
+  width: 100%;
+}
+
+@media (max-width: 1440px) {
+  .comparison__slider {
+    max-width: 1009px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1150px) {
+  .comparison__slider {
+    max-width: 673px;
+  }
+}
+
+@media (max-width: 960px) {
+  .comparison__slider {
+    overflow: overlay;
+    margin: 0;
+    max-width: 100%;
+  }
+  .comparison__slider::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 .comparison .comparison-slider__header {
@@ -11583,6 +11699,12 @@ label {
 
 .comparison .comparison-slider__button-prev:disabled, .comparison .comparison-slider__button-next:disabled {
   cursor: auto;
+}
+
+@media (max-width: 960px) {
+  .comparison .comparison-slider__button-prev, .comparison .comparison-slider__button-next {
+    display: none;
+  }
 }
 
 .comparison .comparison-slider__button-next {

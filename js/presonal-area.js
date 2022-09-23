@@ -1,5 +1,7 @@
 export let personalArea = function() { 
-    const personalArea = document.querySelector('[data-personal-arae]');
+    const personalArea = document.querySelector('[data-personal-arae]'),
+          navigationBar = personalArea.querySelector('[data-navigation-bar]'),
+          emptyNav = personalArea.querySelector('[data-navigation-bar-empty]');
 
     function delActiv(param) {
         param.forEach((el) => {
@@ -41,16 +43,15 @@ export let personalArea = function() {
     }
 
     if(personalArea !== null) {
-        const navigationBar = personalArea.querySelector('[data-navigation-bar]'),
-              favorites = personalArea.querySelector('[data-favorites]'),
+        const favorites = personalArea.querySelector('[data-favorites]'),
               privateData = personalArea.querySelector('[data-private-data]'),
               myOrders = personalArea.querySelector('[data-my-orders]'),
               comparison = personalArea.querySelector('[data-comparison]');
       
         if(navigationBar !== null) {
             const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
-                  sections = personalArea.querySelectorAll('[data-section-personal-area]'),
-                  emptyNav = personalArea.querySelector('[data-navigation-bar-empty]');
+                  sections = personalArea.querySelectorAll('[data-section-personal-area]');
+                  
             
             tabs.forEach(item => {
                 item.addEventListener('click', function() {
@@ -139,10 +140,14 @@ export let personalArea = function() {
             const   itemsSelect = comparison.querySelectorAll('[data-dropdown-category-item]'),
                     itemSelected = comparison.querySelector('[data-dropdown-category-selected]'),
                     dropdown = comparison.querySelector('[data-dropdown-category]'),
-
-                    
                     buttonsMore = comparison.querySelectorAll('[data-wrapper-comparison-more]');
                    
+                    window.addEventListener("scroll", function () {
+                        if (comparison.classList.contains('active')) {
+                            navigationBar.classList.remove('active');
+                            emptyNav.classList.remove('active');
+                        }
+                    });
             
                     dropdown.addEventListener('click', function() {
                     if (this.classList.contains('active')) {
@@ -213,12 +218,7 @@ export let personalArea = function() {
                             if(cur <= (space - 3)) {
                                 addSlide();
                             }
-                        }    else if(window.innerWidth > 300) {
-                            if(cur <= (space - 2)) {
-                                addSlide();
-                            }
-                        }            
-                                                                                       
+                        }                                                                                          
                     });
 
                     btnPrev.addEventListener('click', () => {
