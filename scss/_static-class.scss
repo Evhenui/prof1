@@ -531,10 +531,21 @@ html {
       box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
   }
 
+ &__list-wrapper {
+  @include __960 {
+    padding: 16px 24px 60px 24px;
+  }
+ }
+
   &__menu {
       display: flex;
       flex-direction: column;
       row-gap: 4px;
+      &.mobile {
+        @include __960 {
+          padding: 0 24px;
+        }
+      }
   }
 
   &__item {

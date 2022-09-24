@@ -979,11 +979,12 @@
         padding: 24px 0 ;
         &.active {
             display: block;
-        }
-        @extend %padding-country;
-        @include __960 {
-            padding-left: 16px;
-        }
+            @extend %padding-country;
+            @include __960 {
+                padding: 24px 0 0 16px;
+            } 
+        }   
+        
     }
 
     &__navigation {
@@ -1042,7 +1043,11 @@
         &.active {
             border-color: $color-red;
         }
+        &.mobile {
+            display: none;
+        }
     }
+    
 
     &__dropdown.active:hover &__dropdown-arrow-state  {
         stroke: $color-black;
@@ -1108,6 +1113,8 @@
             }
         }
     }
+
+   
 
     &__buttons {
         flex: 1 0 351px;
@@ -1719,5 +1726,62 @@
 
     &__button-text {
         @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
+    }
+}
+
+.favorites__dropdown {
+    @include __960 {
+        display: none;
+    }
+    &.mobile {
+        display: none;
+        @include __960 {
+            display: block;
+        }
+    }
+}
+
+.favorites__dropdown-header-mobile-close {
+    font-size: 0;
+}
+
+.favorites__dropdown-header-mobile {
+    display: none;
+    @include __960 {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 69px;
+    }
+}
+
+.favorites__dropdown-header-mobile-title {
+    @include text( $size: 1rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+    width: 100%;
+}
+
+.favorites__dropdown-list {
+    display: none; 
+    @include __960 {
+        display: block;
+    }
+    transition: all .2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    background-color: $color-white;
+    width: 100%;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 24px 24px 0px 0px;
+    z-index: 4;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 4;
     }
 }

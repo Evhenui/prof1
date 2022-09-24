@@ -81,22 +81,59 @@ export let personalArea = function() {
             const   itemsSelect = favorites.querySelectorAll('[data-favorites-item]'),
                     itemSelected = favorites.querySelector('[data-dropdown-favorites-selected]'),
                     itemLabel = favorites.querySelector('[data-dropdown-favorites-label]'),
-                    dropdown = favorites.querySelector('[data-dropdown-favorites]');
-            
+                    dropdown = favorites.querySelector('[data-dropdown-favorites]'),
+
+                    itemsSelectMobile = favorites.querySelectorAll('[data-favorites-item-mobile]'),
+                    itemSelectedMobile = favorites.querySelector('[data-dropdown-favorites-selected-mobile]'),
+                    dropdownMobile = favorites.querySelector('[data-dropdown-favorites-mobile]'),
+                    mobileBlur = document.querySelector('[data-blur]'),
+                    dropMenuMobile = favorites.querySelector('[data-mobile-dropdown-list]'),
+                    btnCloseDropMobile = favorites.querySelector('[data-button-close-dropdown-mobile]'); 
+                    
+                    function changeLableMobile (items, dropdown, section, bg) {
+                        items.forEach((item)=> {
+                            item.addEventListener('click', ()=> {
+                                dropdown.innerText = item.innerText;
+                                section.classList.remove('active')
+                                bg.classList.remove('active'); 
+                            })
+                        })
+                    }
+
                     dropdown.addEventListener('click', function() {
-             if (this.classList.contains('active')) {
-                 this.classList.remove('active');
-             }
-             else {
-                 this.classList.add('active');
-             }
-             if(itemSelected.innerText === '') {
-                 itemLabel.classList.toggle('active');
-             } 
-             closeMenu(personalArea, dropdown, itemSelected, itemLabel)
-         })
-         changeLable(itemsSelect, itemSelected)
-        }
+                        if (this.classList.contains('active')) {
+                            this.classList.remove('active');
+                        }
+                        else {
+                            this.classList.add('active');
+                        }
+                        if(itemSelected.innerText === '') {
+                            itemLabel.classList.toggle('active');
+                        } 
+                        closeMenu(personalArea, dropdown, itemSelected, itemLabel)
+                    })
+                    changeLable(itemsSelect, itemSelected);
+
+                    dropdownMobile.addEventListener('click', function() {
+                            dropMenuMobile.classList.add('active');
+                            mobileBlur.classList.add('active'); 
+                    });
+
+                    btnCloseDropMobile.addEventListener('click', function() {
+                        dropMenuMobile.classList.remove('active')
+                        mobileBlur.classList.remove('active'); 
+                    });
+
+                    mobileBlur.addEventListener('click', function() {
+                        dropMenuMobile.classList.remove('active');
+                        this.classList.remove('active'); 
+                    })
+                   
+                    changeLableMobile(itemsSelectMobile, itemSelectedMobile, dropMenuMobile, mobileBlur);
+                    }
+
+
+                    
 
         if(privateData !== null) {
             const containerPasswordInput = personalArea.querySelectorAll('[data-input-password-private-data-container]');
