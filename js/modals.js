@@ -13,16 +13,19 @@ export let modals = function() {
         buttonOpenModalOnClick.addEventListener('click', function() {
             modalOnClick.classList.add('active');
             body.style.overflow = 'hidden';
+            body.style.maxHeight = '100vh';
         });
         buttonCloseModalOnClick.addEventListener('click', function(){
             modalOnClick.classList.remove('active');
             body.style.overflow = 'auto';
+            body.style.maxHeight = 'none';
         });
         modalOnClick.addEventListener("click", function (e) {
         const click = e.composedPath().includes(modalOnClickContainer);
         if (!click) {
             modalOnClick.classList.remove("active");
-            body.classList.remove("lock");
+            body.style.overflow = 'auto';
+            body.style.maxHeight = 'none';
         }
         });
     }
@@ -40,6 +43,7 @@ export let modals = function() {
             buttonOpenModal.addEventListener('click', function() {
                 modalReview.classList.add('active');
                 body.style.overflow = 'hidden';
+                body.style.maxHeight = '100vh';
             });
             buttonSend.addEventListener('click', function() {
                 modalSendedReview.classList.add('active');
@@ -50,16 +54,19 @@ export let modals = function() {
                 modalSendedReview.classList.remove('active');
                 modalReviewContainer.classList.remove('hidden');
                 body.style.overflow = 'auto';
+                body.style.maxHeight = 'none';
             });
             buttonCloseModal.addEventListener('click', ()=> {
                 modalReview.classList.remove('active');
                 body.style.overflow = 'auto';
+                body.style.maxHeight = 'none';
             });
             modalReview.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
                 if (!click) {
                     modalReview.classList.remove("active");
                     body.style.overflow = 'auto';
+                    body.style.maxHeight = 'none';
                 }
             });
     }
@@ -75,22 +82,26 @@ export let modals = function() {
                 buttonOpenBasket.addEventListener('click', function() {
                     modalBasket.classList.add('active');
                     body.style.overflow = 'hidden';
+                    body.style.maxHeight = '100vh';
                 });
               } 
               
               buttonCloseModal.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
                 body.style.overflow = 'auto';
+                body.style.maxHeight = 'none';
               });
               buttonContinue.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
                 body.style.overflow = 'auto';
+                body.style.maxHeight = 'none';
               });
               modalBasket.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
                 if (!click) {
                     modalBasket.classList.remove("active");
                     body.style.overflow = 'auto';
+                    body.style.maxHeight = 'none';
                 }
               });
     }

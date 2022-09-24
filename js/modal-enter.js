@@ -31,7 +31,8 @@ export let modalEnter = function() {
                         sendedModal = modalEnter.querySelector('[data-modal-sended-email]');
 
                         if(modalEnter.classList.contains('active')) {
-                        body.style.overflow = 'hidden';
+                          body.style.overflow = 'hidden';
+                          body.style.maxHeight = '100vh';
                         }
 
                         menuItems.forEach(function(item) {
@@ -55,6 +56,7 @@ export let modalEnter = function() {
                         item.addEventListener('click', function() {
                             modalEnter.classList.remove('active');
                             body.style.overflow = 'auto';
+                            body.style.maxHeight = 'none';
                         })
                         modalEnter.addEventListener('click',(e)=>{
                             const click = e.composedPath().includes(modalContainer);
@@ -62,6 +64,7 @@ export let modalEnter = function() {
                             if(!click && !clickOnModal) {
                             modalEnter.classList.remove('active');
                             body.style.overflow = 'auto';
+                            body.style.maxHeight = 'none';
                             }
                         })
                         })   

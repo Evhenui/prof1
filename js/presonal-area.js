@@ -1,7 +1,7 @@
 export let personalArea = function() { 
     const personalArea = document.querySelector('[data-personal-arae]'),
-          navigationBar = personalArea.querySelector('[data-navigation-bar]'),
-          emptyNav = personalArea.querySelector('[data-navigation-bar-empty]');
+          navigationBar = document.querySelector('[data-navigation-bar]'),
+          emptyNav = document.querySelector('[data-navigation-bar-empty]');
 
     function delActiv(param) {
         param.forEach((el) => {
@@ -88,7 +88,8 @@ export let personalArea = function() {
                     dropdownMobile = favorites.querySelector('[data-dropdown-favorites-mobile]'),
                     mobileBlur = document.querySelector('[data-blur]'),
                     dropMenuMobile = favorites.querySelector('[data-mobile-dropdown-list]'),
-                    btnCloseDropMobile = favorites.querySelector('[data-button-close-dropdown-mobile]'); 
+                    btnCloseDropMobile = favorites.querySelector('[data-button-close-dropdown-mobile]'),
+                    body = document.querySelector("#body-cont");
                     
                     function changeLableMobile (items, dropdown, section, bg) {
                         items.forEach((item)=> {
@@ -117,23 +118,26 @@ export let personalArea = function() {
                     dropdownMobile.addEventListener('click', function() {
                             dropMenuMobile.classList.add('active');
                             mobileBlur.classList.add('active'); 
+                            body.style.overflow = 'hidden';
+                            body.style.maxHeight = '100vh';
                     });
 
                     btnCloseDropMobile.addEventListener('click', function() {
                         dropMenuMobile.classList.remove('active')
                         mobileBlur.classList.remove('active'); 
+                        body.style.overflow = 'auto';
+                        body.style.maxHeight = 'none';
                     });
 
                     mobileBlur.addEventListener('click', function() {
                         dropMenuMobile.classList.remove('active');
                         this.classList.remove('active'); 
+                        body.style.overflow = 'auto';
+                        body.style.maxHeight = 'none';
                     })
                    
                     changeLableMobile(itemsSelectMobile, itemSelectedMobile, dropMenuMobile, mobileBlur);
-                    }
-
-
-                    
+        }
 
         if(privateData !== null) {
             const containerPasswordInput = personalArea.querySelectorAll('[data-input-password-private-data-container]');
