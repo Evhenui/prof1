@@ -46,7 +46,10 @@ export let personalArea = function() {
         const favorites = personalArea.querySelector('[data-favorites]'),
               privateData = personalArea.querySelector('[data-private-data]'),
               myOrders = personalArea.querySelector('[data-my-orders]'),
-              comparison = personalArea.querySelector('[data-comparison]');
+              comparison = personalArea.querySelector('[data-comparison]'),
+              itemsSliderComparison = personalArea.querySelectorAll('[data-slide-header-item-comparison]'),
+              sliderBody = personalArea.querySelector('[data-slider-body]');
+        let sizeSlider = 0;
       
         if(navigationBar !== null) {
             const tabs = navigationBar.querySelectorAll('[data-tab-item]'),
@@ -61,8 +64,16 @@ export let personalArea = function() {
                     delActiv(tabs)
                     delActiv(sections)
                     currentBtn.classList.add("active");
-                    currentTub.classList.add("active");                      
+                    currentTub.classList.add("active");  
+                    //add size slider
+                    if(comparison.classList.contains('active')) {
+                        const itemEl = personalArea.querySelector('[data-slide-header-item-comparison]');
+                        sizeSlider = itemEl.offsetWidth * itemsSliderComparison.length;
+                        window.getComputedStyle(sliderBody).getPropertyValue('--width');
+                        sliderBody.style.setProperty('--width', (sizeSlider) + 'px');
+                    }
                     });
+                    
             });
 
             window.addEventListener("scroll", function () {
@@ -233,6 +244,7 @@ export let personalArea = function() {
                           sliderHeader = comparison.querySelector('[data-comparison-slider-header]'),
                           slideBody = comparison.querySelectorAll('[data-slide-comparison]'),
                           slideItems = comparison.querySelectorAll('[data-slide-header-item-comparison]');
+
                     let cur = 0,
                         space = (slideItems.length),
                         sizeSlide = 336,
@@ -245,7 +257,8 @@ export let personalArea = function() {
                                 window.getComputedStyle(item).getPropertyValue('--transform');
                                 item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
                             })
-                        }                 
+                        }   
+
                     btnNext.addEventListener('click', () => {  
                         if(window.innerWidth > 1440 ) {
                             if(cur <= (space - maxSlide)) {
@@ -273,6 +286,11 @@ export let personalArea = function() {
                             })
                         }                      
                     });
+
+
+
+                    
+
 
         }
     }

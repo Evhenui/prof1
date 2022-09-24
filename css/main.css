@@ -9708,6 +9708,7 @@ label {
 
 :root {
   --transform: 0;
+  --width: 0;
 }
 
 .personal-area__wrapper {
@@ -11619,6 +11620,12 @@ label {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+@media (max-width: 960px) {
+  .comparison .comparison-slider__main {
+    width: var(--width);
+  }
 }
 
 .comparison .comparison-slider__title-characteristic {

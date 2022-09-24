@@ -1,5 +1,6 @@
 :root {
     --transform: 0;
+    --width: 0;
 }
 
 .personal-area {
@@ -1339,6 +1340,9 @@
 
 		&__main {
             width: max-content;
+            @include __960 {
+                width: var(--width);
+            }
 		}
 
 		&__title-characteristic {

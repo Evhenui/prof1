@@ -283,14 +283,12 @@ export let sliders = function() {
             })
 
         //л6огика свайпа на моб
-        window.addEventListener('resize', () => {
-          if(window.innerWidth <= 860) {
             sliderWrapper.addEventListener('touchstart', handleTouchStart, false);
             sliderWrapper.addEventListener('touchmove', handleTouchMove, false);
             sliderWrapper.addEventListener('touchend', handleTouchEnd, false);
     
             let x1 = null;
-            let count = 0;
+            let countMob = 0;
   
             function handleTouchStart(event) {
                 const firstTouch = event.touches[0]
@@ -310,37 +308,35 @@ export let sliders = function() {
             
             function handleTouchEnd() {
                 if(xDiffObj.xDiff > 0) {
-                  if(count === 0) {
-                    count = (slides.length - 1);
-                    translateFun(count);
+                  if(countMob === 0) {
+                    countMob = (slides.length - 1);
+                    translateFun(countMob);
                     delActiv(points);
-                    points[count].classList.add('active');
+                    points[countMob].classList.add('active');
                   } else {
-                    count -= 1;
-                    translateFun(count);
+                    countMob -= 1;
+                    translateFun(countMob);
                     delActiv(points);
-                    points[count].classList.add('active');
+                    points[countMob].classList.add('active');
                   }
           
                 } else {
-                  if((slides.length - 1) === count){
-                    count = 0;
-                    translateFun(count)
+                  if((slides.length - 1) === countMob){
+                    countMob = 0;
+                    translateFun(countMob)
                     delActiv(points);
-                    points[count].classList.add('active');
+                    points[countMob].classList.add('active');
           
                   } else {
-                    count += 1;
-                    translateFun(count);
+                    countMob += 1;
+                    translateFun(countMob);
                     delActiv(points);
-                    points[count].classList.add('active');
+                    points[countMob].classList.add('active');
                   }   
                 }
             }
           }
-        })
 
-    }
 
     if(newsOne !== null) {
       const sliderNewsOne = new Swiper('.news-one__slider', {
