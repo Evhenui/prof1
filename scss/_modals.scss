@@ -844,7 +844,12 @@
     }
   }
 
+  &.active &__wrapper {
+    max-width: 634px;
+  }
+
   &__wrapper {
+    transition: all .2s ease-in-out;
     display: table-cell;
     vertical-align: middle;
     transition: all 0.3s ease;
@@ -853,11 +858,10 @@
     right: 0;
     max-height: 100vh;
     overflow-y: auto;
-    max-width: 634px;
+    max-width: 0px;
     width: 100%;
     &::-webkit-scrollbar {
-      width: 0;
-      
+      width: 0;  
     }
   }
 
