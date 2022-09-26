@@ -49,6 +49,20 @@ export let header = function() {
                 submenuItems = header.querySelectorAll('[data-item-submenu]'),
                 submenuCatalog = header.querySelector('[data-submenu-catalog]');
 
+
+              // add dafault width catalog submenu
+                window.getComputedStyle(submenuCatalog).getPropertyValue('--width');
+                submenuCatalog.style.setProperty('--width', submenuItems[0].scrollWidth + 'px');
+
+          function getSize() {
+            submenuItems.forEach(item=> {
+              if(item.classList.contains('active')){
+                window.getComputedStyle(submenuCatalog).getPropertyValue('--width');
+                submenuCatalog.style.setProperty('--width', item.scrollWidth + 'px');
+              }
+            })
+          }
+                
           buttonCatalog.addEventListener('click', function() {
             catalogMenu.classList.toggle('active');
             blur.classList.toggle('active');
@@ -68,10 +82,13 @@ export let header = function() {
               delActiv(menuItems);
               delActiv(submenuItems);
               item.classList.add('active');
-              submenuItems[index].classList.add('active');        
+              submenuItems[index].classList.add('active'); 
+              getSize();                 
             });
           });
-        }               
+        }   
+        
+        
         
         if(menuServices !== null) {
           const buttonOpen = header.querySelector('[data-button-services]'),

@@ -2,23 +2,25 @@ export let modals = function() {
     const modalOnClick = document.querySelector('[data-modal-on-click]'),
           modalReview = document.querySelector('[data-modal-stay-review]'),
           modalBasket = document.querySelector('[data-modal-basket]');
+    let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
 
     if(modalOnClick !== null) {
         const buttonOpenModalOnClick = document.querySelector('[data-button-open-modal-on-click]'),
             buttonCloseModalOnClick = document.querySelector('[data-close-modal-on-click]'),
             modalOnClickContainer = document.querySelector('[data-modal-on-click-container]'),
             body = document.querySelector('#body-cont');
-     
-            
+
         buttonOpenModalOnClick.addEventListener('click', function() {
             modalOnClick.classList.add('active');
             body.style.overflow = 'hidden';
             body.style.maxHeight = '100vh';
+            body.style.paddingRight = paddingOffset;
         });
         buttonCloseModalOnClick.addEventListener('click', function(){
             modalOnClick.classList.remove('active');
             body.style.overflow = 'auto';
             body.style.maxHeight = 'none';
+            body.style.paddingRight = 0;
         });
         modalOnClick.addEventListener("click", function (e) {
         const click = e.composedPath().includes(modalOnClickContainer);
@@ -26,6 +28,7 @@ export let modals = function() {
             modalOnClick.classList.remove("active");
             body.style.overflow = 'auto';
             body.style.maxHeight = 'none';
+            body.style.paddingRight = 0;
         }
         });
     }
@@ -44,6 +47,7 @@ export let modals = function() {
                 modalReview.classList.add('active');
                 body.style.overflow = 'hidden';
                 body.style.maxHeight = '100vh';
+                body.style.paddingRight = paddingOffset;
             });
             buttonSend.addEventListener('click', function() {
                 modalSendedReview.classList.add('active');
@@ -55,11 +59,13 @@ export let modals = function() {
                 modalReviewContainer.classList.remove('hidden');
                 body.style.overflow = 'auto';
                 body.style.maxHeight = 'none';
+                body.style.paddingRight = 0;
             });
             buttonCloseModal.addEventListener('click', ()=> {
                 modalReview.classList.remove('active');
                 body.style.overflow = 'auto';
                 body.style.maxHeight = 'none';
+                body.style.paddingRight = 0;
             });
             modalReview.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
@@ -67,6 +73,7 @@ export let modals = function() {
                     modalReview.classList.remove("active");
                     body.style.overflow = 'auto';
                     body.style.maxHeight = 'none';
+                    body.style.paddingRight = 0;
                 }
             });
     }
@@ -83,6 +90,7 @@ export let modals = function() {
                     modalBasket.classList.add('active');
                     body.style.overflow = 'hidden';
                     body.style.maxHeight = '100vh';
+                    body.style.paddingRight = paddingOffset;
                 });
               } 
               
@@ -90,11 +98,13 @@ export let modals = function() {
                 modalBasket.classList.remove('active');
                 body.style.overflow = 'auto';
                 body.style.maxHeight = 'none';
+                body.style.paddingRight = 0;
               });
               buttonContinue.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
                 body.style.overflow = 'auto';
                 body.style.maxHeight = 'none';
+                body.style.paddingRight = 0;
               });
               modalBasket.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
@@ -102,6 +112,7 @@ export let modals = function() {
                     modalBasket.classList.remove("active");
                     body.style.overflow = 'auto';
                     body.style.maxHeight = 'none';
+                    body.style.paddingRight = 0;
                 }
               });
     }

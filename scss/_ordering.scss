@@ -292,16 +292,23 @@
 
     &__license-description-link {
         color: $color-red-50;
+        transition: all .1s ease-in-out;
+        &:hover {
+            color: #E61E37;
+        }
     }
 
-    &__enter {
+    &__enter-reg-user {
         display: none;
         max-width: 380px;
         width: 100%;
         margin: 0 auto;
         &.active {
             display: block;
-            max-width: 100%;
+            @include __960 {
+                max-width: 100%;
+            }
+            
         }
     }
 

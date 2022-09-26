@@ -1,3 +1,6 @@
+:root {
+  --width: 0;
+}
 .header {
     width: 100%;
     background-color: $color-black;
@@ -222,30 +225,24 @@
     }
   
     &__submenu {
-      // width: 0;
-  
       display: flex;
       padding: 8px 0 8px 20px;
       background-color: $color-white;
-      transition: all 0.2s ease-in-out;
-  
-      &.active {
-        width: 100%;
-      }
+      transition: all 0.3s ease-in-out;  
+      width: var(--width);
     }
   
     &__submenu-wrapper {
-      width: 0;
+      display: none;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
       transition: all 0.2s ease-in-out;
       overflow: hidden;
       transition: 0.3s;
-  
+      
       &.active {
-        width: 100%;
-        transition: 0.3s;
+        display: flex;
       }
     }
   
