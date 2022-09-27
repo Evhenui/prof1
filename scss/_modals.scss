@@ -892,6 +892,8 @@
   }
 
   &__header-text-section {
+    width: 100%;
+    justify-content: space-between;
     display: flex;
     align-items: center;
     column-gap: 102px;
@@ -1093,10 +1095,6 @@
 
   &__add-state {
     transition: all .1s ease-in-out;
-  }
-
-  &__footer {
-  
   }
 
   &__footer-wrapper {

@@ -2160,7 +2160,7 @@ label {
   background-color: #2D2D2D;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  max-height: calc(100vh - 68px);
+  height: 100vh;
   overflow-y: auto;
 }
 
@@ -2446,7 +2446,7 @@ label {
 }
 
 .header-navigation-mobile__footer-wrapper {
-  padding-top: 24px;
+  padding: 24px 0 52px 0;
   border-top: 1px solid #474747;
 }
 
@@ -8139,6 +8139,10 @@ label {
 }
 
 .modal-basket__header-text-section {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

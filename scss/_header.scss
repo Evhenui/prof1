@@ -889,7 +889,7 @@
     width: 100%;
     background-color: $color-black;
     transition: all 0.3s ease-in-out;
-    max-height: calc(100vh - 68px);
+    height: 100vh;
     overflow-y: auto;
     @include __960 {
       display: block;
@@ -1154,7 +1154,7 @@
     }
   
     &__footer-wrapper {
-      padding-top: 24px;
+      padding: 24px 0 52px 0;
       border-top: 1px solid $color-gray-90;
     }
   
