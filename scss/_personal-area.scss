@@ -99,6 +99,13 @@
                 opacity: 1;
             }
         }
+        &:hover {
+            color: $color-red;
+            &::after {
+                opacity: 1;
+            }
+        }
+
         &:active {
             color: $color-red-70;
             &::after {
@@ -106,20 +113,15 @@
                 background-color: $color-red-70;
             }
         }
+
         &.disabled {
             color: $color-gray-60;
             cursor: default;
-            &:active {
-                &::after {
-                    opacity: 0;
-                }
-            }
-            &.active {
-                &::after {
-                    opacity: 0;
-                }
+            &::after {
+                opacity: 0;
             }
         }
+
     }
 
     &__login-out {

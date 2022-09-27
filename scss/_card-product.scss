@@ -55,10 +55,27 @@
                 opacity: 1;
             }
         }
+
+        &:active {
+            color: $color-red-70;
+            &::after {
+                opacity: 1;
+                background-color: $color-red-70;
+            }
+        }
+
         &.active {
             color: $color-red;
             &::after {
                 opacity: 1;
+            }
+        }
+
+        &.disabled {
+            cursor: default;
+            color: $color-gray-70;
+            &::after {
+                opacity: 0;
             }
         }
     }

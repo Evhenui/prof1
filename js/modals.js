@@ -12,22 +12,19 @@ export let modals = function() {
 
         buttonOpenModalOnClick.addEventListener('click', function() {
             modalOnClick.classList.add('active');
-            body.style.overflow = 'hidden';
-            body.style.maxHeight = '100vh';
+            document.documentElement.style.overflow = 'hidden';
             body.style.paddingRight = paddingOffset;
         });
         buttonCloseModalOnClick.addEventListener('click', function(){
             modalOnClick.classList.remove('active');
-            body.style.overflow = 'auto';
-            body.style.maxHeight = 'none';
+            document.documentElement.style.overflow = 'auto';
             body.style.paddingRight = 0;
         });
         modalOnClick.addEventListener("click", function (e) {
         const click = e.composedPath().includes(modalOnClickContainer);
         if (!click) {
             modalOnClick.classList.remove("active");
-            body.style.overflow = 'auto';
-            body.style.maxHeight = 'none';
+            document.documentElement.style.overflow = 'auto';
             body.style.paddingRight = 0;
         }
         });
@@ -45,8 +42,7 @@ export let modals = function() {
 
             buttonOpenModal.addEventListener('click', function(event) {  
                 modalReview.classList.add('active');
-                body.style.overflow = 'hidden';
-                body.style.maxHeight = '100vh';
+                document.documentElement.style.overflow = 'hidden';
                 body.style.paddingRight = paddingOffset;
             });
             buttonSend.addEventListener('click', function() {
@@ -57,22 +53,19 @@ export let modals = function() {
                 modalReview.classList.remove('active');
                 modalSendedReview.classList.remove('active');
                 modalReviewContainer.classList.remove('hidden');
-                body.style.overflow = 'auto';
-                body.style.maxHeight = 'none';
+                document.documentElement.style.overflow = 'auto';
                 body.style.paddingRight = 0;
             });
             buttonCloseModal.addEventListener('click', ()=> {
                 modalReview.classList.remove('active');
-                body.style.overflow = 'auto';
-                body.style.maxHeight = 'none';
+                document.documentElement.style.overflow = 'auto';
                 body.style.paddingRight = 0;
             });
             modalReview.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
                 if (!click) {
                     modalReview.classList.remove("active");
-                    body.style.overflow = 'auto';
-                    body.style.maxHeight = 'none';
+                    document.documentElement.style.overflow = 'auto';
                     body.style.paddingRight = 0;
                 }
             });
@@ -88,30 +81,26 @@ export let modals = function() {
               if(!buttonOpenBasket.classList.contains('empty')) {
                 buttonOpenBasket.addEventListener('click', function() {
                     modalBasket.classList.add('active');
-                    body.style.overflow = 'hidden';
-                    body.style.maxHeight = '100vh';
+                    document.documentElement.style.overflow = 'hidden';
                     body.style.paddingRight = paddingOffset;
                 });
               } 
               
               buttonCloseModal.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
-                body.style.overflow = 'auto';
-                body.style.maxHeight = 'none';
+                document.documentElement.style.overflow = 'auto';
                 body.style.paddingRight = 0;
               });
               buttonContinue.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
-                body.style.overflow = 'auto';
-                body.style.maxHeight = 'none';
+                document.documentElement.style.overflow = 'auto';
                 body.style.paddingRight = 0;
               });
               modalBasket.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
                 if (!click) {
                     modalBasket.classList.remove("active");
-                    body.style.overflow = 'auto';
-                    body.style.maxHeight = 'none';
+                    document.documentElement.style.overflow = 'auto';
                     body.style.paddingRight = 0;
                 }
               });
