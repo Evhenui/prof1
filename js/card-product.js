@@ -19,7 +19,14 @@ export let cardProduct = function() {
               characteristicsSection = cardProduct.querySelector('[data-characteristics-section]'),
               reviwsSection = cardProduct.querySelector('[data-reviews-section]'),
               navigationPage = cardProduct.querySelector('[data-navigation-scroll-card-product]'),
-              navigationPageEmpty = cardProduct.querySelector('[data-navigation-scroll-card-product-empty]');
+              navigationPageEmpty = cardProduct.querySelector('[data-navigation-scroll-card-product-empty]'),
+              buttonBuy = cardProduct.querySelector('[data-button-buy-card-product]'),
+              notificationBasket = cardProduct.querySelector('[data-notification-basket]');
+
+              buttonBuy.addEventListener('click', function() {
+                this.classList.add('active');
+                notificationBasket.classList.add('active');
+              })
 
               window.addEventListener('scroll', function() {
                 if (window.scrollY > 139) {
@@ -120,9 +127,13 @@ export let cardProduct = function() {
         navigationSection.classList.add("active");
       }
       window.addEventListener('scroll', function() {
+        
         if (window.scrollY < 500) {
           navigationSection.classList.add("active");
-        } else {
+        } else if(window.scrollY > 1000)  {
+          navigationSection.classList.add("active");
+        }
+        else {
           navigationSection.classList.remove("active");
         }
       })

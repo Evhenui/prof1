@@ -43,7 +43,7 @@ export let modals = function() {
               modalContainer = modalReview.querySelector('[data-modal-stay-review-container]'),
               body = document.querySelector('#body-cont');
 
-            buttonOpenModal.addEventListener('click', function() {
+            buttonOpenModal.addEventListener('click', function(event) {  
                 modalReview.classList.add('active');
                 body.style.overflow = 'hidden';
                 body.style.maxHeight = '100vh';

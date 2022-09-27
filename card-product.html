@@ -18,6 +18,54 @@
 
         <section data-card-product class="card-product">
             <div class="card-product__wrapper">
+                <section class="notification-wrp">
+                    <section data-notification-basket class="notification basket ">
+                        <div class="notification__wrapper">
+                            <p class="notification__title">Товар добавлен</p>
+                            <button class="btn-arrow-right notification__button">
+                                <span class="btn-arrow-right__title">В корзину</span>
+                                <div class="btn-arrow-right__arrow">
+                                    <span class="btn-arrow-right__line-active"></span>
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg> 
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+    
+                    <section class="notification compare">
+                        <div class="notification__wrapper">
+                            <p class="notification__title">Товар добавлен</p>
+                            <button class="btn-arrow-right notification__button">
+                                <span class="btn-arrow-right__title">В сравнение</span>
+                                <div class="btn-arrow-right__arrow">
+                                    <span class="btn-arrow-right__line-active"></span>
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg> 
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+    
+                    <section class="notification favourite">
+                        <div class="notification__wrapper">
+                            <p class="notification__title">Товар добавлен</p>
+                            <button class="btn-arrow-right notification__button">
+                                <span class="btn-arrow-right__title">В избранное</span>
+                                <div class="btn-arrow-right__arrow">
+                                    <span class="btn-arrow-right__line-active"></span>
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg> 
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+                </section>
+                
+
                 <section class="page ">
                     <div class="page__wrapper card-product__page">
                         <a class="page__title-link item" href="#">Главная</a>
@@ -354,14 +402,15 @@
                                             </div>                                          
                                         </section>
                                         <section class="main-information__buttons">
-                                            <button class="main-information__button-buy btn-red-basket">
+                                            <button data-button-buy-card-product class="main-information__button-buy btn-red-basket">
                                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M17.7142 32.75C18.6538 32.75 19.4285 31.994 19.4285 31.0455C19.4285 30.0969 18.6538 29.3409 17.7142 29.3409C16.7746 29.3409 16 30.0969 16 31.0455C16 31.994 16.7746 32.75 17.7142 32.75Z" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     <path d="M31.2133 32.75C32.1528 32.75 32.9275 31.994 32.9275 31.0455C32.9275 30.0969 32.1528 29.3409 31.2133 29.3409C30.2737 29.3409 29.499 30.0969 29.499 31.0455C29.499 31.994 30.2737 32.75 31.2133 32.75Z" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     <path d="M10 11H13.8569L16.7496 27.2273H32.1773" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                     <path d="M16.7497 23.4091H31.7821C31.8936 23.4092 32.0017 23.371 32.0879 23.3011C32.1742 23.2311 32.2333 23.1337 32.2552 23.0255L33.9908 14.4346C34.0048 14.3653 34.0031 14.2938 33.9858 14.2253C33.9685 14.1567 33.9361 14.0929 33.8908 14.0382C33.8455 13.9836 33.7886 13.9396 33.7241 13.9094C33.6596 13.8792 33.5891 13.8636 33.5177 13.8636H14.8213" stroke="#FEFEFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                    <span class="main-information__button-text btn-red-basket__text">Купить</span>
+                                                    <span class="main-information__button-text basket-text btn-red-basket__text">Купить</span>
+                                                    <span class="main-information__button-text add-basket btn-red-basket__text">В корзине</span>
                                             </button>
                                             <button data-button-open-modal-on-click class="main-information__button-buy-on-click btn-transparent">
                                                 <span class="main-information__button-text on-click">Быстрый заказ</span>
@@ -643,13 +692,11 @@
                                 <span class="characteristics__open-all-title">Все характеристики</span>
                                 <span class="characteristics__open-all-title hidden">Скрыть</span>
                                 <div class="characteristics__open-all-arrow">
-                                    <span class="characteristics__open-all-line"></span>
                                     <svg class="characteristics__open-all-arrow-svg" width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="characteristics__arrow-svg" d="M14.5 19L22.5 25L30.5 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>   
                                 </div>
                                 <div class="characteristics__open-all-arrow-hidden">
-                                    <span class="characteristics__open-all-line-hidden"></span>
                                     <svg class="characteristics__open-all-arrow-svg-hidden" width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="characteristics__arrow-svg hidden" d="M14.5 19L22.5 25L30.5 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>   
@@ -807,11 +854,10 @@
                         <button data-button-show-reviews class="btn-arrow-right reviews__button-show-all">
                             <span class="btn-arrow-right__title reviews__button-show-all-title">Все характеристики</span>
                             <span class="btn-arrow-right__title reviews__button-show-all-hidden-title">Скрыть</span>
-                            <div class="btn-arrow-right__arrow">
-                                <span class="btn-arrow-right__line-active"></span>
-                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="btn-arrow-right__arrow-state" d="M26 30L32 22L26 14" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg> 
+                            <div class="reviews__arrow-down">
+                                <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="reviews__arrow-down-state" d="M14.5 19L22.5 25L30.5 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
                         </button>
                     </div>                   
