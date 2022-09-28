@@ -338,8 +338,15 @@
         margin-bottom: 4px;
     }
 
+    &__register-acc-wrapper:hover {
+        background-color: $color-white
+    }
+
     &__input {
         &.enter {
+            max-width: 100%;
+        }
+        &.email-forget-pass {
             max-width: 100%;
         }
     }

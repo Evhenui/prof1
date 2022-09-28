@@ -13,7 +13,10 @@ export let filter = function() {
               scrollBarr = filterSection.querySelector('[data-scroll-bar]'),
               emptySection = filterSection.querySelector('[data-empty-section]'),
               buttonsChangeView = filterSection.querySelectorAll('[data-button-list-view]'),
-              productItems = filterSection.querySelectorAll('[data-product-item-change-view]');
+              productItems = filterSection.querySelectorAll('[data-product-item-change-view]'),
+              leftNavigation = filterSection.querySelector('[data-left-navigation-bar]'),
+              emptyLeftNavigation = filterSection.querySelector('[data-left-navigation-bar-empty]');
+
 
               function delActiv(param) {
                 param.forEach((el) => {
@@ -27,17 +30,11 @@ export let filter = function() {
                 })
               }
 
-              const sizeNavFilter = document.querySelector('[data-top-navigation-section]').offsetHeight,
-                    sizeNamePage = document.querySelector('[data-title-page-size]').offsetHeight,
-                    sizePage = document.querySelector('[data-page]').offsetHeight,
-                    sizeHeader = 68;
-              window.getComputedStyle(navigationBar).getPropertyValue('--heightNav');
-              navigationBar.style.setProperty('--heightNav', (window.innerHeight) - sizeNavFilter - sizeNamePage - sizePage - sizeHeader + 'px');
-
         filterSwitch.addEventListener('click', function() {
             this.classList.toggle('active');
             navigationBar.classList.toggle('active');
             catalogIntems.classList.toggle('active');
+            emptyLeftNavigation.classList.toggle('active');
         });
 
         dropdownFilter.addEventListener('click', function() {
@@ -46,7 +43,6 @@ export let filter = function() {
 
         filterSection.addEventListener('click',(e)=>{
             const click = e.composedPath().includes(dropdownFilter);
-            console.log(click)
             if(!click) {
                 dropdownFilter.classList.remove('active');
             }
@@ -69,6 +65,17 @@ export let filter = function() {
             } else {
                 scrollBarr.classList.remove('active');
                 emptySection.classList.remove('active');
+            }
+        });
+
+        window.addEventListener("scroll", function () {
+            
+            if (window.scrollY > 121) {
+                leftNavigation.classList.add('scroll');
+                emptyLeftNavigation.classList.add('scroll');
+            }else {
+                leftNavigation.classList.remove('scroll');
+                emptyLeftNavigation.classList.remove('scroll');
             }
         });
 

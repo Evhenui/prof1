@@ -847,7 +847,7 @@
 .about-company {
     &__wrapper {
        @extend %size-page;
-       padding: 0 152px;
+       padding: 0 48px;
         @include __960 {
             @include padding-mob;
         }

@@ -30,7 +30,6 @@ html {
   &.error &__input {
     border-color: $color-red-50;
     color: $color-red-40;
-    margin-bottom: 4px;
   }
   &.error &__prompt-wrapper{
     display: block;
@@ -73,6 +72,7 @@ html {
   }
 
   &__prompt-wrapper {
+    position: absolute;
     display: none;
     padding-left: 16px;
   }
@@ -106,7 +106,6 @@ html {
   &.error &__input {
     border-color: $color-red-50;
     color: $color-red;
-    margin-bottom: 4px;
   }
   &.error &__prompt-wrapper{
     display: block;
@@ -148,6 +147,7 @@ html {
   }
 
   &__prompt-wrapper {
+    position: absolute;
     display: none;
     padding-left: 16px;
   }

@@ -1,7 +1,3 @@
-:root {
-    --heightNav: 500px;
-}
-
 .filter {
     &__wrapper {   
         padding: 68px 0 120px 0;
@@ -50,8 +46,6 @@
         display: flex;
         column-gap: 4px;
     }
-
-   
 
     &__number-filter {
         display: none;
@@ -103,8 +97,7 @@
     }
 
     &__filters.active &__arrow-wrapper {
-        transform: rotateZ(0deg);
-        
+        transform: rotateZ(0deg); 
     }
 
     &__filters.active:hover &__name-section {
@@ -156,7 +149,6 @@
     &__title-menu {
        display: flex;
        align-items: center;
-
     }
 
     &__change-view {
@@ -187,9 +179,6 @@
         fill: $color-red;
     }
     
-    &.active &__title-menu-wrapper {
-        row-gap: 8px;
-    }
 
     &__title-menu-wrapper {
         border-left: 1px solid $color-red-30;
@@ -213,12 +202,11 @@
             }
         }
     }
-
    
-
     &__navigation-main {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         column-gap: 8px;
         height: 100%;
         @include __1410 {
@@ -255,13 +243,17 @@
         display: flex;
         column-gap: 12px;
         flex-wrap: wrap;
-        row-gap: 4px;
+        row-gap: 8px;
         @include __1410 {
             column-gap: 8px;
         }
         @include __960 {
             flex-wrap: nowrap;
         }
+    }
+
+    &__menu-item-text-search {
+        @extend %centre-flex-columb;
     }
 
     &__menu-item {
@@ -313,20 +305,28 @@
         transition: all .1s ease-in-out;
     }
 
+    &.active &__dropdown-list {
+        top: 45px;
+    }
+
     &__dropdown {
+        height: 100%;
         flex: 1 0 232px;
         position: relative;
         cursor: pointer;
         display: flex;
         align-items: center;
         padding-left: 16px;
-        transition: all .2s ease-in-out;
         border-right: 1px solid #FAD1D6;
         border-left: 1px solid #FAD1D6;
         &.active {
            outline: 1px solid $color-red;
            border-color: $color-white;
         }
+        &:hover {
+            outline: 1px solid $color-red;
+            border-color: $color-white;
+         }
         @include __960 {
             display: none;
         }
@@ -393,7 +393,7 @@
             transition: all .1s ease-in-out;
         }
         &:hover {
-            background-color: $color-gray-10;
+            background-color: #F7F7F7;
             &::before {
                 opacity: 1;
             }
@@ -427,15 +427,42 @@
 }
 
 .left-navigation {
+    height: 100%;
+    align-self: flex-start;
     max-width: 325px;
     width: 100%;
     padding-right: 20px;
-    overflow-y: auto;
-    height: var(--heightNav);
+    overflow: auto;
     border-right: 1px solid #FAD1D6;
     transition: all .2s ease-in-out;
+    @include __960 {
+        border-right: none;
+    }
     &::-webkit-scrollbar {
         width: 0; 
+    }
+    &.scroll {
+        position: fixed;
+        top: 114px;
+        @include __960 {
+            position: static;
+        }
+    }
+
+    &__empty{
+        &.scroll {
+            flex: 0 0 325px;
+            height: 1100px;
+            @include __960 {
+                height: 0;
+                flex: 0;
+            }
+        } 
+       &.active {
+        flex: 0;
+        height: 0;
+        transition: all .2s ease-in-out;
+       }
     }
    
     @include __1250 {
@@ -447,6 +474,7 @@
         height: 1125px;
     }
     &.active {
+        border: none;
         width: 0;
         padding: 0;
         height: 0;
@@ -702,7 +730,6 @@
             background: $color-white; 
         }
         &::-webkit-scrollbar-thumb {
-
             border: 3px solid $color-gray-40;
             &:hover {
                 border-color: $color-red-40;
