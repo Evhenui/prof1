@@ -358,6 +358,18 @@
         }
     }
 
+    &__wrapper-input-checkbox.active &__input-image-item {
+        display: none;
+    }
+
+    &__wrapper-input-checkbox.active &__input-image-item-active {
+        display: block;
+    }
+
+    &__input-image-item-active {
+        display: none
+    }
+
 
     &__input-image-wrapper {
         @extend %flex-center-horizontal;

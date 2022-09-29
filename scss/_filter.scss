@@ -448,6 +448,14 @@
             position: static;
         }
     }
+    &.scroll-stop {
+        position: absolute;
+        top: 350px;
+        height: auto;
+        @include __960 {
+            position: static;
+        }
+    }
 
     &__empty{
         &.scroll {

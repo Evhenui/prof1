@@ -349,8 +349,17 @@ html {
     width: 60px;
     opacity: 1;
   }
-  &:hover &__svg {
-    stroke: $color-white;
+  &:hover &__img-active {
+    display: block;
+  }
+  &:hover &__img {
+    display: none;
+  }
+  &__img-active {
+    display: none;
+  }
+  &__img-disabled {
+    display: none;
   }
   &:active {
     background-color: $color-red-70;
@@ -363,8 +372,17 @@ html {
     outline-color: $color-gray-60;
     background-color: $color-white;
   }
-  &:disabled &__svg {
-    stroke: $color-gray-60;
+  &:disabled &__img-disabled {
+    display: block;
+  }
+  &:disabled &__img {
+    display: none;
+  }
+  &:disabled:hover &__img-disabled {
+    display: none;
+  }
+  &:disabled:hover {
+    background-color: $color-gray-60;
   }
   &__text {
     width: 0;

@@ -69,13 +69,17 @@ export let filter = function() {
         });
 
         window.addEventListener("scroll", function () {
-            
             if (window.scrollY > 121) {
                 leftNavigation.classList.add('scroll');
                 emptyLeftNavigation.classList.add('scroll');
+                if(window.scrollY > 500) {
+                    leftNavigation.classList.replace('scroll' ,'scroll-stop');
+                } else {
+                    leftNavigation.classList.remove('scroll-stop');
+                }
             }else {
-                leftNavigation.classList.remove('scroll');
-                emptyLeftNavigation.classList.remove('scroll');
+                leftNavigation.classList.remove('scroll', 'scroll-stop');
+                emptyLeftNavigation.classList.remove('scroll', 'scroll-stop');
             }
         });
 
