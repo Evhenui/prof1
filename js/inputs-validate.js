@@ -369,9 +369,17 @@ export let inputsValidate = function() {
             const inputs = modalReview.querySelectorAll('[data-input-stay-review]'),
                   buttonSend = modalReview.querySelector('[data-button-modal-review]'),
                   inputTelContainer = modalReview.querySelector('[data-input-tel-stay-review-contaner]'),
-                  inputTel = modalReview.querySelector('[data-input-tel-stay-review]');
+                  inputTel = modalReview.querySelector('[data-input-tel-stay-review]'),
+                  containerInputNameReview = modalReview.querySelector('[data-input-name-stay-review-container]'),
+                  inputNameReview = modalReview.querySelector('[data-input-stay-review-name]');
 
                   preventDefaultButton(buttonSend);
+
+                  inputNameReview.addEventListener('input', function() {
+                    this.value = this.value.replace(/\s+/gi,'');
+                    exam(regText, inputNameReview, false, containerInputNameReview);
+                  })
+
 
                   inputs.forEach((el) => {
                     el.addEventListener('input', () => {
