@@ -9519,7 +9519,7 @@ label {
 }
 
 .left-navigation__filter-checkbox-hidden::-webkit-scrollbar {
-  width: 4px;
+  width: 14px;
 }
 
 .left-navigation__filter-checkbox-hidden::-webkit-scrollbar-track {
@@ -9527,15 +9527,16 @@ label {
 }
 
 .left-navigation__filter-checkbox-hidden::-webkit-scrollbar-thumb {
-  border: 3px solid #C7C7C7;
+  background: #C7C7C7;
+  border: 5px solid #FEFEFE;
 }
 
 .left-navigation__filter-checkbox-hidden::-webkit-scrollbar-thumb:hover {
-  border-color: #F5A3AD;
+  background-color: #F5A3AD;
 }
 
 .left-navigation__filter-checkbox-hidden::-webkit-scrollbar-thumb:active {
-  border-color: #F07585;
+  background-color: #F07585;
 }
 
 .left-navigation__buttons {

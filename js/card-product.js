@@ -44,6 +44,32 @@ export let cardProduct = function() {
               item.classList.add('active');
             });
         });
+        window.addEventListener('scroll', function() {
+          navigationPageItems.forEach((item) => {
+            if (window.scrollY < 800) {
+              if(item.classList.contains('all-about-item')) {
+                delActiv(navigationPageItems);
+                item.classList.add('active');
+              }
+            } else if (window.scrollY > 800 && window.scrollY < 1550) {
+              if(item.classList.contains('characteristics-item')) {
+                delActiv(navigationPageItems);
+                item.classList.add('active');
+              }
+            } else if(window.scrollY > 1600 && window.scrollY < 2800) {
+              if(item.classList.contains('reviews-item')) {
+                delActiv(navigationPageItems);
+                item.classList.add('active');
+              }
+            } else if (window.scrollY > 2800){
+              if(item.classList.contains('recommendation-item')) {
+                delActiv(navigationPageItems);
+                item.classList.add('active');
+              }
+            }
+        });
+         
+        })
         //----------------color select-------------------------------
         colorItems.forEach((item) => {
           item.addEventListener("click", function () {
