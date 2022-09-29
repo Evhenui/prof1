@@ -22,7 +22,15 @@ export let cardProduct = function() {
               navigationPageEmpty = cardProduct.querySelector('[data-navigation-scroll-card-product-empty]'),
               buttonBuy = cardProduct.querySelector('[data-button-buy-card-product]'),
               notificationBasket = cardProduct.querySelector('[data-notification-basket]'),
-              sectionCardProduct = document.querySelectorAll('[data-section-card-product]');
+              sectionCardProduct = cardProduct.querySelectorAll('[data-section-card-product]');
+
+            /* const navSecScr = cardProduct.querySelector('[data-sc]');
+              navSecScr.addEventListener('scroll', function() {
+                navigationPageItems.forEach(el => {
+                  console.log(navSecScr.scrollLeft)
+                })
+              })*/
+
 
               buttonBuy.addEventListener('click', function() {
                 this.classList.add('active');
@@ -48,13 +56,13 @@ export let cardProduct = function() {
 
         window.addEventListener('scroll', function() {
           let scrollDistansce = window.scrollY,
-              sizeHeader = 68;
+              sizeHeader = 88;
               sectionCardProduct.forEach((el, i) => {
             if(el.offsetTop - navigationPage.clientHeight - sizeHeader <= scrollDistansce) {
               navigationPageItems.forEach(el => {
                 if(el.classList.contains('active')) {
-                  el.classList.remove('active');
-                }
+                  el.classList.remove('active');                
+                }               
               })
               navigationPageItems[i].classList.add('active')
             }
@@ -62,33 +70,6 @@ export let cardProduct = function() {
           })
          
         })
-     /*   window.addEventListener('scroll', function() {
-          navigationPageItems.forEach((item) => {
-            if (window.scrollY < 800) {
-              
-              if(item.classList.contains('all-about-item')) {
-                delActiv(navigationPageItems);
-                item.classList.add('active');
-              }
-            } else if (window.scrollY > 800 && window.scrollY < 1550) {
-              if(item.classList.contains('characteristics-item')) {
-                delActiv(navigationPageItems);
-                item.classList.add('active');
-              }
-            } else if(window.scrollY > 1600 && window.scrollY < 2500) {
-              if(item.classList.contains('reviews-item')) {
-                delActiv(navigationPageItems);
-                item.classList.add('active');
-              }
-            } else if (window.scrollY > 2500){
-              if(item.classList.contains('recommendation-item')) {
-                delActiv(navigationPageItems);
-                item.classList.add('active');
-              }
-            }
-        });
-         
-        })*/
         //----------------color select-------------------------------
         colorItems.forEach((item) => {
           item.addEventListener("click", function () {
