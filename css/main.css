@@ -4228,7 +4228,13 @@ label {
 .characteristics {
   position: relative;
   margin-bottom: 80px;
-  scroll-margin-top: 120px;
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 960px) {
+  .characteristics {
+    scroll-margin-top: 40px;
+  }
 }
 
 .characteristics__wrapper {
@@ -4541,7 +4547,13 @@ label {
 
 .reviews {
   margin-bottom: 160px;
-  scroll-margin-top: 150px;
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 960px) {
+  .reviews {
+    scroll-margin-top: 115px;
+  }
 }
 
 @media (max-width: 960px) {
@@ -4802,7 +4814,7 @@ label {
 }
 
 .recommendation {
-  scroll-margin-top: 160px;
+  scroll-margin-top: 110px;
 }
 
 .recommendation__wrapper {

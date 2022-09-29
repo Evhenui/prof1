@@ -21,7 +21,8 @@ export let cardProduct = function() {
               navigationPage = cardProduct.querySelector('[data-navigation-scroll-card-product]'),
               navigationPageEmpty = cardProduct.querySelector('[data-navigation-scroll-card-product-empty]'),
               buttonBuy = cardProduct.querySelector('[data-button-buy-card-product]'),
-              notificationBasket = cardProduct.querySelector('[data-notification-basket]');
+              notificationBasket = cardProduct.querySelector('[data-notification-basket]'),
+              sectionCardProduct = document.querySelectorAll('[data-section-card-product]');
 
               buttonBuy.addEventListener('click', function() {
                 this.classList.add('active');
@@ -44,9 +45,27 @@ export let cardProduct = function() {
               item.classList.add('active');
             });
         });
+
         window.addEventListener('scroll', function() {
+          let scrollDistansce = window.scrollY,
+              sizeHeader = 68;
+              sectionCardProduct.forEach((el, i) => {
+            if(el.offsetTop - navigationPage.clientHeight - sizeHeader <= scrollDistansce) {
+              navigationPageItems.forEach(el => {
+                if(el.classList.contains('active')) {
+                  el.classList.remove('active');
+                }
+              })
+              navigationPageItems[i].classList.add('active')
+            }
+            
+          })
+         
+        })
+     /*   window.addEventListener('scroll', function() {
           navigationPageItems.forEach((item) => {
             if (window.scrollY < 800) {
+              
               if(item.classList.contains('all-about-item')) {
                 delActiv(navigationPageItems);
                 item.classList.add('active');
@@ -56,12 +75,12 @@ export let cardProduct = function() {
                 delActiv(navigationPageItems);
                 item.classList.add('active');
               }
-            } else if(window.scrollY > 1600 && window.scrollY < 2800) {
+            } else if(window.scrollY > 1600 && window.scrollY < 2500) {
               if(item.classList.contains('reviews-item')) {
                 delActiv(navigationPageItems);
                 item.classList.add('active');
               }
-            } else if (window.scrollY > 2800){
+            } else if (window.scrollY > 2500){
               if(item.classList.contains('recommendation-item')) {
                 delActiv(navigationPageItems);
                 item.classList.add('active');
@@ -69,7 +88,7 @@ export let cardProduct = function() {
             }
         });
          
-        })
+        })*/
         //----------------color select-------------------------------
         colorItems.forEach((item) => {
           item.addEventListener("click", function () {

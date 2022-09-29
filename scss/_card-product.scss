@@ -708,7 +708,10 @@
 .characteristics {
     position: relative;
     margin-bottom: 80px;
-    scroll-margin-top: 120px;
+    scroll-margin-top: 100px;
+    @include __960 {
+        scroll-margin-top: 40px;  
+    }
     &__wrapper {
         @extend %size-page;     
         background-color: $color-white;
@@ -931,7 +934,10 @@
 
 .reviews {
     margin-bottom: 160px;
-    scroll-margin-top: 150px;
+    scroll-margin-top: 80px;
+    @include __960 {
+        scroll-margin-top: 115px;  
+    }
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
@@ -1125,7 +1131,7 @@
 }
 
 .recommendation {
-    scroll-margin-top: 160px;
+    scroll-margin-top: 110px;
     &__wrapper {
         @extend %size-page; 
         padding-bottom: 100px;
