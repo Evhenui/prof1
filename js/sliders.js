@@ -155,6 +155,29 @@ export let sliders = function() {
               el: '.current-offers__novelties-scrollbar',
               draggable: true
             },
+            breakpoints: {
+              0: { 
+                slidesPerView: 1.1, 
+              }, 
+              400: { 
+                slidesPerView: 1.3, 
+              }, 
+              520: { 
+                slidesPerView: 1.5, 
+              },
+              600: { 
+                slidesPerView: 2, 
+              },
+              820: { 
+                slidesPerView: 2.5, 
+              },
+              1000: { 
+                slidesPerView: 3, 
+              },
+              1300: { 
+                slidesPerView: 4, 
+              }
+            }
           });
     
           const sliderStock = new Swiper('.current-offers__slider-stock', {
@@ -173,6 +196,29 @@ export let sliders = function() {
               el: '.current-offers__stock-scrollbar',
               draggable: true
             },
+            breakpoints: {
+              0: { 
+                slidesPerView: 1.1, 
+              }, 
+              400: { 
+                slidesPerView: 1.3, 
+              }, 
+              520: { 
+                slidesPerView: 1.5, 
+              },
+              600: { 
+                slidesPerView: 2, 
+              },
+              820: { 
+                slidesPerView: 2.5, 
+              },
+              1000: { 
+                slidesPerView: 3, 
+              },
+              1300: { 
+                slidesPerView: 4, 
+              }
+            }
           });
         }
 
@@ -335,7 +381,7 @@ export let sliders = function() {
                   }   
                 }
             }
-          }
+    }
 
 
     if(newsOne !== null) {

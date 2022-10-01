@@ -68,7 +68,7 @@ export let filter = function() {
             }
         });
 
-        window.addEventListener("scroll", function () {
+      /*  window.addEventListener("scroll", function () {
             if (window.scrollY > 121) {
                 leftNavigation.classList.add('scroll');
                 emptyLeftNavigation.classList.add('scroll');
@@ -81,7 +81,7 @@ export let filter = function() {
                 leftNavigation.classList.remove('scroll', 'scroll-stop');
                 emptyLeftNavigation.classList.remove('scroll', 'scroll-stop');
             }
-        });
+        });*/
 
         buttonsChangeView.forEach((item) => {
             item.addEventListener('click', function() {

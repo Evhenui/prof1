@@ -56,7 +56,7 @@ export let cardProduct = function() {
 
         window.addEventListener('scroll', function() {
           let scrollDistansce = window.scrollY,
-              sizeHeader = 88;
+              sizeHeader = 68;
               sectionCardProduct.forEach((el, i) => {
             if(el.offsetTop - navigationPage.clientHeight - sizeHeader <= scrollDistansce) {
               navigationPageItems.forEach(el => {

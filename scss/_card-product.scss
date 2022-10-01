@@ -1533,7 +1533,7 @@
         visibility: hidden;
         z-index: -1;
         &.active {
-            z-index: 4;
+            z-index: 3;
             opacity: 1;
             visibility: visible;
         }
