@@ -34,10 +34,12 @@ export let filter = function() {
             if (window.scrollY > 121) {
                 leftNavigation.classList.add('scroll');
                 emptyLeftNavigation.classList.add('scroll');
-                if(window.scrollY > catalogIntems.offsetHeight - 300) {
+                if(window.scrollY > catalogIntems.offsetHeight - 490) {
                     leftNavigation.classList.replace('scroll' ,'scroll-stop');
+                    emptyLeftNavigation.classList.replace('scroll' ,'scroll-stop');
                 } else {
                     leftNavigation.classList.remove('scroll-stop');
+                    emptyLeftNavigation.classList.remove('scroll-stop');
                 }
             }else {
                 leftNavigation.classList.remove('scroll', 'scroll-stop');
