@@ -98,6 +98,12 @@
   color: $color;
 }
 
+@mixin set-item-count-in-row($count) {
+  width: calc(
+    (100% - #{($count - 1)} * #{$product-gallery-margin}) / #{$count}
+  );
+}
+
 @mixin card-prod-cat-late($backgroundColor: $color-orange) {
   padding: 4px 8px;
   position: absolute;
@@ -178,7 +184,6 @@
     @content;
   }
 }
-
 
 @mixin __1280 {
   @media (max-width: 1280px) {
@@ -266,6 +271,12 @@
 
 @mixin __650 {
   @media (max-width: 650px) {
+    @content;
+  }
+}
+
+@mixin __680 {
+  @media (max-width: 680px) {
     @content;
   }
 }

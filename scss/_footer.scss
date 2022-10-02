@@ -81,6 +81,7 @@
   &__input-text {
     background-color: $color-black;
   }
+
   &__form-btn {
     max-width: 240px;
     width: 100%;
@@ -169,5 +170,12 @@
     &:hover {
       color: $color-white;
     }
+  }
+}
+
+.footer__inp {
+  @include __640 {
+    width: 100%;
+    max-width: 100%;
   }
 }

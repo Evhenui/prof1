@@ -1,863 +1,944 @@
+:root {
+  --position: 0;
+  --top: 0;
+}
+
 .filter {
-    &__wrapper {   
-        padding: 68px 0 120px 0;
-        position: relative;
-    }
-
-    &__name-page {
-        padding: 0 48px;
-        @extend %size-page;
-        margin-bottom: 20px;
-        @include text($size: 2rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 44px);
-        @include __960 {
-            padding-left: 16px;
-        }
-    }
-}
-.page {
-
     &__wrapper {
-        @extend %size-page;
-        padding: 16px 48px 20px 48px;
-        @include __960 {
-            @include padding-mob;
-        }
+      padding: 68px 0 120px 0;
+      position: relative;
     }
-
-}
-
-.top-navigation {
+  
+    &__name-page {
+      padding: 0 48px;
+      @extend %size-page;
+      margin-bottom: 20px;
+      @include text(
+        $size: 2rem,
+        $color: $color-black,
+        $textAlign: left,
+        $fontWeight: 700,
+        $lineHeight: 44px
+      );
+      @include __960 {
+        padding-left: 16px;
+      }
+    }
+  }
+  .page {
+    &__wrapper {
+      @extend %size-page;
+      padding: 16px 48px 20px 48px;
+      @include __960 {
+        @include padding-mob;
+      }
+    }
+  }
+  
+  .top-navigation {
     border-top: 1px solid $color-red-30;
     border-bottom: 1px solid $color-red-30;
     background-color: $color-white;
     @include __960 {
-        border: none;
+      border: none;
     }
     &.active {
-        position: fixed;
-        top: 68px;
-        left: 0;
-        z-index: 2;
-        width: 100%;
-        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+      position: fixed;
+      top: 68px;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
     }
-
+  
     &__mobile-wrapper {
-        display: flex;
-        column-gap: 4px;
+      display: flex;
+      column-gap: 4px;
     }
-
+  
     &__number-filter {
-        display: none;
-        width: 20px;
-        height: 21px;
-        border-radius: 50%;
-        background-color: $color-black;
-        @include text( $size: 0.75rem, $textAlign: center, $color: #FEFEFE, $fontWeight: 700, $lineHeight: 20px);
-        @include __960 {
-            display: inline-block;
-        }
+      display: none;
+      width: 20px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: $color-black;
+      @include text(
+        $size: 0.75rem,
+        $textAlign: center,
+        $color: #fefefe,
+        $fontWeight: 700,
+        $lineHeight: 20px
+      );
+      @include __960 {
+        display: inline-block;
+      }
     }
-
+  
     &__wrapper {
-        transition: all .2s ease-in-out;
-        padding: 0 48px;
-        @extend %size-page;
-        display: flex;
-        @include __960 {
-            padding: 0 16px;
-            align-items: center;
-            justify-content: space-between;
-        }
+      transition: all 0.2s ease-in-out;
+      padding: 0 48px;
+      @extend %size-page;
+      display: flex;
+      @include __960 {
+        padding: 0 16px;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
-
+  
     &__empty-section {
-        display: none;
+      display: none;
     }
-
+  
     &__filters {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        column-gap: 8px;
-        @include __960 {
-            column-gap: 4px;
-            outline: 1px solid $color-red-30;
-            padding-left: 16px;
-        }
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      @include __960 {
+        column-gap: 4px;
+        outline: 1px solid $color-red-30;
+        padding-left: 16px;
+      }
     }
-
+  
     &__filters:hover &__name-section {
-        color: $color-red;
+      color: $color-red;
     }
-
+  
     &__filters:hover &__arrow-state {
-        stroke: $color-red;
+      stroke: $color-red;
     }
-
+  
     &__filters.active &__arrow-wrapper {
-        transform: rotateZ(0deg); 
+      transform: rotateZ(0deg);
     }
-
+  
     &__filters.active:hover &__name-section {
-        color: $color-black;
+      color: $color-black;
     }
-
+  
     &__filters.active:hover &__arrow-state {
-        stroke: $color-black;
+      stroke: $color-black;
     }
-
+  
     &__image {
-        font-size: 0;
-        @include __960 {
-            display: none;
-        }
+      font-size: 0;
+      @include __960 {
+        display: none;
+      }
     }
-
+  
     &__name-section {
-        transition: all .1s ease-in-out;
-        width: 212px;
-        @include text($size: 1rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 24px);
-        @include __1250 {
-            width: 100px; 
-        }
-        @include __960 {
-            display: none;
-        }
+      transition: all 0.1s ease-in-out;
+      width: 212px;
+      @include text(
+        $size: 1rem,
+        $color: $color-black,
+        $textAlign: left,
+        $fontWeight: 700,
+        $lineHeight: 24px
+      );
+      @include __1250 {
+        width: 100px;
+      }
+      @include __960 {
+        display: none;
+      }
     }
-
+  
     &__name-section-mobile {
-        display: none;
-        @include __960 {
-            display: block;
-            @include text($size: 0.75rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 20px);
-        }
+      display: none;
+      @include __960 {
+        display: block;
+        @include text(
+          $size: 0.75rem,
+          $color: $color-black,
+          $textAlign: left,
+          $fontWeight: 700,
+          $lineHeight: 20px
+        );
+      }
     }
-
+  
     &__arrow-wrapper {
-        font-size: 0;
-        transition: all .2s ease-in-out;
-        transform: rotateZ(180deg);
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      font-size: 0;
+      transition: all 0.2s ease-in-out;
+      transform: rotateZ(180deg);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
-
+  
     &__arrow-state {
-        transition: all .1s ease-in-out;
+      transition: all 0.1s ease-in-out;
     }
-
+  
     &__title-menu {
-       display: flex;
-       align-items: center;
+      display: flex;
+      align-items: center;
     }
-
+  
     &__change-view {
-        display: none;
-        @include __960 {
-            display: block;
-        }
+      display: none;
+      @include __960 {
+        display: block;
+      }
     }
-
-    &__button-normal, &__button-palit {
-        font-size: 0;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
+    &__button-normal,
+    &__button-palit {
+      font-size: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
-
-    &__button-normal.active &__button-normal-state{
-        fill: $color-red;
+  
+    &__button-normal.active &__button-normal-state {
+      fill: $color-red;
     }
-
-    &__button-palit.active &__button-palit-state{
-        fill: $color-red;
+  
+    &__button-palit.active &__button-palit-state {
+      fill: $color-red;
     }
-
+  
     &__button-normal:active &__button-normal-state {
-        fill: $color-red;
+      fill: $color-red;
     }
-
-    &__button-palit:active &__button-palit-state{
-        fill: $color-red;
+  
+    &__button-palit:active &__button-palit-state {
+      fill: $color-red;
     }
-    
-
+  
     &__title-menu-wrapper {
-        border-left: 1px solid $color-red-30;
-        flex: 1 0 788px;
-        display: flex;
-        flex-direction: column;
-        padding: 4px 8px;
-        @include __1410 {
-            flex: 1 0 645px;
+      border-left: 1px solid $color-red-30;
+      flex: 1 0 788px;
+      display: flex;
+      flex-direction: column;
+      padding: 4px 8px;
+      @include __1410 {
+        flex: 1 0 645px;
+      }
+      @include __1280 {
+        flex: 1 0 400px;
+      }
+      @include __960 {
+        display: none;
+        &.mobile {
+          display: flex;
+          border: none;
+          flex: 0;
         }
-        @include __1280 {
-            flex: 1 0 400px;
-        }
-        @include __960 {
-            display: none;
-            &.mobile {
-                display: flex;
-                border: none;
-                flex: 0;
-                
-            }
-        }
+      }
     }
-   
+  
     &__navigation-main {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 8px;
+      height: 100%;
+      @include __1410 {
+        column-gap: 4px;
+      }
+      @include __960 {
         column-gap: 8px;
-        height: 100%;
-        @include __1410 {
-            column-gap: 4px;
+        &.mobile {
+          white-space: nowrap;
+          overflow-y: hidden;
+          &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+          }
         }
-        @include __960 {
-            column-gap: 8px;
-            &.mobile {
-                white-space: nowrap;
-                overflow-y: hidden;
-                &::-webkit-scrollbar {
-                    width: 0;
-                    height: 0;
-                }
-            }
-        }
+      }
     }
-
+  
     &__navigation-scroll {
-        overflow: hidden;
-        height: 0;
-        transition: all .2s ease-in-out;
+      overflow: hidden;
+      height: 0;
+      transition: all 0.2s ease-in-out;
     }
-
+  
     &.active &__navigation-scroll {
       height: 32px;
     }
-
+  
     &__amount-search {
-        @include text($size: 0.75rem, $color: $color-black, $textAlign: left, $fontWeight: 400, $lineHeight: 20px);
+      @include text(
+        $size: 0.75rem,
+        $color: $color-black,
+        $textAlign: left,
+        $fontWeight: 400,
+        $lineHeight: 20px
+      );
     }
-
+  
     &__menu-list {
-        display: flex;
-        column-gap: 12px;
-        flex-wrap: wrap;
-        row-gap: 8px;
-        @include __1410 {
-            column-gap: 8px;
-        }
-        @include __960 {
-            flex-wrap: nowrap;
-        }
+      display: flex;
+      column-gap: 12px;
+      flex-wrap: wrap;
+      row-gap: 8px;
+      @include __1410 {
+        column-gap: 8px;
+      }
+      @include __960 {
+        flex-wrap: nowrap;
+      }
     }
-
+  
     &__menu-item-text-search {
-        @extend %centre-flex-columb;
+      @extend %centre-flex-columb;
     }
-
+  
     &__menu-item {
-        display: flex;
-        align-items: center;
-        column-gap: 6px;
-        cursor: pointer;
-        border: 1px solid $color-gray-40;
-        background-color: $color-white;
-        border-radius: 20px;
-        width: 75px;
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+      cursor: pointer;
+      border: 1px solid $color-gray-40;
+      background-color: $color-white;
+      border-radius: 20px;
+      width: 75px;
+      height: 32px;
+      padding-left: 12px;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        border-color: $color-red-40;
+        background-color: $color-red-10;
+      }
+      &.delete {
+        padding: 0;
+        width: 80px;
         height: 32px;
-        padding-left: 12px;
-        transition: all .1s ease-in-out;
+        @extend %centre-flex-columb;
+        border-color: $color-red-50;
         &:hover {
-            border-color: $color-red-40;
-            background-color: $color-red-10;
+          background-color: $color-red-50;
         }
-        &.delete {
-            padding: 0;
-            width: 80px;
-            height: 32px;
-            @extend %centre-flex-columb;
-            border-color: $color-red-50;
-            &:hover {
-                background-color: $color-red-50;
-            }
-        }
+      }
     }
-
+  
     &__menu-item.delete:hover &__menu-title {
-        color: $color-white;
+      color: $color-white;
     }
-
+  
     &__menu-item:hover &__menu-close-state {
-        stroke-width: 3px;
+      stroke-width: 3px;
     }
-
+  
     &__menu-title {
-        transition: all .1s ease-in-out;
-        @include text($size: 0.75rem, $color: $color-black, $textAlign: left, $fontWeight: 400, $lineHeight: 20px);
+      transition: all 0.1s ease-in-out;
+      @include text(
+        $size: 0.75rem,
+        $color: $color-black,
+        $textAlign: left,
+        $fontWeight: 400,
+        $lineHeight: 20px
+      );
     }
-
+  
     &__menu-close-wrapper {
-        font-size: 0;
+      font-size: 0;
     }
-
+  
     &__menu-close-state {
-        transition: all .1s ease-in-out;
+      transition: all 0.1s ease-in-out;
     }
-
+  
     &.active &__dropdown-list {
-        top: 45px;
+      top: var(--top);
     }
-
+  
     &__dropdown {
-        height: 100%;
-        flex: 1 0 232px;
-        position: relative;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        padding-left: 16px;
-        border-right: 1px solid #FAD1D6;
-        border-left: 1px solid #FAD1D6;
-        &.active {
-           outline: 1px solid $color-red;
-           border-color: $color-white;
-        }
-        &:hover {
-            outline: 1px solid $color-red;
-            border-color: $color-white;
-         }
-        @include __960 {
-            display: none;
-        }
+      height: 100%;
+      flex: 0 0 232px;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      border-right: 1px solid #fad1d6;
+      border-left: 1px solid #fad1d6;
+      &.active {
+        outline: 1px solid $color-red;
+        border-color: $color-white;
+      }
+      &:hover {
+        outline: 1px solid $color-red;
+        border-color: $color-white;
+      }
+   
+      @include __960 {
+        display: none;
+      }
     }
-
-    &__dropdown.active:hover &__dropdown-arrow-state  {
-        stroke: $color-black;
+  
+    &__dropdown.active:hover &__dropdown-arrow-state {
+      stroke: $color-black;
     }
-
+  
     &__dropdown:hover &__dropdown-arrow-state {
-        stroke: $color-red;
+      stroke: $color-red;
     }
-
+  
     &__dropdown.active &__dropdown-arrow {
-        transform: rotateZ(180deg);
+      transform: rotateZ(180deg);
     }
-
+  
     &__dropdown-title {
-        display: block;
-        max-width: 172px;
-        width: 100%;
-        @include text($size: 0.875rem, $color: $color-black, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+      display: block;
+      max-width: 172px;
+      width: 100%;
+      @include text(
+        $size: 0.875rem,
+        $color: $color-black,
+        $textAlign: left,
+        $fontWeight: 400,
+        $lineHeight: 24px
+      );
     }
-
+  
     &__dropdown-arrow {
-        transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
-
+  
     &__dropdown.active &__dropdown-list {
-        opacity: 1;
-        visibility: visible;
-        z-index: 1;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
     }
-
+  
     &__dropdown-list {
-        width: 100%;
-        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
-        background-color: $color-white;
-        position: absolute;
-        transition: all .2s ease-in-out;
-        opacity: 0;
-        visibility: hidden;
-        top: 46px;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        row-gap: 4px;
+      width: 100%;
+      box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+      background-color: $color-white;
+      position: absolute;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
     }
-
+  
     &__dropdown-item {
-        position: relative;
-        transition: all .1s ease-in-out;
-        padding: 8px 16px;
-        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+      position: relative;
+      transition: all 0.1s ease-in-out;
+      padding: 8px 16px;
+      @include text(
+        $size: 0.875rem,
+        $color: $color-gray-80,
+        $textAlign: left,
+        $fontWeight: 400,
+        $lineHeight: 24px
+      );
+      &::before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $color-red-50;
+        opacity: 0;
+        transition: all 0.1s ease-in-out;
+      }
+      &:hover {
+        background-color: #f7f7f7;
         &::before {
-            content: '';
-            width: 2px;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: $color-red-50;
-            opacity: 0;
-            transition: all .1s ease-in-out;
+          opacity: 1;
         }
-        &:hover {
-            background-color: #F7F7F7;
-            &::before {
-                opacity: 1;
-            }
-        }
+      }
     }
-}
-
-.empty-section.active {
+  }
+  
+  .empty-section.active {
     display: block;
     width: 100%;
     height: 46.22px;
-} 
-
-
-.main-info {
+  }
+  
+  .main-info {
     display: flex;
     @extend %size-page;
     @extend %padding-country;
     @include __960 {
-        flex-direction: column;
-        @include padding-mob;
-        padding-top: 12px;
+      flex-direction: column;
+      @include padding-mob;
+      padding-top: 12px;
     }
-
+  
     &__result-search-mobile {
-        display: none;
-        @include __960 {
-            display: block;
-        }
-    } 
-}
-
-.left-navigation {
-    height: 100%;
+      display: none;
+      @include __960 {
+        display: block;
+      }
+    }
+  }
+  
+  .left-navigation {
+    height: var(--height-page);
     align-self: flex-start;
     max-width: 325px;
     width: 100%;
     padding-right: 20px;
     overflow: auto;
-    border-right: 1px solid #FAD1D6;
-    transition: all .2s ease-in-out;
+    border-right: 1px solid #fad1d6;
+    transition: all 0.2s ease-in-out;
     @include __960 {
-        border-right: none;
+      border-right: none;
     }
     &::-webkit-scrollbar {
-        width: 0; 
+      width: 0;
     }
     &.scroll {
-        position: fixed;
-        top: 114px;
-        @include __960 {
-            position: static;
-        }
+      position: fixed;
+      top: 114px;
+      @include __960 {
+        position: static;
+      }
     }
     &.scroll-stop {
-        position: absolute;
-        top: 350px;
-        height: auto;
-        @include __960 {
-            position: static;
-        }
+      position: absolute;
+      top: 350px;
+      height: auto;    
+      @include __960 {
+        position: static;
+      }
     }
-
-    &__empty{
-        &.scroll {
-            flex: 0 0 325px;
-            height: 1100px;
-            @include __960 {
-                height: 0;
-                flex: 0;
-            }
-        } 
-       &.active {
+  
+    &__empty {
+      &.scroll {
+        flex: 0 0 325px;
+        height: 1100px;
+        @include __1250 {
+          flex: 0 0 213px;
+        }
+        @include __960 {
+          height: 0;
+          flex: 0;
+        }
+      }
+      &.active {
         flex: 0;
         height: 0;
-        transition: all .2s ease-in-out;
-       }
+        transition: all 0.2s ease-in-out;
+      }
     }
-   
+  
     @include __1250 {
-        max-width: 206px; 
+      max-width: 213px;
     }
-
+  
     @include __960 {
-        max-width: 100%;
-        height: 1125px;
+      max-width: 100%;
+      height: 1125px;
     }
     &.active {
-        border: none;
-        width: 0;
-        padding: 0;
-        height: 0;
-        overflow: hidden;
+      border: none;
+      width: 0;
+      padding: 0;
+      height: 0;
+      overflow: hidden;
     }
     &__filter-status {
-        padding: 36px 0 24px 4px;
-        border-bottom: 1px solid $color-red-30;
+      padding: 36px 0 24px 4px;
+      border-bottom: 1px solid $color-red-30;
     }
-
-
-
+  
     &__input-checkbox {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+  
+    &__label-checkbox {
+      padding-left: 26px;
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+      position: relative;
+      width: 100%;
+      height: 24px;
+      @include text(
+        $size: 0.875rem,
+        $color: $color-gray-80,
+        $textAlign: left,
+        $fontWeight: 400,
+        $lineHeight: 24px
+      );
+      &:before {
+        content: "";
         position: absolute;
-        z-index: -1;
-        opacity: 0;
-      }
-
-      &__label-checkbox {
-        padding-left: 26px;
-        display: inline-flex;
-        align-items: center;
-        user-select: none;
-        position: relative;
-        width: 100%;
-        height: 24px;
-        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
-        &:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            transition: all .1s ease-in-out;
-            border: 1px solid $color-gray-60;
-        }
-    }
-
-      &__input-checkbox:checked + &__label-checkbox::before {
-        border-color: $color-red;
-        background-color: $color-red;
-        width: 8px;
-        height: 8px;
-      }
-
- 
-      &__input-checkbox:not(:disabled):not(:checked) + &__label-checkbox:hover::before {
-        border-color: $color-gray-100;
-        width: 14px;
-        height: 14px;
-     }
-
-    &__input-checkbox:not(:disabled):active + &__label-checkbox::before {
-        background-color: $color-red;
-        border-color: $color-red;
-    }
-
-    &__input-container {
-        padding: 8px 0 8px 13px;
-        transition: all .1s ease-in-out;
-        position: relative;
-        &:before {
-            content: "";
-            width: 2px;
-            height: 100%;
-            background-color: #F07585;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: all 0.1s ease-in-out;
-        }
-        &:hover {
-            background-color: #F7F7F7;
-            &::before {
-                opacity: 1;
-            }
-        }
-    }
-
-    &__input-container:hover &__label-checkbox {
-        color: $color-gray-100;
-    }
-
-    &__input-container.active:hover &__label-checkbox {
-        color: $color-black;
-    }
-
-    &__filter-price {
-        padding: 36px 0 24px 4px;
-        border-bottom: 1px solid #FAD1D6;
-    }
-
-    &__filter-price-title {
-        cursor: pointer;
-        @extend %centre-space-between;
-        padding: 4px 4px 4px 12px;
-    }
-
-
-    &__filter-price-title:hover &__filter-name {
-        color: $color-red;
-    }
-
-    &__filter-price-title:hover &__filter-arrow-state {
-        stroke: $color-red;
-    }
-
-    &__filter-price.active &__filter-arrow-wrapper {
-        transform: rotateZ(180deg);
-    }
-
-    &__filter-price.active &__filter-price-hidden {
-        height: 104px;
-    }
-
-    &__filter-name {
-        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
-    }
-
-    &__filter-arrow-wrapper {
-        font-size: 0;
-        transition: all .2s ease-in-out;
-    }
-
-    &__filter-arrow {
-        transition: all .2s ease-in-out;
-    }
-
-    &__filter-price-hidden {
-        transition: all .2s ease-in-out;
-        height: 0;
-        overflow: hidden;
-    }
-
-    &__price-controls {
-        position: relative;
-        height: 40px;
-        @extend %flex-center-horizontal;
-        column-gap: 12px;
-        margin-bottom: 38px;
-        input {
-            width: 50px;
-            margin: 0;
-            color: inherit;
-            font: inherit;
-            background: none;
-            border: none;
-            outline: none;
-        }
-    }
-
-    &__price-controls-line {
-        display: block;
-        width: 12px;
-        height: 1px;
-        background-color: $color-gray-60;
-    }
-
-    &__min-price, &__max-price {
-        border-bottom: 1px solid $color-gray-50;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
         display: inline-block;
-        width: 100px;
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
-        cursor: pointer;
-        padding: 8px 16px;
+        width: 12px;
+        height: 12px;
+        transition: all 0.1s ease-in-out;
+        border: 1px solid $color-gray-60;
+      }
     }
-
-    &__range-controls {
-        position: relative;
+  
+    &__input-checkbox:checked + &__label-checkbox::before {
+      border-color: $color-red;
+      background-color: $color-red;
+      width: 8px;
+      height: 8px;
     }
-
-    &__scale {
-        height: 2px;
-        background: $color-white;
+  
+    &__input-checkbox:not(:disabled):not(:checked)
+      + &__label-checkbox:hover::before {
+      border-color: $color-gray-100;
+      width: 14px;
+      height: 14px;
     }
-
-    &__bar {
-        width: 98%;
-        height: 2px;
-        background: #EB475C;
-        border-radius: 2px;
+  
+    &__input-checkbox:not(:disabled):active + &__label-checkbox::before {
+      background-color: $color-red;
+      border-color: $color-red;
     }
-
-    &__range-toggle {
-        transition: all .1s ease-in-out;
+  
+    &__input-container {
+      padding: 8px 0 8px 13px;
+      transition: all 0.1s ease-in-out;
+      position: relative;
+      &:before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: #f07585;
         position: absolute;
-        top: -7px;
-        background-color: $color-white;
-        width: 16px;
-        height: 16px;
-        border: 3px solid #F07585;
-        border-radius: 50%;
-        cursor: pointer;
-        &:hover {
-            border-color: $color-red;
-            width: 24px;
-            height: 24px;
-            top: -10px;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.1s ease-in-out;
+      }
+      &:hover {
+        background-color: #f7f7f7;
+        &::before {
+          opacity: 1;
         }
-        &.range-toggle-min {
-            left: 0px;
-        }
-        &.range-toggle-max {
-            right: 0;
-        }
+      }
     }
-
+  
+    &__input-container:hover &__label-checkbox {
+      color: $color-gray-100;
+    }
+  
+    &__input-container.active:hover &__label-checkbox {
+      color: $color-black;
+    }
+  
+    &__filter-price {
+      padding: 36px 0 24px 4px;
+      border-bottom: 1px solid #fad1d6;
+    }
+  
+    &__filter-price-title {
+      cursor: pointer;
+      @extend %centre-space-between;
+      padding: 4px 4px 4px 12px;
+    }
+  
+    &__filter-price-title:hover &__filter-name {
+      color: $color-red;
+    }
+  
+    &__filter-price-title:hover &__filter-arrow-state {
+      stroke: $color-red;
+    }
+  
+    &__filter-price.active &__filter-arrow-wrapper {
+      transform: rotateZ(180deg);
+    }
+  
+    &__filter-price.active &__filter-price-hidden {
+      height: 104px;
+    }
+  
+    &__filter-name {
+      @include text(
+        $size: 1rem,
+        $textAlign: left,
+        $color: $color-black,
+        $fontWeight: 700,
+        $lineHeight: 24px
+      );
+    }
+  
+    &__filter-arrow-wrapper {
+      font-size: 0;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    &__filter-arrow {
+      transition: all 0.2s ease-in-out;
+    }
+  
+    &__filter-price-hidden {
+      transition: all 0.2s ease-in-out;
+      height: 0;
+      overflow: hidden;
+    }
+  
+    &__price-controls {
+      position: relative;
+      height: 40px;
+      @extend %flex-center-horizontal;
+      column-gap: 12px;
+      margin-bottom: 38px;
+      input {
+        width: 50px;
+        margin: 0;
+        color: inherit;
+        font: inherit;
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
+  
+    &__price-controls-line {
+      display: block;
+      width: 12px;
+      height: 1px;
+      background-color: $color-gray-60;
+    }
+  
+    &__min-price,
+    &__max-price {
+      border-bottom: 1px solid $color-gray-50;
+      display: inline-block;
+      width: 100px;
+      @include text(
+        $size: 0.875rem,
+        $textAlign: left,
+        $color: $color-gray-80,
+        $fontWeight: 400,
+        $lineHeight: 24px
+      );
+      cursor: pointer;
+      padding: 8px 16px;
+    }
+  
+    &__range-controls {
+      position: relative;
+    }
+  
+    &__scale {
+      height: 2px;
+      background: $color-white;
+    }
+  
+    &__bar {
+      width: 98%;
+      height: 2px;
+      background: #eb475c;
+      border-radius: 2px;
+    }
+  
+    &__range-toggle {
+      transition: all 0.1s ease-in-out;
+      position: absolute;
+      top: -7px;
+      background-color: $color-white;
+      width: 16px;
+      height: 16px;
+      border: 3px solid #f07585;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        border-color: $color-red;
+        width: 24px;
+        height: 24px;
+        top: -10px;
+      }
+      &.range-toggle-min {
+        left: 0px;
+      }
+      &.range-toggle-max {
+        right: 0;
+      }
+    }
+  
     &__filter-checkbox {
-        position: relative;
-        padding: 36px 0 24px 4px;
-        border-bottom: 1px solid $color-red-30;
+      position: relative;
+      padding: 36px 0 24px 4px;
+      border-bottom: 1px solid $color-red-30;
     }
-
+  
     &__filter-checkbox.active &__filter-checkbox-hidden {
-        height: 172px;
+      height: 172px;
     }
-
+  
     &__filter-checkbox.active &__filter-arrow {
-        transform: rotateZ(180deg);
+      transform: rotateZ(180deg);
     }
-
+  
     &__filter-checkbox.last {
-        border-bottom: none;
+      border-bottom: none;
     }
-
+  
     &__filter-checkbox-title {
-        @extend %centre-space-between;
-        padding: 4px 4px 4px 12px;
-        cursor: pointer;
+      @extend %centre-space-between;
+      padding: 4px 4px 4px 12px;
+      cursor: pointer;
     }
-
+  
     &__filter-checkbox-title:hover &__filter-name {
-        color: $color-red;
+      color: $color-red;
     }
-
+  
     &__filter-checkbox-title:hover &__filter-arrow-state {
-        stroke: $color-red;
+      stroke: $color-red;
     }
-
-
+  
     &__filter-checkbox-hidden {
-        transition: all .2s ease-in-out;
-        height: 0;
-        overflow: auto;
-        &::-webkit-scrollbar {
-            width: 14px; 
-        }
-        &::-webkit-scrollbar-track {
-            background: $color-white; 
-        }
-        &::-webkit-scrollbar-thumb {
-            background: $color-gray-40;
-            border: 5px solid $color-white;
-            &:hover {
-                background-color: $color-red-40;
-            }
-            &:active {
-                background-color: $color-red-50;
-            }
-        }
-    }
-
-    &__buttons {
-        padding-top: 60px;
-        display: flex;
-        align-items: center;
-        column-gap: 11px;
-    }
-
-    &__button-show, &__button-clear {
-        width: 100%;
-        padding: 16px 0;
-    }
-
-    &__button-show {
-        border: 1px solid $color-black;
+      transition: all 0.2s ease-in-out;
+      height: 0;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 14px;
+      }
+      &::-webkit-scrollbar-track {
+        background: $color-white;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color-gray-40;
+        border: 5px solid $color-white;
         &:hover {
-            border-color: $color-red;
+          background-color: $color-red-40;
         }
         &:active {
-            border-color: #B81429;
+          background-color: $color-red-50;
         }
+      }
     }
-
- 
-}
-
-.items {
-
+  
+    &__buttons {
+      padding-top: 60px;
+      display: flex;
+      align-items: center;
+      column-gap: 11px;
+    }
+  
+    &__button-show,
+    &__button-clear {
+      width: 100%;
+      padding: 16px 0;
+    }
+  
+    &__button-show {
+      border: 1px solid $color-black;
+      &:hover {
+        border-color: $color-red;
+      }
+      &:active {
+        border-color: #b81429;
+      }
+    }
+  }
+  
+  .items {
     &__wrapper {
-        padding: 24px 0 0 19px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 32px;
-        position: relative;
-        &.active {
-            padding-left: 0;
-        }
+      padding: 24px 0 0 19px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap);
+      position: relative;
+      &.active {
+        padding-left: 0;
+      }
     }
-
+  
+    & .card-item {
+      @include set-item-count-in-row(3);
+      @include __1050 {
+        @include set-item-count-in-row(2);
+      }
+      @include __680 {
+        @include set-item-count-in-row(1);
+      }
+    }
+  
     &__navigation-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 0 176px 0;
-        row-gap: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 0 176px 0;
+      row-gap: 36px;
     }
-
+  
     &__navigation-button-more {
-        padding: 16px 0;
-        max-width: 175px;
-        width: 100%;
+      padding: 16px 0;
+      max-width: 175px;
+      width: 100%;
     }
-
+  
     &__navigation-pages {
-        display: flex;
-        align-items: center;
-        column-gap: 8px;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
     }
-
+  
     &__button-right {
-        padding: 0;
+      padding: 0;
     }
-
+  
     &__pagination {
-        display: flex;
-        align-items: center
+      display: flex;
+      align-items: center;
     }
-
+  
     &__page-item {
-        position: relative;
-        transition: all .1s ease-in-out;
-        cursor: pointer;
-        @extend %centre-flex-columb;
-        width: 44px;
-        height: 44px;
-        &:after {
-            content: '';
-            width: 100%;
-            height: 1px;
-            background-color: $color-red;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            transition: all .1s ease-in-out;
-            opacity: 0;
-        }
-        @include text($size: 0.875rem, $color: $color-black, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
-        &.active {
-            color: $color-red;
-            &:hover {
-                &:after {
-                    opacity: 0;
-                }
-            }
-        }
+      position: relative;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+      @extend %centre-flex-columb;
+      width: 44px;
+      height: 44px;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $color-red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.1s ease-in-out;
+        opacity: 0;
+      }
+      @include text(
+        $size: 0.875rem,
+        $color: $color-black,
+        $textAlign: center,
+        $fontWeight: 600,
+        $lineHeight: 20px
+      );
+      &.active {
+        color: $color-red;
         &:hover {
-            color: $color-red;
-            &:after {
-                opacity: 1;
-            }
+          &:after {
+            opacity: 0;
+          }
         }
+      }
+      &:hover {
+        color: $color-red;
+        &:after {
+          opacity: 1;
+        }
+      }
     }
-
+  
     &__button-left {
-        padding: 0;
-        transform: rotateZ(180deg);
+      padding: 0;
+      transform: rotateZ(180deg);
     }
-}
-
-.result-search {
+  }
+  
+  .result-search {
     position: absolute;
     z-index: 1;
     top: 412px;
@@ -865,108 +946,139 @@
     box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     @include __960 {
-        display: none;
+      display: none;
     }
     &__wrapper {
-       position: relative;
-       @extend %centre-flex-columb;
-       row-gap: 8px;
-       padding: 4px 8px;
-       background-color: $color-white;
-        &::before {
-            content: '';
-            width: 8px;
-            height: 16px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: -8px;
-            background-repeat: no-repeat;
-            background-image: url('/icon/range-coube.png');
-        }
+      position: relative;
+      @extend %centre-flex-columb;
+      row-gap: 8px;
+      padding: 4px 8px;
+      background-color: $color-white;
+      &::before {
+        content: "";
+        width: 8px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -8px;
+        background-repeat: no-repeat;
+        background-image: url("/icon/range-coube.png");
+      }
     }
     &__title {
-        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+      @include text(
+        $size: 0.875rem,
+        $textAlign: center,
+        $color: $color-black,
+        $fontWeight: 400,
+        $lineHeight: 24px
+      );
     }
     &__button {
-        padding: 4px;
-        @include text( $size: 0.875rem, $textAlign: center, $color: $color-red, $fontWeight: 700, $lineHeight: 20px);
-        &:hover {
-          color: #ca1d31;
-        }
+      padding: 4px;
+      @include text(
+        $size: 0.875rem,
+        $textAlign: center,
+        $color: $color-red,
+        $fontWeight: 700,
+        $lineHeight: 20px
+      );
+      &:hover {
+        color: #ca1d31;
+      }
     }
-}
-
-.filter-description {
+  }
+  
+  .filter-description {
     @extend %size-page;
     @extend %padding-country;
-
+  
     &__title {
-        @include text($size: 1rem, $color: $color-gray-70, $textAlign: left, $fontWeight: 700, $lineHeight: 24px);
-        margin-bottom: 12px;
+      @include text(
+        $size: 1rem,
+        $color: $color-gray-70,
+        $textAlign: left,
+        $fontWeight: 700,
+        $lineHeight: 24px
+      );
+      margin-bottom: 12px;
     }
-
+  
     &__description {
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
     }
-
+  
     &__subtitle {
-        @include text($size: 0.875rem, $color: $color-gray-70, $textAlign: left, $fontWeight: 400, $lineHeight: 24px);
+      @include text(
+        $size: 0.875rem,
+        $color: $color-gray-70,
+        $textAlign: left,
+        $fontWeight: 400,
+        $lineHeight: 24px
+      );
     }
-}
-
-.notification-wrp {
+  }
+  
+  .notification-wrp {
     position: relative;
-}
-.notification {
+  }
+  .notification {
     position: absolute;
     top: 88px;
     right: 0;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     opacity: 0;
     z-index: -1;
     visibility: hidden;
     max-width: 294px;
     width: 100%;
-    background-color:  $color-white;
+    background-color: $color-white;
     filter: drop-shadow(0px 4px 11px rgba(0, 0, 0, 0.08));
     @include __960 {
-        display: none;
+      display: none;
     }
     &.active {
-        opacity: 1;
-        z-index: 3;
-        visibility: visible;
+      opacity: 1;
+      z-index: 3;
+      visibility: visible;
     }
-
+  
     &__wrapper {
-        display: flex;
-        align-items: center;
-        border-bottom: 4px solid $color-gray-30;
-        padding-right: 12px;
+      display: flex;
+      align-items: center;
+      border-bottom: 4px solid $color-gray-30;
+      padding-right: 12px;
     }
-
+  
     &__title {
-        white-space: nowrap;
-        padding: 22px 11px 22px 24px;
-        position: relative;
-        max-width: 147px;
+      white-space: nowrap;
+      padding: 22px 11px 22px 24px;
+      position: relative;
+      max-width: 147px;
+      width: 100%;
+      display: block;
+      @include text(
+        $size: 0.875rem,
+        $color: $color-gray-80,
+        $textAlign: center,
+        $fontWeight: 600,
+        $lineHeight: 20px
+      );
+      &::after {
+        content: "";
         width: 100%;
-        display: block;
-        @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
-        &::after {         
-            content: '';
-            width: 100%;
-            height: 4px;
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            background-color: $color-red;
-        }
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        background-color: $color-red;
+      }
     }
     &__button {
-        white-space: nowrap;
+      white-space: nowrap;
     }
-}
+  }
+  

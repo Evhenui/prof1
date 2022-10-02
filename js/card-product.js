@@ -38,7 +38,7 @@ export let cardProduct = function() {
               })
 
               window.addEventListener('scroll', function() {
-                if (window.scrollY > 139) {
+                if (window.scrollY > 60) {
                   navigationPage.classList.add("active");
                   navigationPageEmpty.classList.add("active");
                 } else {

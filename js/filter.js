@@ -15,8 +15,8 @@ export let filter = function() {
               buttonsChangeView = filterSection.querySelectorAll('[data-button-list-view]'),
               productItems = filterSection.querySelectorAll('[data-product-item-change-view]'),
               leftNavigation = filterSection.querySelector('[data-left-navigation-bar]'),
-              emptyLeftNavigation = filterSection.querySelector('[data-left-navigation-bar-empty]');
-
+              emptyLeftNavigation = filterSection.querySelector('[data-left-navigation-bar-empty]'),
+              dropList = filterSection.querySelector('[data-droplist-filter]');
 
               function delActiv(param) {
                 param.forEach((el) => {
@@ -29,6 +29,21 @@ export let filter = function() {
                   el.classList.remove('palit');
                 })
               }
+
+            window.addEventListener("scroll", function () {
+            if (window.scrollY > 121) {
+                leftNavigation.classList.add('scroll');
+                emptyLeftNavigation.classList.add('scroll');
+                if(window.scrollY > catalogIntems.offsetHeight - 300) {
+                    leftNavigation.classList.replace('scroll' ,'scroll-stop');
+                } else {
+                    leftNavigation.classList.remove('scroll-stop');
+                }
+            }else {
+                leftNavigation.classList.remove('scroll', 'scroll-stop');
+                emptyLeftNavigation.classList.remove('scroll', 'scroll-stop');
+            }
+        });
 
         filterSwitch.addEventListener('click', function() {
             this.classList.toggle('active');
@@ -68,21 +83,6 @@ export let filter = function() {
             }
         });
 
-      /*  window.addEventListener("scroll", function () {
-            if (window.scrollY > 121) {
-                leftNavigation.classList.add('scroll');
-                emptyLeftNavigation.classList.add('scroll');
-                if(window.scrollY > 500) {
-                    leftNavigation.classList.replace('scroll' ,'scroll-stop');
-                } else {
-                    leftNavigation.classList.remove('scroll-stop');
-                }
-            }else {
-                leftNavigation.classList.remove('scroll', 'scroll-stop');
-                emptyLeftNavigation.classList.remove('scroll', 'scroll-stop');
-            }
-        });*/
-
         buttonsChangeView.forEach((item) => {
             item.addEventListener('click', function() {
                 delActiv(buttonsChangeView);
@@ -97,5 +97,18 @@ export let filter = function() {
             })
         });
 
+        function getPositionDropdown() {
+            const sizeSpace = 1;
+            window.getComputedStyle(dropList).getPropertyValue('--top');
+            dropList.style.setProperty('top', dropdownFilter.offsetHeight + sizeSpace + 'px');
+        }
+
+        window.getComputedStyle(navigationBar).getPropertyValue('--height-page');
+        navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + 'px');
+
+        getPositionDropdown();
+        window.addEventListener('resize', function() {
+            getPositionDropdown();
+        })
     }
 }
