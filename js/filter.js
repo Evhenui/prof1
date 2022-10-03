@@ -105,8 +105,10 @@ export let filter = function() {
             dropList.style.setProperty('top', dropdownFilter.offsetHeight + sizeSpace + 'px');
         }
 
+        let sizeHeaderFilter = 68 + 46;
+
         window.getComputedStyle(navigationBar).getPropertyValue('--height-page');
-        navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + 'px');
+        navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + sizeHeaderFilter + 'px');
 
         getPositionDropdown();
         window.addEventListener('resize', function() {

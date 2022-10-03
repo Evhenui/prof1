@@ -24,12 +24,12 @@ export let cardProduct = function() {
               notificationBasket = cardProduct.querySelector('[data-notification-basket]'),
               sectionCardProduct = cardProduct.querySelectorAll('[data-section-card-product]');
 
-            /* const navSecScr = cardProduct.querySelector('[data-sc]');
+            const navSecScr = cardProduct.querySelector('[data-sc]');
               navSecScr.addEventListener('scroll', function() {
                 navigationPageItems.forEach(el => {
-                  console.log(navSecScr.scrollLeft)
+                  console.log(el.scrollLeft )
                 })
-              })*/
+              })
 
 
               buttonBuy.addEventListener('click', function() {

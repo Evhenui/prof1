@@ -5480,6 +5480,24 @@ label {
   margin-bottom: 28px;
 }
 
+.card-item__price.none .card-item__full-price {
+  display: none;
+}
+
+.card-item__not-available {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #ADADAD;
+}
+
+.card-item__price.none .card-item__not-available {
+  display: block;
+}
+
 .wrp {
   height: 1000px;
   padding-top: 200px;
@@ -9743,7 +9761,6 @@ label {
 }
 
 .result-search__wrapper {
-  position: relative;
   row-gap: 8px;
   padding: 4px 8px;
   background-color: #FEFEFE;
@@ -9759,7 +9776,7 @@ label {
           transform: translateY(-50%);
   left: -8px;
   background-repeat: no-repeat;
-  background-image: url("/icon/range-coube.png");
+  background-image: url("icon/range-coube.png");
 }
 
 .result-search__title {

@@ -949,7 +949,6 @@
       display: none;
     }
     &__wrapper {
-      position: relative;
       @extend %centre-flex-columb;
       row-gap: 8px;
       padding: 4px 8px;
@@ -963,7 +962,7 @@
         transform: translateY(-50%);
         left: -8px;
         background-repeat: no-repeat;
-        background-image: url("/icon/range-coube.png");
+        background-image: url("icon/range-coube.png");
       }
     }
     &__title {

@@ -1626,3 +1626,16 @@
 
 
 
+
+.card-item__price.none .card-item__full-price {
+    display: none;
+}
+
+.card-item__not-available {
+    display: none;
+    @include text( $size: 1.125rem, $textAlign: left, $color: $color-gray-50, $fontWeight: 700, $lineHeight: 24px);
+}
+
+.card-item__price.none .card-item__not-available {
+    display: block;
+}
