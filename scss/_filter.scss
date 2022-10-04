@@ -1,6 +1,7 @@
 :root {
   --position: 0;
   --top: 0;
+  --topScroll: 0;
 }
 
 .filter {
@@ -482,8 +483,10 @@
     width: 100%;
     padding-right: 20px;
     overflow: auto;
+    flex: 1 0 auto;
     border-right: 1px solid #fad1d6;
     transition: all 0.2s ease-in-out;
+    position: relative;
     @include __960 {
       border-right: none;
     }
@@ -492,7 +495,7 @@
     }
     &.scroll {
       position: fixed;
-      top: 114px;
+      top: var(--topScroll);
       @include __960 {
         position: static;
       }
@@ -851,9 +854,25 @@
         padding-left: 0;
       }
     }
+
+    .items__wrapper.active .nav-item {
+      @include set-item-count-in-row(4);
+      @include __1050 {
+        @include set-item-count-in-row(3);
+      }
+      @include __960 {
+        @include set-item-count-in-row(2);
+      }
+      @include __680 {
+        @include set-item-count-in-row(1);
+      }
+    }
+
   
     & .card-item {
+      transition: all .3s ease-in-out;
       @include set-item-count-in-row(3);
+      max-width: 100%;
       @include __1050 {
         @include set-item-count-in-row(2);
       }
@@ -941,8 +960,8 @@
   .result-search {
     position: absolute;
     z-index: 1;
-    top: 412px;
-    left: 6px;
+    top: 200px;
+    left: 717px;
     box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     @include __960 {
@@ -962,7 +981,7 @@
         transform: translateY(-50%);
         left: -8px;
         background-repeat: no-repeat;
-        background-image: url("icon/range-coube.png");
+        background-image: url("/icon/range-coube.png");
       }
     }
     &__title {

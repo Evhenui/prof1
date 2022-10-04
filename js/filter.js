@@ -99,7 +99,7 @@ export let filter = function() {
             })
         });
 
-        function getPositionDropdown() {
+       function getPositionDropdown() {
             const sizeSpace = 1;
             window.getComputedStyle(dropList).getPropertyValue('--top');
             dropList.style.setProperty('top', dropdownFilter.offsetHeight + sizeSpace + 'px');
@@ -113,6 +113,17 @@ export let filter = function() {
         getPositionDropdown();
         window.addEventListener('resize', function() {
             getPositionDropdown();
+        })
+
+
+        const headerSize = 68;  
+
+        window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
+        navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
+
+        window.addEventListener('resize', function() {
+            window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
+            navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
         })
     }
 }
