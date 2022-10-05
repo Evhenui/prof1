@@ -18,6 +18,7 @@ export let filter = function() {
               emptyLeftNavigation = filterSection.querySelector('[data-left-navigation-bar-empty]'),
               dropList = filterSection.querySelector('[data-droplist-filter]');
 
+
               function delActiv(param) {
                 param.forEach((el) => {
                   el.classList.remove('active');
@@ -30,21 +31,36 @@ export let filter = function() {
                 })
               }
 
-            window.addEventListener("scroll", function () {
-            if (window.scrollY > 121) {
-                leftNavigation.classList.add('scroll');
-                emptyLeftNavigation.classList.add('scroll');
-                if(window.scrollY > catalogIntems.offsetHeight - 490) {
-                    leftNavigation.classList.replace('scroll' ,'scroll-stop');
-                    emptyLeftNavigation.classList.replace('scroll' ,'scroll-stop');
+              function checkScrollNavBar(scroll, nav, navEmpty, blockItems) {
+                if (scroll < 121) {
+                    nav.classList.remove('scroll', 'scroll-stop');
+                    navEmpty.classList.remove('scroll', 'scroll-stop');
+                } else if(scroll < blockItems.offsetHeight - 490) {
+                    nav.classList.add('scroll');
+                    navEmpty.classList.add('scroll');
+                    if(navEmpty.classList.contains('scroll-stop')) {
+                        nav.classList.remove('scroll', 'scroll-stop');
+                        navEmpty.classList.remove('scroll', 'scroll-stop');
+                    }
                 } else {
-                    leftNavigation.classList.remove('scroll-stop');
-                    emptyLeftNavigation.classList.remove('scroll-stop');
+                    nav.classList.replace('scroll' ,'scroll-stop');
+                    navEmpty.classList.replace('scroll' ,'scroll-stop');
                 }
-            }else {
-                leftNavigation.classList.remove('scroll', 'scroll-stop');
-                emptyLeftNavigation.classList.remove('scroll', 'scroll-stop');
+              }
+
+              function checkScrollNavBarMobile() {
+                window.addEventListener('resize', function() {
+                    if(window.innerWidth > 960) {
+                        checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems)
+                    }
+                })
+              }
+
+        window.addEventListener("scroll", function () {
+            if(window.innerWidth > 960) {
+                checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems);
             }
+            checkScrollNavBarMobile();
         });
 
         filterSwitch.addEventListener('click', function() {
