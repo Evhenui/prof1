@@ -1,0 +1,228 @@
+:root {
+    --transform: 0;
+    --height: 810px;
+}
+.about-company-page {
+    @extend %size-page;
+    padding: 68px 48px 120px 48px;
+
+    &__title-page {
+        @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);  
+        margin-bottom: 80px;
+    }
+    &__main {
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 200px;
+    }
+
+    &__navigation {
+        max-width: 200px;
+        width: 100%;
+    }
+
+    &__navigation-wrapper { 
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background-color: $color-red-30;
+        }
+    }
+
+    &__tab-item {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);  
+        padding: 8px 0 8px 16px;
+        position: relative;
+        transition: all .1s ease-in-out;
+        &::after {
+            content: '';
+            height: 100%;
+            width: 2px;
+            background-color: $color-red-50;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: all .1s ease-in-out;
+            opacity: 0;            
+        }
+        &:hover {
+            background-color: #F7F7F7;
+            &:after {
+                opacity: 1;
+            }
+        }
+        &.active {
+            @include text( $size: 1rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 700, $lineHeight: 24px); 
+            &:after {
+                opacity: 1;
+            }
+        }
+        &.link-page {
+            padding: 8px 0 8px 24px; 
+        }
+    }
+
+    &__selected-section {
+       overflow: hidden;
+       height: (var(--height));
+    }
+
+    &__selected-section-wrapper {
+        transition: all .5s ease-in-out;
+        transform: translateY(var(--transform));
+
+    }
+    &__section-about-company {
+        transition: all .2s ease-in-out;
+        max-width: 820px;
+        width: 100%;
+    }
+
+    &__section-about-company-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__description {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+    }
+
+    &__section-pay {
+        max-width: 944px;
+        width: 100%;
+    }
+
+    &__pay-block {
+    }
+
+    &__section-pay-main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        margin-bottom: 32px;
+    }
+
+    &__title-wrapper {
+        @extend %left-flex;
+        column-gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    &__title-decoration {
+    }
+
+    &__title {
+        text-transform: uppercase;
+        @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 28px); 
+    }
+
+    &__pay-block-description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__pay-delivery {
+        display: flex;
+        column-gap: 116px;
+    }
+
+    &__pay-button {
+        height: 96px;
+        border: 1px solid $color-red-30;
+        display: flex;
+        align-items: center;
+        padding: 8px 24px;
+        transition: all .1s ease-in-out;
+        &:hover {
+            border-color: $color-red;
+        }
+    }
+
+    &__pay-button:hover &__pay-img-wrapper::after {
+        background-color: $color-red;
+    }
+
+    &__pay-button:hover &__pay-button-text {
+        color: $color-red;
+    }
+
+    &__pay-img-wrapper {
+        padding: 11px 18px 11px 0;
+        position: relative;
+        font-size: 0;
+        display: inline-block;
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: $color-red-30;
+            top: 0;
+            right: 0;
+            transition: all .1s ease-in-out;
+        }
+    }
+
+    &__pay-button-text-wrapper {
+        padding: 15px 0 15px 20px;
+    }
+
+    &__pay-button-text {
+        max-width: 80px;
+        width: 100%;
+        transition: all .1s ease-in-out;
+        @include text( $size: 0.825rem, $textAlign: center, $color: $color-red-50, $fontWeight: 400, $lineHeight: 24px); 
+    }
+
+
+    &__section-services-descripton {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        margin-bottom: 48px;
+    }
+
+    &__services-blocks {
+        @extend %centre-space-between;
+        max-width: 692px;
+        width: 100%;
+    }
+
+    &__services-item {
+        padding: 24px;
+        background: $color-white;
+        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+        @extend %centre-flex-columb;
+        row-gap: 20px;
+        cursor: pointer;
+    }
+
+    &__services-item-img {
+    }
+
+    &__services-item-name {
+        @include text( $size: 0.825rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+    }
+
+    &__contacts {
+    }
+}
+.page.about-company .page__wrapper{
+    padding: 16px 0 20px 0;
+}

@@ -1043,7 +1043,7 @@
     position: relative;
   }
   .notification {
-    position: absolute;
+    position: fixed;
     top: 88px;
     right: 0;
     transition: all 0.2s ease-in-out;

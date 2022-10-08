@@ -33,3 +33,6 @@ import {personalArea} from './presonal-area.js';
   
 import {ordering} from './ordering.js';
         ordering(); 
+
+import {aboutCompany} from './about-company.js';
+        aboutCompany(); 
