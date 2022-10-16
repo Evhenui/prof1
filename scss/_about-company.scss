@@ -17,6 +17,9 @@
         display: flex;
         justify-content: space-between;
         column-gap: 200px;
+        @include __1250 {
+            column-gap: 50px;
+        }
     }
 
     &__navigation {
@@ -86,10 +89,15 @@
         transform: translateY(var(--transform));
 
     }
-    &__section-about-company {
-        transition: all .2s ease-in-out;
-        max-width: 820px;
+    &__section {
+        &.about-company {
+         max-width: 820px;
+         width: 100%;
+        }
+       &.pay {
+        max-width: 944px;
         width: 100%;
+       }
     }
 
     &__section-about-company-text {
@@ -221,6 +229,210 @@
     }
 
     &__contacts {
+    }
+
+
+    &__section {
+    }
+
+    &__section-wrapper {
+    }
+
+    &__input-wrapper {
+        @extend %flex-align-center;
+        margin-bottom: 28px;
+    }
+
+    &__input-search {
+        padding: 10px 16px;
+        max-width: 360px;
+        width: 100%;
+        border-bottom: 1px solid $color-gray-50;
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
+        &:hover {
+            border-color: $color-red-50;
+            }
+            &:focus {
+            border-color: $color-black;
+            color: $color-gray-100;
+            }
+    }
+
+    &__img-search {
+        font-size: 0;
+    }
+
+    &__manual {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__downloads {
+        
+    }
+
+    &__title-wrapper {
+    }
+
+    &__title-decoration {
+    }
+
+    &__title {
+    }
+
+    &__download-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+    }
+
+    &__download-item {
+        @extend %flex-align-center;
+        position: relative;
+        max-width: fit-content;
+        cursor: pointer;
+    }
+
+    &__download-item:hover &__download-name-catalog {
+        color: $color-red;
+    }
+
+    &__download-name-catalog {
+        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+        transition: all .1s ease-in-out;
+    }
+
+    &__download-img {
+
+    }
+
+    &__download-item:hover &__download-img-active {
+        display: block;
+    }
+
+    &__download-item:hover &__download-img-default {
+        display: none;
+    }
+
+    &__download-img-active {
+        display: none;
+    }
+
+    &__download-item:hover &__helper {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    &__helper {
+        @extend %flex-align-center;
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        right: -140px;
+        top: 0;
+        transition: all .2s ease-in-out;
+    }
+
+    &__helper-wrapper {
+        padding: 8px 12px;
+        background-color: $color-white;
+        box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+        border-radius: 1px;
+    }
+
+    &__helper-title {
+        @include text( $size: 0.75rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 20px); 
+    }
+
+    &__questions {
+    }
+
+    &__question-section {
+        margin-bottom: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__dropdown {
+        margin-bottom: 4px;
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    &__short-information {
+        cursor: pointer;
+    }
+
+    &__short-information.active &__dropdown-img {
+        transform: rotateZ(180deg);
+    }
+
+    &__short-information.active &__dropdown-arrow-state {
+        stroke: $color-red;
+    }
+
+    &__short-information.active &__dropdown-title {
+        color: $color-red-50;
+    }
+
+    &__short-information.active:hover &__dropdown-title {
+        color: $color-red-50;
+    }
+
+    &__short-information-wrapper {
+        padding: 4px 20px;
+        @extend %centre-space-between;
+    }
+
+    &__short-information:hover &__dropdown-title {
+        color: $color-red;
+    }
+
+    &__short-information:hover &__dropdown-arrow-state {
+        stroke: $color-red;
+    }
+
+    &__dropdown-title {
+        @include text( $size: 0.825rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+        transition: all .1s ease-in-out;
+    }
+
+    &__dropdown-img {
+        font-size: 0;
+        transition: all .1s ease-in-out;
+    }
+
+    &__dropdown-arrow-state {
+        transition: all .1s ease-in-out;
+    }
+
+    &__full-information {
+        transition: all .3s ease-in-out;
+        padding: 0 40px 0 40px;
+        height: 0;
+        overflow: hidden;
+        &.active {
+            padding: 16px 40px 12px 40px;
+        }
+    }
+
+    &__full-information-wrapper {
+        max-width: 638px;
+        width: 100%;
+    }
+
+    &__dropdown-description {
+        @include text( $size: 0.825rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+    }
+
+    &__description-list {
+    }
+
+    &__description-item {
+        @include text( $size: 0.825rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
     }
 }
 .page.about-company .page__wrapper{

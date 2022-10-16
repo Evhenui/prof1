@@ -189,7 +189,16 @@ label {
   margin-right: auto;
 }
 
-.header-navigation-catalog__item, .header-navigation-menu__submenu-call-title, .header-navigation-mobile__select-header, .footer-content, .footer-content__social-wrp, .footer-special-documents__wrp, .catalog__items-wrapper, .main-information__subtitles-wrapper, .main-information__reviews, .main-information__reviews-info, .main-information__product-code, .main-information__dropdown-header, .reviews__review-header, .mobile-price-line__wrapper, .card-item.palit .card-item__footer-palit, .card-item__footer-navigation, .product-selection__sex, .current-offers__header, .news__header, .news__items-wrapper, .news__description-top, .modal-on-click__header, .main-modal__navigation, .modal-sended-review__wrap, .modal-stay-review__header, .modal-basket__header, .modal-basket__item-bottom, .left-navigation__filter-price-title, .left-navigation__filter-checkbox-title, .favorites__navigation, .order__short-information-wrapper, .comparison__navigation, .comparison-slider__titlte-slider-footer, .ordering__basket-header, .about-company-page__services-blocks {
+.about-company-page__input-wrapper, .about-company-page__download-item, .about-company-page__helper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-navigation-catalog__item, .header-navigation-menu__submenu-call-title, .header-navigation-mobile__select-header, .footer-content, .footer-content__social-wrp, .footer-special-documents__wrp, .catalog__items-wrapper, .main-information__subtitles-wrapper, .main-information__reviews, .main-information__reviews-info, .main-information__product-code, .main-information__dropdown-header, .reviews__review-header, .mobile-price-line__wrapper, .card-item.palit .card-item__footer-palit, .card-item__footer-navigation, .product-selection__sex, .current-offers__header, .news__header, .news__items-wrapper, .news__description-top, .modal-on-click__header, .main-modal__navigation, .modal-sended-review__wrap, .modal-stay-review__header, .modal-basket__header, .modal-basket__item-bottom, .left-navigation__filter-price-title, .left-navigation__filter-checkbox-title, .favorites__navigation, .order__short-information-wrapper, .comparison__navigation, .comparison-slider__titlte-slider-footer, .ordering__basket-header, .about-company-page__services-blocks, .about-company-page__short-information-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13684,6 +13693,13 @@ label {
           column-gap: 200px;
 }
 
+@media (max-width: 1250px) {
+  .about-company-page__wrapper {
+    -webkit-column-gap: 50px;
+            column-gap: 50px;
+  }
+}
+
 .about-company-page__navigation {
   max-width: 200px;
   width: 100%;
@@ -13774,10 +13790,13 @@ label {
           transform: translateY(var(--transform));
 }
 
-.about-company-page__section-about-company {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+.about-company-page__section.about-company {
   max-width: 820px;
+  width: 100%;
+}
+
+.about-company-page__section.pay {
+  max-width: 944px;
   width: 100%;
 }
 
@@ -13947,6 +13966,231 @@ label {
   font-weight: 400;
   line-height: 24px;
   text-align: center;
+  color: #2D2D2D;
+}
+
+.about-company-page__input-wrapper {
+  margin-bottom: 28px;
+}
+
+.about-company-page__input-search {
+  padding: 10px 16px;
+  max-width: 360px;
+  width: 100%;
+  border-bottom: 1px solid #ADADAD;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #7A7A7A;
+}
+
+.about-company-page__input-search:hover {
+  border-color: #F07585;
+}
+
+.about-company-page__input-search:focus {
+  border-color: #2D2D2D;
+  color: #141414;
+}
+
+.about-company-page__img-search {
+  font-size: 0;
+}
+
+.about-company-page__manual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 40px;
+}
+
+.about-company-page__download-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 4px;
+}
+
+.about-company-page__download-item {
+  position: relative;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+.about-company-page__download-item:hover .about-company-page__download-name-catalog {
+  color: #E61E37;
+}
+
+.about-company-page__download-name-catalog {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  color: #2D2D2D;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.about-company-page__download-item:hover .about-company-page__download-img-active {
+  display: block;
+}
+
+.about-company-page__download-item:hover .about-company-page__download-img-default {
+  display: none;
+}
+
+.about-company-page__download-img-active {
+  display: none;
+}
+
+.about-company-page__download-item:hover .about-company-page__helper {
+  opacity: 1;
+  z-index: 1;
+}
+
+.about-company-page__helper {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  right: -140px;
+  top: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.about-company-page__helper-wrapper {
+  padding: 8px 12px;
+  background-color: #FEFEFE;
+  -webkit-box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+  border-radius: 1px;
+}
+
+.about-company-page__helper-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #2D2D2D;
+}
+
+.about-company-page__question-section {
+  margin-bottom: 60px;
+}
+
+.about-company-page__question-section:last-child {
+  margin-bottom: 0;
+}
+
+.about-company-page__dropdown {
+  margin-bottom: 4px;
+}
+
+.about-company-page__dropdown:last-child {
+  margin: 0;
+}
+
+.about-company-page__short-information {
+  cursor: pointer;
+}
+
+.about-company-page__short-information.active .about-company-page__dropdown-img {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+.about-company-page__short-information.active .about-company-page__dropdown-arrow-state {
+  stroke: #E61E37;
+}
+
+.about-company-page__short-information.active .about-company-page__dropdown-title {
+  color: #F07585;
+}
+
+.about-company-page__short-information.active:hover .about-company-page__dropdown-title {
+  color: #F07585;
+}
+
+.about-company-page__short-information-wrapper {
+  padding: 4px 20px;
+}
+
+.about-company-page__short-information:hover .about-company-page__dropdown-title {
+  color: #E61E37;
+}
+
+.about-company-page__short-information:hover .about-company-page__dropdown-arrow-state {
+  stroke: #E61E37;
+}
+
+.about-company-page__dropdown-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.825rem;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  color: #2D2D2D;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.about-company-page__dropdown-img {
+  font-size: 0;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.about-company-page__dropdown-arrow-state {
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.about-company-page__full-information {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  padding: 0 40px 0 40px;
+  height: 0;
+  overflow: hidden;
+}
+
+.about-company-page__full-information.active {
+  padding: 16px 40px 12px 40px;
+}
+
+.about-company-page__full-information-wrapper {
+  max-width: 638px;
+  width: 100%;
+}
+
+.about-company-page__dropdown-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.825rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #2D2D2D;
+}
+
+.about-company-page__description-item {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.825rem;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
   color: #2D2D2D;
 }
 
