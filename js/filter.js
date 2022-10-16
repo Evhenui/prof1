@@ -16,7 +16,9 @@ export let filter = function() {
               productItems = filterSection.querySelectorAll('[data-product-item-change-view]'),
               leftNavigation = filterSection.querySelector('[data-left-navigation-bar]'),
               emptyLeftNavigation = filterSection.querySelector('[data-left-navigation-bar-empty]'),
-              dropList = filterSection.querySelector('[data-droplist-filter]');
+              dropList = filterSection.querySelector('[data-droplist-filter]'),
+              mainInfo = filterSection.querySelector('[data-main-info]'),
+              resultSerach = filterSection.querySelector('[data-result-block]');
 
 
               function delActiv(param) {
@@ -31,34 +33,38 @@ export let filter = function() {
                 })
               }
 
-              function checkScrollNavBar(scroll, nav, navEmpty, blockItems) {
+              function checkScrollNavBar(scroll, nav, navEmpty, blockItems, result) {
                 if (scroll < 121) {
                     nav.classList.remove('scroll', 'scroll-stop');
                     navEmpty.classList.remove('scroll', 'scroll-stop');
+                    result.classList.remove('scroll', 'scroll-stop');
                 } else if(scroll < blockItems.offsetHeight - 490) {
                     nav.classList.add('scroll');
                     navEmpty.classList.add('scroll');
+                    result.classList.add('scroll');
                     if(navEmpty.classList.contains('scroll-stop')) {
                         nav.classList.remove('scroll', 'scroll-stop');
                         navEmpty.classList.remove('scroll', 'scroll-stop');
+                        result.classList.remove('scroll', 'scroll-stop');
                     }
                 } else {
                     nav.classList.replace('scroll' ,'scroll-stop');
                     navEmpty.classList.replace('scroll' ,'scroll-stop');
+                    result.classList.replace('scroll' ,'scroll-stop');
                 }
               }
 
               function checkScrollNavBarMobile() {
                 window.addEventListener('resize', function() {
                     if(window.innerWidth > 960) {
-                        checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems)
+                        checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems, resultSerach)
                     }
                 })
               }
 
         window.addEventListener("scroll", function () {
             if(window.innerWidth > 960) {
-                checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems);
+                checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems, resultSerach);
             }
             checkScrollNavBarMobile();
         });
@@ -68,6 +74,7 @@ export let filter = function() {
             navigationBar.classList.toggle('active');
             catalogIntems.classList.toggle('active');
             emptyLeftNavigation.classList.toggle('active');
+            resultSerach.classList.toggle('active');
         });
 
         dropdownFilter.addEventListener('click', function() {
@@ -122,6 +129,10 @@ export let filter = function() {
         }
 
         let sizeHeaderFilter = 68 + 46;
+        const headerSize = 68;
+        let widthNavBar = Math.floor(navigationBar.getBoundingClientRect().width),
+                mainPaddingLeft = parseInt(getComputedStyle(mainInfo, true).paddingLeft),
+                positionLeftResult = widthNavBar + mainPaddingLeft;
 
         window.getComputedStyle(navigationBar).getPropertyValue('--height-page');
         navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + sizeHeaderFilter + 'px');
@@ -131,15 +142,30 @@ export let filter = function() {
             getPositionDropdown();
         })
 
-
-        const headerSize = 68;  
-
         window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
         navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
 
         window.addEventListener('resize', function() {
+            let widthNavBar = Math.floor(navigationBar.getBoundingClientRect().width),
+                mainPaddingLeft = parseInt(getComputedStyle(mainInfo, true).paddingLeft),
+                positionLeftResult = widthNavBar + mainPaddingLeft;
+
             window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
             navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
+            getPositionResult(filterSection, positionLeftResult);
+        })
+
+        function getPositionResult(section, position) {
+            if(window.innerWidth > 960) {
+                window.getComputedStyle(section).getPropertyValue('--leftPositionResult');
+                section.style.setProperty('--leftPositionResult', position + 'px');
+            } 
+        }
+        
+        getPositionResult(filterSection, positionLeftResult);
+
+        window.addEventListener('scroll', function() {
+            console.log(resultSerach)
         })
     }
 }

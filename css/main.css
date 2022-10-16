@@ -8591,6 +8591,7 @@ label {
   --position: 0;
   --top: 0;
   --topScroll: 0;
+  --leftPositionResult: 0;
 }
 
 .filter__wrapper {
@@ -9178,6 +9179,7 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 @media (max-width: 960px) {
@@ -9791,10 +9793,26 @@ label {
   position: absolute;
   z-index: 1;
   top: 200px;
-  left: 717px;
+  left: var(--leftPositionResult);
   -webkit-box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.result-search.active {
+  display: none;
+}
+
+.result-search.scroll {
+  position: fixed;
+  top: 360px;
+}
+
+.result-search.scroll-stop {
+  top: auto;
+  bottom: 200px;
 }
 
 @media (max-width: 960px) {
