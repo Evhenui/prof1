@@ -37,9 +37,9 @@
     }
 
     &__title {
-        @include text( $size: 2rem, $textAlign: center, $color: $color-green, $fontWeight: 700, $lineHeight: 44px);
+        @include text( $size: 32px, $textAlign: center, $color: $color-green, $fontWeight: 700, $lineHeight: 44px);
         @include __960 {
-            @include text( $size: 1.25rem, $textAlign: center, $color: $color-green, $fontWeight: 600, $lineHeight: 28px);
+            @include text( $size: 20px, $textAlign: center, $color: $color-green, $fontWeight: 600, $lineHeight: 28px);
             max-width: 280px;
             width: 100%;
         }
@@ -54,12 +54,12 @@
     }
 
     &__subtitle {
-        @include text( $size: 2rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
+        @include text( $size: 32px, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
         margin-bottom: 19px;
         color: $color-black;
         margin-bottom: 65px;
         @include __960 {
-            @include text( $size: 1.25rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+            @include text( $size: 20px, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
             max-width: 323px;
             width: 100%;
         }
@@ -70,11 +70,11 @@
     }
 
     &__waiting-subtitle, &__social-networks-title {
-        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
+        @include text( $size: 14px, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);
     }
 
     &__working-mode {
-        @include text( $size: 1rem, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        @include text( $size: 16px, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
         margin-bottom: 40px;
     }
 

@@ -16,7 +16,7 @@
     }
 
     &__page-title {
-        @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);
+        @include text( $size: 28px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);
     }
 
     &__items {
@@ -57,12 +57,12 @@
 
     &__item-name {
         text-transform: uppercase;
-        @include text( $size: 1.25rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+        @include text( $size: 20px, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
     }
 
     &__description-title {
         margin-bottom: 12px;
-        @include text( $size: 1rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 700, $lineHeight: 24px);
+        @include text( $size: 16px, $textAlign: left, $color: $color-gray-70, $fontWeight: 700, $lineHeight: 24px);
     }
 
     &__description-text {
@@ -71,6 +71,6 @@
     }
 
     &__description-subtitle {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 24px);
+        @include text( $size: 14px, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 24px);
     }
 }

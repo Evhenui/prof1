@@ -3,6 +3,8 @@
   --top: 0;
   --topScroll: 0;
   --leftPositionResult: 0;
+  --topPositionResult: 0;
+
 }
 
 .filter {
@@ -16,7 +18,7 @@
       @extend %size-page;
       margin-bottom: 20px;
       @include text(
-        $size: 2rem,
+        $size: 32px,
         $color: $color-black,
         $textAlign: left,
         $fontWeight: 700,
@@ -65,7 +67,7 @@
       border-radius: 50%;
       background-color: $color-black;
       @include text(
-        $size: 0.75rem,
+        $size: 12px,
         $textAlign: center,
         $color: #fefefe,
         $fontWeight: 700,
@@ -136,7 +138,7 @@
       transition: all 0.1s ease-in-out;
       width: 212px;
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $color: $color-black,
         $textAlign: left,
         $fontWeight: 700,
@@ -155,7 +157,7 @@
       @include __960 {
         display: block;
         @include text(
-          $size: 0.75rem,
+          $size: 12px,
           $color: $color-black,
           $textAlign: left,
           $fontWeight: 700,
@@ -265,7 +267,7 @@
   
     &__amount-search {
       @include text(
-        $size: 0.75rem,
+        $size: 12px,
         $color: $color-black,
         $textAlign: left,
         $fontWeight: 400,
@@ -329,7 +331,7 @@
     &__menu-title {
       transition: all 0.1s ease-in-out;
       @include text(
-        $size: 0.75rem,
+        $size: 12px,
         $color: $color-black,
         $textAlign: left,
         $fontWeight: 400,
@@ -390,7 +392,7 @@
       max-width: 172px;
       width: 100%;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $color: $color-black,
         $textAlign: left,
         $fontWeight: 400,
@@ -427,7 +429,7 @@
       transition: all 0.1s ease-in-out;
       padding: 8px 16px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $color: $color-gray-80,
         $textAlign: left,
         $fontWeight: 400,
@@ -565,7 +567,7 @@
       width: 100%;
       height: 24px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $color: $color-gray-80,
         $textAlign: left,
         $fontWeight: 400,
@@ -664,7 +666,7 @@
   
     &__filter-name {
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $textAlign: left,
         $color: $color-black,
         $fontWeight: 700,
@@ -717,7 +719,7 @@
       display: inline-block;
       width: 100px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-gray-80,
         $fontWeight: 400,
@@ -931,7 +933,7 @@
         opacity: 0;
       }
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $color: $color-black,
         $textAlign: center,
         $fontWeight: 600,
@@ -961,18 +963,18 @@
   
   .result-search {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     top: 200px;
+    top: var(--topPositionResult);
     left: var(--leftPositionResult);
     box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    transition: all .1s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
     &.active {
-      display: none;
-    }
-    &.scroll {
-      position: fixed;
-      top: 360px;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
     }
     &.scroll-stop {
       top: auto;
@@ -1000,7 +1002,7 @@
     }
     &__title {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: center,
         $color: $color-black,
         $fontWeight: 400,
@@ -1010,7 +1012,7 @@
     &__button {
       padding: 4px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: center,
         $color: $color-red,
         $fontWeight: 700,
@@ -1027,7 +1029,7 @@
     padding: 176px 48px 0 48px;
     &__title {
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $color: $color-gray-70,
         $textAlign: left,
         $fontWeight: 700,
@@ -1044,7 +1046,7 @@
   
     &__subtitle {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $color: $color-gray-70,
         $textAlign: left,
         $fontWeight: 400,
@@ -1092,7 +1094,7 @@
       width: 100%;
       display: block;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $color: $color-gray-80,
         $textAlign: center,
         $fontWeight: 600,

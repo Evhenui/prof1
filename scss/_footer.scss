@@ -39,7 +39,7 @@
   }
   &__title-text-clock {
     @include text(
-      $size: 0.875rem,
+      $size: 14px,
       $textAlign: left,
       $color: $color-gray-20,
       $fontWeight: 600,
@@ -50,7 +50,7 @@
   &__title-text {
     margin-bottom: 12px;
     @include text(
-      $size: 1rem,
+      $size: 16px,
       $textAlign: left,
       $color: $color-gray-50,
       $fontWeight: 700,
@@ -122,7 +122,7 @@
 
 .footer-text {
   margin-bottom: 8px;
-  @include text($size: 0.875rem, $color: $color-gray-50, $textAlign: left, $lineHeight: 24px);
+  @include text($size: 14px, $color: $color-gray-50, $textAlign: left, $lineHeight: 24px);
   &.timetable {
     max-width: 125px;
     width: 100%;
@@ -166,7 +166,7 @@
     }
   }
   &__text {
-    @include text($size: 0.75rem, $color: $color-gray-50, $textAlign: left, $lineHeight: 20px);
+    @include text($size: 12px, $color: $color-gray-50, $textAlign: left, $lineHeight: 20px);
     &:hover {
       color: $color-white;
     }

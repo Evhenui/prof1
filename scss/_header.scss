@@ -215,7 +215,7 @@
   
     &__link {
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $textAlign: left,
         $color: $color-black,
         $fontWeight: 700,
@@ -259,7 +259,7 @@
       width: 200px;
       padding: 10px 12px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-black,
         $fontWeight: 600,
@@ -278,7 +278,7 @@
       padding: 8px 12px;
       transition: all 0.1s ease-in-out;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-black,
         $fontWeight: 400,
@@ -322,7 +322,7 @@
   
     &__title-footer {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-gray-100,
         $fontWeight: 600,
@@ -423,7 +423,7 @@
   
     &__item-link {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: center,
         $color: $color-gray-50,
         $fontWeight: 400,
@@ -489,7 +489,7 @@
   
     &__submenu-item-link {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: center,
         $color: $color-gray-50,
         $fontWeight: 400,
@@ -524,7 +524,7 @@
   
     &__submenu-title {
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 700,
@@ -537,7 +537,7 @@
       white-space: break-spaces;
       margin-bottom: 22px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 600,
@@ -547,7 +547,7 @@
   
     &__submenu-subtitle {
       @include text(
-        $size: 0.75rem,
+        $size: 12px,
         $textAlign: left,
         $color: $color-gray-40,
         $fontWeight: 400,
@@ -578,7 +578,7 @@
   
     &__button-title {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 400,
@@ -654,7 +654,7 @@
       }
       &__title {
         @include text(
-          $size: 0.75rem,
+          $size: 12px,
           $textAlign: center,
           $color: $color-white,
           $fontWeight: 700,
@@ -786,7 +786,7 @@
     &__account-item {
       padding: 8px 20px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: #e6e5e5,
         $fontWeight: 400,
@@ -841,7 +841,7 @@
     &__select-item {
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: center,
         $color: $color-gray-60,
         $fontWeight: 400,
@@ -965,7 +965,7 @@
   
     &__title {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 400,
@@ -1021,7 +1021,7 @@
       max-width: 279px;
       width: 100%;
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 700,
@@ -1045,7 +1045,7 @@
   
     &__navigation-title.footer-title {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 400,
@@ -1062,7 +1062,7 @@
   
     &__navigation-amount-title {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: center,
         $color: $color-white,
         $fontWeight: 700,
@@ -1105,7 +1105,7 @@
   
     &__select-title {
       @include text(
-        $size: 1rem,
+        $size: 16px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 700,
@@ -1141,7 +1141,7 @@
   
     &__select-item-link {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 400,
@@ -1173,7 +1173,7 @@
   
     &__navigation-title {
       @include text(
-        $size: 0.8125rem,
+        $size: 13px,
         $textAlign: left,
         $color: $color-white,
         $fontWeight: 400,
@@ -1188,7 +1188,7 @@
   
     &__footer-text-timetable {
       @include text(
-        $size: 0.75rem,
+        $size: 12px,
         $textAlign: left,
         $color: #b5b0b0,
         $fontWeight: 400,
@@ -1220,7 +1220,7 @@
   
     &__submenu-footer-title {
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-red-50,
         $fontWeight: 600,
@@ -1300,7 +1300,7 @@
       width: 768px;
       padding: 10px 16px;
       @include text(
-        $size: 0.875rem,
+        $size: 14px,
         $textAlign: left,
         $color: $color-gray-80,
         $fontWeight: 400,

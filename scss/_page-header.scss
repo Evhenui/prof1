@@ -10,7 +10,7 @@
 
     &__title-link {
         transition: all .1s ease-in-out;
-        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);
+        @include text( $size: 12px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);
     }
     &__title-link.item:hover {
         text-shadow: 1px 0 0 currentColor;

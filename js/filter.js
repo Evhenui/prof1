@@ -18,7 +18,11 @@ export let filter = function() {
               emptyLeftNavigation = filterSection.querySelector('[data-left-navigation-bar-empty]'),
               dropList = filterSection.querySelector('[data-droplist-filter]'),
               mainInfo = filterSection.querySelector('[data-main-info]'),
-              resultSerach = filterSection.querySelector('[data-result-block]');
+              resultSerach = filterSection.querySelector('[data-result-block]'),
+              dropFilterItems = filterSection.querySelectorAll('[data-dropdown-filter-item]'),
+              dropSelectedItem = filterSection.querySelector('[data-dropdown-filter-selected]'),
+              itemNavigationBar = filterSection.querySelectorAll('[data-filter-item-navigation]'),
+              filterResultItems = filterSection.querySelector('[data-filter-items]');
 
 
               function delActiv(param) {
@@ -37,20 +41,16 @@ export let filter = function() {
                 if (scroll < 121) {
                     nav.classList.remove('scroll', 'scroll-stop');
                     navEmpty.classList.remove('scroll', 'scroll-stop');
-                    result.classList.remove('scroll', 'scroll-stop');
                 } else if(scroll < blockItems.offsetHeight - 490) {
                     nav.classList.add('scroll');
                     navEmpty.classList.add('scroll');
-                    result.classList.add('scroll');
                     if(navEmpty.classList.contains('scroll-stop')) {
                         nav.classList.remove('scroll', 'scroll-stop');
                         navEmpty.classList.remove('scroll', 'scroll-stop');
-                        result.classList.remove('scroll', 'scroll-stop');
                     }
                 } else {
                     nav.classList.replace('scroll' ,'scroll-stop');
                     navEmpty.classList.replace('scroll' ,'scroll-stop');
-                    result.classList.replace('scroll' ,'scroll-stop');
                 }
               }
 
@@ -59,6 +59,14 @@ export let filter = function() {
                     if(window.innerWidth > 960) {
                         checkScrollNavBar(window.scrollY, leftNavigation, emptyLeftNavigation, catalogIntems, resultSerach)
                     }
+                })
+              }
+
+              function changeLable (items, dropdown) {
+                items.forEach((item)=> {
+                    item.addEventListener('click', ()=> {
+                        dropdown.innerText = item.innerText;
+                    })
                 })
               }
 
@@ -91,6 +99,8 @@ export let filter = function() {
         filterRange.addEventListener('click', function() {
             filterPrice.classList.toggle('active');
         });
+
+        changeLable(dropFilterItems, dropSelectedItem)
 
         titleCheckBox.forEach((item) => {
             item.addEventListener('click', function() {
@@ -162,10 +172,47 @@ export let filter = function() {
             } 
         }
         
-        getPositionResult(filterSection, positionLeftResult);
+        getPositionResult(filterSection, positionLeftResult);   
+        
+        
 
-        window.addEventListener('scroll', function() {
-            console.log(resultSerach)
+        itemNavigationBar.forEach((el) => {
+            el.addEventListener('click', () => {
+                let top = el.getBoundingClientRect().top;
+                let topR = filterResultItems.getBoundingClientRect().top;
+                resultSerach.classList.add('active');
+        
+                window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
+                resultSerach.style.setProperty('--topPositionResult', top + 'px');
+        
+                navigationBar.addEventListener('scroll', () => {
+                    let top = el.getBoundingClientRect().top;
+                    window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
+                    resultSerach.style.setProperty('--topPositionResult', top + 'px');
+
+                })
+        
+                window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
+                resultSerach.style.setProperty('--topPositionResult', ((-(topR - 8)) + top) + 'px');
+        
+                window.addEventListener('scroll', () => {                   
+                    let topR = filterResultItems.getBoundingClientRect().top;
+                    window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
+                    resultSerach.style.setProperty('--topPositionResult', ((-(topR - 8)) + top) + 'px');
+                    if(navigationBar.classList.contains('scroll-stop')) {
+                        resultSerach.classList.add('scroll-stop')
+                    }else {
+                        resultSerach.classList.remove('scroll-stop')
+                    }
+             
+                })   
+            })
         })
+         
+        window.addEventListener('scroll', () => {
+            let topR = filterResultItems.getBoundingClientRect().top;
+            window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
+            resultSerach.style.setProperty('--topPositionResult', -topR + 'px');
+        })  
     }
 }

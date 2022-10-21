@@ -7,7 +7,7 @@
     padding: 68px 48px 120px 48px;
 
     &__title-page {
-        @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);  
+        @include text( $size: 32px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);  
         margin-bottom: 80px;
     }
     &__main {
@@ -47,7 +47,7 @@
     }
 
     &__tab-item {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);  
+        @include text( $size: 14px, $textAlign: left, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);  
         padding: 8px 0 8px 16px;
         position: relative;
         transition: all .1s ease-in-out;
@@ -69,7 +69,7 @@
             }
         }
         &.active {
-            @include text( $size: 1rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 700, $lineHeight: 24px); 
+            @include text( $size: 16px, $textAlign: left, $color: $color-gray-100, $fontWeight: 700, $lineHeight: 24px); 
             &:after {
                 opacity: 1;
             }
@@ -107,7 +107,7 @@
     }
 
     &__description {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
     }
 
     &__section-pay {
@@ -136,7 +136,7 @@
 
     &__title {
         text-transform: uppercase;
-        @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 28px); 
+        @include text( $size: 20px, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 28px); 
     }
 
     &__pay-block-description {
@@ -195,7 +195,7 @@
         max-width: 80px;
         width: 100%;
         transition: all .1s ease-in-out;
-        @include text( $size: 0.825rem, $textAlign: center, $color: $color-red-50, $fontWeight: 400, $lineHeight: 24px); 
+        @include text( $size: 14px, $textAlign: center, $color: $color-red-50, $fontWeight: 400, $lineHeight: 24px); 
     }
 
 
@@ -225,7 +225,7 @@
     }
 
     &__services-item-name {
-        @include text( $size: 0.825rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+        @include text( $size: 14px, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
     }
 
     &__contacts {
@@ -248,7 +248,7 @@
         max-width: 360px;
         width: 100%;
         border-bottom: 1px solid $color-gray-50;
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
+        @include text( $size: 14px, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight:24px);
         &:hover {
             border-color: $color-red-50;
             }
@@ -299,7 +299,7 @@
     }
 
     &__download-name-catalog {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
         transition: all .1s ease-in-out;
     }
 
@@ -342,7 +342,7 @@
     }
 
     &__helper-title {
-        @include text( $size: 0.75rem, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 20px); 
+        @include text( $size: 12px, $textAlign: center, $color: $color-black, $fontWeight: 400, $lineHeight: 20px); 
     }
 
     &__questions {
@@ -396,7 +396,7 @@
     }
 
     &__dropdown-title {
-        @include text( $size: 0.825rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
         transition: all .1s ease-in-out;
     }
 
@@ -425,14 +425,14 @@
     }
 
     &__dropdown-description {
-        @include text( $size: 0.825rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
     }
 
     &__description-list {
     }
 
     &__description-item {
-        @include text( $size: 0.825rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
     }
 }
 .page.about-company .page__wrapper{

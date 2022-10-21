@@ -178,11 +178,11 @@
         width: 100%;
         margin-bottom: 68px;
         text-transform: uppercase;
-        @include text($size: 2.75rem, $color: $color-black, $textAlign: left, $fontWeight: 800, $lineHeight: 44px);
+        @include text($size: 44px, $color: $color-black, $textAlign: left, $fontWeight: 800, $lineHeight: 44px);
         @include __860 {
             max-width: 327px;
             margin-bottom: 40px;
-            @include text($size: 1.5rem, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 40px);
+            @include text($size: 24px, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 40px);
         }
     }
 
@@ -419,7 +419,7 @@
     }
 
     &__checkbox-label {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
 
     &__button {
@@ -434,11 +434,11 @@
     }
 
     &__search-title {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
 
     &__search-result {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
     }
 }
 
@@ -494,7 +494,7 @@
         transition: all .1s ease-in-out;
         display: inline-block;
         padding: 8px 12px;
-        @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 600, $lineHeight: 28px);  
+        @include text( $size: 20px, $textAlign: left, $color: $color-gray-80, $fontWeight: 600, $lineHeight: 28px);  
         &:hover {
             color: $color-red;
             &::after {
@@ -518,7 +518,7 @@
             transition: all .2s ease-in-out;
         }
         @include __960 {
-            font-size: 0.9375rem;
+            font-size: 15px;
             padding: 8px;
         }
     }
@@ -761,16 +761,16 @@
     }
 
     &__description-data {
-        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);  
+        @include text( $size: 12px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);  
     }
 
     &__description-title {
         margin-bottom: 12px;
-        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
+        @include text( $size: 16px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
     }
 
     &__subtitle {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
 }
 
@@ -803,7 +803,7 @@
 
     &__inputs-title {
         margin-bottom: 40px;
-        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
+        @include text( $size: 16px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
     }
 
     &__input {
@@ -852,7 +852,7 @@
     }
 
     &__subtitle {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
     }
 }
 
@@ -884,10 +884,10 @@
 
 .main-title {
     text-transform: uppercase;
-    @include text( $size: 1.75rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);  
+    @include text( $size: 28px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 40px);  
 }
 
 .main-subtitle {
-    @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+    @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
 }
 

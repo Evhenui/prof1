@@ -94,7 +94,7 @@
     &__palit-button-text {
         max-width: 60px;
         width: 100%;
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
+        @include text( $size: 14px, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
     }
 
     &__offers {
@@ -155,7 +155,7 @@
     &__offers-title {
         letter-spacing: 0.04em;
         text-transform: uppercase;
-        @include text( $size: 0.625rem, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
+        @include text( $size: 10px, $textAlign: left, $color: $color-white, $fontWeight: 700, $lineHeight: 20px);
     }
 
     &__main {
@@ -290,7 +290,7 @@
     }
 
     &__color-item-more {
-        @include text( $size: 0.875rem, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);  
+        @include text( $size: 14px, $textAlign: center, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);  
     }
 
     &__footer {
@@ -319,12 +319,12 @@
     }
 
     &__subtitle {
-        @include text( $size: 0.75rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 20px);  
+        @include text( $size: 12px, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 20px);  
     }
 
     &__name-item {
         margin-bottom: 12px;
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px); 
     }
 
     &__footer-navigation {
@@ -333,7 +333,7 @@
 
     &__price-text {
         text-decoration-line: line-through;
-        @include text( $size: 0.75rem, $textAlign: left, $color: #686464, $fontWeight: 400, $lineHeight: 20px); 
+        @include text( $size: 12px, $textAlign: left, $color: #686464, $fontWeight: 400, $lineHeight: 20px); 
         &.discount {
             font-weight: 700;
             text-decoration: none;
@@ -342,7 +342,7 @@
     }
 
     &__full-price {
-        @include text( $size: 1.125rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px); 
+        @include text( $size: 18px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px); 
     }
 
 }

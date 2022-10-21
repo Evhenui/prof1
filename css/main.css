@@ -1411,7 +1411,7 @@ label {
 
 .header-navigation-catalog__link {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -1473,7 +1473,7 @@ label {
   width: 200px;
   padding: 10px 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -1494,7 +1494,7 @@ label {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -1540,7 +1540,7 @@ label {
 
 .header-navigation-catalog__title-footer {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -1672,7 +1672,7 @@ label {
 
 .header-navigation-menu__item-link {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -1746,7 +1746,7 @@ label {
 
 .header-navigation-menu__submenu-item-link {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -1781,7 +1781,7 @@ label {
 
 .header-navigation-menu__submenu-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -1793,7 +1793,7 @@ label {
   white-space: break-spaces;
   margin-bottom: 22px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -1802,7 +1802,7 @@ label {
 
 .header-navigation-menu__submenu-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -1831,7 +1831,7 @@ label {
 
 .header-navigation-menu__button-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -1915,7 +1915,7 @@ label {
 
 .header-navigation .amount-item__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 700;
   line-height: 20px;
   text-align: center;
@@ -2080,7 +2080,7 @@ label {
 .header-navigation__account-item {
   padding: 8px 20px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -2140,7 +2140,7 @@ label {
 .header-navigation__select-item {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -2286,7 +2286,7 @@ label {
 
 .header-navigation-mobile__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -2345,7 +2345,7 @@ label {
   max-width: 279px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -2368,7 +2368,7 @@ label {
 
 .header-navigation-mobile__navigation-title.footer-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -2383,7 +2383,7 @@ label {
 
 .header-navigation-mobile__navigation-amount-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 20px;
   text-align: center;
@@ -2433,7 +2433,7 @@ label {
 
 .header-navigation-mobile__select-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -2467,7 +2467,7 @@ label {
 
 .header-navigation-mobile__select-item-link {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -2497,7 +2497,7 @@ label {
 
 .header-navigation-mobile__navigation-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.8125rem;
+  font-size: 13px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -2510,7 +2510,7 @@ label {
 
 .header-navigation-mobile__footer-text-timetable {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -2550,7 +2550,7 @@ label {
 
 .header-navigation-mobile__submenu-footer-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -2646,7 +2646,7 @@ label {
   width: 768px;
   padding: 10px 16px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -2762,7 +2762,7 @@ label {
 
 .footer-content__title-text-clock {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -2773,7 +2773,7 @@ label {
 .footer-content__title-text {
   margin-bottom: 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 22px;
   text-align: left;
@@ -2859,7 +2859,7 @@ label {
 .footer-text {
   margin-bottom: 8px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -2922,7 +2922,7 @@ label {
 
 .footer-special-documents__text {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -3081,7 +3081,7 @@ label {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -3090,7 +3090,7 @@ label {
 
 .dropdown-search__item-link {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -3099,7 +3099,7 @@ label {
 
 .dropdown-search__item-link.dedicated {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 22px;
   text-align: center;
@@ -3160,7 +3160,7 @@ label {
 
 .catalog__page-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 700;
   line-height: 40px;
   text-align: left;
@@ -3223,7 +3223,7 @@ label {
 .catalog__item-name {
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
@@ -3233,7 +3233,7 @@ label {
 .catalog__description-title {
   margin-bottom: 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -3246,7 +3246,7 @@ label {
 
 .catalog__description-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -3272,7 +3272,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -3378,7 +3378,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -3555,7 +3555,7 @@ label {
   max-width: 464px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -3583,7 +3583,7 @@ label {
   transition: all .2s ease-in-out;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -3594,7 +3594,7 @@ label {
   .main-information__title {
     text-transform: none;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 700;
     line-height: 40px;
     text-align: left;
@@ -3644,7 +3644,7 @@ label {
 
 .main-information__reviews-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -3658,7 +3658,7 @@ label {
 
 .main-information__code-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -3734,7 +3734,7 @@ label {
 
 .main-information__text {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -3743,7 +3743,7 @@ label {
 
 .main-information__text.color, .main-information__text.size {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -3864,7 +3864,7 @@ label {
 
 .main-information__size-item {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -3932,7 +3932,7 @@ label {
 
 .main-information__price {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -3941,7 +3941,7 @@ label {
 
 .main-information__price.discount {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -3952,7 +3952,7 @@ label {
 
 .main-information__full-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 700;
   line-height: 40px;
   text-align: left;
@@ -4208,7 +4208,7 @@ label {
 
 .main-information__dropdown-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -4234,7 +4234,7 @@ label {
   max-width: 570px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -4364,7 +4364,7 @@ label {
 .characteristics__characteristic-name {
   white-space: nowrap;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -4398,7 +4398,7 @@ label {
   max-width: 490px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -4513,7 +4513,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -4554,7 +4554,7 @@ label {
 .card-product-title {
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 700;
   line-height: 40px;
   text-align: left;
@@ -4609,7 +4609,7 @@ label {
 
 .reviews__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -4650,7 +4650,7 @@ label {
 .reviews__balls {
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -4660,7 +4660,7 @@ label {
 .reviews__description {
   padding-left: 8px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -4773,7 +4773,7 @@ label {
 .reviews__review-data {
   margin-bottom: 4px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -4782,7 +4782,7 @@ label {
 
 .reviews__review-data.user, .reviews__review-data.admin {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 14px;
 }
 
 .reviews__review-data.admin {
@@ -5417,7 +5417,7 @@ label {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -5426,7 +5426,7 @@ label {
 
 .mobile-price-line__discount-percent {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -5435,7 +5435,7 @@ label {
 
 .mobile-price-line__full-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -5496,7 +5496,7 @@ label {
 .card-item__not-available {
   display: none;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -5618,7 +5618,7 @@ label {
   max-width: 60px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -5701,7 +5701,7 @@ label {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.625rem;
+  font-size: 10px;
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -5859,7 +5859,7 @@ label {
 
 .card-item__color-item-more {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -5891,7 +5891,7 @@ label {
 
 .card-item__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -5901,7 +5901,7 @@ label {
 .card-item__name-item {
   margin-bottom: 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -5912,7 +5912,7 @@ label {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -5927,7 +5927,7 @@ label {
 
 .card-item__full-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -6142,7 +6142,7 @@ label {
   margin-bottom: 68px;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 2.75rem;
+  font-size: 44px;
   font-weight: 800;
   line-height: 44px;
   text-align: left;
@@ -6154,7 +6154,7 @@ label {
     max-width: 327px;
     margin-bottom: 40px;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 700;
     line-height: 40px;
     text-align: left;
@@ -6429,7 +6429,7 @@ label {
 
 .product-selection__checkbox-label {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -6449,7 +6449,7 @@ label {
 
 .product-selection__search-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -6458,7 +6458,7 @@ label {
 
 .product-selection__search-result {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -6542,7 +6542,7 @@ label {
   display: inline-block;
   padding: 8px 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -6579,7 +6579,7 @@ label {
 
 @media (max-width: 960px) {
   .current-offers__navigation-item {
-    font-size: 0.9375rem;
+    font-size: 15px;
     padding: 8px;
   }
 }
@@ -6866,7 +6866,7 @@ label {
 
 .news__description-data {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -6876,7 +6876,7 @@ label {
 .news__description-title {
   margin-bottom: 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -6885,7 +6885,7 @@ label {
 
 .news__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -6933,7 +6933,7 @@ label {
 .stay-partner__inputs-title {
   margin-bottom: 40px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -7001,7 +7001,7 @@ label {
 
 .stay-partner__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -7047,7 +7047,7 @@ label {
 .main-title {
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 700;
   line-height: 40px;
   text-align: left;
@@ -7056,7 +7056,7 @@ label {
 
 .main-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -7162,7 +7162,7 @@ label {
 
 .modal-on-click__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -7237,7 +7237,7 @@ label {
 .modal-on-click__text-title {
   margin-bottom: 36px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -7283,7 +7283,7 @@ label {
   text-transform: uppercase;
   margin-bottom: 60px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 24px;
   text-align: center;
@@ -7298,7 +7298,7 @@ label {
 
 .modal-on-click__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
@@ -7503,7 +7503,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
@@ -7598,7 +7598,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -7639,7 +7639,7 @@ label {
 .main-modal__forget-password-title {
   margin-bottom: 40px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -7696,7 +7696,7 @@ label {
   display: block;
   margin-bottom: 20px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -7812,7 +7812,7 @@ label {
 .modal-send-email__title {
   margin-bottom: 16px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
@@ -7821,7 +7821,7 @@ label {
 
 .modal-send-email__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -7892,7 +7892,7 @@ label {
 .modal-sended-review__title {
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
@@ -7902,7 +7902,7 @@ label {
 @media (max-width: 640px) {
   .modal-sended-review__title {
     font-family: "Open Sans", sans-serif;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 700;
     line-height: 44px;
     text-align: center;
@@ -8015,7 +8015,7 @@ label {
 .modal-stay-review__title {
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
@@ -8089,7 +8089,7 @@ label {
 
 .modal-stay-review__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -8274,7 +8274,7 @@ label {
 .modal-basket__header-title {
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -8322,7 +8322,7 @@ label {
 
 .modal-basket__button-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -8436,7 +8436,7 @@ label {
   max-width: 434px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -8447,7 +8447,7 @@ label {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -8456,7 +8456,7 @@ label {
 
 .modal-basket__new-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -8501,7 +8501,7 @@ label {
 
 .modal-basket__amount {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -8557,7 +8557,7 @@ label {
 
 .modal-basket__full-price-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -8592,6 +8592,7 @@ label {
   --top: 0;
   --topScroll: 0;
   --leftPositionResult: 0;
+  --topPositionResult: 0;
 }
 
 .filter__wrapper {
@@ -8603,7 +8604,7 @@ label {
   padding: 0 48px;
   margin-bottom: 20px;
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -8664,7 +8665,7 @@ label {
   border-radius: 50%;
   background-color: #2D2D2D;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 700;
   line-height: 20px;
   text-align: center;
@@ -8760,7 +8761,7 @@ label {
   transition: all 0.1s ease-in-out;
   width: 212px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -8787,7 +8788,7 @@ label {
   .top-navigation__name-section-mobile {
     display: block;
     font-family: "Open Sans", sans-serif;
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: 700;
     line-height: 20px;
     text-align: left;
@@ -8944,7 +8945,7 @@ label {
 
 .top-navigation__amount-search {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -9024,7 +9025,7 @@ label {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -9096,7 +9097,7 @@ label {
   max-width: 172px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -9141,7 +9142,7 @@ label {
   transition: all 0.1s ease-in-out;
   padding: 8px 16px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -9336,7 +9337,7 @@ label {
   width: 100%;
   height: 24px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -9441,7 +9442,7 @@ label {
 
 .left-navigation__filter-name {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -9496,7 +9497,7 @@ label {
   display: inline-block;
   width: 100px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -9747,7 +9748,7 @@ label {
   width: 44px;
   height: 44px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -9791,23 +9792,21 @@ label {
 
 .result-search {
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   top: 200px;
+  top: var(--topPositionResult);
   left: var(--leftPositionResult);
   -webkit-box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .result-search.active {
-  display: none;
-}
-
-.result-search.scroll {
-  position: fixed;
-  top: 360px;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
 
 .result-search.scroll-stop {
@@ -9842,7 +9841,7 @@ label {
 
 .result-search__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -9852,7 +9851,7 @@ label {
 .result-search__button {
   padding: 4px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 20px;
   text-align: center;
@@ -9869,7 +9868,7 @@ label {
 
 .filter-description__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -9890,7 +9889,7 @@ label {
 
 .filter-description__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -9948,7 +9947,7 @@ label {
   width: 100%;
   display: block;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -10035,7 +10034,7 @@ label {
   display: block;
   padding: 12px 16px 12px 0;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -10072,7 +10071,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -10265,7 +10264,7 @@ label {
   text-transform: uppercase;
   margin-bottom: 40px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
@@ -10280,7 +10279,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.825rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -10350,7 +10349,7 @@ label {
 
 .private-data__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -10411,7 +10410,7 @@ label {
   width: 100%;
   height: 24px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -10555,7 +10554,7 @@ label {
   text-transform: uppercase;
   margin-bottom: 60px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
@@ -10708,7 +10707,7 @@ label {
 .order__status-title {
   display: none;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -10802,7 +10801,7 @@ label {
 
 .order__data {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -10811,7 +10810,7 @@ label {
 
 .order__data-subtitle-order {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -10842,7 +10841,7 @@ label {
 
 .order__sum-title, .order__amount-title, .order__amount-product {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -10851,7 +10850,7 @@ label {
 
 .order__sum-subtitle, .order__amount-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -10946,7 +10945,7 @@ label {
 
 .order__more-number {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -11014,7 +11013,7 @@ label {
 .order__about-order {
   display: block;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11035,7 +11034,7 @@ label {
 
 .order__list-item {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11063,7 +11062,7 @@ label {
 .order__title-navigation-item {
   width: 120px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11169,7 +11168,7 @@ label {
   max-width: 218px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -11225,7 +11224,7 @@ label {
 
 .order__details-price-title, .order__details-amount-title, .order__details-sum-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -11243,7 +11242,7 @@ label {
   display: inline-block;
   width: 120px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -11322,7 +11321,7 @@ label {
 
 .order__payment-title, .order__total-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11331,7 +11330,7 @@ label {
 
 .order__payment-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11353,7 +11352,7 @@ label {
 
 .order__total-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -11446,7 +11445,7 @@ label {
 
 .comparison__category-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -11513,7 +11512,7 @@ label {
 
 .comparison__dropdown-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11552,7 +11551,7 @@ label {
   transition: all .1s ease-in-out;
   padding: 8px 16px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11666,7 +11665,7 @@ label {
 
 .comparison__switch-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -11766,7 +11765,7 @@ label {
 .comparison__empty-title {
   margin-bottom: 40px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: center;
@@ -11791,7 +11790,7 @@ label {
 
 .comparison__empty-subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -11931,7 +11930,7 @@ label {
 
 .comparison .comparison-slider__title-characteristic-item {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -11969,7 +11968,7 @@ label {
   border-bottom: 1px solid #FAD1D6;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -12200,7 +12199,7 @@ label {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.625rem;
+  font-size: 10px;
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -12247,7 +12246,7 @@ label {
 
 .comparison-slider__review-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -12258,7 +12257,7 @@ label {
   max-width: 168px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -12345,7 +12344,7 @@ label {
   cursor: pointer;
   padding: 12px 22px 12px 16px;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -12384,7 +12383,7 @@ label {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -12393,7 +12392,7 @@ label {
 
 .comparison-slider__new-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -12425,7 +12424,7 @@ label {
 
 .comparison-slider__button-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -12475,7 +12474,7 @@ label {
 
 .favorites__dropdown-header-mobile-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
@@ -12570,7 +12569,7 @@ label {
 
 .order-waiting__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: center;
@@ -12580,7 +12579,7 @@ label {
 @media (max-width: 960px) {
   .order-waiting__title {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 600;
     line-height: 28px;
     text-align: center;
@@ -12603,7 +12602,7 @@ label {
 
 .order-waiting__subtitle {
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: center;
@@ -12616,7 +12615,7 @@ label {
 @media (max-width: 960px) {
   .order-waiting__subtitle {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 600;
     line-height: 28px;
     text-align: center;
@@ -12632,7 +12631,7 @@ label {
 
 .order-waiting__waiting-subtitle, .order-waiting__social-networks-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -12641,7 +12640,7 @@ label {
 
 .order-waiting__working-mode {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: center;
@@ -12691,7 +12690,7 @@ label {
 
 .ordering__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -12701,7 +12700,7 @@ label {
 
 @media (max-width: 960px) {
   .ordering__title {
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-bottom: 12px;
   }
 }
@@ -12765,7 +12764,7 @@ label {
   padding: 12px;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -12776,7 +12775,7 @@ label {
   .ordering__new-user, .ordering__regular-user {
     text-transform: none;
     font-family: "Open Sans", sans-serif;
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 600;
     line-height: 20px;
     text-align: left;
@@ -12844,7 +12843,7 @@ label {
 
 .ordering__section-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -13065,7 +13064,7 @@ label {
 
 .ordering__tip-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -13098,7 +13097,7 @@ label {
 
 .ordering__license-description {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
@@ -13228,7 +13227,7 @@ label {
 
 .ordering__basket-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -13238,7 +13237,7 @@ label {
 @media (max-width: 960px) {
   .ordering__basket-title {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.125rem;
+    font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     text-align: left;
@@ -13357,7 +13356,7 @@ label {
 
 .ordering__name-product {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -13380,7 +13379,7 @@ label {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   line-height: 20px;
   text-align: right;
@@ -13389,7 +13388,7 @@ label {
 
 .ordering__new-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: right;
@@ -13398,7 +13397,7 @@ label {
 
 @media (max-width: 960px) {
   .ordering__new-price {
-    font-size: 0.75rem;
+    font-size: 12px;
     line-height: 20px;
   }
 }
@@ -13417,7 +13416,7 @@ label {
 
 .ordering__footer-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -13426,7 +13425,7 @@ label {
 
 .ordering__footer-full-price {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -13477,7 +13476,7 @@ label {
 
 .news-section__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -13511,7 +13510,7 @@ label {
 
 .news-one__title {
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -13523,7 +13522,7 @@ label {
   .news-one__title {
     padding-left: 16px;
     padding-right: 16px;
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-bottom: 24px;
   }
 }
@@ -13570,7 +13569,7 @@ label {
 
 .news-one__data {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -13582,7 +13581,7 @@ label {
   max-width: 624px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -13692,7 +13691,7 @@ label {
 
 .about-company-page__title-page {
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 44px;
   text-align: left;
@@ -13747,7 +13746,7 @@ label {
 
 .about-company-page__tab-item {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -13781,7 +13780,7 @@ label {
 
 .about-company-page__tab-item.active {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   text-align: left;
@@ -13831,7 +13830,7 @@ label {
 
 .about-company-page__description {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -13864,7 +13863,7 @@ label {
 .about-company-page__title {
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
@@ -13945,7 +13944,7 @@ label {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.825rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -13980,7 +13979,7 @@ label {
 
 .about-company-page__services-item-name {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.825rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: center;
@@ -13997,7 +13996,7 @@ label {
   width: 100%;
   border-bottom: 1px solid #ADADAD;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -14053,7 +14052,7 @@ label {
 
 .about-company-page__download-name-catalog {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -14099,7 +14098,7 @@ label {
 
 .about-company-page__helper-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
@@ -14157,7 +14156,7 @@ label {
 
 .about-company-page__dropdown-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.825rem;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   text-align: left;
@@ -14196,7 +14195,7 @@ label {
 
 .about-company-page__dropdown-description {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.825rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
@@ -14205,7 +14204,7 @@ label {
 
 .about-company-page__description-item {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.825rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;

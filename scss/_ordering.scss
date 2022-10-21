@@ -13,10 +13,10 @@
     }
 
     &__title {
-        @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
+        @include text( $size: 32px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
         margin-bottom: 52px;
         @include __960 {
-            font-size: 1.5rem;
+            font-size: 24px;
             margin-bottom: 12px;
         }
     }
@@ -53,10 +53,10 @@
         position: relative;
         padding: 12px;
         text-transform: uppercase;
-        @include text( $size: 1.25rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 28px);
+        @include text( $size: 20px, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 28px);
         @include __960 {
             text-transform: none;
-            @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 20px); 
+            @include text( $size: 14px, $textAlign: left, $color: $color-gray-60, $fontWeight: 600, $lineHeight: 20px); 
         }
         &::after {
             content: '';
@@ -104,7 +104,7 @@
     }
 
     &__section-title {
-        @include text( $size: 1rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        @include text( $size: 16px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
         margin-bottom: 32px;
     }
 
@@ -255,7 +255,7 @@
     }
 
     &__tip-text {
-        @include text( $size: 0.75rem, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 20px);
+        @include text( $size: 12px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__footer {
@@ -287,7 +287,7 @@
     }
 
     &__license-description {
-        @include text( $size: 0.75rem, $textAlign: center, $color: $color-gray-60, $fontWeight: 400, $lineHeight: 20px);
+        @include text( $size: 12px, $textAlign: center, $color: $color-gray-60, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__license-description-link {
@@ -398,9 +398,9 @@
     }
 
     &__basket-title {
-        @include text( $size: 1.25rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
+        @include text( $size: 20px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 28px);
         @include __960 {
-            @include text( $size: 1.125rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px); 
+            @include text( $size: 18px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px); 
         }
     }
 
@@ -481,7 +481,7 @@
 
 
     &__name-product {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
+        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
     }
 
     &__price {
@@ -495,13 +495,13 @@
     &__old-price {
         display: block;
         text-decoration-line: line-through;
-        @include text( $size: 0.75rem, $textAlign: right, $color: $color-gray-70, $fontWeight: 600, $lineHeight: 20px);
+        @include text( $size: 12px, $textAlign: right, $color: $color-gray-70, $fontWeight: 600, $lineHeight: 20px);
     }
 
     &__new-price {
-        @include text( $size: 1rem, $textAlign: right, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        @include text( $size: 16px, $textAlign: right, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
         @include __960 {
-            font-size: 0.75rem;
+            font-size: 12px;
             line-height: 20px;
         }
     }
@@ -514,11 +514,11 @@
     }
 
     &__footer-title {
-        @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-60, $fontWeight: 400, $lineHeight: 24px);
+        @include text( $size: 14px, $textAlign: left, $color: $color-gray-60, $fontWeight: 400, $lineHeight: 24px);
     }
 
     &__footer-full-price {
-        @include text( $size: 1.125rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+        @include text( $size: 18px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
     }
 }
 

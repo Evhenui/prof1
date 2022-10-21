@@ -8,7 +8,7 @@
     }
 
     &__title {
-        @include text( $size: 2rem, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
+        @include text( $size: 32px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
         margin-bottom: 40px;
     }
 
