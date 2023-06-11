@@ -281,10 +281,36 @@
         }
     }
 
+    &__private-info {
+        width: 100%;
+    }
+
     &__private-info-wrapper {
+        position: relative;
+        background: #F7F7F7;
+        border-radius: 0px 44px 44px 0px;
         padding: 48px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #F7F7F7;
+        }
         @include __960 {
+            width: 100%;
             padding: 48px 16px;
+            border-radius: 0px 44px 44px 0px;
+        }
+    }
+
+    &__change-password {
+        @include __960 {
+            width: 100%;
+            border-radius: 0px 44px 44px 0px;
         }
     }
 
@@ -385,9 +411,16 @@
     }
 
     &__change-password-wrapper {
+        background: #F7F7F7;
+        border-radius: 44px;
         padding: 48px;
         @include __960 {
             padding: 48px 16px;
+        }
+
+        @include __860 {
+            width: 100%;
+            border-radius: 0px 44px 44px 0px;
         }
     }
 
@@ -1564,17 +1597,17 @@
         align-items: center;
         display: none;
         &.stocks {
-            background-image: url('/icon/stocks.png');
+            background-image: url('../icon/stocks.png');
             background-repeat: no-repeat;
             background-size: auto auto;
         }
         &.bestseller {
-            background-image: url('/icon/bestseller.png');
+            background-image: url('../icon/bestseller.png');
             background-repeat: no-repeat;
             background-size: auto auto;
         }
         &.novelty {
-            background-image: url('/icon/novelty.png');
+            background-image: url('../icon/novelty.png');
             background-repeat: no-repeat;
         }
     }

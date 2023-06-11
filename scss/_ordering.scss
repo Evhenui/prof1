@@ -25,6 +25,7 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        gap: 20px;
         @include __960 {
             flex-direction: column-reverse;
         }
@@ -96,8 +97,23 @@
     }
 
     &__contacts, &__delivery, &__payment-method {
+        position: relative;
         padding: 48px 52px 48px 0;
         margin-bottom: 44px;
+
+        background-color: #F7F7F7;
+        border-radius: 0px 44px 44px 0px;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: -100%;
+            background-color: #F7F7F7;
+        }
         @include __1356 {
             padding: 48px 30px 48px 0; 
         }
@@ -246,7 +262,7 @@
             width: 12px;
             height: 4px;
             background-repeat: no-repeat;
-            background-image: url('/icon/ordering_arrow.png');
+            background-image: url('../icon/ordering_arrow.png');
             position: absolute;
             bottom: -6px;
             left: 50%;

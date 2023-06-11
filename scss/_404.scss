@@ -1,0 +1,58 @@
+.error-page {
+  min-height: 100vh;
+
+  background-image: url('../img/bg_404.png');
+  background-repeat: no-repeat;
+  background-position: center 310px;
+
+  @include __860 {
+    background-position: center 215px;
+  }
+
+  &__wrp {
+    padding: 180px 48px;
+
+    @include __860 {
+      padding: 120px 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 42px;
+  }
+
+  &__txts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+  }
+
+  &__text {
+    @include text( $size: 16px, $textAlign: center, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);  
+  
+    &.subtitle {
+      font-size: 14px;
+      font-weight: 400;
+
+      margin-bottom: 54px;
+    }
+
+    &.error-text {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+
+      & > a {
+        font-size: 14px;
+        color: #F07585;
+      }
+    }
+  }
+
+}

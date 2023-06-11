@@ -14,7 +14,7 @@ html {
 
 #body-cont {
   background-color: $color-white;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   &.active {
     overflow-y: hidden;
     padding-right: 17px;

@@ -8,14 +8,10 @@
 .header-page-navigation {
     border-bottom: 1px solid $color-gray-30;
     position: sticky;
-    z-index: 3;
-    top: 68px;
+    z-index: 100;
+    top: 67px;
     margin-bottom: 28px;
     background-color: $color-white;
-    &.active {
-        position: fixed;
-        width: 100%
-    }
     &__wrapper {
         @extend %size-page;
         @extend %padding-country;
@@ -113,6 +109,9 @@
 .main-slider {
     flex: 0 0 648px;
     height: 600px;
+
+    margin-bottom: 142px;
+
     @media (max-width: 960px) {
         margin: 0 auto;
         margin-bottom: 16px;
@@ -173,13 +172,39 @@
     }
 }
 .main-information {
+    position: sticky;
+    top: 125px;
+
     height: 673px;
-    overflow: auto;
+
     &::-webkit-scrollbar { width: 0; }
+
     @include __960 {
         height: auto;
     }
+
+    @media (max-width: 1150px) {
+        display: none;
+    }
+
+    &.mobile {
+        display: none;
+
+        @media (max-width: 1150px) {
+            display: block;
+
+            position: static;
+
+            margin-bottom: 90px;
+        }
+
+        @include __960 {
+            padding: 0 16px;
+        }
+    }
+
     &.active {
+        z-index: 99;
         max-width: 464px;
         width: 100%;
         box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
@@ -187,6 +212,10 @@
         background-color: $color-white;
         height: 513px;
         overflow: hidden;
+
+        @include __1250 {
+            height: 607px;
+        }
     }
     &.active &__wrapper {
         padding: 24px 0 39px 0;
@@ -194,6 +223,7 @@
 
     &.active &__title-image-wrapper {
         display: block;
+        flex: 0 0 80px;
     }
 
     &__title-image-wrapper {
@@ -231,7 +261,6 @@
     }
 
     &__title {
-        transition: all .2s ease-in-out;
         text-transform: uppercase;
         @include text( $size: 32px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
         @include __1250 {
@@ -303,6 +332,75 @@
         @include __960 {
             margin-bottom: 44px;
         }
+    }
+    &__short-decription {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    &__description-title {
+        @include text( $size: 16px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 24px);
+    }
+
+    &__download-info {
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+
+        @include text( $size: 14px, $textAlign: left, $color: $color-gray-60, $fontWeight: 400, $lineHeight: 24px);
+        
+        &:hover,
+        &:active {
+            color: $color-red;
+
+            .main-information__download-svg {
+                fill: $color-red;
+            }
+        }
+    }
+
+    &__description {
+        position: relative;
+    }
+    .news__button.card-btn {
+        max-width: 143px;
+
+        position: absolute;
+
+        bottom: -4px;
+        right: 0;
+
+        background-color: white;
+
+        & > .btn-arrow-right__arrow {
+            height: 30px;
+            & > .card-btn-svg {
+                height: 30px;
+            }
+        }
+    }
+
+    .btn-arrow-right__line-active.little {
+        top: 50%;
+    }
+
+    .btn-arrow-right.card-btn:hover .btn-arrow-right__line-active {
+        left: 8px;
+    }
+
+    &__description-txt {
+        @include text( $size: 14px, $textAlign: left, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);  
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        box-orient: vertical;
     }
 
     &__select-color-section {
@@ -584,6 +682,9 @@
         width: 100%;
         column-gap: 10px;
         margin-right: 4px;
+
+        transition: color .2s ease-in-out;
+        transition: background .2s ease-in-out;
         @include __1250 {
             max-width: 100%;
             
@@ -607,6 +708,9 @@
         padding: 16px 0;
         max-width: 244px;
         width: 100%;
+
+        transition: color .2s ease-in-out;
+        transition: background .2s ease-in-out;
         @include __1250 {
             max-width: 100%;
         }
@@ -723,11 +827,13 @@
         width: 100%;
         background-color: $color-gray-5;
         border-radius: 0px 44px 44px 0px;
-        @include __960 {
+
+        @media (max-width: 1150px) {
+            max-width: 100%;
             padding: 84px 16px 80px 16px;
         }
         &::before {
-            content: '';
+            //content: '';
             position: absolute;
             width: 100vw;
             height: 100%;
@@ -933,22 +1039,22 @@
 }
 
 .reviews {
-    margin-bottom: 160px;
     scroll-margin-top: 80px;
     @include __960 {
         scroll-margin-top: 115px;  
+        padding: 0 16px
     }
     &__wrapper {
         @extend %size-page;
-        @extend %padding-country;
-        @include __960 {
-            @include padding-mob;
-        }
     }
 
     &__main {
         max-width: 832px;
         width: 100%;
+
+        @media (max-width: 1150px) {
+            max-width: 100%;
+        }
     }
 
     &__title {
@@ -1284,9 +1390,23 @@
 
 .main-slider {
     height: 600px;
+
+    @media (max-width: 1150px) {
+        margin-bottom: 40px;
+    }
+
+    @include __960 {
+        height: 460px;
+
+        margin-bottom: 0;
+    }
     &__wrapper {
       display: flex;
       align-items: flex-start;
+      @media (max-width: 1150px) {
+        justify-content: center;
+      }
+
       @media (max-width: 960px) {
         flex-direction: column-reverse;
         row-gap: 16px;
@@ -1642,4 +1762,21 @@
 
 .card-item__footer-navigation.none .card-item__button-basket {
     display: none;
+}
+
+.car-wrp{
+    max-width: 1440px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    margin: 0 auto 160px auto;
+    @extend %padding-country;
+
+    @include __960 {
+        padding: 0;
+        margin-bottom: 80px;
+    }
 }

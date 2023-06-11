@@ -19,26 +19,16 @@ export let cardProduct = function() {
             characteristicsSection = cardProduct.querySelector('[data-characteristics-section]'),
             reviwsSection = cardProduct.querySelector('[data-reviews-section]'),
             navigationPage = cardProduct.querySelector('[data-navigation-scroll-card-product]'),
-            navigationPageEmpty = cardProduct.querySelector('[data-navigation-scroll-card-product-empty]'),
             buttonBuy = cardProduct.querySelector('[data-button-buy-card-product]'),
             notificationBasket = cardProduct.querySelector('[data-notification-basket]'),
-            sectionCardProduct = cardProduct.querySelectorAll('[data-section-card-product]');
+            sectionCardProduct = cardProduct.querySelectorAll('[data-section-card-product]'),
+            mainInfo = cardProduct.querySelector('[data-main-info]');
 
           const navSecScr = cardProduct.querySelector('[data-sc]');
 
             buttonBuy.addEventListener('click', function() {
               this.classList.add('active');
               notificationBasket.classList.add('active');
-            })
-
-            window.addEventListener('scroll', function() {
-              if (window.scrollY > 60) {
-                navigationPage.classList.add("active");
-                navigationPageEmpty.classList.add("active");
-              } else {
-                navigationPage.classList.remove("active");
-                navigationPageEmpty.classList.remove("active");
-              }
             })
       //----------------navigation page----------------------------
       navigationPageItems.forEach((item) => {
@@ -47,6 +37,14 @@ export let cardProduct = function() {
             item.classList.add('active');
           });
       });
+
+      window.addEventListener('scroll', function() {
+        if(window.scrollY > 100) {
+          mainInfo.classList.add('active')
+        } else {
+          mainInfo.classList.remove('active')
+        }
+      })
 
       window.addEventListener('scroll', function() {
         let scrollDistansce = window.scrollY,

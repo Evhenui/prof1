@@ -35,6 +35,19 @@
         }
     }
 
+    &__last-news {
+        background-image: url('../img/bg-news.png');
+        background-repeat: no-repeat;
+        background-position: left 0;
+
+        padding: 100px 0;
+
+        @include __960 {
+            background-image: url('../img/bg-news-mobile.png');
+            background-position: center;
+        }
+    }
+
     &__image-wrapper {
         max-width: 688px;
         width: 100%;
@@ -78,9 +91,9 @@
     }
 
     &__videos {
-        margin-bottom: 200px;
+        margin-bottom: 100px;
         @include __960 {
-            margin-bottom: 180px; 
+            margin-bottom: 100px; 
         }
     }
 

@@ -137,17 +137,17 @@
         align-items: center;
         display: none;
         &.stocks {
-            background-image: url('/icon/stocks.png');
+            background-image: url('../icon/stocks.png');
             background-repeat: no-repeat;
             background-size: auto auto;
         }
         &.bestseller {
-            background-image: url('/icon/bestseller.png');
+            background-image: url('../icon/bestseller.png');
             background-repeat: no-repeat;
             background-size: auto auto;
         }
         &.novelty {
-            background-image: url('/icon/novelty.png');
+            background-image: url('../icon/novelty.png');
             background-repeat: no-repeat;
         }
     }

@@ -6,7 +6,7 @@
     background-color: $color-black;
     position: fixed;
     top: 0;
-    z-index: 4;
+    z-index: 999999;
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
     &::before {
       content: "";
@@ -941,6 +941,16 @@
   
     &__username {
       padding: 16px 0;
+
+      &.new-user {
+        .header-navigation-mobile__login-in {
+          display: none;
+        }
+
+        .header-navigation-mobile__login-out {
+          display: block;
+        }
+      }
     }
   
     &__login-in {

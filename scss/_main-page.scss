@@ -148,7 +148,7 @@
     }
 
     &__slide-wrapper {
-        background-image: url('/img/background-main_1.jpg');
+        background-image: url('../img/background-main_1.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
@@ -287,12 +287,12 @@
         display: flex;
         background-repeat: no-repeat;
         background-position: right;
-        background-image: url('/img/backgroung_4.png');
+        background-image: url('../img/backgroung_4.png');
         @include __960 {
             padding: 80px 16px;
             justify-content: center;
             background-position: center;
-            background-image: url('/img/backgroung_mobile.png');
+            background-image: url('../img/backgroung_mobile.png');
         }
     }
 
@@ -657,7 +657,7 @@
 .background-wrapper {
     @extend %size-page;
     background-repeat: no-repeat, no-repeat;
-    background-image: url('/img/bg.png');
+    background-image: url('../img/bg.png');
     background-position: right 0px;
 }
 
