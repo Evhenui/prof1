@@ -451,7 +451,6 @@ export let inputsValidate = function() {
                         }
                     })
                   }
-                  console.log(arr.length)
                   if(arr.length === inputs.length) {
                       buttonSend.disabled = false;
                   }

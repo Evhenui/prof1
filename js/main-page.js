@@ -58,7 +58,7 @@ export let mainPage = function() {
             itemSelected = contactsPage.querySelector('[data-dropdown-selected]'),
             itemLabel = contactsPage.querySelector('[data-dropdown-label]'),
             dropdowns = contactsPage.querySelectorAll('[data-dropdown]');
-
+            
             if(dropdownTypeOfTrade) {
                 dropdownTypeOfTrade.addEventListener('click', function() {
                     if (this.classList.contains('active')) {

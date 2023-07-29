@@ -11,7 +11,6 @@ export let sliders = function() {
         } 
 
     if (cardProduct !== null) {
-
       const sliderCardProductFooter = new Swiper('.recommendation__slider', {
         direction: 'horizontal',
         slidesPerView: 4, 

@@ -461,11 +461,21 @@
     &__item-select.active &__color-item{
         width: 20px;
         height: 20px;
+
+        a > img {
+            width: 20px !important;
+            height: 20px !important;
+        }
     }
 
     &__item-select:hover &__color-item{
         width: 20px;
         height: 20px;
+
+        a > img {
+            width: 20px !important;
+            height: 20px !important;
+        }
     }
 
     &__color-item {
@@ -474,31 +484,12 @@
         height: 12px;
         transition: all .2s ease-in-out;
         outline: 1px solid rgba(177, 177, 177, 0.5);
+        a > img {
+            width: 12px !important;
+            height: 12px !important;
 
-        &.red {
-            background-color: $color-red;
+            transition: all .2s ease-in-out;
         }
-        &.black {
-            background-color: $color-black;
-        }
-        &.white {
-            background-color: $color-white;
-        }
-        &.blue {
-            background-color: #70CBFE;
-        }
-        &.green {
-            background-color: #70FE8F;
-        }
-        &.pink {
-            background-color: #F270FE;
-        }
-        &.yellow {
-            background-color: #FEF070;
-        }
-        &.grey {
-            background-color: #DFDFDF;
-        } 
     }
 
     &__select-size-section {
@@ -1150,6 +1141,7 @@
     }
 
     &__section-review-wrapper {
+        width: 100%;
         display: flex;
         flex-direction: column;
         background: #FFFFFF;
@@ -1778,5 +1770,9 @@
     @include __960 {
         padding: 0;
         margin-bottom: 80px;
+    }
+
+    &__left-block {
+        width: 100%;
     }
 }

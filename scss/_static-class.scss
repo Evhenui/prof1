@@ -1,7 +1,11 @@
 html {
-  // overflow-x: hidden;
-  // margin-right: calc(-1 * (100vw - 100%));
+  overflow: auto;
+
+  &.block-scroll {
+    overflow: hidden;
+  }
 }
+
 :root {
   --width-page: 1440px;
   --height-monitor: 700px;
@@ -61,6 +65,12 @@ html {
       border-color: $color-gray-30;
       color: $color-gray-30;
     }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active  {
+      box-shadow: 0 0 0 30px #F5F5F5 inset !important;
+    }
   
   }
 
@@ -82,6 +92,13 @@ html {
 
 
   &__input:focus{ outline:none; }
+
+  &__input:-webkit-autofill,
+  &__input:-webkit-autofill:hover,
+  &__input:-webkit-autofill:focus,
+  &__input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px #F5F5F5 inset !important;
+  }
 
   &__label {
     @include text( $size: 0.875rem, $textAlign: left, $color: $color-gray-70, $fontWeight: 400, $lineHeight: 24px);
@@ -136,6 +153,13 @@ html {
     &:valid {
       border-color: $color-gray-70;
       color: $color-gray-100;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active  {
+        box-shadow: 0 0 0 30px #F5F5F5 inset !important;
     }
   }
 
@@ -327,7 +351,7 @@ html {
   height: 100%;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  display: table;
+  display: flex;
   z-index: -2;
   transition: all 0.3s ease;
   &.active {

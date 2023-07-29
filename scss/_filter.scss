@@ -491,6 +491,7 @@
     border-right: 1px solid #fad1d6;
     transition: all 0.2s ease-in-out;
     position: relative;
+
     @include __960 {
       border-right: none;
     }
@@ -543,6 +544,7 @@
     &.active {
       border: none;
       width: 0;
+      max-width: 0;
       padding: 0;
       height: 0;
       overflow: hidden;
@@ -872,14 +874,36 @@
       }
     }
 
+    .items__wrapper.active .nav-item.normal-size {
+      max-width: 312px;
+      width: 100%;
+      
+      @include __1050 {
+        @include set-item-count-in-row(3);
+      }
+      @include __960 {
+        @include set-item-count-in-row(2);
+      }
+      @include __680 {
+        @include set-item-count-in-row(1);
+      }
+    }
+
   
     & .card-item {
       transition: all .3s ease-in-out;
       @include set-item-count-in-row(3);
       max-width: 100%;
+
+      &.normal-size {
+        max-width: 312px;
+        width: 100%;
+      }
+
       @include __1050 {
         @include set-item-count-in-row(2);
       }
+
       @include __680 {
         @include set-item-count-in-row(1);
       }

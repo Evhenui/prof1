@@ -242,11 +242,21 @@
     &__color.active &__color-item{
         width: 20px;
         height: 20px;
+
+        img {
+            width: 20px !important;
+            height: 20px !important;
+        }
     }
 
     &__color:hover &__color-item{
         width: 20px;
         height: 20px;
+
+        img {
+            width: 20px !important;
+            height: 20px !important;
+        }
     }
 
     &__color-item {
@@ -256,29 +266,12 @@
         width: 12px;
         height: 12px;
         outline: 1px solid rgba(177, 177, 177, 0.5);
-        &.red {
-            background-color: $color-red;
-        }
-        &.black {
-            background-color: $color-black;
-        }
-        &.white {
-            background-color: $color-white;
-        }
-        &.blue {
-            background-color: #70CBFE;
-        }
-        &.green {
-            background-color: #70FE8F;
-        }
-        &.pink {
-            background-color: #F270FE;
-        }
-        &.yellow {
-            background-color: #FEF070;
-        }
-        &.grey {
-            background-color: #DFDFDF;
+
+        img {
+            width: 12px !important;
+            height: 12px !important; 
+            
+            transition: all .2s ease-in-out;
         }
     }
 

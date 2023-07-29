@@ -390,11 +390,11 @@
     }
 
     &__input-wrapper.password {
-        margin-bottom: 4px;
+        margin-bottom: 24px;
     }
 
     &__input-wrapper.email {
-      margin-bottom: 24px;
+      margin-bottom: 40px;
   }
   
     &__subtitle-wrapper {
@@ -521,7 +521,7 @@
     &__form-register {
         display: flex;
         flex-direction: column;
-        row-gap: 24px;
+        row-gap: 36px;
     }
 
     &__input-wrapper.name-register, &__input-wrapper.email-register,
@@ -818,6 +818,7 @@
   z-index: -1;
   opacity: 0;
   visibility: hidden;
+
   &.active {
     z-index: 5;
     opacity: 1;
@@ -825,7 +826,31 @@
     @include __640 {
       z-index: 4;
     }
-}
+  }
+
+  &__empty-title {
+    @include text($size: 18px, $color: $color-black, $textAlign: center, $fontWeight: 700, $lineHeight: 24px);
+
+    margin-bottom: 24px;
+  }
+
+  &__empty-subtitle {
+    @include text($size: 14px, $color: $color-black, $textAlign: center, $fontWeight: 600, $lineHeight: 20px);
+    .modal-basket__empty-subtitle-link {
+      color: $color-red-50;
+    }
+  }
+
+  &__no-order-img-wrapper {
+    max-width: 350px;
+    width: 100%;
+
+    margin: 0 auto 56px auto;
+  }
+
+  &__no-order-img {
+    min-height: 288px;
+  }
 
   &__mask {
     position: fixed;
@@ -1103,7 +1128,12 @@
   }
 
   &__footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+
     background-color: $color-white;
+    box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
   }
 
   &__footer-wrapper {

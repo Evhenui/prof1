@@ -1,4 +1,5 @@
 export let cardProduct = function() {
+
   const cardProduct = document.querySelector('[data-card-product]'),
         allAbout = document.querySelector('[data-all-about-section]'),
         navigationSection = document.querySelector('[data-mobile-navigation]');
@@ -70,13 +71,6 @@ export let cardProduct = function() {
         })
        
       })
-      //----------------color select-------------------------------
-      colorItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          delActiv(colorItems);
-          item.classList.add('active');
-        });
-      });
       //----------------size select-------------------------------
       sizeItems.forEach((item) => {
         item.addEventListener("click", function () {

@@ -1,7 +1,7 @@
 export let header = function() {
- 
     const header = document.querySelector('[data-header]'),
           blur = document.querySelector('[data-blur]');
+    const body = document.querySelector('#body-cont');
 
     function addActiveClass(list) {
       list.forEach((item) => {
@@ -39,6 +39,18 @@ export let header = function() {
               buttonSearch = header.querySelector('[data-button-search]'),
               buttonCloseSearch = header.querySelector('[data-button-close-search]'),
               linksHeader = header.querySelectorAll('[data-default-link]');
+
+        const linkRegister = header.querySelector('.link-register');
+        const linkEnter = header.querySelector('.link-enter');
+
+        linkRegister.addEventListener('click', e => {
+          e.preventDefault();
+        });
+
+        linkEnter.addEventListener('click', e => {
+          e.preventDefault();
+        })
+
         //----add/remove class groop------
         addActiveClass(selectLanguage)
 
@@ -51,8 +63,19 @@ export let header = function() {
 
 
               // add dafault width catalog submenu
+              function getInitialStep() {
+                delActiv(submenuItems);
+                delActiv(menuItems);
+                menuItems[0].classList.add('active');
+                submenuItems[0].classList.add('active');
                 window.getComputedStyle(submenuCatalog).getPropertyValue('--width');
-                submenuCatalog.style.setProperty('--width', submenuItems[0].scrollWidth + 'px');
+                setTimeout(() => {
+                  submenuCatalog.style.setProperty('--width', submenuItems[0].scrollWidth + 'px');
+                }, 100)
+              }
+
+              getInitialStep()
+          
 
           function getSize() {
             submenuItems.forEach(item=> {
@@ -65,20 +88,24 @@ export let header = function() {
                 
           buttonCatalog.addEventListener('click', function() {
             catalogMenu.classList.toggle('active');
+            document.documentElement.classList.toggle("block-scroll");
             blur.classList.toggle('active');
           })
 
-          window.addEventListener('click',(e)=>{
+
+        
+          body.addEventListener('click', (e)=>{
             const click = e.composedPath().includes(catalogMenu);
             const clickButton = e.composedPath().includes(buttonCatalog);
             if(!click && !clickButton) {
               catalogMenu.classList.remove('active');
+              document.documentElement.classList.remove("block-scroll");
               blur.classList.remove('active');
             }
           })
          //----open submenu---------------------
           menuItems.forEach((item, index) => {
-            item.addEventListener("click", function () {
+            item.addEventListener("mouseenter", function () {
               delActiv(menuItems);
               delActiv(submenuItems);
               item.classList.add('active');
@@ -93,13 +120,20 @@ export let header = function() {
         if(menuServices !== null) {
           const buttonOpen = header.querySelector('[data-button-services]'),
                 section = header.querySelector('[data-section-services]');
+          const buttonOpenCall = header.querySelector('[data-button-call]'),
+                sectionCall = header.querySelector('[data-section-call]');
+
           buttonOpen.addEventListener('click', function() {
+            buttonOpenCall.classList.remove('active');
+            sectionCall.classList.remove('active');
+            menuCall.classList.remove('active');
+
             this.classList.toggle('active');
             menuServices.classList.toggle('active');
             section.classList.toggle('active');
           })
 
-          window.addEventListener('click',(e)=>{
+          body.addEventListener('click',(e)=>{
             const click = e.composedPath().includes(menuServices);
             const clickButton = e.composedPath().includes(buttonOpen);
             if(!click && !clickButton) {
@@ -113,13 +147,21 @@ export let header = function() {
         if(menuCall !== null) {
           const buttonOpen = header.querySelector('[data-button-call]'),
                 section = header.querySelector('[data-section-call]');
+
+          const buttonOpenService = header.querySelector('[data-button-services]'),
+                sectionService = header.querySelector('[data-section-services]');
+
           buttonOpen.addEventListener('click', function() {
+            buttonOpenService.classList.remove('active');
+            sectionService.classList.remove('active');
+            menuServices.classList.remove('active');
+
             this.classList.toggle('active');
             menuCall.classList.toggle('active');
             section.classList.toggle('active');
           })
 
-          window.addEventListener('click',(e)=>{
+          body.addEventListener('click',(e)=>{
             const click = e.composedPath().includes(menuCall);
             const clickButton = e.composedPath().includes(buttonOpen);
             if(!click && !clickButton) {
@@ -140,7 +182,7 @@ export let header = function() {
             section.classList.toggle('active');
           })
 
-          window.addEventListener('click',(e)=>{
+          body.addEventListener('click',(e)=>{
             const click = e.composedPath().includes(menuAccount);
             const clickButton = e.composedPath().includes(buttonOpen);
             if(!click && !clickButton) {
