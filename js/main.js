@@ -36,3 +36,6 @@ import {ordering} from './ordering.js';
 
 import {aboutCompany} from './about-company.js';
         aboutCompany(); 
+
+import {cardProductSliders} from './card-product-sliders.js';
+        cardProductSliders(); 

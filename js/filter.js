@@ -11,7 +11,6 @@ export let filter = function() {
               navigationBar = filterSection.querySelector('[data-left-navigation-bar]'),
               catalogIntems = filterSection.querySelector('[data-catalog-items]'),
               scrollBarr = filterSection.querySelector('[data-scroll-bar]'),
-              emptySection = filterSection.querySelector('[data-empty-section]'),
               buttonsChangeView = filterSection.querySelectorAll('[data-button-list-view]'),
               productItems = filterSection.querySelectorAll('[data-product-item-change-view]'),
               leftNavigation = filterSection.querySelector('[data-left-navigation-bar]'),
@@ -23,6 +22,17 @@ export let filter = function() {
               dropSelectedItem = filterSection.querySelector('[data-dropdown-filter-selected]'),
               itemNavigationBar = filterSection.querySelectorAll('[data-filter-item-navigation]'),
               filterResultItems = filterSection.querySelector('[data-filter-items]');
+
+        const filterTitle = filterSection.querySelectorAll('.ocf-filter-header');
+        const filterList = filterSection.querySelectorAll('.ocf-value-list');
+
+        filterTitle.forEach((el, index) => {
+            el.addEventListener('click', () => {
+                el.classList.toggle("active")
+
+                filterList[index].style.height = el.classList.contains("active") ? filterList[index].scrollHeight + 'px' : 0;
+            })
+        })
 
 
               function delActiv(param) {
@@ -38,7 +48,7 @@ export let filter = function() {
               }
 
               function checkScrollNavBar(scroll, nav, navEmpty, blockItems, result) {
-                if (scroll < 121) {
+/*                 if (scroll < 121) {
                     nav.classList.remove('scroll', 'scroll-stop');
                     navEmpty.classList.remove('scroll', 'scroll-stop');
                 } else if(scroll < blockItems.offsetHeight - 490) {
@@ -51,7 +61,7 @@ export let filter = function() {
                 } else {
                     nav.classList.replace('scroll' ,'scroll-stop');
                     navEmpty.classList.replace('scroll' ,'scroll-stop');
-                }
+                } */
               }
 
               function checkScrollNavBarMobile() {
@@ -82,7 +92,7 @@ export let filter = function() {
             navigationBar.classList.toggle('active');
             catalogIntems.classList.toggle('active');
             emptyLeftNavigation.classList.toggle('active');
-            resultSerach.classList.toggle('active');
+            //resultSerach.classList.toggle('active');
         });
 
         dropdownFilter.addEventListener('click', function() {
@@ -109,12 +119,10 @@ export let filter = function() {
         });
 
         window.addEventListener("scroll", function () {
-            if (window.scrollY > 121) {
+            if (window.scrollY > 125) {
                 scrollBarr.classList.add('active');
-                emptySection.classList.add('active');
             } else {
                 scrollBarr.classList.remove('active');
-                emptySection.classList.remove('active');
             }
         });
 
@@ -144,24 +152,24 @@ export let filter = function() {
                 mainPaddingLeft = parseInt(getComputedStyle(mainInfo, true).paddingLeft),
                 positionLeftResult = widthNavBar + mainPaddingLeft;
 
-        window.getComputedStyle(navigationBar).getPropertyValue('--height-page');
-        navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + sizeHeaderFilter + 'px');
+        //window.getComputedStyle(navigationBar).getPropertyValue('--height-page');
+        //navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + sizeHeaderFilter + 'px');
 
         getPositionDropdown();
         window.addEventListener('resize', function() {
             getPositionDropdown();
         })
 
-        window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
-        navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
+        //window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
+        //navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
 
         window.addEventListener('resize', function() {
             let widthNavBar = Math.floor(navigationBar.getBoundingClientRect().width),
                 mainPaddingLeft = parseInt(getComputedStyle(mainInfo, true).paddingLeft),
                 positionLeftResult = widthNavBar + mainPaddingLeft;
 
-            window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
-            navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
+            //window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
+            //navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
             getPositionResult(filterSection, positionLeftResult);
         })
 
@@ -185,34 +193,33 @@ export let filter = function() {
                 window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
                 resultSerach.style.setProperty('--topPositionResult', top + 'px');
         
-                navigationBar.addEventListener('scroll', () => {
+/*                 navigationBar.addEventListener('scroll', () => {
                     let top = el.getBoundingClientRect().top;
                     window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
                     resultSerach.style.setProperty('--topPositionResult', top + 'px');
-
-                })
+                }) */
         
                 window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
                 resultSerach.style.setProperty('--topPositionResult', ((-(topR - 8)) + top) + 'px');
         
                 window.addEventListener('scroll', () => {                   
-                    let topR = filterResultItems.getBoundingClientRect().top;
+/*                     let topR = filterResultItems.getBoundingClientRect().top;
                     window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
-                    resultSerach.style.setProperty('--topPositionResult', ((-(topR - 8)) + top) + 'px');
-                    if(navigationBar.classList.contains('scroll-stop')) {
+                    resultSerach.style.setProperty('--topPositionResult', ((-(topR - 8)) + top) + 'px'); */
+/*                     if(navigationBar.classList.contains('scroll-stop')) {
                         resultSerach.classList.add('scroll-stop')
                     }else {
                         resultSerach.classList.remove('scroll-stop')
                     }
-             
+              */
                 })   
             })
         })
          
-        window.addEventListener('scroll', () => {
+/*         window.addEventListener('scroll', () => {
             let topR = filterResultItems.getBoundingClientRect().top;
             window.getComputedStyle(resultSerach).getPropertyValue('--topPositionResult');
             resultSerach.style.setProperty('--topPositionResult', -topR + 'px');
-        })  
+        })  */ 
     }
 }

@@ -601,6 +601,19 @@
     &__submenu-button-call {
       width: 100%;
       padding: 16px 0;
+
+      &:not(&:disabled) {
+        background-color: $color-red;
+
+        &:hover {
+          background-color: $color-red-70;
+        }
+
+        &:active {
+          background-color: $color-white;
+          color: $color-black;
+        }
+      }
     }
   }
   

@@ -50,48 +50,6 @@ export let sliders = function() {
           }
         }
       });
-      
-      const sliderMain = new Swiper('.main-slider__container-navigation', {
-        direction: 'horizontal',
-        slidesPerView: 6, 
-        navigation: { 
-        nextEl: '.main-slider__button-next', 
-        prevEl: '.main-slider__button-prev'
-        },
-        freeMode: true, 
-        breakpoints: { 
-        0: { 
-            slidesPerView: 4, 
-            direction: 'horizontal',
-        },
-        960: { 
-            slidesPerView: 4,
-            direction: 'vertical', 
-        }
-        }
-      });
-
-      const sliderMainNav = new Swiper('.main-slider__container-basic', {
-        direction: 'horizontal',
-        slidesPerView: 1,
-        mousewheel: true,
-        navigation: {
-        nextEl: '.main-slider__button-next', 
-        prevEl: '.main-slider__button-prev'
-        },
-        grabCursor: true,
-        thumbs: { 
-        swiper: sliderMain
-        },
-        breakpoints: {
-        0: { 
-            direction: 'horizontal',
-        },
-        768: { 
-            direction: 'horizontal',
-        }
-        }
-      }); 
     }
 
     if(mainPage !== null) {

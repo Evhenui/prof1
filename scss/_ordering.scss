@@ -168,15 +168,178 @@
     &__post-dropdowns {
         max-width: 644px;
         width: 100%;
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         gap: 32px 44px;
+
+        &.active {
+            display: flex;
+        }
+
+        .selected {
+            max-width: 410px;
+            width: 100%;
+            position: relative;
+        
+            &.hidden {
+                display: none;
+            }
+            
+        
+            &:hover {
+                .selected__select {
+                    border-color: $color-red-50;
+                }
+        
+                .selected__caption.active {
+                    color: $color-red-50;
+                }
+            }
+        
+        
+            &__input {
+                @include text($size: 14px, $fontWeight: 400, $lineHeight: 24px);
+                text-align: left;
+                color: #827d7d;
+
+                border-bottom: 1px solid #ADADAD;
+
+                font-family: "Open Sans", sans-serif;
+
+                padding: 10px 16px;
+                display: block;
+                border: none;
+                border-bottom: 1px solid #ADADAD;
+                width: 100%;
+            }
+        
+            &__caption {
+                display: inline-block;
+                
+                position: absolute;
+                left: 16px;
+                top: 11px;
+        
+                @include text($size: 14px, $fontWeight: 400, $lineHeight: 24px);
+                text-align: center;
+                color: #827d7d;
+        
+                padding: 0 4px;
+                transition: all 0.2s ease-in-out;
+        
+                &.active {
+                    font-size: 12px;
+                    top: -17px;
+                }
+            }
+        
+            &__arrow {
+                font-size: 0;
+        
+                transition: transform .2s ease-in-out;
+            }
+        
+            &__option-list {
+                width: 100%;
+                height: 200px;
+        
+                position: absolute;
+                z-index: 2;
+                top: 44px;
+        
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+        
+                background-color: $color-white;
+        
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in;
+        
+                overflow: auto;
+                scrollbar-width: none;
+
+                box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
+
+
+        
+                &::-webkit-scrollbar {
+                    width: 0px;
+                  }
+        
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        
+            &__option-item {
+                min-height: 60px;
+        
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        
+                position: relative;
+                z-index: 200;
+        
+                padding: 0 12px;
+                gap: 4px;
+                
+                cursor: pointer;
+        
+                &:hover {
+                    background-color: #fff9fa;
+        
+                    & > .red-diamonds {
+                        opacity: 1;
+                        transition: 0.3s ease-in;
+                    }
+                }
+        
+                &:active {
+                    background-color: #fff3ef;
+                }
+        
+                &.empty {
+                    @include text($size: 14px, $fontWeight: 400, $lineHeight: 22px);
+                    text-align: left;
+                    color: #4e4b4b;
+                }
+            }
+        
+            &__option-text {
+                @include text($size: 14px, $fontWeight: 400, $lineHeight: 22px);
+                text-align: left;
+                color: #4e4b4b;
+            }
+        }
+
+        .selected__option-list {
+            display: none;
+
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .selected__caption {
+            @include text( $size: 14px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
+        }
+
+        .basket__wrapper-input.hidden {
+            display: none;
+        }
     }
 
     &__post-checkbox {
         display: flex;
         column-gap: 84px;
         margin-bottom: 32px;
+        flex-wrap: wrap;
+        gap: 26px 84px;
         @include __1090 {
             flex-direction: column;
             row-gap: 32px;

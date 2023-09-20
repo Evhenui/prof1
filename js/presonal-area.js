@@ -99,7 +99,7 @@ export let personalArea = function() {
                     dropdownMobile = favorites.querySelector('[data-dropdown-favorites-mobile]'),
                     mobileBlur = document.querySelector('[data-blur]'),
                     dropMenuMobile = favorites.querySelector('[data-mobile-dropdown-list]'),
-                    btnCloseDropMobile = favorites.querySelector('[data-button-close-dropdown-mobile]'),
+                    btnCloseDropMobile = document.querySelector('[data-button-close-dropdown-mobile]'),
                     body = document.querySelector("#body-cont");
                     
                     function changeLableMobile (items, dropdown, section, bg) {

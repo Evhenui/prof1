@@ -130,6 +130,10 @@
     }
 
     &__navigation-button {
+        cursor: pointer;
+    }
+
+    &__navigation-button {
         font-size: 0;
     }
 
@@ -156,8 +160,16 @@
     &__navigation-button-zoom {
         display: inline-block;
         font-size: 0;
-        position: relative;
+        position: absolute;
+        bottom: 0;
+        right: 0;
         padding: 0 4px 4px 0;
+
+        cursor: pointer;
+
+        @include __960 {
+            display: none;
+        }
     }
 
     &__navigation-button-zoom:hover &__navigation-button-zoom-hover {
@@ -540,8 +552,23 @@
         display: flex;
         align-items: end;
         margin-bottom: 20px;
+
         @include __1250 {
             justify-content: space-between;
+        }
+
+        &.zoom {
+            justify-content: space-between;
+
+            gap: 8px;
+
+            .main-information__prices-buttons {
+                display: flex;
+            }
+
+            .main-information__prices-buttons {
+                gap: 20px;
+            }
         }
     }
 

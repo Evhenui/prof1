@@ -4,6 +4,10 @@ html {
   &.block-scroll {
     overflow: hidden;
   }
+
+  &.block-scroll-cart {
+    overflow: hidden;
+  }
 }
 
 :root {
@@ -540,7 +544,7 @@ html {
       left: 16px;
       top: 11px;
       @include text($size: 0.875rem, $color: $color-gray-80, $textAlign: center, $fontWeight: 400, $lineHeight: 24px);
-      background-color: $color-white;
+      background-color: inherit;
       transition: all .2s ease-in-out;
       &.active{
           font-size: 0.75rem;

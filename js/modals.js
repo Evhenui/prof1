@@ -1,7 +1,8 @@
 export let modals = function() {
     const modalOnClick = document.querySelector('[data-modal-on-click]'),
           modalReview = document.querySelector('[data-modal-stay-review]'),
-          modalBasket = document.querySelector('[data-modal-basket]');
+          modalBasket = document.querySelector('[data-modal-basket]'),
+          modalZoom = document.querySelector('[data-modal-zoom]');
     let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
 
     if(modalOnClick !== null) {
@@ -12,6 +13,7 @@ export let modals = function() {
 
         buttonOpenModalOnClick.addEventListener('click', function() {
             modalOnClick.classList.add('active');
+            document.documentElement.classList.add('block-scroll-cart');
             document.documentElement.style.overflow = 'hidden';
             body.style.paddingRight = paddingOffset;
         });
@@ -40,11 +42,6 @@ export let modals = function() {
               modalContainer = modalReview.querySelector('[data-modal-stay-review-container]'),
               body = document.querySelector('#body-cont');
 
-            buttonOpenModal.addEventListener('click', function(event) {  
-                modalReview.classList.add('active');
-                document.documentElement.style.overflow = 'hidden';
-                body.style.paddingRight = paddingOffset;
-            });
             buttonSend.addEventListener('click', function() {
                 modalSendedReview.classList.add('active');
                 modalReviewContainer.classList.add('hidden');
@@ -81,28 +78,66 @@ export let modals = function() {
               if(!buttonOpenBasket.classList.contains('empty')) {
                 buttonOpenBasket.addEventListener('click', function() {
                     modalBasket.classList.add('active');
-                    document.documentElement.style.overflow = 'hidden';
-                    body.style.paddingRight = paddingOffset;
+                    document.documentElement.classList.add('block-scroll-cart');
                 });
               } 
               
               buttonCloseModal.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
-                document.documentElement.style.overflow = 'auto';
-                body.style.paddingRight = 0;
+                document.documentElement.classList.remove('block-scroll-cart');
               });
               buttonContinue.addEventListener('click', function() {
                 modalBasket.classList.remove('active');
-                document.documentElement.style.overflow = 'auto';
-                body.style.paddingRight = 0;
+                document.documentElement.classList.remove('block-scroll-cart');
               });
               modalBasket.addEventListener("click", function (e) {
                 const click = e.composedPath().includes(modalContainer);
                 if (!click) {
                     modalBasket.classList.remove("active");
-                    document.documentElement.style.overflow = 'auto';
-                    body.style.paddingRight = 0;
+                    document.documentElement.classList.remove('block-scroll-cart');
                 }
               });
+    }
+    
+    if (modalZoom !== null) {
+        const body = document.querySelector("#body-cont"),
+          modalZoomContainer = document.querySelector(
+            "[data-modal-zoom-container]"
+          ),
+          modalZoomClose = document.querySelector("[data-modal-zoom-close]"),
+          modalZoomButtonBuyOnClick = document.querySelector(
+            "[data-modal-zoom__buy-on-click]"
+          ),
+          modalBuyOnClickOpen = document.querySelector("[data-modal-on-click]");
+  
+          function closeModalZoom() {
+            if(window.innerWidth < 960) {
+              modalZoom.classList.remove("active");
+              document.documentElement.style.overflow = "auto";
+            }
+          }
+  
+          closeModalZoom()
+          window.addEventListener('resize', closeModalZoom)
+  
+        modalZoomClose.addEventListener("click", function () {
+          modalZoom.classList.remove("active");
+          document.documentElement.style.overflow = "auto";
+        });
+  
+        modalZoom.addEventListener("click", function (e) {
+          const click = e.composedPath().includes(modalZoomContainer);
+          if (!click) {
+            modalZoom.classList.remove("active");
+            document.documentElement.style.overflow = "auto";
+          }
+        });
+  
+        modalZoomButtonBuyOnClick.addEventListener("click", function () {
+          modalZoom.classList.remove("active");
+          modalBuyOnClickOpen.classList.add("active");
+        });
+        
+  
     }
 }   

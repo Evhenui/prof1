@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="icon/page-icon.svg" type="image/x-icon">
-    <script type="module" src="js/main.js"></script> 
+   <!--  <script type="module" src="js/main.js"></script>  -->
     <title>Prof1 sport</title>
 </head>
 
@@ -96,17 +96,104 @@
                                     <section class="ordering__checkbox-wrapper">                  
                                         <form class="ordering__form-select-post" action="">
                                             <section class="ordering__post-checkbox">
-                                                <div class="product-selection__checkbox-section ordering__checkbox-section">
+                                                <div data-delivery-radio class="product-selection__checkbox-section ordering__checkbox-section">
                                                     <input checked data-checkbox-input class="product-selection__checkbox ordering__checkbox" type="radio" name="new-post" id="new-post"> 
                                                     <label class="product-selection__checkbox-label ordering__checkbox-label" for="new-post">Новая Почта до отделения</label>
                                                 </div>
                 
-                                                <div class="product-selection__checkbox-section ordering__checkbox-section">
+                                                <div data-delivery-radio class="product-selection__checkbox-section ordering__checkbox-section">
                                                     <input data-checkbox-input class="product-selection__checkbox ordering__checkbox" type="radio" name="new-post" id="new-post-delivery"> 
                                                     <label class="product-selection__checkbox-label ordering__checkbox-label" for="new-post-delivery">Новая Почта до отделения</label>
                                                 </div>
                                             </section>
-                                            <section class="ordering__post-dropdowns">
+
+                                            <section data-current-delivery class="ordering__post-dropdowns">
+                                                <section data-dropdown-city class="dropdown ordering__dropdown">
+                                                    <div class="dropdown__input">
+                                                      <span data-dropdown-city-selected class="dropdown__selected-item">Город</span> 
+                                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                      </svg>
+                                                    </div>
+                                                    <div class="dropdown__list">
+                                                      <div>
+                                                        <ul class="dropdown__menu">
+                                                          <li data-city-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">Одесса</p>
+                                                          </li>
+                                                          <li data-city-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">Киев</p>
+                                                          </li>
+                                                          <li data-city-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">Львов</p>
+                                                          </li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                </section>
+                
+                                                <section data-dropdown-region class="dropdown ordering__dropdown">
+                                                    <div class="dropdown__input">
+                                                      <span data-dropdown-region-selected class="dropdown__selected-item">Область</span> 
+                                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                      </svg>
+                                                    </div>
+                                                    <div class="dropdown__list">
+                                                      <div>
+                                                        <ul class="dropdown__menu">
+                                                          <li data-region-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">Одесская</p>
+                                                          </li>
+                                                          <li data-region-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">Киевская</p>
+                                                          </li>
+                                                          <li data-region-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">Львовская</p>
+                                                          </li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                </section>
+                
+                                                <section data-dropdown-number-post class="dropdown ordering__dropdown">
+                                                    <div class="dropdown__input">
+                                                      <span data-dropdown-number-post-selected class="dropdown__selected-item">Номер отеделения</span> 
+                                                      <svg class="dropdown__arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="dropdown__arrow-hover" d="M14 19L22 25L30 19" stroke="#2D2D2D" stroke-linecap="round" stroke-linejoin="round"/>
+                                                      </svg>
+                                                    </div>
+                                                    <div class="dropdown__list">
+                                                      <div>
+                                                        <ul class="dropdown__menu">
+                                                          <li data-number-post-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">1</p>
+                                                          </li>
+                                                          <li data-number-post-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">2</p>
+                                                          </li>
+                                                          <li data-number-post-item class="dropdown__item">
+                                                            <p class="dropdown__item-name">3</p>
+                                                          </li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                </section>
+
+<!--
+                                                <section data-drop-section-city class="test">
+                                                    <div data-drop-city class="input-wrapper-white test__wrapper">                                                       
+                                                        <input data-input-city class="input-wrapper-white__input ordering__input test__input" type="text" required value="Город">                                                     
+                                                        <div data-list-city class="test__list">
+                                                            <span data-item-city>1</span>
+                                                            <span data-item-city>2</span>
+                                                            <span data-item-city>3</span>
+                                                        </div>
+                                                    </div>
+                                                </section>
+-->
+                                            </section>
+                                            <section data-current-delivery class="ordering__post-dropdowns">
                                                 <section data-dropdown-city class="dropdown ordering__dropdown">
                                                     <div class="dropdown__input">
                                                       <span data-dropdown-city-selected class="dropdown__selected-item">Город</span> 
@@ -448,7 +535,7 @@
         <!-- do not delete, this is a blur !!!!!!!!!!!!!!! Should be on every page-->
         <div data-blur class="blur"></div>
     </main>
-
+<script type="module" src="dist/bundle.js"></script>
 </body>
 
 </html>

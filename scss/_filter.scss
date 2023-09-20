@@ -40,18 +40,20 @@
   }
   
   .top-navigation {
+    position: sticky;
+    top: 68px;
+    left: 0;
+    z-index: 9999;
+
     border-top: 1px solid $color-red-30;
     border-bottom: 1px solid $color-red-30;
     background-color: $color-white;
+    
+    
     @include __960 {
       border: none;
     }
     &.active {
-      position: fixed;
-      top: 68px;
-      left: 0;
-      z-index: 2;
-      width: 100%;
       box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
     }
   
@@ -481,41 +483,44 @@
   }
   
   .left-navigation {
-    height: var(--height-page);
+    height: 100%;
     align-self: flex-start;
     max-width: 325px;
     width: 100%;
     padding-right: 20px;
-    overflow: auto;
     flex: 1 0 auto;
     border-right: 1px solid #fad1d6;
     transition: all 0.2s ease-in-out;
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
 
     @include __960 {
       border-right: none;
+      position: static;
     }
     &::-webkit-scrollbar {
       width: 0;
     }
-    &.scroll {
+/*     &.scroll {
       position: fixed;
       top: var(--topScroll);
       @include __960 {
         position: static;
       }
-    }
-    &.scroll-stop {
+    } */
+/*     &.scroll-stop {
       position: static;
       align-self: flex-end;   
       height: 100%;
       @include __960 {
         position: static;
       }
-    }
+    } */
   
     &__empty {
-      &.scroll {
+/*       &.scroll {
         flex: 0 0 325px;
         height: 1100px;
         @include __1250 {
@@ -525,7 +530,7 @@
           height: 0;
           flex: 0;
         }
-      }
+      } */
       &.active {
         flex: 0;
         height: 0;
@@ -539,7 +544,6 @@
   
     @include __960 {
       max-width: 100%;
-      height: 1125px;
     }
     &.active {
       border: none;
@@ -834,8 +838,12 @@
   
     &__button-show,
     &__button-clear {
+      max-width: 145px;
       width: 100%;
+      
       padding: 16px 0;
+
+      font-size: 14px;
     }
   
     &__button-show {
@@ -850,6 +858,8 @@
   }
   
   .items {
+    width: 100%;
+
     &__wrapper {
       padding: 24px 0 0 19px;
       display: flex;
@@ -878,14 +888,8 @@
       max-width: 312px;
       width: 100%;
       
-      @include __1050 {
-        @include set-item-count-in-row(3);
-      }
-      @include __960 {
-        @include set-item-count-in-row(2);
-      }
       @include __680 {
-        @include set-item-count-in-row(1);
+        max-width: 343px;
       }
     }
 
@@ -1000,10 +1004,10 @@
       visibility: visible;
       z-index: 1;
     }
-    &.scroll-stop {
+/*     &.scroll-stop {
       top: auto;
       bottom: 200px;
-    }
+    } */
     @include __960 {
       display: none;
     }
@@ -1167,3 +1171,167 @@
     }
   }
   
+
+  .ocf-filter-header {
+    cursor: pointer !important;
+    padding-left: 10px;
+    justify-content: space-between;
+
+    &:hover {
+      .ocf-filter-name {
+        color: $color-red;
+      }
+      .left-navigation__filter-arrow-state {
+        stroke: $color-red;
+      }
+    }
+
+    &.active {
+      .left-navigation__filter-arrow {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+
+  .ocf-filter-name {
+    @include text(
+      $size: 16px !important,
+      $textAlign: left,
+      $color: $color-black,
+      $fontWeight: 700 !important,
+      $lineHeight: 24px !important
+    );
+  }
+
+  .ocf-value-input-checkbox {
+    position: absolute !important;
+    top: 50%;
+    left: 10px;
+
+    transform: translateY(-50%);
+  }
+
+  .ocf-selected .ocf-value-input-checkbox::after {
+    background-image: none !important;
+  }
+
+  .ocf-value.ocf-checkbox {
+    padding: 8px 8px 8px 13px !important;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: #f07585;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:hover {
+      background-color: #f7f7f7;
+
+      .ocf-value-input-checkbox {
+        width: 14px !important;
+        height: 14px !important;
+        flex: 0 0 14px !important;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .ocf-value-input {
+    width: 12px !important;
+    height: 12px !important;
+    flex: 0 0 12px !important;
+    margin: 0 !important;
+
+    transition: all .2s ease-in-out;
+
+    &::before {
+      border: 1px solid #949494 !important; 
+      border-radius: 0 !important;
+    }
+  }
+
+  .ocf-value-name {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    position: relative;
+    width: 100%;
+    height: 24px;
+    padding-left: 26px;
+
+    @include text(
+      $size: 14px !important,
+      $color: $color-gray-80,
+      $textAlign: left !important,
+      $fontWeight: 400 !important,
+      $lineHeight: 24px !important
+    );
+  }
+
+  .ocf-value-count {
+    @include text(
+      $size: 12px !important,
+      $color: $color-gray-80,
+      $textAlign: left !important,
+      $fontWeight: 400 !important,
+      $lineHeight: 24px !important
+    );
+  }
+
+  .ocf-selected .ocf-value-input::before {
+    background-color: #E61E37 !important;
+    border-color: #E61E37 !important;
+
+    width: 8px !important;
+    height: 8px !important;
+    flex: 0 0 8px !important;
+  }
+
+  .ocf-checkbox.ocf-selected {
+
+    &:hover {
+      .ocf-value-input-checkbox {
+        width: 8px !important;
+        height: 8px !important;
+        flex: 0 0 8px !important;
+      }
+    }
+
+    .ocf-value-input-checkbox {
+      width: 8px !important;
+      height: 8px !important;
+      flex: 0 0 8px !important;
+    }
+  }
+
+  .ocf-between {
+
+    .left-navigation__button-show,
+    .left-navigation__button-clear {
+      @include __960 {
+        max-width: 300px;
+      }
+    }
+    @include __960 {
+      gap: 10px;
+    }
+  }
+
+  .ocf-filter-header-append {
+    display: none !important;
+  }
+
+  .ocf-value-list {
+    overflow: hidden;
+  }

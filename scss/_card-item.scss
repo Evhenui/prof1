@@ -17,10 +17,16 @@
 
     &.palit {
         max-width: 343px;
+        min-height: 192px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &.palit &__wrapper {
         display: flex;
+        justify-content: space-between;
         padding: 0 8px 8px 8px;
     }
 
@@ -48,7 +54,8 @@
     }
 
     &.palit &__palit-button {
-        display: block;
+        display: flex;
+        flex-direction: column;
         padding-top: 8px;
     }
 
@@ -58,6 +65,7 @@
 
     &.palit &__main {
         margin: 0 8px 0 0;
+        padding-left: 0;
     }
 
     &.palit &__footer-palit {

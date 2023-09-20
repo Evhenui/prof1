@@ -75,10 +75,16 @@ export let inputsValidate = function() {
                     e.target.value = "";
                 }
             }
+            var maskOptions = {
+                mask: '+{38} (000)-000-00-00'
+            };
+
             for (var phoneInput of phoneInputs) {
-                phoneInput.addEventListener('keydown', onPhoneKeyDown);
-                phoneInput.addEventListener('input', onPhoneInput, false);
-                phoneInput.addEventListener('paste', onPhonePaste, false);
+                var mask = IMask(phoneInput, maskOptions);
+
+                //phoneInput.addEventListener('keydown', onPhoneKeyDown);
+                //phoneInput.addEventListener('input', onPhoneInput, false);
+                //phoneInput.addEventListener('paste', onPhonePaste, false);
             }
     //------------------------validate inputs----------------------------
             function valid(value, button, container) {
@@ -253,6 +259,18 @@ export let inputsValidate = function() {
                 })
             })
 
+            inputEmailEnter.addEventListener('input', () => {
+                if(!inputEmailEnter.length && !inputPasswordEnter.length) {
+                    button.disabled = true;
+                }
+            })
+
+            inputPasswordEnter.addEventListener('input', () => {
+                if(!inputEmailEnter.length && !inputPasswordEnter.length) {
+                    button.disabled = true;
+                }
+            })
+
             showPassword(btnShowPassModal)
             inputsChange(inputsEnter, button)
           }
@@ -265,10 +283,6 @@ export let inputsValidate = function() {
                   containerInputTel = modalOnClick.querySelector('[data-input-tel-container-modal-on-click]'),
                   inputs = modalOnClick.querySelectorAll('[data-input-modal-on-click]');
 
-            button.addEventListener('click', function(event){
-                event.preventDefault();
-                  modalOnClick.classList.add('done'); 
-            });
             inputTel.addEventListener('input', function() {
                 exam(regPhone, inputTel, false, containerInputTel);
             }); 
@@ -322,7 +336,15 @@ export let inputsValidate = function() {
                   containerInputPhone = mainSection.querySelector('[data-input-phone-main-container]'),
                   inputName = mainSection.querySelector('[data-input-name]'),
                   containerInputName = mainSection.querySelector('[data-input-name-main-container]'),
-                  containers = mainSection.querySelectorAll('[data-input-main-item]');
+                  containers = mainSection.querySelectorAll('[data-input-main-item]'),
+                  txtInput = mainSection.querySelector('[data-input-text]'),
+                  txtContainer = mainSection.querySelector('[data-input-text-main-container]'),
+                  selectedInput = mainSection.querySelector('[data-dropdown-selected]');
+
+                  let dropText = false;
+                  let isNameInput = false;
+                  let isPhoneInput = false;
+                  let isTextInput = false;
                 
                 function exam(reg, input, container) {
                     if (!validate(reg, input.value) && input.value != "") {
@@ -341,26 +363,98 @@ export let inputsValidate = function() {
                 } 
 
                 inputPhone.addEventListener('input', function(){
-                    exam(regPhone, inputPhone, containerInputPhone);
-                }); 
-                inputName.addEventListener('input', function(){
-                    this.value = this.value.replace(/\s+/gi,'');
-                    exam(regText, inputName, containerInputName);
-                }); 
-             
+                    if(!validator.isMobilePhone(inputPhone.value.replace(/[^0-9]/g, '').substring(2), ['uk-UA'])) {
+                        isPhoneInput = false;
+                        containerInputPhone.classList.add("error");
+                    } else {
+                        isPhoneInput = true;
+                        containerInputPhone.classList.remove("error");
+                    }
 
-                function inputsChange(inputs, button) {
-                    inputs.forEach((item)=>{
-                      item.addEventListener('input', function() {
-                       if(inputs[0].innerText !== '' && inputs[1].value && inputs[2].value && inputs[3].value ) {
-                          if(validate(regText, inputs[1].value)) {
-                            button.disabled = false;
-                          }
-                       }
-                      })
-                    })
-                }
-                inputsChange(inputs, button)
+                    if(!inputPhone.value) {
+                        isPhoneInput = false;
+                        containerInputPhone.classList.add("error");
+                    }
+
+                    button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                }); 
+
+                inputPhone.addEventListener('blur', e => {
+                    if(!e.target.value) {
+                        isPhoneInput = false;
+                        containerInputPhone.classList.add("error")
+                    }else {
+                        isPhoneInput = true;
+                        containerInputPhone.classList.remove("error")
+                    }
+
+                    button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                }); 
+
+                inputName.addEventListener('input', e => {  
+                    if(e.target.value) {
+                        isNameInput = true;
+                        containerInputName.classList.remove("error");
+                    }
+
+                    if(!inputName.value) {
+                        isNameInput = false;
+                        containerInputName.classList.add("error");
+                    }
+
+                    button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                }); 
+
+                inputName.addEventListener('blur', function(e) {  
+                    if(!e.target.value) {
+                        isNameInput = false;
+                        containerInputName.classList.add("error")
+                    }else {
+                        isNameInput = true;
+                        containerInputName.classList.remove("error")
+                    }
+
+                    button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                }); 
+
+                txtInput.addEventListener('input', e => {  
+                    if(e.target.value) {
+                        isTextInput = true;
+                        txtContainer.classList.remove("error");
+                    }
+
+                    if(!e.target.value) {
+                        isTextInput = false;
+                        txtContainer.classList.add("error");
+                    }
+
+                    button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                }); 
+
+                txtInput.addEventListener('blur', e => {  
+                    if(!e.target.value) {
+                        isTextInput = false;
+                        txtContainer.classList.add("error")
+                    }else {
+                        isTextInput = true;
+                        txtContainer.classList.remove("error")
+                    }
+
+                    button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                }); 
+
+                var observer = new MutationObserver(function(mutationsList) {
+                    for(var mutation of mutationsList) {
+                      if (mutation.type === 'childList' && mutation.target === selectedInput) {
+                        dropText = true;
+                        button.disabled = isNameInput && isPhoneInput && isTextInput && dropText ? false : true;
+                      }
+                    }
+                });
+
+                var observerConfig = { childList: true, subtree: true };
+                observer.observe(selectedInput, observerConfig);
+             
             }
             
           }  
