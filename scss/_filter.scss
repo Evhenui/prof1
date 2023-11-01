@@ -102,6 +102,7 @@
       display: flex;
       align-items: center;
       column-gap: 8px;
+      border-right: 1px solid $color-red-30;
       @include __960 {
         column-gap: 4px;
         outline: 1px solid $color-red-30;
@@ -146,9 +147,6 @@
         $fontWeight: 700,
         $lineHeight: 24px
       );
-      @include __1250 {
-        width: 100px;
-      }
       @include __960 {
         display: none;
       }
@@ -182,6 +180,10 @@
     &__title-menu {
       display: flex;
       align-items: center;
+      width: 100%;
+      @include __960 {
+        width: auto;
+      }
     }
   
     &__change-view {
@@ -214,7 +216,6 @@
     }
   
     &__title-menu-wrapper {
-      border-left: 1px solid $color-red-30;
       flex: 1 0 788px;
       display: flex;
       flex-direction: column;
@@ -302,8 +303,8 @@
       border: 1px solid $color-gray-40;
       background-color: $color-white;
       border-radius: 20px;
-      width: 75px;
-      height: 32px;
+      width: max-content;
+      height: auto;
       padding-left: 12px;
       transition: all 0.1s ease-in-out;
       &:hover {
@@ -330,7 +331,8 @@
       stroke-width: 3px;
     }
   
-    &__menu-title {
+    &__menu-title,
+    &__menu-title-value {
       transition: all 0.1s ease-in-out;
       @include text(
         $size: 12px,
@@ -483,26 +485,31 @@
   }
   
   .left-navigation {
-    height: 100%;
+    height: var(--height-nav);
     align-self: flex-start;
     max-width: 325px;
     width: 100%;
     padding-right: 20px;
     flex: 1 0 auto;
     border-right: 1px solid #fad1d6;
-    transition: all 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
     position: sticky;
-    top: 0;
+    top: 115px;
     left: 0;
     z-index: 999;
+    overflow: auto;
 
     @include __960 {
       border-right: none;
       position: static;
+      transition: none;
+      height: 100vh;
+      padding-right: 0;
     }
     &::-webkit-scrollbar {
       width: 0;
     }
+
 /*     &.scroll {
       position: fixed;
       top: var(--topScroll);
@@ -536,10 +543,6 @@
         height: 0;
         transition: all 0.2s ease-in-out;
       }
-    }
-  
-    @include __1250 {
-      max-width: 213px;
     }
   
     @include __960 {
@@ -860,6 +863,14 @@
   .items {
     width: 100%;
 
+    &.show_more_main_list {
+      &.active {
+        @include __960 {
+          display: none;
+        }
+      }
+    }
+
     &__wrapper {
       padding: 24px 0 0 19px;
       display: flex;
@@ -895,7 +906,6 @@
 
   
     & .card-item {
-      transition: all .3s ease-in-out;
       @include set-item-count-in-row(3);
       max-width: 100%;
 
@@ -1334,4 +1344,15 @@
 
   .ocf-value-list {
     overflow: hidden;
+  }
+
+
+  .ocf-footer {
+    .ocf-between {
+      align-items: stretch;
+    }
+  }
+
+  .ocf-active-label {
+    @include text( $size: 14px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
   }

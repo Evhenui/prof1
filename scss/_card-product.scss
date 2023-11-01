@@ -167,7 +167,7 @@
 
         cursor: pointer;
 
-        @include __960 {
+        @media (max-width: 1140px) {
             display: none;
         }
     }
@@ -187,7 +187,7 @@
     position: sticky;
     top: 125px;
 
-    height: 673px;
+    height: 600px;
 
     &::-webkit-scrollbar { width: 0; }
 
@@ -204,7 +204,7 @@
 
         @media (max-width: 1150px) {
             display: block;
-
+            height: auto;
             position: static;
 
             margin-bottom: 90px;
@@ -222,7 +222,7 @@
         box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
         background-color: $color-white;
-        height: 513px;
+        height: 486px;
         overflow: hidden;
 
         @include __1250 {
@@ -230,7 +230,7 @@
         }
     }
     &.active &__wrapper {
-        padding: 24px 0 39px 0;
+        padding: 24px;
     }
 
     &.active &__title-image-wrapper {
@@ -246,14 +246,15 @@
         display: flex;
         align-items: center;
         column-gap: 10px;
-        padding: 0 37px 0 9px;
-        margin-bottom: 40px;
+        padding-bottom: 24px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #E0E0E0;
     }
 
     &.active &__title {
         max-width: 464px;
         width: 100%;
-        @include text( $size: 16px, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 28px);
+        @include text( $size: 18px, $textAlign: left, $color: $color-gray-100, $fontWeight: 700, $lineHeight: 24px);
     }
 
     &__button-buy.active &__button-text.add-basket {
@@ -307,11 +308,15 @@
     &__reviews-info {
         cursor: pointer;
         @extend %centre-space-between;
-        column-gap: 4px
+        column-gap: 4px;
+        align-items: center;
+
+        @include text( $size: 12px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 20px);
     }
 
     &__reviews-image-wrapper {
         font-size: 0;
+        display: flex;
     }
 
     &__reviews-text {
@@ -328,13 +333,8 @@
     }
 
     &.active &__select-wrapper {
-        padding: 0 29px;
-        border: none;
-        margin-bottom: 50px;
-    }
-
-    &.active &__select-color-section {
-        margin-bottom: 20px;
+        border-bottom: 1px solid $color-gray-30;
+        margin-bottom: 24px;
     }
 
     &__select-wrapper {
@@ -375,6 +375,19 @@
 
     &__description {
         position: relative;
+
+        p {
+            @include text( $size: 14px, $textAlign: left, $color: $color-gray-100, $fontWeight: 400, $lineHeight: 24px);  
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-clamp: 2;
+            box-orient: vertical;
+        }
     }
     .news__button.card-btn {
         max-width: 143px;
@@ -420,6 +433,9 @@
         align-items: center;
         column-gap: 16px;
         margin-bottom: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
         @include __1250 {
             flex-direction: column;
             align-items: flex-start;
@@ -536,10 +552,6 @@
         }
     }
 
-    &.active &__buy-wrapper {
-        padding: 0 20px;
-    }
-
     &.active &__button-like {
         display: none;
     }
@@ -575,6 +587,7 @@
     &__prices-discount {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         column-gap: 4px;
     }
 
@@ -831,6 +844,7 @@
     position: relative;
     margin-bottom: 80px;
     scroll-margin-top: 100px;
+
     @include __960 {
         scroll-margin-top: 40px;  
     }
@@ -1067,12 +1081,7 @@
     }
 
     &__main {
-        max-width: 832px;
         width: 100%;
-
-        @media (max-width: 1150px) {
-            max-width: 100%;
-        }
     }
 
     &__title {
@@ -1794,12 +1803,22 @@
     margin: 0 auto 160px auto;
     @extend %padding-country;
 
+    &.active {
+        gap: 48px;
+
+        .car-wrp__left-block {
+            max-width: 880px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1150px) {
+        justify-content: center;
+    }
+
     @include __960 {
         padding: 0;
         margin-bottom: 80px;
     }
 
-    &__left-block {
-        width: 100%;
-    }
 }

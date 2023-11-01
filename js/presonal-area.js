@@ -61,6 +61,7 @@ export let personalArea = function() {
                     let currentBtn = item;
                     let tabId = currentBtn.getAttribute("data-tab");
                     let currentTub = document.querySelector(tabId);
+
                     delActiv(tabs)
                     delActiv(sections)
                     currentBtn.classList.add("active");
@@ -243,55 +244,111 @@ export let personalArea = function() {
                           btnPrev = comparison.querySelector('[data-button-prev-comparison]'),
                           sliderHeader = comparison.querySelector('[data-comparison-slider-header]'),
                           slideBody = comparison.querySelectorAll('[data-slide-comparison]'),
-                          slideItems = comparison.querySelectorAll('[data-slide-header-item-comparison]');
+                          slideItems = comparison.querySelectorAll('[data-slide-header-item-comparison]'),
+                          sliderWindow = comparison.querySelector('.comparison__slider'),
+                          sliderWidth = comparison.querySelector('.comparison-slider__header-wrp'),
+                          slidesLength = comparison.querySelectorAll('[data-slide-header-item-comparison]');
+ 
+                    let distance = 0;
+                    let translateX = 0;
+                    let counter = 0;
+            
+                    let mobileTranslateX = 0;
+                    let difference = 0;
+                    let activeTouches = 0;
+                    let startPosition = 0;
 
-                    let cur = 0,
-                        space = (slideItems.length),
-                        sizeSlide = 336,
-                        maxSlide = 5; 
-                        function addSlide() {
-                            cur += 1;
-                            window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
-                            sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px'); 
-                            slideBody.forEach(item=> {
-                                window.getComputedStyle(item).getPropertyValue('--transform');
-                                item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
-                            })
-                        }   
+                    function viewButtons() {
+                        if(sliderWindow.offsetWidth < sliderWidth.scrollWidth) {
+                            btnPrev.classList.remove('hidden')
+                            btnNext.classList.remove('hidden')
+                        } else {
+                            btnPrev.classList.add('hidden')
+                            btnNext.classList.add('hidden')
+                        }
+                    }
 
-                    btnNext.addEventListener('click', () => {  
-                        if(window.innerWidth > 1440 ) {
-                            if(cur <= (space - maxSlide)) {
-                                addSlide();
-                            }  
-                        }  else if(window.innerWidth > 1110) {
-                            if(cur <= (space - 4)) {
-                                addSlide();
-                            }
-                        }  else if(window.innerWidth > 800) {
-                            if(cur <= (space - 3)) {
-                                addSlide();
-                            }
-                        }                                                                                          
-                    });
+                    function nextSlide() {
+                        const maxStep = Math.round(sliderWidth.children.length - sliderWindow.offsetWidth / slidesLength[0].offsetWidth);
+                        distance = sliderWidth.scrollWidth - sliderWindow.offsetWidth - (translateX + slidesLength[0].offsetWidth);
 
-                    btnPrev.addEventListener('click', () => {
-                        if(cur !== 0) {
-                            cur -= 1;                     
-                            window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
-                            sliderHeader.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
-                            slideBody.forEach(item => {
-                                window.getComputedStyle(item).getPropertyValue('--transform');
-                                item.style.setProperty('--transform', (-cur * sizeSlide) + 'px');
-                            })
-                        }                      
-                    });
+                        if (distance >= 0 && counter < maxStep - 1) {
+                            counter++;
+                            translateX = (slidesLength[0].offsetWidth) * counter;
+                        } else {
+                            translateX = sliderWidth.scrollWidth - sliderWindow.offsetWidth;
+                            counter = maxStep;
+                        }
 
+                        window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
+                        sliderHeader.style.setProperty('--transform', - translateX + 'px'); 
 
+                        slideBody.forEach(item=> {
+                            window.getComputedStyle(item).getPropertyValue('--transform');
+                            item.style.setProperty('--transform', - translateX + 'px');
+                        })
+                        
+                    }
 
+                    function prevSlide() {
+                        const startingPosition = 0;
+                        const maxStep = Math.round(sliderWidth.children.length - sliderWindow.offsetWidth / slidesLength[0].offsetWidth);
+                        distance = sliderWidth.scrollWidth - sliderWindow.offsetWidth - (translateX - slidesLength[0].offsetWidth);
+
+                        if (distance <= sliderWidth.scrollWidth - sliderWindow.offsetWidth) {
+                            counter--;
+                            translateX = (slidesLength[0].offsetWidth) * counter;
+                        } else {
+                            translateX = startingPosition;
+                        }
+
+                        window.getComputedStyle(sliderHeader).getPropertyValue('--transform');
+                        sliderHeader.style.setProperty('--transform', -  translateX + 'px'); 
+
+                        slideBody.forEach(item=> {
+                            window.getComputedStyle(item).getPropertyValue('--transform');
+                            item.style.setProperty('--transform', - translateX + 'px');
+                        })
+                    }
+
+                    function handleTouchStart(event) {
+                        activeTouches = true;
+                        mobileTranslateX = event.touches[0].clientX;
+                        startPosition = event.touches[0].clientX;
+                    }
+            
+                    function handleTouchMove(event) {
+                        const positionMove = event.touches[0].clientX;
+                        const diff = positionMove - mobileTranslateX;
+                        const fingerSpace = 30;
+                        if ( startPosition - positionMove < fingerSpace &&
+                             startPosition - positionMove > - fingerSpace) {
+                          return false;
+                        } else {
+                          if (activeTouches) {
+                            if (!mobileTranslateX) return false;
+                            difference = diff;
+                            difference > 0 ? prevSlide() : nextSlide();
+                            mobileTranslateX = null;
+                          }
+                        }
+                    }
+            
+                    function handleTouchEnd() {
+                        activeTouches = false;
+                    }
+
+                    btnNext.addEventListener('click', nextSlide);
+                    btnPrev.addEventListener('click', prevSlide);
                     
+                    viewButtons();
 
+                    sliderWindow.addEventListener('touchstart', handleTouchStart)
+                    sliderWindow.addEventListener('touchmove', handleTouchMove)
+                    sliderWindow.addEventListener('touchend', handleTouchEnd)
 
+                    window.addEventListener('resize', prevSlide);
+                    window.addEventListener('resize', viewButtons);
         }
     }
 }

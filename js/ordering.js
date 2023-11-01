@@ -243,13 +243,44 @@ export let ordering = function() {
                 })
             }
 
+            const inputDelivery = document.querySelector("[data-home-delivery]");
+            
+            if(inputDelivery) {
+                const input = document.querySelector("[data-input-delivery]");
+                const label = document.querySelector("[data-caption-department-number]");
+
+                inputDelivery.addEventListener("click", () => {
+                    input.classList.toggle("active")
+                    label.classList.toggle("active")
+    
+                    input.focus()
+                })
+            }
+
+            const department = document.querySelector('[data-wrp-selected-department-number]');
+            const delivery = document.querySelector('[data-home-delivery]');
+            const ukrpost = document.querySelector('[data-home-ukrpost]');
+
             radioInputs.forEach((el, i) => {
                 el.addEventListener('click', () => {
                     delActive (radioInputs)
-                    delActive (currentSections)
-
                     el.classList.add('active');
-                    currentSections[i].classList.add('active');
+
+                    department.classList.add('hidden');
+                    delivery.classList.add('hidden');
+                    ukrpost.classList.add('hidden');
+
+                    if (i === 0) {
+                        department.classList.remove('hidden');
+                    }
+                    
+                    if (i === 1) {
+                        delivery.classList.remove('hidden');
+                    }
+                    
+                    if (i === 2) {
+                        ukrpost.classList.remove('hidden');
+                    }
                 })
             })
         }

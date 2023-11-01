@@ -1101,7 +1101,7 @@
     &__dropdown.active &__dropdown-list {
         opacity: 1;
         visibility: visible;
-        z-index: 1;
+        z-index: 2002;
     }
 
     &__dropdown-title {
@@ -1296,8 +1296,9 @@
     }
 
     &__empty-subtitle-wrapper {
+        display: none;
         &.mobile {
-            display: none;
+           
             @include __480 {
                 display: block;
             }
@@ -1335,35 +1336,30 @@
 		}
 
 		&__slider {
-            overflow: hidden;
             border-top: 1px solid #FAD1D6;
             border-left: 1px solid #FAD1D6;
             border-right: 1px solid #FAD1D6;
             max-width: 1344px;
             width: 100%;
-            @include __1440 {
-                max-width: 1009px;
-                margin: 0 auto;
-            }
-            @include __1150 {
-                max-width: 673px;
-            }
+
             @include __960 {
-                overflow: overlay;
-                margin: 0;
                 max-width: 100%;
-                &::-webkit-scrollbar {
-                    width: 0;
-                    height: 0;
-                }
             }
 		}
 
 .comparison-slider {
-		&__header {
+        &__header {
+            position: sticky;
+            top: 68px;
+            z-index: 2000;
+            background-color: $color-white;
+            overflow: hidden;
+            box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.08);
+        }
+
+		&__header-wrp {
             display: flex;
             flex-wrap: nowrap;
-            width: max-content;
             transition: all .2s ease-in-out;
             transform: translateX(var(--transform));
 		}
@@ -1375,10 +1371,8 @@
 		}
 
 		&__main {
-            width: max-content;
-            @include __960 {
-                width: var(--width);
-            }
+            width: 100%;
+            overflow: hidden;
 		}
 
 		&__title-characteristic {
@@ -1434,8 +1428,14 @@
             height: 44px;
             font-size: 0;
             position: absolute;
+            z-index: 2001;
             top: 74px;
             background-color: $color-white;
+
+            &.hidden {
+                display: none;
+            }
+
             &:disabled {
                 cursor: auto;
             }
@@ -1539,8 +1539,7 @@
 
     &__titlte-slider {
         position: relative;
-        max-width: 336px;
-        width: 100%;
+        flex: 0 0 336px;
         border-bottom: 1px solid $color-red-30;
         border-right: 1px solid $color-red-30;
     }
@@ -1553,6 +1552,7 @@
     &__titlte-slider-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin-bottom: 6px;
     }
 
@@ -1636,6 +1636,7 @@
     &__stars {
         display: flex;
         align-items: center;
+        gap: 2px;
     }
 
     &__review-link {
@@ -1651,6 +1652,7 @@
     &__product-name {
         max-width: 168px;
         width: 100%;
+        word-wrap: break-word;
         @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
     }
 

@@ -408,7 +408,7 @@
     &__subtitle-link {
       display: inline-block;
       transition: all .1s ease-in-out;
-      @include text( $size: 12px, $textAlign: left, $color: $color-red-50, $fontWeight: 400, $lineHeight: 20px);
+      @include text( $size: 12px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 20px);
       &:hover {
         color: $color-red;
       }
@@ -1385,6 +1385,7 @@
           user-select: auto;
 
           iframe {
+            min-width: 703px;;
             pointer-events: auto;
             user-select: auto;
           }
@@ -1706,8 +1707,8 @@
     display: flex;
     justify-content: flex-start;
 
-    padding: 16px 8px;
-    gap: 8px;
+    padding: 0;
+    gap: 16px;
 
     @media (max-width: 1150px) {
       justify-content: center;
@@ -1801,4 +1802,69 @@
       fill: $color-white;
     }
   }
+}
+
+.modal-info {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &.subscription {
+    .modal-on-click__main-wrapper.order {
+      display: none;
+    }
+  }
+
+  &.order {
+    .modal-on-click__main-wrapper.subscription {
+      display: none;
+    }
+  }
+
+  .modal-on-click__header {
+    justify-content: flex-end;
+  }
+
+  .modal-on-click__header {
+    padding: 12px;
+  }
+
+  .modal-on-click__main-wrapper {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .modal-on-click__main-wrapper {
+    &.subscription {
+      .modal-on-click__subtitle {
+        max-width: 300px;
+      }
+    }
+
+    &.order {
+      .modal-on-click__subtitle {
+        max-width: 267px;
+      }
+    }
+  } 
+
+  .modal-on-click__subtitle {
+    width: 100%;
+  }
+
+  .modal-on-click__title {
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+
+  .modal-on-click__subtitle {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.threesixty .nav_bar {
+  right: 60px !important;
 }

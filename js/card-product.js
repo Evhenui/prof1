@@ -24,6 +24,7 @@ export let cardProduct = function() {
             notificationBasket = cardProduct.querySelector('[data-notification-basket]'),
             sectionCardProduct = cardProduct.querySelectorAll('[data-section-card-product]'),
             mainInfo = cardProduct.querySelector('[data-main-info]');
+          const carWrpEl = document.querySelector('.car-wrp');
 
           const navSecScr = cardProduct.querySelector('[data-sc]');
 
@@ -41,9 +42,11 @@ export let cardProduct = function() {
 
       window.addEventListener('scroll', function() {
         if(window.scrollY > 100) {
-          mainInfo.classList.add('active')
+          mainInfo.classList.add('active');
+          carWrpEl.classList.add('active');
         } else {
-          mainInfo.classList.remove('active')
+          mainInfo.classList.remove('active');
+          carWrpEl.classList.remove('active');
         }
       })
 

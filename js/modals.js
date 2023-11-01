@@ -2,7 +2,8 @@ export let modals = function() {
     const modalOnClick = document.querySelector('[data-modal-on-click]'),
           modalReview = document.querySelector('[data-modal-stay-review]'),
           modalBasket = document.querySelector('[data-modal-basket]'),
-          modalZoom = document.querySelector('[data-modal-zoom]');
+          modalZoom = document.querySelector('[data-modal-zoom]'),
+          modalInfo = document.querySelector('[data-info-modal]');
     let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
 
     if(modalOnClick !== null) {
@@ -42,10 +43,10 @@ export let modals = function() {
               modalContainer = modalReview.querySelector('[data-modal-stay-review-container]'),
               body = document.querySelector('#body-cont');
 
-            buttonSend.addEventListener('click', function() {
+/*             buttonSend.addEventListener('click', function() {
                 modalSendedReview.classList.add('active');
                 modalReviewContainer.classList.add('hidden');
-            });
+            }); */
             buttonCloseModals.addEventListener('click', function() {
                 modalReview.classList.remove('active');
                 modalSendedReview.classList.remove('active');
@@ -111,7 +112,7 @@ export let modals = function() {
           modalBuyOnClickOpen = document.querySelector("[data-modal-on-click]");
   
           function closeModalZoom() {
-            if(window.innerWidth < 960) {
+            if(window.innerWidth < 1140) {
               modalZoom.classList.remove("active");
               document.documentElement.style.overflow = "auto";
             }
@@ -139,5 +140,13 @@ export let modals = function() {
         });
         
   
+    }
+
+    if(modalInfo) {
+      const closeBtm = modalInfo.querySelector('[data-close-btn]');
+
+      closeBtm.addEventListener('click', () => {
+        modalInfo.classList.remove('active');
+      })
     }
 }   

@@ -32,7 +32,7 @@
 
     &__prev, &__next {
         position: absolute;
-        top: 46%;
+        top: 52%;
         transform: translate(0, -50%);
         z-index: 2;
         width: 44px;
@@ -155,8 +155,11 @@
     }
 
     &__info {
-        background: $color-white;
-        opacity: 0.9;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     &__image-wrapper {
@@ -167,7 +170,7 @@
 
     &__info-wrapper {
         @extend %size-page;
-        padding: 180px 0 180px 104px;
+        padding: 0 0 0 104px;
         @include __860 {
             padding: 38px 24px 0 24px; 
         }
@@ -176,9 +179,8 @@
     &__info-title {
         max-width: 600px;
         width: 100%;
-        margin-bottom: 68px;
-        text-transform: uppercase;
-        @include text($size: 44px, $color: $color-black, $textAlign: left, $fontWeight: 800, $lineHeight: 44px);
+        margin-bottom: 60px;
+        @include text($size: 32px, $color: $color-black, $textAlign: left, $fontWeight: 700, $lineHeight: 44px);
         @include __860 {
             max-width: 327px;
             margin-bottom: 40px;

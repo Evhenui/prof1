@@ -37,6 +37,9 @@
     }
 
     &__item {
+        max-width: 240px;
+        width: 100%;
+        min-height: 306px;
         box-shadow: 0px 4px 22px -8px rgba(0, 0, 0, 0.15);
         &:hover {
            box-shadow: none;
@@ -50,9 +53,11 @@
 
     &__item-wrapper {
         padding: 20px 12px 10px 12px;
-        @extend %flex-columb;
-        align-items: center;
-        row-gap: 32px;
+        a {
+            @extend %flex-columb;
+            align-items: center;
+            row-gap: 32px;
+        }
     }
 
     &__item-name {

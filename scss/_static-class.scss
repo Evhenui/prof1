@@ -372,6 +372,10 @@ html {
   &:hover {
     background-color: $color-red;
     column-gap: 4px;
+
+    .btn-basket__svg {
+      stroke: $color-white;
+    }
   }
   &:hover &__text {
     width: 60px;

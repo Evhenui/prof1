@@ -25,6 +25,7 @@ export let filter = function() {
 
         const filterTitle = filterSection.querySelectorAll('.ocf-filter-header');
         const filterList = filterSection.querySelectorAll('.ocf-value-list');
+        const filterAside = document.querySelector('[data-left-navigation-bar]');
 
         filterTitle.forEach((el, index) => {
             el.addEventListener('click', () => {
@@ -92,7 +93,19 @@ export let filter = function() {
             navigationBar.classList.toggle('active');
             catalogIntems.classList.toggle('active');
             emptyLeftNavigation.classList.toggle('active');
-            //resultSerach.classList.toggle('active');
+            filterResultItems.classList.toggle('active');
+
+            if (window.innerWidth > 960) {
+                if(window.innerHeight - 312 > filterAside.scrollHeight) {
+                    window.getComputedStyle(filterAside).getPropertyValue('--height-nav');
+                    filterAside.style.setProperty('--height-nav', filterAside.scrollHeight + 'px');
+                } else {
+                   window.getComputedStyle(filterAside).getPropertyValue('--height-nav');
+                   filterAside.style.setProperty('--height-nav', window.innerHeight - 226 + 'px');
+                }
+            }
+
+
         });
 
         dropdownFilter.addEventListener('click', function() {
@@ -152,16 +165,10 @@ export let filter = function() {
                 mainPaddingLeft = parseInt(getComputedStyle(mainInfo, true).paddingLeft),
                 positionLeftResult = widthNavBar + mainPaddingLeft;
 
-        //window.getComputedStyle(navigationBar).getPropertyValue('--height-page');
-        //navigationBar.style.setProperty('--height-page', (document.documentElement.clientHeight - navigationBar.getBoundingClientRect().top) + sizeHeaderFilter + 'px');
-
         getPositionDropdown();
         window.addEventListener('resize', function() {
             getPositionDropdown();
         })
-
-        //window.getComputedStyle(navigationBar).getPropertyValue('--topScroll');
-        //navigationBar.style.setProperty('--topScroll', scrollBarr.offsetHeight + headerSize  + 'px');
 
         window.addEventListener('resize', function() {
             let widthNavBar = Math.floor(navigationBar.getBoundingClientRect().width),
@@ -222,4 +229,37 @@ export let filter = function() {
             resultSerach.style.setProperty('--topPositionResult', -topR + 'px');
         })  */ 
     }
+    const filtersStatic = document.querySelector('[data-scroll-bar]');
+    const filterAside = document.querySelector('[data-left-navigation-bar]');
+
+    if (filtersStatic && filterAside) {
+
+        
+        let isScrolling = false;
+
+        window.addEventListener('scroll', () => {
+          if (window.innerWidth > 960) {
+            isScrolling = true;
+
+            clearTimeout(window.scrollEndTimeout);
+            window.scrollEndTimeout = setTimeout(function () {
+              isScrolling = false;
+        
+              const isFiltersActive = filtersStatic.classList.contains('active');
+              if (isFiltersActive) {
+                filterAside.style.setProperty('--height-nav', window.innerHeight - 110 + 'px');
+              } else {
+                if (window.innerHeight - 312 > filterAside.scrollHeight) {
+                  window.getComputedStyle(filterAside).getPropertyValue('--height-nav');
+                  filterAside.style.setProperty('--height-nav', filterAside.scrollHeight + 'px');
+                } else {
+                  window.getComputedStyle(filterAside).getPropertyValue('--height-nav');
+                  filterAside.style.setProperty('--height-nav', window.innerHeight - 226 + 'px');
+                }
+              }
+            }, 100);
+          }
+        });
+      }
+
 }

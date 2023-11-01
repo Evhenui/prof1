@@ -48,8 +48,7 @@ export let mainPage = function() {
 
     if(mainPage !== null) {
 
-        const dropdownTypeOfTrade = mainPage.querySelector('[data-dropdown-type-of-trade]'),
-              dropdownSex = mainPage.querySelector('[data-product-selection-dropdowns]'); 
+        const dropdownTypeOfTrade = mainPage.querySelector('[data-dropdown-type-of-trade]');
         const contactsPage = document.querySelector('[data-about-company-page]');
 
         if(contactsPage !== null) {
@@ -79,8 +78,6 @@ export let mainPage = function() {
          changeLable(itemsSelect, itemSelected)
         }
 
-        
-        
         if(dropdownTypeOfTrade !== null) {
 
             const  itemsSelect = document.querySelectorAll('[data-type-of-trade-item]'),
@@ -104,58 +101,9 @@ export let mainPage = function() {
                 changeLable(itemsSelect, itemSelected)
         }
 
-        if(dropdownSex !== null) {
-                
-            const dropdownCategory = dropdownSex.querySelector('[data-dropdown-category]'),
-                  labelCategory = dropdownSex.querySelector('[data-dropdown-category-label]'),
-                  selectedCategory = dropdownSex.querySelector('[data-dropdown-category-selected]'),
-                  itemsCategory = dropdownSex.querySelectorAll('[data-category-item]'),
-
-                  dropdownGrowth = dropdownSex.querySelector('[data-dropdown-growth]'),
-                  labelGrowth = dropdownSex.querySelector('[data-dropdown-growth-label]'),
-                  selectedGrowth = dropdownSex.querySelector('[data-dropdown-growth-selected]'),
-                  itemsGrowth = dropdownSex.querySelectorAll('[data-growth-item]'),
-
-                  dropdownTestOne = dropdownSex.querySelector('[data-dropdown-test-one]'),
-                  labelTestOne = dropdownSex.querySelector('[data-dropdown-test-one-label]'),
-                  selectedTestOne = dropdownSex.querySelector('[data-dropdown-test-one-selected]'),
-                  itemsTestOne = dropdownSex.querySelectorAll('[data-test-one-item]'),
-
-                  dropdownTestTwo = dropdownSex.querySelector('[data-dropdown-test-two]'),
-                  labelTestTwo = dropdownSex.querySelector('[data-dropdown-test-two-label]'),
-                  selectedTestTwo = dropdownSex.querySelector('[data-dropdown-test-two-selected]'),
-                  itemsTestTwo = dropdownSex.querySelectorAll('[data-test-two-item]');
-                  
-
-                
-                addActiveDropdown(dropdownCategory, selectedCategory, labelCategory)
-                changeLable(itemsCategory, selectedCategory)
-
-                addActiveDropdown(dropdownGrowth, selectedGrowth, labelGrowth)
-                changeLable(itemsGrowth, selectedGrowth)
-
-                addActiveDropdown(dropdownTestOne, selectedTestOne, labelTestOne)
-                changeLable(itemsTestOne, selectedTestOne)
-
-                addActiveDropdown(dropdownTestTwo, selectedTestTwo, labelTestTwo)
-                changeLable(itemsTestTwo, selectedTestTwo)
-      
-        }
     }
-    
-    if(productSelection !== null) {
-        const containers = productSelection.querySelectorAll('[data-checkbox-container]');
-             
-              containers.forEach(itemContainer => {
-                itemContainer.addEventListener('click', function(event) {
-                    delActive(containers);
-                    const self = event.currentTarget;
-                    const targetInput = self.querySelector('[data-checkbox-input]');
-                    targetInput.checked = true;
-                    itemContainer.classList.add('active');
-                })
-              })
-    }
+
+
 
     if(currentOffersSection !== null) {
         const menuItems = currentOffersSection.querySelectorAll('[data-menu-item]'),

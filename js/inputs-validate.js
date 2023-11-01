@@ -245,31 +245,34 @@ export let inputsValidate = function() {
             inputPasswordEnter.addEventListener('input', function(){
                 this.value = this.value.replace(/\s+/gi,'');
             }); 
-            
-            inputsRegister.forEach((item)=> {
-                item.addEventListener('input', function() {
-                    if(this.classList.contains('name-register')) {
-                        this.value = this.value.replace(/\s+/gi,'');
-                        exam(regText, this, button, containerInputNameRegister);
-                    }else if(this.classList.contains('email-register')) {
-                        this.value = this.value.replace(/\s+/gi,'');
-                        exam(regEmail, this, button, containerInputEmailRegister);
-                    }
-                    inputsChangeReg(inputsRegister, buttonRegister);
-                })
+
+            const registerName = modalEnter.querySelector('[data-input-name-modal-register]');
+            const registerEmail = modalEnter.querySelector('[data-input-email-modal-register]');
+
+            function checkValidRegisterForm() {
+                if(regEmail.test(registerEmail.value) && validator.isEmail(registerEmail.value) && registerName.value !== '' && inputPasswordRegister.value !== '' && inputPasswordReRegister.value !== '' && inputPasswordReRegister.value === inputPasswordRegister.value) {
+                    buttonRegister.disabled = false;
+                } else {
+                    buttonRegister.disabled = true;
+                }
+            }
+
+            registerName.addEventListener('input', () => {
+                checkValidRegisterForm()
             })
 
-            inputEmailEnter.addEventListener('input', () => {
-                if(!inputEmailEnter.length && !inputPasswordEnter.length) {
-                    button.disabled = true;
-                }
+            registerEmail.addEventListener('input', () => {
+                checkValidRegisterForm()
             })
 
-            inputPasswordEnter.addEventListener('input', () => {
-                if(!inputEmailEnter.length && !inputPasswordEnter.length) {
-                    button.disabled = true;
-                }
+            inputPasswordRegister.addEventListener('input', () => {
+                checkValidRegisterForm()
             })
+
+            inputPasswordReRegister.addEventListener('input', () => {
+                checkValidRegisterForm()
+            })
+
 
             showPassword(btnShowPassModal)
             inputsChange(inputsEnter, button)
@@ -283,9 +286,29 @@ export let inputsValidate = function() {
                   containerInputTel = modalOnClick.querySelector('[data-input-tel-container-modal-on-click]'),
                   inputs = modalOnClick.querySelectorAll('[data-input-modal-on-click]');
 
-            inputTel.addEventListener('input', function() {
-                exam(regPhone, inputTel, false, containerInputTel);
-            }); 
+                  var maskOptions = {
+                    mask: '+{38} (000)-000-00-00'
+                  };
+              
+                  var mask = IMask(inputTel, maskOptions);
+
+                  function validOrderForm() {
+                    if(validator.isMobilePhone(inputTel.value.replace(/[^0-9]/g, '').substring(2), ['uk-UA']) && inputText.value.length) {
+                        button.disabled = false;
+                    }else {
+                        button.disabled = true;
+                    }
+                  }
+
+                  inputTel.addEventListener("input", () => {
+                    validOrderForm()
+                  })
+
+                  inputText.addEventListener("input", () => {
+
+                    validOrderForm()
+                  })
+
             inputText.addEventListener('input', function() {
                 this.value = this.value.replace(/\s+/gi,'');
             })
@@ -307,9 +330,6 @@ export let inputsValidate = function() {
                             }
                         })
                     }
-                    if(arr.length === inputs.length) {
-                        button.disabled = false;
-                    }
                 })
             });
 
@@ -319,6 +339,12 @@ export let inputsValidate = function() {
             const containerInput = headerSection.querySelector('[data-input-phone-header-cotainer]'),
                   inputPhone = headerSection.querySelector('[data-input-tel-header]'),
                   button = headerSection.querySelector('[data-button-tel-submit-header]');
+
+                  var maskOptions = {
+                    mask: '+{38} (000)-000-00-00'
+                  };
+              
+                  var mask = IMask(inputPhone, maskOptions);
 
             preventDefaultButton(button); 
             inputPhone.addEventListener('input', function(){
@@ -594,13 +620,6 @@ export let inputsValidate = function() {
                   dropdownRegion = orderingNewUser.querySelector('[data-dropdown-region-selected]'),
                   dropdownNumberPost = orderingNewUser.querySelector('[data-dropdown-number-post-selected]');
 
-                 /* const   inputCity = document.querySelector('[data-input-city]'),
-                        itemsSelect = document.querySelectorAll('[data-item-city]'),
-                        listCity = document.querySelector('[data-list-city]'),
-                        dropCity = document.querySelector('[data-drop-city]'),
-                        sectDrop = document.querySelector('[data-drop-section-city]');
-
-                        const sectionDropdowns = document.querySelector('[data-ordering]');*/
 
                 inputEmail.addEventListener('input', function(){
                     this.value = this.value.replace(/\s+/gi,'');

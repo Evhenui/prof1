@@ -564,6 +564,9 @@
     }
 
     &__basket-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         transition: all .2s ease-in-out;
         @extend %centre-space-between;
         padding: 4px 0;
@@ -594,8 +597,9 @@
     }
 
     &__button-header {
-        max-width: 210px;
+        max-width: initial;
         width: 100%;
+        justify-content: flex-end;
         @include __960 {
             display: none;
         }
@@ -660,11 +664,11 @@
 
 
     &__name-product {
+        width: 100%;
         @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
     }
 
     &__price {
-        max-width: 148px;
         width: 100%;
         @include __960 {
             max-width: 80px;
@@ -725,4 +729,14 @@
     }
 }
 
+.wrp-hidden-input {
+    max-width: 410px;
 
+    input {
+        max-width: 100%;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}
