@@ -360,7 +360,7 @@ html {
   transition: all 0.3s ease;
   &.active {
     background: rgba(0, 0, 0, 0.2);
-    z-index: 3;
+    z-index: 999999;
   }
 }
 
@@ -679,4 +679,9 @@ html {
   &:hover &__state {
     stroke: $color-black;
   }
+}
+
+
+.js-main {
+  min-height: 80vh;
 }

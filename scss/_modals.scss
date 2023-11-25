@@ -956,7 +956,7 @@
     width: 100%;
     @include __640 {
       padding: 12px;
-      max-width: 155px;
+      max-width: 165px;
     }
   }
 
@@ -1070,7 +1070,12 @@
     align-self: flex-start;
     max-width: 434px;
     width: 100%;
+    word-wrap: break-word;
     @include text($size: 14px, $color: $color-black, $textAlign: left, $fontWeight: 600, $lineHeight: 20px);
+
+    @include __640 {
+      max-width: 216px;
+    }
   }
 
   &__item-bottom {

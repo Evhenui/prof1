@@ -274,6 +274,8 @@
     }
 
     &__title {
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
         text-transform: uppercase;
         @include text( $size: 32px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);
         @include __1250 {
@@ -971,6 +973,11 @@
         align-items: center;
         justify-content: right;
         margin: 0 auto;
+
+        &.hidden {
+            display: none;
+        }
+        
         @include __960 {
             margin: 0;
         }

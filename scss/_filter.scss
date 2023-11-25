@@ -1356,3 +1356,98 @@
   .ocf-active-label {
     @include text( $size: 14px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
   }
+
+  .ocf-noUi-pips {
+    &.ocf-noUi-pips-horizontal {
+      opacity: 0;
+      visibility: hidden;
+      height: 15px;
+    }
+  }
+
+  .ocf-noUi-handle {
+    &.ocf-noUi-handle-lower,
+    &.ocf-noUi-handle-upper {
+      border: 3px solid #EB475C;
+      background-color: $color-white;
+      cursor: pointer;
+      transition: all .1s ease-in-out;
+
+      &:hover {
+        border-color: $color-red;
+        width: 28px;
+        height: 28px;
+        top: -6px;
+      }
+    }
+  }
+
+
+  .ocf-filter {
+    .ocf-filter-body {
+      .ocf-value-list {
+        padding: 0 10px;
+
+        .ocf-slider-input-group {
+          .ocf-form-control {
+            border: none;
+            padding: 10px 16px;
+            border-radius: 0;
+            border-bottom: 1px solid $color-gray-50;
+            @include text( $size: 14px, $textAlign: left, $color: $color-gray-80, $fontWeight: 400, $lineHeight: 24px);
+
+            &:hover {
+              box-shadow: none;
+              border-bottom: 1px solid $color-gray-50 !important;
+            }
+            &:focus {
+              box-shadow: none;
+              border-bottom: 1px solid $color-gray-50 !important;
+            }
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active  {
+              box-shadow: 0 0 0 30px #F5F5F5 inset !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ocf-popover.ocf-fade.ocf-right.ocf-in{
+    display: none !important;
+  }
+
+
+  .ocf-noUi-connects {
+    .ocf-noUi-connect {
+      &::before {
+        background-color: #EB475C;
+      }
+    }
+  }
+
+
+  .ocf-input-group-addon {
+    background-color: inherit !important;
+    color: $color-gray-60 !important;
+    &:last-of-type {
+      display: none !important;
+    }
+  }
+
+  .ocf-input-group.ocf-slider-input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .ocf-input-group-addon {
+      padding: 6px 0;
+    }
+
+    input {
+      max-width: 100px;
+    }
+  }

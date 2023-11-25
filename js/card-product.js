@@ -33,9 +33,14 @@ export let cardProduct = function() {
               notificationBasket.classList.add('active');
             })
       //----------------navigation page----------------------------
-      navigationPageItems.forEach((item) => {
+      navigationPageItems.forEach((item, index) => {
           item.addEventListener("click", function () {
             delActiv(navigationPageItems);
+
+            if(!index) {
+              window.scrollTo({ top: 0,  behavior: "smooth" });
+            }
+
             item.classList.add('active');
           });
       });
@@ -111,6 +116,16 @@ export let cardProduct = function() {
 
       if(characteristicsSection !== null) {
         const button = characteristicsSection.querySelector('[data-button-show-characteristics]');
+        const characteristicList = characteristicsSection.querySelectorAll('.characteristics__details');
+
+        function showBtn() {
+          if(characteristicList.length <= 8) {
+            button.classList.add('hidden');
+          } 
+        }
+
+        showBtn()
+
         button.addEventListener('click', function() {
           characteristicsSection.classList.toggle('active');
         })

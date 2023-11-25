@@ -403,19 +403,6 @@
         row-gap: 40px;
     }
 
-    &__downloads {
-        
-    }
-
-    &__title-wrapper {
-    }
-
-    &__title-decoration {
-    }
-
-    &__title {
-    }
-
     &__download-list {
         display: flex;
         flex-direction: column;
@@ -578,6 +565,42 @@
         @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px); 
     }
 }
+
+
+.info-section {
+    &__wrp {
+        padding: 68px 48px 0 48px;
+        @extend %size-page;
+        margin: 0 auto;
+
+        h1 {
+            @include text( $size: 32px, $textAlign: left, $color: $color-black, $fontWeight: 700, $lineHeight: 44px);  
+            margin-bottom: 40px;
+    
+            @include __960 {
+                padding: 0 16px;
+            }
+        }
+
+        ul {
+            padding-left: 0 !important;
+
+            li[aria-level="1"] {
+                    text-transform: uppercase;
+                    @include text( $size: 20px, $textAlign: left, $color: $color-gray-100, $fontWeight: 600, $lineHeight: 28px); 
+                }
+                li[aria-level="2"] {
+                    @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);   
+
+                    p b {
+                        @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 400, $lineHeight: 24px);  
+                    }
+                }
+            
+        }
+    }
+}
+
 .page.about-company .page__wrapper{
     padding: 16px 0 20px 0;
 }

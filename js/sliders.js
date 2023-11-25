@@ -56,19 +56,19 @@ export let sliders = function() {
         const currentOffers = mainPage.querySelector('[data-current-offers]'),
               newsSection = mainPage.querySelector('[data-news-section]');
         if(currentOffers !== null) {
-          const sliderBestseller = new Swiper('.current-offers__slider-bestseller', {
+          const sliderBestseller = new Swiper('[data-top-sales-slider]', {
             direction: 'horizontal',
-            slidesPerView: 4, 
+            slidesPerView: 4.1, 
             spaceBetween: 32, 
             pagination: {
               el: '.swiper-pagination',
             },
             navigation: {
-              nextEl: '.current-offers__slider-bestseller-button-next',
-              prevEl: '.current-offers__slider-bestseller-button-prev',
+              nextEl: '[data-top-sales-btn-next]',
+              prevEl: '[data-top-sales-btn-prev]',
             },
             scrollbar: {
-              el: '.current-offers__bestseller-scrollbar',
+              el: '[data-top-sales-scrollbar]',
               draggable: true
             },
             breakpoints: {
@@ -82,34 +82,34 @@ export let sliders = function() {
                 slidesPerView: 1.5, 
               },
               600: { 
-                slidesPerView: 2, 
+                slidesPerView: 2.1, 
               },
               820: { 
                 slidesPerView: 2.5, 
               },
               1000: { 
-                slidesPerView: 3, 
+                slidesPerView: 3.1, 
               },
               1300: { 
-                slidesPerView: 4, 
+                slidesPerView: 4.1, 
               }
             }
           });
     
-          const sliderNovelties = new Swiper('.current-offers__slider-novelties', {
+          const sliderNovelties = new Swiper('[data-discont-slider]', {
             direction: 'horizontal',
-            slidesPerView: 4, 
+            slidesPerView: 4.1, 
             spaceBetween: 32, 
             pagination: {
               el: '.swiper-pagination',
               clickable: true,
             },
             navigation: {
-              nextEl: '.current-offers__slider-novelties-button-next',
-              prevEl: '.current-offers__slider-novelties-button-prev',
+              nextEl: '[data-discont-btn-prev]',
+              prevEl: '[data-discont-btn-prev]',
             },
             scrollbar: {
-              el: '.current-offers__novelties-scrollbar',
+              el: '[data-discont-scrollbar]',
               draggable: true
             },
             breakpoints: {
@@ -123,34 +123,34 @@ export let sliders = function() {
                 slidesPerView: 1.5, 
               },
               600: { 
-                slidesPerView: 2, 
+                slidesPerView: 2.1, 
               },
               820: { 
                 slidesPerView: 2.5, 
               },
               1000: { 
-                slidesPerView: 3, 
+                slidesPerView: 3.1, 
               },
               1300: { 
-                slidesPerView: 4, 
+                slidesPerView: 4.1, 
               }
             }
           });
     
-          const sliderStock = new Swiper('.current-offers__slider-stock', {
+          const sliderStock = new Swiper('[data-novelty-slider]', {
             direction: 'horizontal',
-            slidesPerView: 4, 
+            slidesPerView: 4.1, 
             spaceBetween: 32, 
             pagination: {
               el: '.swiper-pagination',
               clickable: true,
             },
             navigation: {
-              nextEl: '.current-offers__slider-stock-button-next',
-              prevEl: '.current-offers__slider-stock-button-prev',
+              nextEl: '[data-novelty-btn-next]',
+              prevEl: '[data-novelty-btn-prev]',
             },
             scrollbar: {
-              el: '.current-offers__stock-scrollbar',
+              el: '[data-novelty-scrollbar]',
               draggable: true
             },
             breakpoints: {
@@ -164,16 +164,16 @@ export let sliders = function() {
                 slidesPerView: 1.5, 
               },
               600: { 
-                slidesPerView: 2, 
+                slidesPerView: 2.1, 
               },
               820: { 
                 slidesPerView: 2.5, 
               },
               1000: { 
-                slidesPerView: 3, 
+                slidesPerView: 3.1, 
               },
               1300: { 
-                slidesPerView: 4, 
+                slidesPerView: 4.1, 
               }
             }
           });

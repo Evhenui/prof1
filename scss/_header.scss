@@ -621,6 +621,10 @@
     &__item-link {
       display: inline-block;
       font-size: 0;
+
+      &.basket.notification__button {
+        display: flex;
+      }
     }
   }
   
@@ -987,7 +991,9 @@
     &__login-in-wrapper {
       padding: 4px 0;
       display: flex;
-      column-gap: 81px;
+      justify-content: space-between;
+      column-gap: 20px;
+      max-width: 345px;
     }
   
     &__icon {

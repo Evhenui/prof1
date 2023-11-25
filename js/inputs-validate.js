@@ -13,7 +13,7 @@ export let inputsValidate = function() {
           personalArea = document.querySelector('[data-personal-arae]');
     const   regPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
             regText = /^([A-Za-z\-\']{1,50})|([А-Яа-я\-\']{1,50})$/,
-            regEmail = /[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]/;
+            regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     //------------------------phone mask--------------------------------        
             const getInputNumbersValue = function (input) {
                 return input.value.replace(/\D/g, '');
@@ -81,10 +81,6 @@ export let inputsValidate = function() {
 
             for (var phoneInput of phoneInputs) {
                 var mask = IMask(phoneInput, maskOptions);
-
-                //phoneInput.addEventListener('keydown', onPhoneKeyDown);
-                //phoneInput.addEventListener('input', onPhoneInput, false);
-                //phoneInput.addEventListener('paste', onPhonePaste, false);
             }
     //------------------------validate inputs----------------------------
             function valid(value, button, container) {
@@ -616,74 +612,64 @@ export let inputsValidate = function() {
                   inputSurname = orderingNewUser.querySelector('[data-input-ordering-surname]'),
                   inputs = orderingNewUser.querySelectorAll('[data-input-ordering]'),
                   buttonOrder = orderingNewUser.querySelector('[data-button-ordering]'),
-                  dropdownCity = orderingNewUser.querySelector('[data-dropdown-city-selected]'),
-                  dropdownRegion = orderingNewUser.querySelector('[data-dropdown-region-selected]'),
+                  checkbox = orderingNewUser.querySelector('.ordering__input-checkbox'),
+                  dropdownCity = orderingNewUser.querySelector('[data-select-input-city]'),
+                  dropdownRegion = orderingNewUser.querySelector('[data-select-input-region]'),
                   dropdownNumberPost = orderingNewUser.querySelector('[data-dropdown-number-post-selected]');
+                  
+
+            function checkValidRegisterForm() {
+                if(regEmail.test(inputEmail.value) && validator.isEmail(inputEmail.value) && inputName.value !== '' && 
+                inputSurname.value !== '' && validator.isMobilePhone(inputPhone.value.replace(/[^0-9]/g, '').substring(2), ['uk-UA'])) {
+                    buttonOrder.disabled = false;
+                } else {
+                    buttonOrder.disabled = true;
+                }
+            }
+
+            checkValidRegisterForm()
+
+            inputEmail.addEventListener('input', () => {
+                checkValidRegisterForm();
+
+                if(!regEmail.test(inputEmail.value) && !validator.isEmail(inputEmail.value)) {
+                    containerEmail.classList.add('error');
+                } else {
+                    containerEmail.classList.remove('error');
+                }
+            });
+            
+            inputName.addEventListener('input', () => {
+                checkValidRegisterForm();
+
+                if(!inputName.value.length) {
+                    containerName.classList.add('error');
+                } else {
+                    containerName.classList.remove('error');
+                }
+            });
+
+            inputSurname.addEventListener('input', () => {
+                checkValidRegisterForm();
+
+                if(!inputSurname.value.length) {
+                    containerSurname.classList.add('error');
+                } else {
+                    containerSurname.classList.remove('error');
+                }
+            });
+
+            inputPhone.addEventListener('input', () => {
+                checkValidRegisterForm();
+
+                if(!validator.isMobilePhone(inputPhone.value.replace(/[^0-9]/g, '').substring(2), ['uk-UA'])) {
+                    containerPhone.classList.add('error');
+                } else {
+                    containerPhone.classList.remove('error');
+                }
+            }); 
 
 
-                inputEmail.addEventListener('input', function(){
-                    this.value = this.value.replace(/\s+/gi,'');
-                    exam(regEmail, inputEmail, false, containerEmail);
-                });
-
-                inputName.addEventListener('input', function(){
-                    this.value = this.value.replace(/\s+/gi,'');
-                    exam(regText, inputName, false, containerName);
-                });
-
-                inputSurname.addEventListener('input', function(){
-                    this.value = this.value.replace(/\s+/gi,'');
-                    exam(regText, inputSurname, false, containerSurname);
-                });
-
-                inputPhone.addEventListener('input', function(){
-                    exam(regPhone, inputPhone, false, containerPhone);
-                }); 
-
-                inputs.forEach((el) => {
-                    el.addEventListener('input', () => {
-                        let arr = [];
-                        
-                        if (el.value !== '') {
-                            inputs.forEach((item, index) => {
-                                if (item.value !== '') {
-                                    arr.push(inputs[index])
-                                }
-                            })
-                        }
-                        if(arr.length === inputs.length) {
-                            buttonOrder.disabled = false;
-                        }
-                    })
-                });
-
-                
-/*
-                        function changeInput (items, input) {
-                            items.forEach((item)=> {
-                                item.addEventListener('click', ()=> {
-                                    input.value = item.innerText;
-                                    sectDrop.classList.remove('active');
-                                })
-                            })
-                        }  
-
-                        function closeMenu (dropdown, section) {
-                            sectionDropdowns.addEventListener('click', function(e) {
-                                const click = e.composedPath().includes(dropdown);
-                                if(!click) {
-                                    section.classList.remove('active');
-                                }
-                            })
-                        }                     
-                        
-                        inputCity.addEventListener('click', function() {
-                            sectDrop.classList.toggle('active');
-                        })
-
-                        closeMenu(dropCity, sectDrop)
-                        changeInput(itemsSelect, inputCity, listCity);
-*/
           }
 
           if(personalArea !== null) {

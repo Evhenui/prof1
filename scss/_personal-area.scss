@@ -542,6 +542,14 @@
         }
     }
 
+    &__image-wrapper {
+        max-width: 60px;
+    }
+
+    &__product-img {
+        flex: 0 0 60px;
+    }
+
     &__short-information-wrapper {
         transition: all .3s ease-in-out;
         @extend %centre-space-between;
@@ -711,8 +719,9 @@
         @include __960 {
             max-width: 319px;
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start;
             height: 60px;
+            gap: 16px;
         }
     }
 
@@ -788,7 +797,12 @@
     }
 
     &__full-information-left-section {
+        @include __1390 {
+            max-width: 200px;
+        }
+
         @include __960 {
+            max-width: 100%;
             padding: 0 12px;
         }
     }
@@ -881,14 +895,14 @@
 
     &__details-name {
         transition: all .1s ease-in-out;
-        max-width: 218px;
-        width: 100%;
+        width: 218px;
+        word-wrap: break-word;
         @include text( $size: 14px, $textAlign: left, $color: $color-black, $fontWeight: 600, $lineHeight: 20px);
         @include __1390 {
-            max-width: 135px;
+            width: 135px;
         }
         @include __960{
-            max-width: 218px; 
+            width: 100%; 
         }
     }
 
@@ -932,6 +946,14 @@
         }
     }
 
+    &__details-amount-subtitle {
+        padding-left: 34px;
+
+        @include __1390 {
+            padding-left: 0;
+        }
+    }
+
     &__details-amount {
         @include __960 {
             text-align: center;
@@ -946,6 +968,7 @@
     }
 
     &__button-stay-review {
+        width: max-content;
         padding: 12px 36.5px;
         @include __1390 {
             padding: 12px 4px;

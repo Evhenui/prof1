@@ -88,6 +88,10 @@ export let ordering = function() {
                 const selectCaption = document.querySelector("[data-caption-region]");
                 const selectedItem = document.querySelectorAll("[data-option-list-region]");
                 const listRegion = document.querySelector("[data-list-region]");
+
+                let validRegion = false;
+                let validCity = false;
+                let validDepartmentNumber = false;
                 
                 selectInput.addEventListener("input", () => {
                     if(selectInput.value === "") {
@@ -285,66 +289,36 @@ export let ordering = function() {
             })
         }
 
-        if(orderingTabSection !== null) {
-            const menuItems = orderingTabSection.querySelectorAll('[data-ordering-tab]'),
-                  tabItems = orderingTabSection.querySelectorAll('[data-ordering-tab-section]'),
-
-                  forgetPass = orderingTabSection.querySelector('[data-ordering-tab-link]'),
-                  forgetPassSection = orderingTabSection.querySelector('[data-ordering-tab-forget-pass]'),
-                  containerEnter = orderingTabSection.querySelector('[data-ordering-login-wrapper]');
-
-/*             menuItems.forEach(function(item) {
-                item.addEventListener("click", function () {
-                    const tabId = item.getAttribute("data-ordering-tab-item"),
-                        currentTub = orderingTabSection.querySelector(tabId);
-                    if (!item.classList.contains("active")) {
-                    menuItems.forEach(function (item) {
-                        item.classList.remove("active");
-                    });
-                    tabItems.forEach(function (item) {
-                        item.classList.remove("active");
-                    });
-                    item.classList.add("active");
-                    currentTub.classList.add("active");
-                    }
-                })
-            }); */
-
-/*             forgetPass.addEventListener('click', function(event) {
-                event.preventDefault()
-                const tabId = forgetPass.getAttribute("data-ordering-tab-item"),
-                currentTub = orderingTabSection.querySelector(tabId);
-                containerEnter.classList.add("active");
-                currentTub.classList.add("active");
-            }) */
-        }
-
         if(orderingBasket !== null) {
             function res() {
-                if(window.innerWidth <= 960) {
-                    const buttonShowMore = orderingBasket.querySelector('[data-button-ordering-show-full-info]');
-    
-               
+                const buttonShowMore = orderingBasket.querySelector('[data-button-ordering-show-full-info]');
+            
+                if (window.innerWidth <= 960) {
+                    const bodyAccordion = buttonShowMore.nextElementSibling;
+                    buttonShowMore.classList.add("active");
+                    bodyAccordion.style.height = bodyAccordion.scrollHeight + 'px';
+                    bodyAccordion.classList.add('active');
+            
                     buttonShowMore.addEventListener('click', function() {
-                        const bodyAccordion = this.nextElementSibling;
                         this.classList.toggle("active");
-                        
-                        if(this.classList.contains('active')){
+                        const bodyAccordion = this.nextElementSibling;
+            
+                        if (this.classList.contains('active')) {
                             bodyAccordion.style.height = bodyAccordion.scrollHeight + 'px';
-                            bodyAccordion.classList.add('active')
-                            } else {
+                            bodyAccordion.classList.add('active');
+                        } else {
                             bodyAccordion.style.height = 0 + 'px';
-                            bodyAccordion.classList.remove('active')
-                        }      
-                    })   
+                            bodyAccordion.classList.remove('active');
+                        }
+                    });
                 }
             }
-            res();
-            window.addEventListener('resize', () =>{
-                res();
-                
-            })
             
+            res();
+            
+            window.addEventListener('resize', () => {
+                res();
+            });
         }
 
     }

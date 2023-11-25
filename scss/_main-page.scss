@@ -282,6 +282,15 @@
 
 .product-selection {
     margin-bottom: 204px;
+
+    @include __960 {
+        margin-bottom: 50px;
+    }
+
+    @include __407 {
+        margin-bottom: 0;
+    }
+
     &__wrapper {
         @extend %size-page;
         padding: 80px 48px 60px 48px;
@@ -445,6 +454,19 @@
 }
 
 .current-offers {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 528px;
+        transform: translateY(-50%);
+        background-color: #FAFAFA;
+        z-index: -1;
+    }
 
     &__wrapper {
         @extend %size-page;
@@ -452,6 +474,10 @@
         @include __960 {
             @include padding-mob;
         }
+    }
+
+    .card-item {
+        height: 100%;
     }
 
     &__header {
@@ -528,6 +554,7 @@
     &__accordion {
         position: relative;
         display: none;
+        min-height: 531px;
         &.active {
             display: block;
         }
@@ -745,6 +772,12 @@
         position: absolute;
         bottom: 0;
         right: 4px;
+
+        @include __960 {
+            opacity: 1;
+            padding: 50px 0 0 50px;
+            max-width: 190px;
+        }
     }
 
     &__image {
@@ -785,7 +818,7 @@
         margin-bottom: 100px;
         @include __960 {
             padding: 80px 16px 0 16px;
-            flex-direction: column-reverse;
+            flex-direction: column;
             align-items: center;
             row-gap: 64px;
             background-position: 50px -71px;
